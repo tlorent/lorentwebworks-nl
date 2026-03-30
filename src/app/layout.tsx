@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Lorent Webworks — Website laten maken voor zzp en MKB",
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     title: "Website laten maken voor zzp & MKB | Lorent Webworks",
     description:
       "Freelance webdesigner voor zzp'ers en kleine bedrijven. Inclusief teksten, SEO en hosting. Binnen 2–4 weken live.",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
 };
 
