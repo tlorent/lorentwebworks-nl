@@ -72,7 +72,7 @@ export default function Home() {
                     name: "Hoe lang duurt het voordat mijn website live gaat?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Een one-pager is binnen 2 weken live. Een complete website binnen 3–4 weken. Een webshop binnen 4–6 weken.",
+                      text: "Een one-pager is binnen 48 uur live. Een complete website binnen 3–4 weken. Een webshop binnen 4–6 weken.",
                     },
                   },
                   {
@@ -108,10 +108,10 @@ export default function Home() {
             <a href="#voor-wie">Voor wie</a>
           </li>
           <li>
-            <a href="#pakketten">Pakketten</a>
+            <a href="#aanpak">Aanpak</a>
           </li>
           <li>
-            <a href="#werkwijze">Hoe het werkt</a>
+            <a href="#resultaat">Resultaat</a>
           </li>
           <li>
             <a href="#over-tim">Over Tim</a>
@@ -144,37 +144,33 @@ export default function Home() {
               </div>
             </div>
             <h1 className="hero-title">
-              Websites die
-              <span className="word-green"> klanten opleveren.</span>
+              Websites die <br/>
+              <span className="word-green">klanten opleveren.</span>
             </h1>
             <div className="hero-bottom-row">
               <p className="hero-desc">
-                Voor zzp'ers en kleine bedrijven die klaar zijn met een website
-                die niets doet. Ik regel design, tekst en SEO — jij focust op
-                je bedrijf.
+                Je website staat online. Maar levert weinig op. Bezoekers
+                kijken, klikken... en vertrekken weer. Ik bouw een landing
+                page die wél werkt. Duidelijk verhaal. Sterke structuur.
+                Gericht op conversie.
               </p>
               <div className="hero-ctas">
                 <a href="#contact" className="btn btn-yellow">
-                  Plan een gesprek →
-                </a>
-                <a href="#pakketten" className="btn btn-outline-dark">
-                  Bekijk pakketten
+                  Vraag gratis website audit →
                 </a>
               </div>
               <div className="hero-trust-bullets">
                 <div className="trust-bullet">
-                  <span className="trust-check">✓</span>
-                  <span>
-                    8+ jaar ervaring — eerder voor bol, T-Mobile &amp; GrandVision
-                  </span>
+                  <span className="trust-stat">+45%</span>
+                  <span>abonnementsgroei bij bol</span>
+                </div>
+                <div className="trust-bullet">
+                  <span className="trust-stat">+3,4%</span>
+                  <span>conversiegroei bij Pearle</span>
                 </div>
                 <div className="trust-bullet">
                   <span className="trust-check">✓</span>
-                  <span>Binnen 2–4 weken live</span>
-                </div>
-                <div className="trust-bullet">
-                  <span className="trust-check">✓</span>
-                  <span>Design, tekst én SEO — alles geregeld</span>
+                  <span>Binnen 48 uur live</span>
                 </div>
               </div>
             </div>
@@ -185,23 +181,31 @@ export default function Home() {
       {/* VOOR WIE */}
       <section className="voor-wie" id="voor-wie">
         <div className="container">
-          <div className="voor-wie-top reveal">
-            <span className="tag-pill">Voor wie</span>
-            <h2 className="display-h2">
-              Herken jij
-              <br />
-              dit?
-            </h2>
-            <p className="voor-wie-sub">
-              Je website staat er al jaren, maar levert niks op. Of je hebt
-              er helemaal geen — en loopt elke dag omzet mis. Je wil iemand
-              die het snapt, het regelt, en er gewoon werk van maakt.
-            </p>
-            <a href="#contact" className="btn btn-dark">
-              Ja, dit ben ik →
-            </a>
-          </div>
-          <div className="sector-grid reveal">
+          <div className="voor-wie-inner">
+            <div className="voor-wie-top reveal">
+              <span className="tag-pill">Voor wie</span>
+              <h2 className="display-h2">
+                Herken je
+                <br />
+                dit?
+              </h2>
+              <p className="voor-wie-sub">
+                Je website:
+              </p>
+              <ul className="voor-wie-lijst">
+                <li>staat er, maar levert weinig op</li>
+                <li>vertelt niet duidelijk wat je doet</li>
+                <li>voelt rommelig of onduidelijk</li>
+                <li>wordt nauwelijks gevonden</li>
+              </ul>
+              <p className="voor-wie-sub">
+                Of je hebt nog geen website — en mist elke dag kansen.
+              </p>
+              <a href="#contact" className="btn btn-dark">
+                Ja, dit herken ik →
+              </a>
+            </div>
+            <div className="sector-grid reveal">
             <div className="sector-card">
               <span className="sector-num">01</span>
               <div className="sector-illus">
@@ -218,8 +222,7 @@ export default function Home() {
               </div>
               <div className="sector-name">Horeca</div>
               <p className="sector-desc">
-                Restaurant, café, bakker, catering. Gasten googlen je voordat
-                ze binnenlopen — en ze besluiten op basis van wat ze zien.
+                Gasten googlen je voordat ze binnenlopen — en beslissen op basis van wat ze zien.
               </p>
               <a href="#contact" className="sector-cta">Dit herken ik →</a>
             </div>
@@ -235,8 +238,7 @@ export default function Home() {
               </div>
               <div className="sector-name">Creatief</div>
               <p className="sector-desc">
-                Fotograaf, kunstenaar, designer, muzikant. Je werk is goed —
-                maar je portfolio laat dat nog niet zien.
+                Je werk is goed — maar je website laat het niet zien.
               </p>
               <a href="#contact" className="sector-cta">Dit herken ik →</a>
             </div>
@@ -255,8 +257,7 @@ export default function Home() {
               </div>
               <div className="sector-name">Coaches</div>
               <p className="sector-desc">
-                Therapeut, coach, consultant. Klanten moeten je vertrouwen
-                vóórdat ze contact opnemen. Een slechte site kost je leads.
+                Mensen moeten je vertrouwen vóór ze contact opnemen. Je site maakt of breekt dat.
               </p>
               <a href="#contact" className="sector-cta">Dit herken ik →</a>
             </div>
@@ -287,14 +288,32 @@ export default function Home() {
               </div>
               <div className="sector-name">Winkels</div>
               <p className="sector-desc">
-                Winkel, atelier, studio. Gevonden worden in Google is geen
-                luxe meer — het is het verschil tussen druk en stil.
+                Gevonden worden in Google is het verschil tussen druk en stil.
               </p>
               <a href="#contact" className="sector-cta">Dit herken ik →</a>
             </div>
           </div>
+          </div>
         </div>
       </section>
+
+      {/* AANPAK */}
+      <div className="cta-band" id="aanpak">
+        <div className="container">
+          <h2 className="display-h2">
+            Gewoon een site die werkt.
+          </h2>
+          <p>
+            Ik bepaal de structuur, schrijf de teksten, bouw de site en zorg
+            dat je gevonden wordt. Jij hoeft alleen te zeggen wat je doet.
+          </p>
+          <div className="cta-band-actions">
+            <a href="#contact" className="btn btn-yellow">
+              Plan een gesprek →
+            </a>
+          </div>
+        </div>
+      </div>
 
       {/* OVER TIM */}
       <section className="over-tim" id="over-tim">
@@ -306,19 +325,16 @@ export default function Home() {
                 Ik regel het.
               </h2>
               <p>
-                Ik ben Tim Lorent, freelance webdesigner en frontend engineer
-                met <strong>meer dan 8 jaar ervaring</strong>. Ik heb platforms
-                gebouwd voor bol, GrandVision en T-Mobile.
+                Ik ben Tim Lorent, webdesigner en frontend engineer met{" "}
+                <strong>8+ jaar ervaring</strong>. Ik werkte aan platforms voor
+                bol, GrandVision en T-Mobile.
               </p>
               <p>
-                Ik werk alleen. Geen team erachter, geen junior die stiekem het
-                werk doet. <strong>Jij praat direct met mij</strong> — van
-                eerste gesprek tot oplevering. Dat scheelt misverstanden,
-                vertraging en geld.
+                Je werkt direct met mij — van eerste gesprek tot oplevering.
+                Geen ruis, geen misverstanden.
               </p>
               <p>
-                Vanuit Amsterdam, voor ondernemers door heel Nederland. Website
-                laten maken hoeft geen gedoe te zijn.
+                Vanuit Amsterdam, voor ondernemers door heel Nederland.
               </p>
               <div className="over-tim-ctas">
                 <a href="#contact" className="btn btn-dark">
@@ -359,28 +375,55 @@ export default function Home() {
         </div>
       </section>
 
-      {/* PAKKETTEN */}
-      <section className="pakketten" id="pakketten">
+      {/* RESULTAAT */}
+      <section className="pakketten" id="resultaat">
         <div className="container">
           <div className="pakketten-top reveal">
-            <span className="tag-pill">Pakketten</span>
+            <span className="tag-pill">Resultaten</span>
             <h2 className="display-h2">
-              Helder aanbod.
+              Wat het
               <br />
-              Geen verrassingen.
+              oplevert.
+            </h2>
+          </div>
+          <div className="resultaat-grid reveal">
+            <div className="resultaat-card">
+              <div className="resultaat-stat">+45%</div>
+              <div className="resultaat-label">abonnementsgroei bij bol</div>
+              <p className="resultaat-desc">
+                4.000+ nieuwe subscribers in één lancering. Frontend
+                architectuur voor het abonnementsplatform van nul opgebouwd.
+              </p>
+            </div>
+            <div className="resultaat-card">
+              <div className="resultaat-stat">+3,4%</div>
+              <div className="resultaat-label">conversiegroei bij GrandVision</div>
+              <p className="resultaat-desc">
+                425 nieuwe betalende klanten uit 13.000 interacties.
+                Wishlistfunctie van nul gebouwd bij GrandVision.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* AANBOD */}
+      <section className="aanbod" id="aanbod">
+        <div className="container">
+          <div className="pakketten-top reveal">
+            <span className="tag-pill">Aanbod</span>
+            <h2 className="display-h2">
+              Start met een
+              <br />
+              landing page.
             </h2>
             <p className="pakketten-intro">
-              Drie vaste pakketten met een duidelijke scope, vaste prijs en
-              een harde deadline. Jij levert het beeldmateriaal en ik regel
-              de rest.
+              De snelste manier om klanten via je website te krijgen.
             </p>
-            <a href="#contact" className="btn btn-yellow">
-              Vraag gratis advies →
-            </a>
           </div>
-          <div className="pakket-grid reveal">
-            <div className="pakket-card">
-              <span className="pakket-badge">Snel live</span>
+          <div className="pakket-grid pakket-grid--two reveal">
+            <div className="pakket-card featured">
+              <span className="pakket-badge">Meest gekozen</span>
               <div className="pakket-illus">
                 <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
                   <rect
@@ -389,289 +432,76 @@ export default function Home() {
                     width="38"
                     height="30"
                     rx="2"
-                    stroke="rgba(255,253,245,0.35)"
+                    stroke="rgba(26,26,26,0.5)"
                     strokeWidth="1.8"
                   />
-                  <path d="M7 19h38" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
+                  <path d="M7 19h38" stroke="rgba(26,26,26,0.5)" strokeWidth="1.8" />
                   <path
                     d="M15 28h22M15 34h14"
-                    stroke="rgba(255,253,245,0.25)"
+                    stroke="rgba(26,26,26,0.35)"
                     strokeWidth="1.5"
                     strokeLinecap="round"
                   />
                 </svg>
               </div>
-              <div className="pakket-naam">One-pager</div>
+              <div className="pakket-naam">Landing page</div>
               <p className="pakket-tagline">
-                Ideaal voor starters en zzp'ers die snel en professioneel
-                online willen staan.
+                Eén sterke pagina die bezoekers overtuigt en laat converteren.
               </p>
               <div className="pakket-prijs">€950–1.400</div>
-              <p className="pakket-prijs-note">excl. BTW · eenmalig · live binnen 2 weken</p>
+              <p className="pakket-prijs-note">excl. BTW · eenmalig · live binnen 48 uur</p>
               <hr className="pakket-divider" />
               <ul className="pakket-lijst">
-                <li><span className="pakket-check">✓</span>One-pager op maat</li>
-                <li><span className="pakket-check">✓</span>Teksten die bezoekers overtuigen</li>
-                <li><span className="pakket-check">✓</span>Gevonden worden in Google (SEO)</li>
-                <li><span className="pakket-check">✓</span>Bezoekersstatistieken ingesteld</li>
-                <li><span className="pakket-check">✓</span>Huisstijladvies</li>
+                <li><span className="pakket-check">✓</span>Landing page op maat</li>
+                <li><span className="pakket-check">✓</span>Teksten die overtuigen</li>
+                <li><span className="pakket-check">✓</span>Basis SEO</li>
+                <li><span className="pakket-check">✓</span>Mobiel geoptimaliseerd</li>
                 <li><span className="pakket-check">✓</span>1 revisieronde</li>
               </ul>
-              <a href="#contact" className="btn btn-outline-white" style={{ textAlign: "center", width: "100%" }}>
-                Kies dit pakket →
+              <a href="#contact" className="btn btn-dark" style={{ textAlign: "center", width: "100%" }}>
+                Kies dit →
               </a>
             </div>
-            <div className="pakket-card featured">
-              <span className="pakket-badge">Meest gekozen</span>
+            <div className="pakket-card">
               <div className="pakket-illus">
                 <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
-                  <rect
-                    x="5"
-                    y="7"
-                    width="42"
-                    height="34"
-                    rx="2"
-                    stroke="rgba(26,26,26,0.5)"
-                    strokeWidth="1.8"
-                  />
-                  <path d="M5 15h42" stroke="rgba(26,26,26,0.5)" strokeWidth="1.8" />
-                  <rect
-                    x="11"
-                    y="21"
-                    width="11"
-                    height="14"
-                    rx="1"
-                    stroke="rgba(26,26,26,0.35)"
-                    strokeWidth="1.5"
-                  />
-                  <path
-                    d="M28 23h13M28 29h13M28 35h8"
-                    stroke="rgba(26,26,26,0.35)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
+                  <rect x="5" y="7" width="42" height="34" rx="2" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
+                  <path d="M5 15h42" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
+                  <rect x="11" y="21" width="11" height="14" rx="1" stroke="rgba(255,253,245,0.25)" strokeWidth="1.5" />
+                  <path d="M28 23h13M28 29h13M28 35h8" stroke="rgba(255,253,245,0.25)" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               </div>
               <div className="pakket-naam">Complete website</div>
               <p className="pakket-tagline">
-                Ideaal voor ondernemers die hun verhaal volledig willen
-                vertellen.
+                Meer pagina&apos;s, meer verhaal. Voor wie groter wil denken.
               </p>
-              <div className="pakket-prijs">€2.500–3.500</div>
-              <p className="pakket-prijs-note">excl. BTW · eenmalig · live binnen 3–4 weken</p>
               <hr className="pakket-divider" />
               <ul className="pakket-lijst">
                 <li><span className="pakket-check">✓</span>4–6 pagina&apos;s op maat</li>
                 <li><span className="pakket-check">✓</span>Teksten voor alle pagina&apos;s</li>
-                <li><span className="pakket-check">✓</span>Per pagina gevonden in Google (SEO)</li>
-                <li><span className="pakket-check">✓</span>Bezoekersstatistieken + conversie-tracking</li>
-                <li><span className="pakket-check">✓</span>Huisstijladvies</li>
-                <li><span className="pakket-check">✓</span>1 revisieronde</li>
+                <li><span className="pakket-check">✓</span>SEO per pagina</li>
+                <li><span className="pakket-check">✓</span>Conversie-tracking</li>
               </ul>
-              <a href="#contact" className="btn btn-dark" style={{ textAlign: "center", width: "100%" }}>
-                Kies dit pakket →
-              </a>
-            </div>
-            <div className="pakket-card">
-              <span className="pakket-badge">E-commerce</span>
-              <div className="pakket-illus">
-                <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
-                  <path
-                    d="M7 9h6l4 20h20l4-14H17"
-                    stroke="rgba(255,253,245,0.35)"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <circle cx="24" cy="36" r="3" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
-                  <circle cx="35" cy="36" r="3" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
-                </svg>
-              </div>
-              <div className="pakket-naam">Webshop</div>
-              <p className="pakket-tagline">
-                Ideaal voor winkels en merken die online willen verkopen.
-              </p>
-              <div className="pakket-prijs">€3.500–5.000</div>
-              <p className="pakket-prijs-note">excl. BTW · + Shopify €29–79/mnd · live binnen 4–6 weken</p>
-              <hr className="pakket-divider" />
-              <ul className="pakket-lijst">
-                <li><span className="pakket-check">✓</span>Shopify ingericht &amp; gestyled</li>
-                <li><span className="pakket-check">✓</span>Teksten voor hoofdpagina&apos;s</li>
-                <li><span className="pakket-check">✓</span>Gevonden worden in Google (SEO)</li>
-                <li><span className="pakket-check">✓</span>Bezoekersstatistieken + shop-tracking</li>
-                <li><span className="pakket-check">✓</span>Betaalkoppeling ingesteld</li>
-                <li><span className="pakket-check">✓</span>1 revisieronde</li>
-              </ul>
+              <p className="pakket-op-aanvraag">Prijs op aanvraag</p>
               <a href="#contact" className="btn btn-outline-white" style={{ textAlign: "center", width: "100%" }}>
-                Kies dit pakket →
+                Bespreek mijn situatie →
               </a>
             </div>
           </div>
         </div>
       </section>
-
-      {/* WERKWIJZE */}
-      <section className="werkwijze" id="werkwijze">
-        <div className="container">
-          <div className="werkwijze-top reveal">
-            <span className="tag-pill">Hoe het werkt</span>
-            <h2 className="display-h2">
-              Van gesprek
-              <br />
-              naar live.
-            </h2>
-            <p className="werkwijze-sub">
-              Geen lang traject, geen onduidelijkheid. Je weet precies wat er
-              gebeurt, wanneer — en je site gaat live terwijl concurrenten nog
-              offertes aanvragen.
-            </p>
-            <a href="#contact" className="btn btn-dark">
-              Start vandaag →
-            </a>
-          </div>
-          <div className="stappen-grid reveal">
-            <div className="stap-card">
-              <span className="stap-num">01</span>
-              <div className="stap-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <path
-                    d="M8 10h28v20H26l-8 6v-6H8z"
-                    stroke="#1A1A1A"
-                    strokeWidth="1.8"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M14 20h16M14 26h10"
-                    stroke="rgba(26,26,26,0.3)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-              <div className="stap-titel">Kennismaken</div>
-              <p className="stap-tekst">
-                30 minuten. Ik leer je bedrijf kennen, jij stelt je vragen.
-                Geen verplichtingen — wel direct eerlijk advies.
-              </p>
-              <span className="stap-tijd">Dag 1</span>
-            </div>
-            <div className="stap-card">
-              <span className="stap-num">02</span>
-              <div className="stap-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <rect
-                    x="8"
-                    y="6"
-                    width="28"
-                    height="36"
-                    rx="2"
-                    stroke="rgba(255,255,255,0.5)"
-                    strokeWidth="1.8"
-                  />
-                  <path
-                    d="M14 16h16M14 22h16M14 28h10"
-                    stroke="rgba(255,255,255,0.3)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <polyline
-                    points="28 32 32 36 40 28"
-                    stroke="#F5E642"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className="stap-titel">Voorstel</div>
-              <p className="stap-tekst">
-                Helder voorstel: wat ik bouw, in hoeveel weken, voor welk
-                bedrag. Geen kleine lettertjes, geen verborgen kosten.
-              </p>
-              <span className="stap-tijd">Dag 2–3</span>
-            </div>
-            <div className="stap-card">
-              <span className="stap-num">03</span>
-              <div className="stap-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <rect
-                    x="5"
-                    y="9"
-                    width="34"
-                    height="26"
-                    rx="2"
-                    stroke="#1A1A1A"
-                    strokeWidth="1.8"
-                  />
-                  <path d="M5 17h34" stroke="#1A1A1A" strokeWidth="1.8" />
-                  <path
-                    d="M14 26l4 4 8-8"
-                    stroke="#2D6A4F"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className="stap-titel">Bouwen</div>
-              <p className="stap-tekst">
-                Ik ga aan het werk. Je ziet vroeg wat er staat — geen grote
-                onthulling op het einde. Je feedback is welkom, niet verplicht.
-              </p>
-              <span className="stap-tijd">Week 1–3</span>
-            </div>
-            <div className="stap-card">
-              <span className="stap-num">04</span>
-              <div className="stap-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <circle cx="22" cy="22" r="16" stroke="#1A1A1A" strokeWidth="1.8" />
-                  <path
-                    d="M22 6c0 0-7 7-7 16s7 16 7 16M22 6c0 0 7 7 7 16s-7 16-7 16M6 22h32"
-                    stroke="rgba(26,26,26,0.25)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                  <polyline
-                    points="16 30 22 24 28 30"
-                    stroke="#F5E642"
-                    strokeWidth="2.2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className="stap-titel">Live</div>
-              <p className="stap-tekst">
-                De site staat online. Snel, vindbaar, klaar voor gebruik. Je
-                leert hoe je zelf kleine aanpassingen maakt — en ik blijf
-                bereikbaar.
-              </p>
-              <span className="stap-tijd">Week 2–4</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      
 
       {/* CTA BAND */}
       <div className="cta-band">
         <div className="container">
           <h2 className="display-h2">
-            Klaar om live
+            Klaar om je website
             <br />
-            te gaan?
+            voor je te laten werken?
           </h2>
-          <p>
-            Plan een vrijblijvend gesprek van 30 minuten. Binnen die tijd weet
-            je wat er nodig is en wat het kost.
-          </p>
           <div className="cta-band-actions">
             <a href="#contact" className="btn btn-yellow">
               Plan een gesprek →
-            </a>
-            <a href="#pakketten" className="btn btn-outline-white">
-              Bekijk pakketten
             </a>
           </div>
         </div>
@@ -763,12 +593,11 @@ export default function Home() {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="pakket">Welk pakket spreekt je aan?</label>
+                  <label htmlFor="pakket">Wat heb je nodig?</label>
                   <select id="pakket" name="pakket">
                     <option value="">— Kies een optie —</option>
-                    <option>One-pager (€950–1.400)</option>
-                    <option>Complete website (€2.500–3.500)</option>
-                    <option>Webshop (€3.500–5.000)</option>
+                    <option>Landing page (€950–1.400)</option>
+                    <option>Gratis website audit</option>
                     <option>Ik weet het nog niet</option>
                   </select>
                 </div>
@@ -805,49 +634,39 @@ export default function Home() {
           </div>
           <div className="faq-grid reveal">
             <div className="faq-item">
-              <h3 className="faq-vraag">Wat kost een website laten maken?</h3>
+              <h3 className="faq-vraag">Wat kost een landing page laten maken?</h3>
               <p className="faq-antwoord">
-                Een one-pager kost €950–1.400, een complete website
-                €2.500–3.500 en een Shopify webshop €3.500–5.000. Alles excl.
-                BTW, eenmalig betaald — geen abonnement, geen verborgen kosten.
-                Hosting is optioneel bespreekbaar.
+                Een landing page kost €950–1.400 excl. BTW, eenmalig betaald — geen abonnement, geen verborgen kosten. Grotere projecten zoals een complete website of webshop bespreken we samen.
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-vraag">Hoe lang duurt het voordat mijn website live is?</h3>
+              <h3 className="faq-vraag">Hoe lang duurt het voordat mijn landing page live is?</h3>
               <p className="faq-antwoord">
-                Een one-pager staat binnen 2 weken online. Een complete website
-                binnen 3–4 weken. Een webshop binnen 4–6 weken. De snelheid
-                hangt ook af van hoe snel jij beeldmateriaal aanlevert.
+                Binnen 48 uur online. De snelheid hangt ook af van hoe snel jij beeldmateriaal aanlevert.
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-vraag">Kan ik mijn website daarna zelf aanpassen?</h3>
+              <h3 className="faq-vraag">Kan ik mijn landing page daarna zelf aanpassen?</h3>
               <p className="faq-antwoord">
-                Ja. Na oplevering laat ik je stap voor stap zien hoe je teksten
-                en afbeeldingen zelf aanpast. Geen technische kennis nodig.
+                Ja. Na oplevering laat ik je stap voor stap zien hoe je teksten en afbeeldingen zelf aanpast. Geen technische kennis nodig.
               </p>
             </div>
             <div className="faq-item">
               <h3 className="faq-vraag">Is onderhoud inbegrepen?</h3>
               <p className="faq-antwoord">
-                Kleine aanpassingen en hosting zijn te bespreken als doorlopend
-                pakket. Voor grotere wijzigingen stuur ik een losse offerte.
-                Niks verplicht.
+                Kleine aanpassingen en hosting zijn te bespreken als doorlopend pakket. Voor grotere wijzigingen stuur ik een losse offerte. Niks verplicht.
               </p>
             </div>
             <div className="faq-item">
               <h3 className="faq-vraag">Ik heb al een website — kan je die verbeteren?</h3>
               <p className="faq-antwoord">
-                Soms wel, soms is herbouwen sneller en goedkoper. Dat bespreek
-                ik eerlijk met je in het eerste gesprek.
+                Soms wel, soms is herbouwen sneller en goedkoper. Dat bespreek ik eerlijk met je in het eerste gesprek.
               </p>
             </div>
             <div className="faq-item">
               <h3 className="faq-vraag">Werk je alleen in Amsterdam of door heel Nederland?</h3>
               <p className="faq-antwoord">
-                Door heel Nederland. Alles loopt via videocall en e-mail. Een
-                fysieke afspraak in Amsterdam is mogelijk maar niet noodzakelijk.
+                Door heel Nederland. Alles loopt via videocall en e-mail. Een fysieke afspraak in Amsterdam is mogelijk maar niet noodzakelijk.
               </p>
             </div>
           </div>
@@ -860,7 +679,7 @@ export default function Home() {
           <a href="/" className="footer-logo">
             LorentWebworks<em>.</em>nl
           </a>
-          <span>Websites voor ondernemers die ergens voor staan.</span>
+          <span>Websites die klanten opleveren.</span>
           <span>
             © 2026 &nbsp;·&nbsp;{" "}
             <a href="https://www.lorentwebworks.com">lorentwebworks.com</a>
