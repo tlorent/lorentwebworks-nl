@@ -36,7 +36,7 @@ export default function Home() {
                   name: "Nederland",
                 },
                 priceRange: "€€",
-                email: "tim.lorent@icloud.com",
+                email: "tim@lorentwebworks.nl",
                 sameAs: ["https://linkedin.com/in/timlorent"],
                 founder: {
                   "@type": "Person",
@@ -528,8 +528,8 @@ export default function Home() {
                   <div className="contact-icon">✉️</div>
                   <div className="contact-item-body">
                     <p className="ci-label">E-mail</p>
-                    <a href="mailto:tim.lorent@icloud.com">
-                      tim.lorent@icloud.com
+                    <a href="mailto:tim@lorentwebworks.nl">
+                      tim@lorentwebworks.nl
                     </a>
                   </div>
                 </div>
