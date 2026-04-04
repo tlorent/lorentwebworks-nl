@@ -7,6 +7,7 @@ export default function Home() {
     <>
       <ScrollReveal />
 
+
       {/* STRUCTURED DATA */}
       <script
         type="application/ld+json"
@@ -99,6 +100,7 @@ export default function Home() {
       />
 
       {/* NAV */}
+      <header>
       <nav aria-label="Primaire navigatie">
         <a className="nav-logo" href="/">
           LorentWebworks<em>.</em>nl
@@ -124,6 +126,9 @@ export default function Home() {
         </ul>
         <MobileNav />
       </nav>
+      </header>
+
+      <main>
 
       {/* HERO */}
       <section className="hero">
@@ -132,11 +137,14 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-avatar">
-              {/* biome-ignore lint/performance/noImgElement: 64px avatar, next/image adds no benefit at this size */}
-              <img
+              <Image
                 src="/tim.jpg"
                 alt="Tim Lorent — freelance webdesigner Amsterdam"
+                width={64}
+                height={64}
+                sizes="64px"
                 className="avatar-img"
+                preload
               />
               <div className="avatar-text">
                 <div className="avatar-name">Tim Lorent</div>
@@ -686,6 +694,8 @@ export default function Home() {
           </span>
         </div>
       </footer>
+
+      </main>
     </>
   );
 }

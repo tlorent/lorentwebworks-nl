@@ -995,7 +995,7 @@ section { padding: 7rem 0; }
 /* ─── FOOTER ─── */
 footer {
   background: #111111;
-  color: rgba(255,253,245,0.35);
+  color: rgba(255,253,245,0.65);
   padding: 2.5rem 0;
   font-size: 0.82rem;
   border-top: 1px solid rgba(255,253,245,0.08);
@@ -1012,7 +1012,7 @@ footer {
 
 .footer-logo em { font-style: normal; color: var(--yellow); }
 
-footer a { color: rgba(255,253,245,0.35); text-decoration: none; transition: color 0.2s; }
+footer a { color: rgba(255,253,245,0.65); text-decoration: none; transition: color 0.2s; }
 footer a:hover { color: white; }
 
 /* ─── HERO TRUST BULLETS ─── */
