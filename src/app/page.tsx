@@ -21,7 +21,7 @@ export default function Home() {
                 name: "Lorent Webworks",
                 url: "https://lorentwebworks.nl",
                 description:
-                  "Freelance webdesigner voor zzp'ers en MKB in Nederland. Websites die klanten opleveren — inclusief copy, SEO en hosting.",
+                  "Freelance webdesigner voor zzp'ers en MKB in Nederland. Websites die klanten opleveren, inclusief copy, SEO en hosting.",
                 address: {
                   "@type": "PostalAddress",
                   addressLocality: "Amsterdam",
@@ -65,7 +65,7 @@ export default function Home() {
                     name: "Wat kost een website laten maken?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Een one-pager kost €950–1.400, een complete website €2.500–3.500 en een Shopify webshop €3.500–5.000. Alles excl. BTW, eenmalig — geen verborgen kosten.",
+                      text: "Een compacte website (1 pagina) kost vanaf €1.250 excl. BTW, eenmalig betaald. Een website van 4–5 pagina's start vanaf €2.500. Geen abonnement, geen verborgen kosten.",
                     },
                   },
                   {
@@ -73,7 +73,7 @@ export default function Home() {
                     name: "Hoe lang duurt het voordat mijn website live gaat?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Een one-pager is binnen 48 uur live. Een complete website binnen 3–4 weken. Een webshop binnen 4–6 weken.",
+                      text: "Een compacte website is meestal binnen een paar dagen live zodra alle input compleet is. Een website van 4–5 pagina's binnen 3–4 weken.",
                     },
                   },
                   {
@@ -81,7 +81,7 @@ export default function Home() {
                     name: "Kan ik mijn website daarna zelf aanpassen?",
                     acceptedAnswer: {
                       "@type": "Answer",
-                      text: "Ja. Na oplevering laat ik je zien hoe je teksten en afbeeldingen zelf kunt aanpassen — geen technische kennis nodig.",
+                      text: "Ja. Na oplevering laat ik je zien hoe je teksten en afbeeldingen zelf kunt aanpassen. Geen technische kennis nodig.",
                     },
                   },
                   {
@@ -139,7 +139,7 @@ export default function Home() {
             <div className="hero-avatar">
               <Image
                 src="/tim.jpg"
-                alt="Tim Lorent — freelance webdesigner Amsterdam"
+                alt="Tim Lorent, freelance webdesigner Amsterdam"
                 width={64}
                 height={64}
                 sizes="64px"
@@ -157,10 +157,10 @@ export default function Home() {
             </h1>
             <div className="hero-bottom-row">
               <p className="hero-desc">
-                Je website staat online. Maar levert weinig op. Bezoekers
-                kijken, klikken... en vertrekken weer. Ik bouw een landing
-                page die wél werkt. Duidelijk verhaal. Sterke structuur.
-                Gericht op conversie.
+                Als iemand je website bezoekt, beslissen ze binnen seconden of
+                ze je vertrouwen en dus of ze contact opnemen. Ik vertaal
+                wat jij doet naar een duidelijke website die bezoekers
+                aanzet tot contact.
               </p>
               <div className="hero-ctas">
                 <a href="#contact" className="btn btn-yellow">
@@ -169,16 +169,16 @@ export default function Home() {
               </div>
               <div className="hero-trust-bullets">
                 <div className="trust-bullet">
-                  <span className="trust-stat">+45%</span>
-                  <span>abonnementsgroei bij bol</span>
+                  <span className="trust-stat">8+</span>
+                  <span>jaar ervaring met websites die converteren</span>
                 </div>
                 <div className="trust-bullet">
                   <span className="trust-stat">+3,4%</span>
-                  <span>conversiegroei bij Pearle</span>
+                  <span>conversiegroei bij GrandVision</span>
                 </div>
                 <div className="trust-bullet">
                   <span className="trust-check">✓</span>
-                  <span>Binnen 48 uur live</span>
+                  <span>Snel live, meestal binnen een paar dagen</span>
                 </div>
               </div>
             </div>
@@ -207,7 +207,7 @@ export default function Home() {
                 <li>wordt nauwelijks gevonden</li>
               </ul>
               <p className="voor-wie-sub">
-                Of je hebt nog geen website — en mist elke dag kansen.
+                Of je hebt nog geen website en mist elke dag kansen.
               </p>
               <a href="#contact" className="btn btn-dark">
                 Ja, dit herken ik →
@@ -230,7 +230,7 @@ export default function Home() {
               </div>
               <div className="sector-name">Horeca</div>
               <p className="sector-desc">
-                Gasten googlen je voordat ze binnenlopen — en beslissen op basis van wat ze zien.
+                Gasten googlen je voordat ze binnenlopen. Ze beslissen op basis van wat ze zien.
               </p>
               <a href="#contact" className="sector-cta">Dit herken ik →</a>
             </div>
@@ -246,7 +246,7 @@ export default function Home() {
               </div>
               <div className="sector-name">Creatief</div>
               <p className="sector-desc">
-                Je werk is goed — maar je website laat het niet zien.
+                Je werk is goed, maar je website laat het niet zien.
               </p>
               <a href="#contact" className="sector-cta">Dit herken ik →</a>
             </div>
@@ -309,11 +309,11 @@ export default function Home() {
       <div className="cta-band" id="aanpak">
         <div className="container">
           <h2 className="display-h2">
-            Gewoon een site die werkt.
+            Ik zorg dat je website voor je gaat werken.
           </h2>
           <p>
-            Ik bepaal de structuur, schrijf de teksten, bouw de site en zorg
-            dat je gevonden wordt. Jij hoeft alleen te zeggen wat je doet.
+            Ik vertaal wat jij doet naar een duidelijke website, inclusief
+            structuur, teksten en bouw. Jij hoeft alleen input te geven.
           </p>
           <div className="cta-band-actions">
             <a href="#contact" className="btn btn-yellow">
@@ -330,16 +330,16 @@ export default function Home() {
             <div className="over-tim-tekst reveal">
               <span className="tag-pill">Over Tim</span>
               <h2 className="display-h2">
-                Ik regel het.
+                Ik combineer techniek met copy en structuur.
               </h2>
               <p>
-                Ik ben Tim Lorent, webdesigner en frontend engineer met{" "}
-                <strong>8+ jaar ervaring</strong>. Ik werkte aan platforms voor
-                bol, GrandVision en T-Mobile.
+                Ik ben Tim Lorent, <strong>8+ jaar ervaring</strong> met
+                websites die converteren, nu toegepast voor zzp en mkb. Ik
+                werkte aan platforms voor bol, GrandVision en T-Mobile.
               </p>
               <p>
-                Je werkt direct met mij — van eerste gesprek tot oplevering.
-                Geen ruis, geen misverstanden.
+                Je werkt direct met mij: geen bureau, geen ruis, geen
+                vertraging. Van eerste gesprek tot oplevering.
               </p>
               <p>
                 Vanuit Amsterdam, voor ondernemers door heel Nederland.
@@ -370,7 +370,7 @@ export default function Home() {
             <div className="photo-wrap reveal">
               <Image
                 src="/tim.jpg"
-                alt="Tim Lorent — freelance webdesigner Amsterdam"
+                alt="Tim Lorent, freelance webdesigner Amsterdam"
                 width={480}
                 height={560}
               />
@@ -396,11 +396,11 @@ export default function Home() {
           </div>
           <div className="resultaat-grid reveal">
             <div className="resultaat-card">
-              <div className="resultaat-stat">+45%</div>
-              <div className="resultaat-label">abonnementsgroei bij bol</div>
+              <div className="resultaat-stat">8+</div>
+              <div className="resultaat-label">jaar ervaring met websites die converteren</div>
               <p className="resultaat-desc">
-                4.000+ nieuwe subscribers in één lancering. Frontend
-                architectuur voor het abonnementsplatform van nul opgebouwd.
+                Van grote platforms (bol, GrandVision, T-Mobile) tot compacte
+                websites voor zzp en mkb, altijd gericht op resultaat.
               </p>
             </div>
             <div className="resultaat-card">
@@ -408,7 +408,7 @@ export default function Home() {
               <div className="resultaat-label">conversiegroei bij GrandVision</div>
               <p className="resultaat-desc">
                 425 nieuwe betalende klanten uit 13.000 interacties.
-                Wishlistfunctie van nul gebouwd bij GrandVision.
+                Dezelfde aanpak, nu toegepast voor zzp en mkb.
               </p>
             </div>
           </div>
@@ -421,12 +421,12 @@ export default function Home() {
           <div className="pakketten-top reveal">
             <span className="tag-pill">Aanbod</span>
             <h2 className="display-h2">
-              Start met een
+              Kies wat past
               <br />
-              landing page.
+              bij jouw situatie.
             </h2>
             <p className="pakketten-intro">
-              De snelste manier om klanten via je website te krijgen.
+              Geen standaardpakketten. Wel duidelijke startpunten.
             </p>
           </div>
           <div className="pakket-grid pakket-grid--two reveal">
@@ -452,18 +452,18 @@ export default function Home() {
                   />
                 </svg>
               </div>
-              <div className="pakket-naam">Landing page</div>
+              <div className="pakket-naam">Compacte website</div>
               <p className="pakket-tagline">
-                Eén sterke pagina die bezoekers overtuigt en laat converteren.
+                1 pagina die direct duidelijk maakt wat je doet en aanzet tot contact.
               </p>
-              <div className="pakket-prijs">€950–1.400</div>
-              <p className="pakket-prijs-note">excl. BTW · eenmalig · live binnen 48 uur</p>
+              <div className="pakket-prijs">Vanaf €1.250</div>
+              <p className="pakket-prijs-note">excl. BTW · eenmalig · snel live</p>
               <hr className="pakket-divider" />
               <ul className="pakket-lijst">
-                <li><span className="pakket-check">✓</span>Landing page op maat</li>
-                <li><span className="pakket-check">✓</span>Teksten die overtuigen</li>
-                <li><span className="pakket-check">✓</span>Basis SEO</li>
-                <li><span className="pakket-check">✓</span>Mobiel geoptimaliseerd</li>
+                <li><span className="pakket-check">✓</span>1 pagina op maat</li>
+                <li><span className="pakket-check">✓</span>Ik schrijf de teksten zodat bezoekers begrijpen wat je doet en waarom ze voor jou moeten kiezen</li>
+                <li><span className="pakket-check">✓</span>Zo opgebouwd dat je goed gevonden wordt door Google én je bezoekers</li>
+                <li><span className="pakket-check">✓</span>Werkt strak en duidelijk op mobiel</li>
                 <li><span className="pakket-check">✓</span>1 revisieronde</li>
               </ul>
               <a href="#contact" className="btn btn-dark" style={{ textAlign: "center", width: "100%" }}>
@@ -471,6 +471,7 @@ export default function Home() {
               </a>
             </div>
             <div className="pakket-card">
+              <span className="pakket-badge">Meer maatwerk</span>
               <div className="pakket-illus">
                 <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
                   <rect x="5" y="7" width="42" height="34" rx="2" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
@@ -479,20 +480,23 @@ export default function Home() {
                   <path d="M28 23h13M28 29h13M28 35h8" stroke="rgba(255,253,245,0.25)" strokeWidth="1.5" strokeLinecap="round" />
                 </svg>
               </div>
-              <div className="pakket-naam">Complete website</div>
+              <div className="pakket-naam">Website 4–5 pagina&apos;s</div>
               <p className="pakket-tagline">
-                Meer pagina&apos;s, meer verhaal. Voor wie groter wil denken.
+                Voor wie meer ruimte nodig heeft: een volledige website die je bedrijf goed neerzet en klanten overtuigt.
               </p>
+              <div className="pakket-prijs">Vanaf €2.500</div>
+              <p className="pakket-prijs-note">excl. BTW · eenmalig</p>
               <hr className="pakket-divider" />
               <ul className="pakket-lijst">
-                <li><span className="pakket-check">✓</span>4–6 pagina&apos;s op maat</li>
-                <li><span className="pakket-check">✓</span>Teksten voor alle pagina&apos;s</li>
-                <li><span className="pakket-check">✓</span>SEO per pagina</li>
-                <li><span className="pakket-check">✓</span>Conversie-tracking</li>
+                <li><span className="pakket-check">✓</span>4–5 pagina&apos;s op maat (home, over, diensten, contact en meer)</li>
+                <li><span className="pakket-check">✓</span>Ik schrijf de teksten voor alle pagina&apos;s</li>
+                <li><span className="pakket-check">✓</span>SEO per pagina, zodat je beter gevonden wordt</li>
+                <li><span className="pakket-check">✓</span>Conversie-tracking ingesteld</li>
+                <li><span className="pakket-check">✓</span>Werkt strak op mobiel</li>
+                <li><span className="pakket-check">✓</span>2 revisierondes</li>
               </ul>
-              <p className="pakket-op-aanvraag">Prijs op aanvraag</p>
-              <a href="#contact" className="btn btn-outline-white" style={{ textAlign: "center", width: "100%" }}>
-                Bespreek mijn situatie →
+              <a href="#contact" className="btn btn-dark" style={{ textAlign: "center", width: "100%" }}>
+                Vraag dit aan →
               </a>
             </div>
           </div>
@@ -503,13 +507,13 @@ export default function Home() {
       <div className="cta-band">
         <div className="container">
           <h2 className="display-h2">
-            Klaar om je website
+            Wat kan er beter
             <br />
-            voor je te laten werken?
+            aan je website?
           </h2>
           <div className="cta-band-actions">
             <a href="#contact" className="btn btn-yellow">
-              Plan een gesprek →
+              Vraag gratis website audit →
             </a>
           </div>
         </div>
@@ -522,14 +526,14 @@ export default function Home() {
             <div className="contact-left reveal">
               <span className="tag-pill">Contact</span>
               <h2 className="display-h2">
-                Wat wil je bereiken
+                Klaar om meer
                 <br />
-                met je website?
+                uit je website te halen?
               </h2>
               <p>
-                Stuur een bericht — ik reageer binnen één werkdag. Geen
-                verplichtingen, geen offerte die je over je heen krijgt.
-                Gewoon een eerlijk gesprek.
+                Geen verplichtingen, geen offerte die je over je heen krijgt.
+                Gewoon een eerlijk gesprek over wat er beter kan aan je website.
+                Ik reageer binnen één werkdag.
               </p>
               <div className="contact-items">
                 <div className="contact-item">
@@ -603,8 +607,9 @@ export default function Home() {
                 <div className="form-group">
                   <label htmlFor="pakket">Wat heb je nodig?</label>
                   <select id="pakket" name="pakket">
-                    <option value="">— Kies een optie —</option>
-                    <option>Landing page (€950–1.400)</option>
+                    <option value="">Kies een optie</option>
+                    <option>Compacte website, vanaf €1.250</option>
+                    <option>Website 4–5 pagina&apos;s, vanaf €2.500</option>
                     <option>Gratis website audit</option>
                     <option>Ik weet het nog niet</option>
                   </select>
@@ -642,15 +647,15 @@ export default function Home() {
           </div>
           <div className="faq-grid reveal">
             <div className="faq-item">
-              <h3 className="faq-vraag">Wat kost een landing page laten maken?</h3>
+              <h3 className="faq-vraag">Wat kost een website laten maken?</h3>
               <p className="faq-antwoord">
-                Een landing page kost €950–1.400 excl. BTW, eenmalig betaald — geen abonnement, geen verborgen kosten. Grotere projecten zoals een complete website of webshop bespreken we samen.
+                Een compacte website (1 pagina) kost vanaf €1.250 excl. BTW, eenmalig betaald. Geen abonnement, geen verborgen kosten. Een website van 4–5 pagina&apos;s start vanaf €2.500. Precies wat het kost bespreek ik in het eerste gesprek.
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-vraag">Hoe lang duurt het voordat mijn landing page live is?</h3>
+              <h3 className="faq-vraag">Hoe lang duurt het voordat mijn website live is?</h3>
               <p className="faq-antwoord">
-                Binnen 48 uur online. De snelheid hangt ook af van hoe snel jij beeldmateriaal aanlevert.
+                Een compacte website is meestal binnen een paar dagen live zodra alle input compleet is. De snelheid hangt ook af van hoe snel jij beeldmateriaal en feedback aanlevert.
               </p>
             </div>
             <div className="faq-item">
@@ -666,7 +671,7 @@ export default function Home() {
               </p>
             </div>
             <div className="faq-item">
-              <h3 className="faq-vraag">Ik heb al een website — kan je die verbeteren?</h3>
+              <h3 className="faq-vraag">Ik heb al een website, kan je die verbeteren?</h3>
               <p className="faq-antwoord">
                 Soms wel, soms is herbouwen sneller en goedkoper. Dat bespreek ik eerlijk met je in het eerste gesprek.
               </p>

@@ -520,6 +520,9 @@ section { padding: 7rem 0; }
 .aanbod .pakket-card:not(.featured) .pakket-lijst li { color: rgba(26,26,26,0.7); }
 .aanbod .pakket-card:not(.featured) .pakket-check { background: var(--ink); }
 .aanbod .pakket-card:not(.featured) .pakket-op-aanvraag { color: var(--mid); }
+.aanbod .pakket-card:not(.featured) .pakket-badge { background: rgba(26,26,26,0.08); color: var(--ink); }
+.aanbod .pakket-card:not(.featured) .pakket-prijs { color: var(--ink); }
+.aanbod .pakket-card:not(.featured) .pakket-prijs-note { color: rgba(26,26,26,0.45); }
 .aanbod .pakket-card:not(.featured) svg path,
 .aanbod .pakket-card:not(.featured) svg rect { stroke: rgba(26,26,26,0.3); }
 
