@@ -1371,6 +1371,9 @@ footer a:hover { color: white; }
   .pakket-grid { grid-template-columns: 1fr; }
   .pakket-grid--two { grid-template-columns: 1fr; }
   .stappen-grid { grid-template-columns: 1fr; }
+  .resultaat-grid { grid-template-columns: 1fr; }
+  .resultaat-card { padding: 2rem; }
+  .resultaat-stat { font-size: 2.5rem; }
   .photo-badge { left: 1rem; bottom: 1rem; }
   .form-row { grid-template-columns: 1fr; }
   .testimonial-grid { grid-template-columns: 1fr; }
