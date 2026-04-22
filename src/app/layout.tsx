@@ -1,31 +1,31 @@
 import type { Metadata } from "next";
-import { Nunito, Nunito_Sans } from "next/font/google";
+import { DM_Mono, Manrope } from "next/font/google";
 import "./globals.css";
 
-const nunito = Nunito({
-  variable: "--font-nunito",
+const manrope = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
-  weight: ["400", "600", "800", "900"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
-const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito-sans",
+const dmMono = DM_Mono({
+  variable: "--font-dm-mono",
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
+  weight: ["400", "500"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://lorentwebworks.nl"),
   title: "Website laten maken voor zzp & MKB | Lorent Webworks Amsterdam",
   description:
-    "Freelance webdesigner Tim Lorent bouwt websites die klanten opleveren — voor zzp'ers en kleine bedrijven in heel Nederland. Inclusief teksten, SEO en hosting. Binnen 2–4 weken live.",
-  alternates: {
-    canonical: "/",
-  },
+    "Senior frontend engineer Tim Lorent bouwt websites die klanten opleveren — voor zzp'ers en MKB in heel Nederland. Direct contact, geen bureau ertussen.",
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Website laten maken voor zzp & MKB | Lorent Webworks Amsterdam",
     description:
-      "Freelance webdesigner voor zzp'ers en MKB. One-pager, complete website of webshop — inclusief teksten, SEO en hosting. Binnen 2–4 weken live.",
+      "Websites die klanten opleveren. 8+ jaar ervaring bij bol.com, GrandVision, T-Mobile — nu toegepast voor ZZP en MKB.",
     url: "https://lorentwebworks.nl",
     siteName: "Lorent Webworks",
     locale: "nl_NL",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lorent Webworks — Website laten maken voor zzp en MKB",
+        alt: "Lorent Webworks — Websites die klanten opleveren",
       },
     ],
   },
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Website laten maken voor zzp & MKB | Lorent Webworks",
     description:
-      "Freelance webdesigner voor zzp'ers en kleine bedrijven. Inclusief teksten, SEO en hosting. Binnen 2–4 weken live.",
+      "Websites die klanten opleveren. Senior-ervaring, nu toegepast voor ZZP en MKB.",
     images: ["/og-image.png"],
   },
 };
@@ -54,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl-NL" className={`${nunito.variable} ${nunitoSans.variable}`}>
+    <html lang="nl-NL" className={`${manrope.variable} ${dmMono.variable}`}>
       <body>{children}</body>
     </html>
   );

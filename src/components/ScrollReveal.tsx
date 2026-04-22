@@ -10,7 +10,7 @@ export default function ScrollReveal() {
           if (e.isIntersecting) e.target.classList.add("visible");
         });
       },
-      { threshold: 0.07 }
+      { threshold: 0.07 },
     );
 
     document.querySelectorAll(".reveal").forEach((el) => {

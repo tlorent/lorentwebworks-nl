@@ -1,12 +1,156 @@
 import Image from "next/image";
-import MobileNav from "@/components/MobileNav";
+import Link from "next/link";
+import AanpakIllustration from "@/components/AanpakIllustration";
+import Faq from "@/components/Faq";
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import ScrollReveal from "@/components/ScrollReveal";
+
+const SEGMENTS = [
+  {
+    name: "Horeca",
+    desc: "Gasten googlen je voor ze binnenlopen. Je site beslist mee.",
+  },
+  {
+    name: "Coaches & therapeuten",
+    desc: "Vertrouwen opbouwen vóór het eerste contact — je site doet het voorwerk.",
+  },
+  {
+    name: "Creatieven & makers",
+    desc: "Je werk verdient een site die het echt laat zien.",
+  },
+  {
+    name: "Winkels",
+    desc: "Gevonden worden is het verschil tussen druk en stil.",
+  },
+  {
+    name: "Dienstverleners",
+    desc: "Kappers, stylisten, specialisten — laten zien dat je écht bestaat.",
+  },
+];
+
+const CLIENTS = [
+  "GrandVision",
+  "bol.",
+  "T-Mobile",
+  "HackYourFuture",
+  "SelfStartGlobal",
+  "Locus",
+  "IDFA",
+  "VVV Texel",
+  "Impacked",
+  "Domas van Wijk",
+];
+
+const AANPAK = [
+  {
+    num: "01",
+    title: "We spreken af",
+    desc: "Kop koffie, videocall of bij jou langs. Ik stel scherpe vragen, jij vertelt wat je doet en wat je nodig hebt.",
+    tag: "30-60 min · gratis",
+    illus: "talk" as const,
+  },
+  {
+    num: "02",
+    title: "Ik bouw",
+    desc: "Structuur, copy, ontwerp en techniek — ik neem het hele pakket voor m'n rekening. Jij krijgt tussentijds een preview.",
+    tag: "5 dagen tot 4 weken",
+    illus: "craft" as const,
+  },
+  {
+    num: "03",
+    title: "Live & opleveren",
+    desc: "Site staat. Analytics draait. Ik laat je zien hoe je zelf kleine dingen aanpast. Geen abonnement, geen haakjes.",
+    tag: "Jij houdt de sleutels",
+    illus: "ship" as const,
+  },
+];
+
+const PAKKETTEN = [
+  {
+    slug: "landingspagina",
+    name: "De Landingspagina",
+    tagline:
+      "Eén scherpe pagina die direct laat zien wat je doet en bezoekers aanzet tot contact.",
+    price: "€1.250",
+    priceNote: "excl. BTW · eenmalig · binnen 5 werkdagen",
+    featured: false,
+    items: [
+      "Strategisch gesprek over doel en doelgroep",
+      "Pagina op maat, geschreven door mij",
+      "Geoptimaliseerd voor Google",
+      "Mobielvriendelijk en snel",
+      "Eén revisieronde",
+    ],
+  },
+  {
+    slug: "bedrijfswebsite",
+    name: "De Bedrijfswebsite",
+    tagline:
+      "Volledige website van 4 tot 6 pagina's die je onderneming op de kaart zet.",
+    price: "€2.500",
+    priceNote: "excl. BTW · eenmalig",
+    featured: true,
+    items: [
+      "Alles uit De Landingspagina",
+      "4-6 pagina's op maat",
+      "SEO per pagina",
+      "Conversietracking ingesteld",
+      "Twee revisierondes",
+    ],
+  },
+  {
+    slug: "website-audit",
+    name: "De Website-audit",
+    tagline:
+      "Heb je al een website, maar levert hij niet op? Ik analyseer hem door en door.",
+    price: "Gratis",
+    priceNote: "binnen 5 werkdagen · geen verplichting",
+    featured: false,
+    items: [
+      "Analyse op structuur, copy en SEO",
+      "Check op snelheid en conversie",
+      "Rapport met concrete acties",
+      "30 minuten doorloop-gesprek",
+    ],
+  },
+];
+
+const FAQ_ITEMS = [
+  {
+    q: "Waarom bij jou en niet gewoon zelf iets in Wix of Squarespace?",
+    a: "Dat kan prima voor een eerste start. Maar als je wilt dat je website daadwerkelijk klanten oplevert — goed gevonden wordt, bezoekers overtuigt, snel laadt — dan is maatwerk vaak het verschil tussen 'hij staat er' en 'hij werkt voor me'. Ik bouw websites die je tijd en geld opleveren, niet kosten.",
+  },
+  {
+    q: "Ik heb nauwelijks tijd — hoeveel vraag je van mij?",
+    a: "Eén goed gesprek aan het begin, foto's en tekst-input als je die hebt, en één of twee revisierondes. De rest doe ik. De meeste klanten zijn per saldo een paar uur kwijt.",
+  },
+  {
+    q: "Wat kost een website laten maken?",
+    a: "De Landingspagina vanaf €1.250 excl. BTW, De Bedrijfswebsite vanaf €2.500. Eenmalig, geen abonnement, geen verborgen kosten. Wat het precies kost voor jou bespreek ik in het eerste gesprek.",
+  },
+  {
+    q: "Hoe lang duurt het voordat mijn website live gaat?",
+    a: "Een Landingspagina is meestal binnen 5 werkdagen live zodra je input compleet is. Een Bedrijfswebsite doorgaans binnen 3-4 weken. Het hangt ook af van hoe snel jij beeldmateriaal en feedback aanlevert.",
+  },
+  {
+    q: "Wat als ik later iets wil veranderen aan mijn website?",
+    a: "Kleine aanpassingen kun je vaak zelf doen — ik laat je zien hoe. Grotere wijzigingen stuur ik een losse offerte voor. Geen abonnement, geen gedoe.",
+  },
+  {
+    q: "Ben ik aan je verbonden na oplevering?",
+    a: "Nee. De website is van jou. Onderhoud en hosting kun je bij mij afnemen of ergens anders regelen — helemaal aan jou.",
+  },
+  {
+    q: "Werk je alleen in Amsterdam of door heel Nederland?",
+    a: "Door heel Nederland. Alles loopt via videocall en e-mail. Een fysieke afspraak in Amsterdam kan, maar is niet nodig.",
+  },
+];
 
 export default function Home() {
   return (
     <>
       <ScrollReveal />
-
 
       {/* STRUCTURED DATA */}
       <script
@@ -21,7 +165,7 @@ export default function Home() {
                 name: "Lorent Webworks",
                 url: "https://lorentwebworks.nl",
                 description:
-                  "Freelance webdesigner voor zzp'ers en MKB in Nederland. Websites die klanten opleveren, inclusief copy, SEO en hosting.",
+                  "Senior frontend engineer voor ZZP en MKB in Nederland. Websites die klanten opleveren.",
                 address: {
                   "@type": "PostalAddress",
                   addressLocality: "Amsterdam",
@@ -32,10 +176,7 @@ export default function Home() {
                   latitude: 52.3676,
                   longitude: 4.9041,
                 },
-                areaServed: {
-                  "@type": "Country",
-                  name: "Nederland",
-                },
+                areaServed: { "@type": "Country", name: "Nederland" },
                 priceRange: "€€",
                 email: "tim@lorentwebworks.nl",
                 sameAs: ["https://linkedin.com/in/timlorent"],
@@ -59,503 +200,314 @@ export default function Home() {
               },
               {
                 "@type": "FAQPage",
-                mainEntity: [
-                  {
-                    "@type": "Question",
-                    name: "Wat kost een website laten maken?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Een compacte website (1 pagina) kost vanaf €1.250 excl. BTW, eenmalig betaald. Een website van 4–5 pagina's start vanaf €2.500. Geen abonnement, geen verborgen kosten.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Hoe lang duurt het voordat mijn website live gaat?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Een compacte website is meestal binnen een paar dagen live zodra alle input compleet is. Een website van 4–5 pagina's binnen 3–4 weken.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Kan ik mijn website daarna zelf aanpassen?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Ja. Na oplevering laat ik je zien hoe je teksten en afbeeldingen zelf kunt aanpassen. Geen technische kennis nodig.",
-                    },
-                  },
-                  {
-                    "@type": "Question",
-                    name: "Is onderhoud inbegrepen?",
-                    acceptedAnswer: {
-                      "@type": "Answer",
-                      text: "Hosting en kleine aanpassingen zijn bespreekbaar als doorlopend pakket. Voor grotere wijzigingen stuur ik een losse offerte.",
-                    },
-                  },
-                ],
+                mainEntity: FAQ_ITEMS.map((item) => ({
+                  "@type": "Question",
+                  name: item.q,
+                  acceptedAnswer: { "@type": "Answer", text: item.a },
+                })),
               },
             ],
           }),
         }}
       />
 
-      {/* NAV */}
-      <header>
-      <nav aria-label="Primaire navigatie">
-        <a className="nav-logo" href="/">
-          LorentWebworks<em>.</em>nl
-        </a>
-        <ul className="nav-links">
-          <li>
-            <a href="#voor-wie">Voor wie</a>
-          </li>
-          <li>
-            <a href="#aanpak">Aanpak</a>
-          </li>
-          <li>
-            <a href="#resultaat">Resultaat</a>
-          </li>
-          <li>
-            <a href="#over-tim">Over Tim</a>
-          </li>
-          <li>
-            <a href="#contact" className="nav-cta">
-              Plan een gesprek
-            </a>
-          </li>
-        </ul>
-        <MobileNav />
-      </nav>
-      </header>
+      <Header />
 
       <main>
-
-      {/* HERO */}
-      <section className="hero">
-        <div className="hero-blob"></div>
-        <div className="hero-dot"></div>
-        <div className="container">
-          <div className="hero-content">
-            <div className="hero-avatar">
-              <Image
-                src="/tim.jpg"
-                alt="Tim Lorent, freelance webdesigner Amsterdam"
-                width={64}
-                height={64}
-                sizes="64px"
-                className="avatar-img"
-                preload
-              />
-              <div className="avatar-text">
-                <div className="avatar-name">Tim Lorent</div>
-                <div className="avatar-role">8+ jaar ervaring · Amsterdam</div>
-              </div>
-            </div>
-            <h1 className="hero-title">
-              Websites die <br/>
-              <span className="word-green">klanten opleveren.</span>
-            </h1>
-            <div className="hero-bottom-row">
-              <p className="hero-desc">
-                Als iemand je website bezoekt, beslissen ze binnen seconden of
-                ze je vertrouwen en dus of ze contact opnemen. Ik vertaal
-                wat jij doet naar een duidelijke website die bezoekers
-                aanzet tot contact.
-              </p>
-              <div className="hero-ctas">
-                <a href="#contact" className="btn btn-yellow">
-                  Vraag gratis website audit →
-                </a>
-              </div>
-              <div className="hero-trust-bullets">
-                <div className="trust-bullet">
-                  <span className="trust-stat">8+</span>
-                  <span>jaar ervaring met websites die converteren</span>
+        {/* HERO */}
+        <section className="hero">
+          <div className="container">
+            <div className="hero-grid">
+              <div className="hero-copy">
+                <div className="hero-meta">
+                  <span className="hero-meta-dot" />
+                  <span>Beschikbaar voor nieuwe projecten</span>
                 </div>
-                <div className="trust-bullet">
-                  <span className="trust-stat">+3,4%</span>
-                  <span>conversiegroei bij GrandVision</span>
+                <h1 className="hero-title">
+                  Websites die <span className="accent">klanten</span>{" "}
+                  opleveren.
+                </h1>
+                <p className="hero-desc">
+                  Als ondernemer heb je geen tijd om een website te managen. Ik
+                  bouw een duidelijke site die bezoekers aanzet tot contact —
+                  zonder poespas, direct oplevering binnen een paar dagen.
+                </p>
+                <div className="hero-ctas">
+                  <Link
+                    href="/diensten/website-audit"
+                    className="btn btn-primary"
+                  >
+                    Plan gratis website audit{" "}
+                    <span className="btn-arrow">→</span>
+                  </Link>
+                  <Link href="#pakketten" className="btn btn-ghost">
+                    Bekijk pakketten
+                  </Link>
                 </div>
-                <div className="trust-bullet">
-                  <span className="trust-check">✓</span>
-                  <span>Snel live, meestal binnen een paar dagen</span>
+                <div className="hero-clients">
+                  <div className="hero-clients-label">Eerder gewerkt voor</div>
+                  <div className="hero-clients-list">
+                    {CLIENTS.map((c) => (
+                      <span key={c} className="hero-client">
+                        {c}
+                      </span>
+                    ))}
+                  </div>
                 </div>
               </div>
+              <div className="hero-portrait">
+                <div className="hero-portrait-frame">
+                  <Image
+                    src="/tim.jpg"
+                    alt="Tim Lorent, senior frontend engineer uit Amsterdam"
+                    width={600}
+                    height={750}
+                    priority
+                    sizes="(max-width: 960px) 380px, 480px"
+                  />
+                </div>
+                <div className="hero-portrait-card">
+                  <div className="name">Tim Lorent</div>
+                  <div className="role">Amsterdam · Sinds 2017</div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* VOOR WIE */}
-      <section className="voor-wie" id="voor-wie">
-        <div className="container">
-          <div className="voor-wie-inner">
-            <div className="voor-wie-top reveal">
-              <span className="tag-pill">Voor wie</span>
-              <h2 className="display-h2">
-                Herken je
-                <br />
-                dit?
-              </h2>
-              <p className="voor-wie-sub">
-                Je website:
-              </p>
-              <ul className="voor-wie-lijst">
-                <li>staat er, maar levert weinig op</li>
-                <li>vertelt niet duidelijk wat je doet</li>
-                <li>voelt rommelig of onduidelijk</li>
-                <li>wordt nauwelijks gevonden</li>
-              </ul>
-              <p className="voor-wie-sub">
-                Of je hebt nog geen website en mist elke dag kansen.
-              </p>
-              <a href="#contact" className="btn btn-dark">
-                Ja, dit herken ik →
-              </a>
-            </div>
-            <div className="sector-grid reveal">
-            <div className="sector-card">
-              <span className="sector-num">01</span>
-              <div className="sector-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <path
-                    d="M6 36h32M10 36V18M34 36V18M4 18h36M16 18V11c0-2 1.6-3.5 3.5-3.5h5c2 0 3.5 1.6 3.5 3.5v7"
-                    stroke="#1A1A1A"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <circle cx="22" cy="27" r="3.5" stroke="#1A1A1A" strokeWidth="1.8" />
-                </svg>
+        {/* VOOR WIE */}
+        <section id="voor-wie" className="voor-wie">
+          <div className="container">
+            <div className="voor-wie-head reveal">
+              <div>
+                <span className="eyebrow">Voor wie</span>
+                <h2 className="display-h2">
+                  Voor ondernemers die hun zaak serieus nemen.
+                </h2>
               </div>
-              <div className="sector-name">Horeca</div>
-              <p className="sector-desc">
-                Gasten googlen je voordat ze binnenlopen. Ze beslissen op basis van wat ze zien.
+              <p className="lead">
+                Je hoeft geen developer te zijn om een site te willen die werkt.
+                Je hoeft ook niet met een bureau in zee. Dit is voor jou:
               </p>
-              <a href="#contact" className="sector-cta">Dit herken ik →</a>
             </div>
-            <div className="sector-card">
-              <span className="sector-num">02</span>
-              <div className="sector-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <rect x="5" y="9" width="34" height="26" rx="2" stroke="#1A1A1A" strokeWidth="1.8" />
-                  <circle cx="22" cy="22" r="6" stroke="#1A1A1A" strokeWidth="1.8" />
-                  <circle cx="22" cy="22" r="2" stroke="#1A1A1A" strokeWidth="1.8" />
-                  <rect x="28" y="11" width="7" height="5" rx="1" stroke="#1A1A1A" strokeWidth="1.5" />
-                </svg>
-              </div>
-              <div className="sector-name">Creatief</div>
-              <p className="sector-desc">
-                Je werk is goed, maar je website laat het niet zien.
-              </p>
-              <a href="#contact" className="sector-cta">Dit herken ik →</a>
-            </div>
-            <div className="sector-card">
-              <span className="sector-num">03</span>
-              <div className="sector-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <circle cx="22" cy="14" r="6" stroke="white" strokeWidth="1.8" />
-                  <path
-                    d="M8 38c0-7.7 6.3-14 14-14s14 6.3 14 14"
-                    stroke="white"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-              <div className="sector-name">Coaches</div>
-              <p className="sector-desc">
-                Mensen moeten je vertrouwen vóór ze contact opnemen. Je site maakt of breekt dat.
-              </p>
-              <a href="#contact" className="sector-cta">Dit herken ik →</a>
-            </div>
-            <div className="sector-card">
-              <span className="sector-num">04</span>
-              <div className="sector-illus">
-                <svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
-                  <path
-                    d="M5 18l3.5-10h27l3.5 10"
-                    stroke="#1A1A1A"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M5 18h34v18H5z"
-                    stroke="#1A1A1A"
-                    strokeWidth="1.8"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M16 36V26h12v10"
-                    stroke="#1A1A1A"
-                    strokeWidth="1.8"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
-              <div className="sector-name">Winkels</div>
-              <p className="sector-desc">
-                Gevonden worden in Google is het verschil tussen druk en stil.
-              </p>
-              <a href="#contact" className="sector-cta">Dit herken ik →</a>
-            </div>
+            <ul className="segment-list reveal">
+              {SEGMENTS.map((s, i) => (
+                <li key={s.name} className="segment-item">
+                  <span className="segment-num">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="segment-name">{s.name}</span>
+                  <span className="segment-desc">{s.desc}</span>
+                  <Link
+                    href="#contact"
+                    className="segment-arrow"
+                    aria-label={`Plan een gesprek over ${s.name}`}
+                  >
+                    →
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* AANPAK */}
-      <div className="cta-band" id="aanpak">
-        <div className="container">
-          <h2 className="display-h2">
-            Ik zorg dat je website voor je gaat werken.
-          </h2>
-          <p>
-            Ik vertaal wat jij doet naar een duidelijke website, inclusief
-            structuur, teksten en bouw. Jij hoeft alleen input te geven.
-          </p>
-          <div className="cta-band-actions">
-            <a href="#contact" className="btn btn-yellow">
-              Plan een gesprek →
-            </a>
+        {/* AANPAK */}
+        <section id="aanpak" className="aanpak">
+          <div className="container">
+            <div className="aanpak-head reveal">
+              <span className="eyebrow">Aanpak</span>
+              <h2 className="display-h2">Drie stappen. Geen gedoe.</h2>
+              <p className="lead" style={{ marginTop: "1rem" }}>
+                Ambachtelijk werk, strak uitgevoerd. Ik neem je aan de hand mee
+                van idee tot live — zonder dat jij er uren op kwijt bent.
+              </p>
+            </div>
+            <div className="aanpak-grid reveal">
+              {AANPAK.map((step) => (
+                <div key={step.num} className="aanpak-step">
+                  <div className="aanpak-step-head">
+                    <span className="aanpak-step-bignum">{step.num}</span>
+                    <div className="aanpak-step-illus">
+                      <AanpakIllustration kind={step.illus} />
+                    </div>
+                  </div>
+                  <div className="aanpak-step-body">
+                    <h3 className="aanpak-step-title">{step.title}</h3>
+                    <p className="aanpak-step-desc">{step.desc}</p>
+                    <div className="aanpak-step-tag">{step.tag}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      {/* OVER TIM */}
-      <section className="over-tim" id="over-tim">
-        <div className="container">
-          <div className="over-tim-inner">
-            <div className="over-tim-tekst reveal">
-              <span className="tag-pill">Over Tim</span>
-              <h2 className="display-h2">
-                Ik combineer techniek met copy en structuur.
-              </h2>
-              <p>
-                Ik ben Tim Lorent, <strong>8+ jaar ervaring</strong> met
-                websites die converteren, nu toegepast voor zzp en mkb. Ik
-                werkte aan platforms voor bol, GrandVision en T-Mobile.
+        {/* PAKKETTEN */}
+        <section id="pakketten" className="pakketten">
+          <div className="container">
+            <div className="pakketten-head reveal">
+              <div>
+                <span className="eyebrow">Pakketten</span>
+                <h2 className="display-h2">Drie duidelijke startpunten.</h2>
+              </div>
+              <p className="lead">
+                Geen uren-briefjes, geen verrassingen. Helder wat je krijgt,
+                helder wat het kost.
               </p>
-              <p>
-                Je werkt direct met mij: geen bureau, geen ruis, geen
-                vertraging. Van eerste gesprek tot oplevering.
-              </p>
-              <p>
-                Vanuit Amsterdam, voor ondernemers door heel Nederland.
-              </p>
-              <div className="over-tim-ctas">
-                <a href="#contact" className="btn btn-dark">
-                  Maak kennis →
-                </a>
-                <a
-                  href="https://www.lorentwebworks.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="btn btn-outline-dark"
+            </div>
+            <div className="pakket-grid reveal">
+              {PAKKETTEN.map((p) => (
+                <div
+                  key={p.slug}
+                  className={`pakket-card${p.featured ? " featured" : ""}`}
                 >
-                  Tech-portfolio ↗
-                </a>
-              </div>
-              <div className="clients-strip">
-                <p className="clients-label">Eerder gewerkt voor</p>
-                <div className="clients-names">
-                  <span>bol</span>
-                  <span>GrandVision</span>
-                  <span>T-Mobile</span>
-                  <span>Locus</span>
+                  {p.featured && (
+                    <span className="pakket-featured-label">Meest gekozen</span>
+                  )}
+                  <div className="pakket-name">{p.name}</div>
+                  <p className="pakket-tagline">{p.tagline}</p>
+                  <div className="pakket-price">
+                    {p.price !== "Gratis" && (
+                      <span className="pakket-price-from">Vanaf</span>
+                    )}
+                    <span className="pakket-price-amount">{p.price}</span>
+                  </div>
+                  <div className="pakket-price-note">{p.priceNote}</div>
+                  <hr className="pakket-divider" />
+                  <ul className="pakket-lijst">
+                    {p.items.map((item) => (
+                      <li key={item}>
+                        <span className="pakket-check" aria-hidden="true" />
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <Link
+                    href={`/diensten/${p.slug}`}
+                    className={`btn ${p.featured ? "btn-dark" : "btn-outline"}`}
+                  >
+                    Meer over dit pakket →
+                  </Link>
                 </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* RESULTATEN */}
+        <section id="resultaten">
+          <div className="container">
+            <div
+              className="faq-head reveal"
+              style={{ maxWidth: "640px", margin: "0 0 3rem" }}
+            >
+              <span className="eyebrow">Resultaten</span>
+              <h2 className="display-h2">Cijfers boven mooie woorden.</h2>
+              <p className="lead" style={{ marginTop: "1rem" }}>
+                Van grote platforms tot één-mans-zaak — het gaat altijd om wat
+                de site oplevert.
+              </p>
+            </div>
+            <div className="resultaten-grid reveal">
+              <div className="resultaat-card">
+                <div className="resultaat-stat">
+                  +45<span className="suffix">%</span>
+                </div>
+                <div className="resultaat-label">
+                  Abonnementsgroei bij bol.com
+                </div>
+                <p className="resultaat-desc">
+                  Leidde de frontend-architectuurmigratie van het
+                  abonnementsplatform. 4.000+ nieuwe abonnees binnengehaald in
+                  één activatiecampagne.
+                </p>
+              </div>
+              <div className="resultaat-card">
+                <div className="resultaat-stat">
+                  +3,4<span className="suffix">%</span>
+                </div>
+                <div className="resultaat-label">
+                  Conversiegroei bij GrandVision
+                </div>
+                <p className="resultaat-desc">
+                  425 nieuwe betalende klanten uit 13.000 interacties. Dezelfde
+                  aanpak, nu voor ZZP en MKB.
+                </p>
+              </div>
+              <div className="resultaat-card">
+                <div className="resultaat-stat">
+                  8<span className="suffix">+ jaar</span>
+                </div>
+                <div className="resultaat-label">
+                  Ervaring met conversiegerichte websites
+                </div>
+                <p className="resultaat-desc">
+                  Van bol.com tot kleine ondernemers. Altijd gericht op wat de
+                  site moet doen — niet op hoe hij eruitziet.
+                </p>
               </div>
             </div>
-            <div className="photo-wrap reveal">
-              <Image
-                src="/tim.jpg"
-                alt="Tim Lorent, freelance webdesigner Amsterdam"
-                width={480}
-                height={560}
-              />
-              <div className="photo-badge">
-                <div className="photo-badge-num">8+</div>
-                <div className="photo-badge-label">Jaar ervaring</div>
+          </div>
+        </section>
+
+        {/* DARK CTA BAND */}
+        <section className="home-cta-wrap">
+          <div className="container">
+            <div className="home-cta-band">
+              <div>
+                <h2>Klaar om meer uit je website te halen?</h2>
+                <p>
+                  Plan een gratis gesprek van 30 minuten. Geen verplichtingen,
+                  wel een helder beeld van wat er kan. Ik reageer binnen één
+                  werkdag.
+                </p>
               </div>
+              <Link href="#contact" className="btn btn-amber">
+                Plan een gesprek <span className="btn-arrow">→</span>
+              </Link>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* RESULTAAT */}
-      <section className="pakketten" id="resultaat">
-        <div className="container">
-          <div className="pakketten-top reveal">
-            <span className="tag-pill">Resultaten</span>
-            <h2 className="display-h2">
-              Wat het
-              <br />
-              oplevert.
-            </h2>
-          </div>
-          <div className="resultaat-grid reveal">
-            <div className="resultaat-card">
-              <div className="resultaat-stat">8+</div>
-              <div className="resultaat-label">jaar ervaring met websites die converteren</div>
-              <p className="resultaat-desc">
-                Van grote platforms (bol, GrandVision, T-Mobile) tot compacte
-                websites voor zzp en mkb, altijd gericht op resultaat.
-              </p>
+        {/* FAQ */}
+        <section id="faq" className="faq-section">
+          <div className="container">
+            <div
+              className="faq-head reveal"
+              style={{ textAlign: "center", margin: "0 auto 3rem" }}
+            >
+              <span className="eyebrow">FAQ</span>
+              <h2 className="display-h2">Veelgestelde vragen</h2>
             </div>
-            <div className="resultaat-card">
-              <div className="resultaat-stat">+3,4%</div>
-              <div className="resultaat-label">conversiegroei bij GrandVision</div>
-              <p className="resultaat-desc">
-                425 nieuwe betalende klanten uit 13.000 interacties.
-                Dezelfde aanpak, nu toegepast voor zzp en mkb.
-              </p>
-            </div>
+            <Faq items={FAQ_ITEMS} />
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* AANBOD */}
-      <section className="aanbod" id="aanbod">
-        <div className="container">
-          <div className="pakketten-top reveal">
-            <span className="tag-pill">Aanbod</span>
-            <h2 className="display-h2">
-              Kies wat past
-              <br />
-              bij jouw situatie.
-            </h2>
-            <p className="pakketten-intro">
-              Geen standaardpakketten. Wel duidelijke startpunten.
-            </p>
-          </div>
-          <div className="pakket-grid pakket-grid--two reveal">
-            <div className="pakket-card featured">
-              <span className="pakket-badge">Meest gekozen</span>
-              <div className="pakket-illus">
-                <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
-                  <rect
-                    x="7"
-                    y="11"
-                    width="38"
-                    height="30"
-                    rx="2"
-                    stroke="rgba(26,26,26,0.5)"
-                    strokeWidth="1.8"
-                  />
-                  <path d="M7 19h38" stroke="rgba(26,26,26,0.5)" strokeWidth="1.8" />
-                  <path
-                    d="M15 28h22M15 34h14"
-                    stroke="rgba(26,26,26,0.35)"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </div>
-              <div className="pakket-naam">Compacte website</div>
-              <p className="pakket-tagline">
-                1 pagina die direct duidelijk maakt wat je doet en aanzet tot contact.
-              </p>
-              <div className="pakket-prijs">Vanaf €1.250</div>
-              <p className="pakket-prijs-note">excl. BTW · eenmalig · snel live</p>
-              <hr className="pakket-divider" />
-              <ul className="pakket-lijst">
-                <li><span className="pakket-check">✓</span>1 pagina op maat</li>
-                <li><span className="pakket-check">✓</span>Ik schrijf de teksten zodat bezoekers begrijpen wat je doet en waarom ze voor jou moeten kiezen</li>
-                <li><span className="pakket-check">✓</span>Zo opgebouwd dat je goed gevonden wordt door Google én je bezoekers</li>
-                <li><span className="pakket-check">✓</span>Werkt strak en duidelijk op mobiel</li>
-                <li><span className="pakket-check">✓</span>1 revisieronde</li>
-              </ul>
-              <a href="#contact" className="btn btn-dark" style={{ textAlign: "center", width: "100%" }}>
-                Kies dit →
-              </a>
-            </div>
-            <div className="pakket-card">
-              <span className="pakket-badge">Meer maatwerk</span>
-              <div className="pakket-illus">
-                <svg viewBox="0 0 52 52" fill="none" aria-hidden="true">
-                  <rect x="5" y="7" width="42" height="34" rx="2" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
-                  <path d="M5 15h42" stroke="rgba(255,253,245,0.35)" strokeWidth="1.8" />
-                  <rect x="11" y="21" width="11" height="14" rx="1" stroke="rgba(255,253,245,0.25)" strokeWidth="1.5" />
-                  <path d="M28 23h13M28 29h13M28 35h8" stroke="rgba(255,253,245,0.25)" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-              </div>
-              <div className="pakket-naam">Website 4–5 pagina&apos;s</div>
-              <p className="pakket-tagline">
-                Voor wie meer ruimte nodig heeft: een volledige website die je bedrijf goed neerzet en klanten overtuigt.
-              </p>
-              <div className="pakket-prijs">Vanaf €2.500</div>
-              <p className="pakket-prijs-note">excl. BTW · eenmalig</p>
-              <hr className="pakket-divider" />
-              <ul className="pakket-lijst">
-                <li><span className="pakket-check">✓</span>4–5 pagina&apos;s op maat (home, over, diensten, contact en meer)</li>
-                <li><span className="pakket-check">✓</span>Ik schrijf de teksten voor alle pagina&apos;s</li>
-                <li><span className="pakket-check">✓</span>SEO per pagina, zodat je beter gevonden wordt</li>
-                <li><span className="pakket-check">✓</span>Conversie-tracking ingesteld</li>
-                <li><span className="pakket-check">✓</span>Werkt strak op mobiel</li>
-                <li><span className="pakket-check">✓</span>2 revisierondes</li>
-              </ul>
-              <a href="#contact" className="btn btn-dark" style={{ textAlign: "center", width: "100%" }}>
-                Vraag dit aan →
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA BAND */}
-      <div className="cta-band">
-        <div className="container">
-          <h2 className="display-h2">
-            Wat kan er beter
-            <br />
-            aan je website?
-          </h2>
-          <div className="cta-band-actions">
-            <a href="#contact" className="btn btn-yellow">
-              Vraag gratis website audit →
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* CONTACT */}
-      <section className="contact-section" id="contact">
-        <div className="container">
-          <div className="contact-inner">
-            <div className="contact-left reveal">
-              <span className="tag-pill">Contact</span>
-              <h2 className="display-h2">
-                Klaar om meer
-                <br />
-                uit je website te halen?
-              </h2>
-              <p>
-                Geen verplichtingen, geen offerte die je over je heen krijgt.
-                Gewoon een eerlijk gesprek over wat er beter kan aan je website.
-                Ik reageer binnen één werkdag.
-              </p>
-              <div className="contact-items">
-                <div className="contact-item">
-                  <div className="contact-icon">✉️</div>
-                  <div className="contact-item-body">
-                    <p className="ci-label">E-mail</p>
+        {/* CONTACT */}
+        <section id="contact">
+          <div className="container">
+            <div className="contact-grid">
+              <div className="contact-left reveal">
+                <span className="eyebrow">Contact</span>
+                <h2 className="display-h2">Laten we eens praten.</h2>
+                <p>
+                  Geen verplichtingen, geen offerte die je over je heen krijgt.
+                  Een eerlijk gesprek over wat beter kan aan je website. Ik
+                  reageer binnen één werkdag.
+                </p>
+                <div className="contact-items">
+                  <div className="contact-item">
+                    <span className="ci-label">E-mail</span>
                     <a href="mailto:tim@lorentwebworks.nl">
                       tim@lorentwebworks.nl
                     </a>
                   </div>
-                </div>
-                <div className="contact-item">
-                  <div className="contact-icon">📍</div>
-                  <div className="contact-item-body">
-                    <p className="ci-label">Locatie</p>
-                    <span>Amsterdam, Nederland</span>
+                  <div className="contact-item">
+                    <span className="ci-label">Locatie</span>
+                    <span>Amsterdam — werkend door heel Nederland</span>
                   </div>
-                </div>
-                <div className="contact-item">
-                  <div className="contact-icon">🔗</div>
-                  <div className="contact-item-body">
-                    <p className="ci-label">LinkedIn</p>
+                  <div className="contact-item">
+                    <span className="ci-label">LinkedIn</span>
                     <a
                       href="https://linkedin.com/in/timlorent"
                       target="_blank"
@@ -566,10 +518,8 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-            </div>
-            <div className="reveal">
               <form
-                className="contact-form"
+                className="contact-form reveal"
                 action="https://formspree.io/f/meepgagp"
                 method="POST"
               >
@@ -606,101 +556,39 @@ export default function Home() {
                 </div>
                 <div className="form-group">
                   <label htmlFor="pakket">Wat heb je nodig?</label>
-                  <select id="pakket" name="pakket">
-                    <option value="">Kies een optie</option>
-                    <option>Compacte website, vanaf €1.250</option>
-                    <option>Website 4–5 pagina&apos;s, vanaf €2.500</option>
-                    <option>Gratis website audit</option>
+                  <select id="pakket" name="pakket" defaultValue="">
+                    <option value="" disabled>
+                      Kies een optie
+                    </option>
+                    <option>De Landingspagina · vanaf €1.250</option>
+                    <option>De Bedrijfswebsite · vanaf €2.500</option>
+                    <option>Gratis website-audit</option>
                     <option>Ik weet het nog niet</option>
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="bericht">
-                    Wat wil je bereiken met je website?
-                  </label>
+                  <label htmlFor="bericht">Wat wil je bereiken?</label>
                   <textarea
                     id="bericht"
                     name="bericht"
-                    placeholder="Vertel me wat je doet, voor wie, en wat je wil verbeteren. Hoe meer context, hoe beter mijn advies."
+                    placeholder="Vertel me wat je doet, voor wie, en wat je wilt verbeteren. Hoe meer context, hoe beter mijn advies."
                     required
-                  ></textarea>
+                  />
                 </div>
                 <button
                   type="submit"
-                  className="btn btn-dark"
+                  className="btn btn-primary"
                   style={{ alignSelf: "flex-start" }}
                 >
-                  Stuur bericht →
+                  Stuur bericht <span className="btn-arrow">→</span>
                 </button>
               </form>
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ */}
-      <section className="faq" id="faq">
-        <div className="container">
-          <div className="faq-top reveal">
-            <span className="tag-pill">Veelgestelde vragen</span>
-            <h2 className="display-h2">Goede vragen.</h2>
-          </div>
-          <div className="faq-grid reveal">
-            <div className="faq-item">
-              <h3 className="faq-vraag">Wat kost een website laten maken?</h3>
-              <p className="faq-antwoord">
-                Een compacte website (1 pagina) kost vanaf €1.250 excl. BTW, eenmalig betaald. Geen abonnement, geen verborgen kosten. Een website van 4–5 pagina&apos;s start vanaf €2.500. Precies wat het kost bespreek ik in het eerste gesprek.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3 className="faq-vraag">Hoe lang duurt het voordat mijn website live is?</h3>
-              <p className="faq-antwoord">
-                Een compacte website is meestal binnen een paar dagen live zodra alle input compleet is. De snelheid hangt ook af van hoe snel jij beeldmateriaal en feedback aanlevert.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3 className="faq-vraag">Kan ik mijn landing page daarna zelf aanpassen?</h3>
-              <p className="faq-antwoord">
-                Ja. Na oplevering laat ik je stap voor stap zien hoe je teksten en afbeeldingen zelf aanpast. Geen technische kennis nodig.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3 className="faq-vraag">Is onderhoud inbegrepen?</h3>
-              <p className="faq-antwoord">
-                Kleine aanpassingen en hosting zijn te bespreken als doorlopend pakket. Voor grotere wijzigingen stuur ik een losse offerte. Niks verplicht.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3 className="faq-vraag">Ik heb al een website, kan je die verbeteren?</h3>
-              <p className="faq-antwoord">
-                Soms wel, soms is herbouwen sneller en goedkoper. Dat bespreek ik eerlijk met je in het eerste gesprek.
-              </p>
-            </div>
-            <div className="faq-item">
-              <h3 className="faq-vraag">Werk je alleen in Amsterdam of door heel Nederland?</h3>
-              <p className="faq-antwoord">
-                Door heel Nederland. Alles loopt via videocall en e-mail. Een fysieke afspraak in Amsterdam is mogelijk maar niet noodzakelijk.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FOOTER */}
-      <footer>
-        <div className="container footer-inner">
-          <a href="/" className="footer-logo">
-            LorentWebworks<em>.</em>nl
-          </a>
-          <span>Websites die klanten opleveren.</span>
-          <span>
-            © 2026 &nbsp;·&nbsp;{" "}
-            <a href="https://www.lorentwebworks.com">lorentwebworks.com</a>
-          </span>
-        </div>
-      </footer>
-
+        </section>
       </main>
+
+      <Footer />
     </>
   );
 }

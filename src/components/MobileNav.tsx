@@ -1,9 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+
+const LINKS = [
+  { href: "/#voor-wie", label: "Voor wie" },
+  { href: "/#aanpak", label: "Aanpak" },
+  { href: "/#pakketten", label: "Pakketten" },
+  { href: "/#faq", label: "FAQ" },
+];
 
 export default function MobileNav() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [open]);
 
   return (
     <>
@@ -21,13 +36,18 @@ export default function MobileNav() {
 
       {open && (
         <nav className="mobile-menu" aria-label="Mobiele navigatie">
-          <a href="#voor-wie" onClick={() => setOpen(false)}>Voor wie</a>
-          <a href="#pakketten" onClick={() => setOpen(false)}>Pakketten</a>
-          <a href="#werkwijze" onClick={() => setOpen(false)}>Hoe het werkt</a>
-          <a href="#over-tim" onClick={() => setOpen(false)}>Over Tim</a>
-          <a href="#contact" className="mobile-menu-cta" onClick={() => setOpen(false)}>
-            Start een project
-          </a>
+          {LINKS.map((l) => (
+            <Link key={l.href} href={l.href} onClick={() => setOpen(false)}>
+              {l.label}
+            </Link>
+          ))}
+          <Link
+            href="/#contact"
+            className="mobile-menu-cta"
+            onClick={() => setOpen(false)}
+          >
+            Plan een gesprek
+          </Link>
         </nav>
       )}
     </>
