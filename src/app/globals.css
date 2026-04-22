@@ -1466,18 +1466,18 @@ footer {
 
 .footer-brand p {
   margin-top: 1rem;
-  color: rgba(255, 255, 255, 0.55);
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.65;
   max-width: 34ch;
   font-size: 0.92rem;
 }
 
-.footer-col h4 {
+.footer-col h2 {
   font-family: var(--mono);
   font-size: 0.72rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.78);
   margin-bottom: 1.25rem;
   font-weight: 500;
 }
@@ -1503,7 +1503,7 @@ footer {
   align-items: center;
   padding-top: 2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.45);
+  color: rgba(255, 255, 255, 0.78);
   font-size: 0.85rem;
   flex-wrap: wrap;
   gap: 1rem;
