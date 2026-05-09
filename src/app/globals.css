@@ -1384,18 +1384,22 @@ footer .nav-logo-mark {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  min-width: 0;
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
+  min-width: 0;
 }
 
 .form-group label {
@@ -1418,6 +1422,10 @@ footer .nav-logo-mark {
   color: var(--color-ink);
   outline: none;
   appearance: none;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
   transition:
     border-color 0.18s,
     background-color 0.18s;
@@ -1805,15 +1813,14 @@ footer {
     padding-bottom: 3rem;
   }
   .hero-grid {
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 2.5rem;
   }
   .hero-portrait {
-    max-width: 380px;
-    margin: 0 auto;
+    max-width: 360px;
   }
   .hero-portrait-card {
-    left: 0;
+    left: -1rem;
     bottom: -1rem;
   }
 
@@ -1902,8 +1909,25 @@ footer {
   .form-row {
     grid-template-columns: 1fr;
   }
+  .contact-form {
+    padding: 1.5rem;
+  }
   .faq-answer {
     padding-right: 1rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  .hero-portrait {
+    max-width: 380px;
+    margin: 0 auto;
+  }
+  .hero-portrait-card {
+    left: 0;
   }
 }
 
