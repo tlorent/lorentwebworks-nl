@@ -72,7 +72,7 @@ const PAKKETTEN = [
     name: "De Landingspagina",
     tagline:
       "Eén scherpe pagina die direct laat zien wat je doet en bezoekers aanzet tot contact.",
-    price: "€1.250",
+    price: "€850",
     priceNote: "excl. BTW · eenmalig · binnen 5 werkdagen",
     featured: false,
     items: [
@@ -88,7 +88,7 @@ const PAKKETTEN = [
     name: "De Bedrijfswebsite",
     tagline:
       "Volledige website van 4 tot 6 pagina's die je onderneming op de kaart zet.",
-    price: "€2.500",
+    price: "€1.750",
     priceNote: "excl. BTW · eenmalig",
     featured: true,
     items: [
@@ -127,7 +127,7 @@ const FAQ_ITEMS = [
   },
   {
     q: "Wat kost een website laten maken?",
-    a: "De Landingspagina vanaf €1.250 excl. BTW, De Bedrijfswebsite vanaf €2.500. Eenmalig, geen abonnement, geen verborgen kosten. Wat het precies kost voor jou bespreek ik in het eerste gesprek.",
+    a: "De Landingspagina vanaf €850 excl. BTW, De Bedrijfswebsite vanaf €1.750. Eenmalig, geen abonnement, geen verborgen kosten. Wat het precies kost voor jou bespreek ik in het eerste gesprek.",
   },
   {
     q: "Hoe lang duurt het voordat mijn website live gaat?",
@@ -560,8 +560,8 @@ export default function Home() {
                     <option value="" disabled>
                       Kies een optie
                     </option>
-                    <option>De Landingspagina · vanaf €1.250</option>
-                    <option>De Bedrijfswebsite · vanaf €2.500</option>
+                    <option>De Landingspagina · vanaf €850</option>
+                    <option>De Bedrijfswebsite · vanaf €1.750</option>
                     <option>Gratis website-audit</option>
                     <option>Ik weet het nog niet</option>
                   </select>

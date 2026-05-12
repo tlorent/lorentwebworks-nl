@@ -9,9 +9,9 @@ import Header from "@/components/Header";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "De Landingspagina — vanaf €1.250 | Lorent Webworks",
+  title: "De Landingspagina — vanaf €850 | Lorent Webworks",
   description:
-    "Eén scherpe pagina die direct laat zien wat je doet en bezoekers aanzet tot contact. Binnen 5 werkdagen live, vanaf €1.250 excl. BTW.",
+    "Eén scherpe pagina die direct laat zien wat je doet en bezoekers aanzet tot contact. Binnen 5 werkdagen live, vanaf €850 excl. BTW.",
   alternates: { canonical: "/diensten/landingspagina" },
 };
 
@@ -152,7 +152,7 @@ export default function LandingspaginaPage() {
               <div className="service-hero-meta">
                 <div className="service-meta-row">
                   <span className="service-meta-label">Vanaf</span>
-                  <span className="service-meta-value">€1.250 excl. BTW</span>
+                  <span className="service-meta-value">€850 excl. BTW</span>
                 </div>
                 <div className="service-meta-row">
                   <span className="service-meta-label">Doorlooptijd</span>
@@ -285,7 +285,7 @@ export default function LandingspaginaPage() {
                 </p>
                 <div className="pakket-price">
                   <span className="pakket-price-from">Vanaf</span>
-                  <span className="pakket-price-amount">€1.250</span>
+                  <span className="pakket-price-amount">€850</span>
                 </div>
                 <div className="pakket-price-note">
                   excl. BTW · eenmalig · binnen 5 werkdagen

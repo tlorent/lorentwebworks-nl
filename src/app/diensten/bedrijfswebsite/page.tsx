@@ -9,9 +9,9 @@ import Header from "@/components/Header";
 import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "De Bedrijfswebsite — vanaf €2.500 | Lorent Webworks",
+  title: "De Bedrijfswebsite — vanaf €1.750 | Lorent Webworks",
   description:
-    "Volledige website van 4 tot 6 pagina's die je onderneming op de kaart zet. Maatwerk copy, SEO per pagina, conversietracking. Vanaf €2.500 excl. BTW.",
+    "Volledige website van 4 tot 6 pagina's die je onderneming op de kaart zet. Maatwerk copy, SEO per pagina, conversietracking. Vanaf €1.750 excl. BTW.",
   alternates: { canonical: "/diensten/bedrijfswebsite" },
 };
 
@@ -167,7 +167,7 @@ export default function BedrijfswebsitePage() {
               <div className="service-hero-meta">
                 <div className="service-meta-row">
                   <span className="service-meta-label">Vanaf</span>
-                  <span className="service-meta-value">€2.500 excl. BTW</span>
+                  <span className="service-meta-value">€1.750 excl. BTW</span>
                 </div>
                 <div className="service-meta-row">
                   <span className="service-meta-label">Doorlooptijd</span>
@@ -300,7 +300,7 @@ export default function BedrijfswebsitePage() {
                 </p>
                 <div className="pakket-price">
                   <span className="pakket-price-from">Vanaf</span>
-                  <span className="pakket-price-amount">€2.500</span>
+                  <span className="pakket-price-amount">€1.750</span>
                 </div>
                 <div className="pakket-price-note">
                   excl. BTW · eenmalig · 3-4 weken
