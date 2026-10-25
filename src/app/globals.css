@@ -222,6 +222,7 @@ header.site-header {
 }
 
 header.site-header.scrolled {
+  background: var(--color-base);
   border-bottom-color: var(--color-border);
 }
 
