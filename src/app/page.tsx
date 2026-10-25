@@ -178,7 +178,6 @@ export default function Home() {
                 },
                 areaServed: { "@type": "Country", name: "Nederland" },
                 priceRange: "€€",
-                email: "tim@lorentwebworks.nl",
                 sameAs: ["https://linkedin.com/in/timlorent"],
                 founder: {
                   "@type": "Person",
@@ -496,12 +495,6 @@ export default function Home() {
                   reageer binnen één werkdag.
                 </p>
                 <div className="contact-items">
-                  <div className="contact-item">
-                    <span className="ci-label">E-mail</span>
-                    <a href="mailto:tim@lorentwebworks.nl">
-                      tim@lorentwebworks.nl
-                    </a>
-                  </div>
                   <div className="contact-item">
                     <span className="ci-label">Locatie</span>
                     <span>Amsterdam — werkend door heel Nederland</span>

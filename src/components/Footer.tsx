@@ -51,9 +51,6 @@ export default function Footer() {
             <h2>Contact</h2>
             <ul>
               <li>
-                <a href="mailto:tim@lorentwebworks.nl">tim@lorentwebworks.nl</a>
-              </li>
-              <li>
                 <a
                   href="https://linkedin.com/in/timlorent"
                   target="_blank"
