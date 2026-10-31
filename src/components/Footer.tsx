@@ -34,6 +34,29 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-col">
+            <h2>Gids</h2>
+            <ul>
+              <li>
+                <Link href="/gids">Overzicht</Link>
+              </li>
+              <li>
+                <Link href="/website-laten-maken">Website laten maken</Link>
+              </li>
+              <li>
+                <Link href="/wat-kost-een-website">Wat kost een website</Link>
+              </li>
+              <li>
+                <Link href="/webdesigner-kiezen">Webdesigner kiezen</Link>
+              </li>
+              <li>
+                <Link href="/website-checklist">Website checklist</Link>
+              </li>
+              <li>
+                <Link href="/vragen-aan-webdesigner">Vragen aan webdesigner</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="footer-col">
             <h2>Site</h2>
             <ul>
               <li>

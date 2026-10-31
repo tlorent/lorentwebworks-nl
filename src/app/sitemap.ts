@@ -24,5 +24,41 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.8,
     },
+    {
+      url: `${base}/gids`,
+      lastModified,
+      changeFrequency: "weekly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/website-laten-maken`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/wat-kost-een-website`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/webdesigner-kiezen`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/website-checklist`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/vragen-aan-webdesigner`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 }
