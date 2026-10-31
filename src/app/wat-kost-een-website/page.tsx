@@ -144,9 +144,14 @@ export default function WatKostEenWebsitePage() {
             </div>
             <div className="guide-header">
               <span className="guide-label">gids</span>
-              <h1 className="display-h1">Wat kost een website laten maken in 2026?</h1>
+              <h1 className="display-h1">
+                Wat kost een website laten maken in 2026?
+              </h1>
               <p className="lead" style={{ marginTop: "1.5rem" }}>
-                "Wat kost een website?" is een van de meest gestelde vragen van ondernemers, en het antwoord "dat hangt ervan af" helpt niemand. In deze gids zet ik de prijzen per optie op een rij, laat ik zien wat de prijs bepaalt en welke kosten je makkelijk vergeet.
+                "Wat kost een website?" is een van de meest gestelde vragen van
+                ondernemers, en het antwoord "dat hangt ervan af" helpt niemand.
+                In deze gids zet ik de prijzen per optie op een rij, laat ik
+                zien wat de prijs bepaalt en welke kosten je makkelijk vergeet.
               </p>
             </div>
           </div>
@@ -158,7 +163,13 @@ export default function WatKostEenWebsitePage() {
             <div className="kort-antwoord">
               <h2 className="kort-antwoord-title">Kort antwoord</h2>
               <p>
-                Zelf bouwen met een websitebouwer kost grofweg € 15 tot € 50 per maand, plus veel eigen tijd. Een freelancer rekent voor een kleine bedrijfswebsite meestal € 800 tot € 3.000. Een webbureau begint voor een mkb-site vaak rond € 4.000 tot € 8.000. Reken daarnaast op terugkerende kosten voor domein, hosting en onderhoud. Bij Lorent Webworks begint een landingspagina vanaf € 850 en een bedrijfswebsite vanaf € 1.750 (excl. btw).
+                Zelf bouwen met een websitebouwer kost grofweg € 15 tot € 50 per
+                maand, plus veel eigen tijd. Een freelancer rekent voor een
+                kleine bedrijfswebsite meestal € 800 tot € 3.000. Een webbureau
+                begint voor een mkb-site vaak rond € 4.000 tot € 8.000. Reken
+                daarnaast op terugkerende kosten voor domein, hosting en
+                onderhoud. Bij Lorent Webworks begint een landingspagina vanaf €
+                850 en een bedrijfswebsite vanaf € 1.750 (excl. btw).
               </p>
             </div>
           </div>
@@ -170,13 +181,27 @@ export default function WatKostEenWebsitePage() {
             <div className="guide-toc">
               <h2>In dit artikel</h2>
               <ol>
-                <li><a href="#prijzen">Prijzen per optie</a></li>
-                <li><a href="#bepaalt">Wat bepaalt de prijs?</a></li>
-                <li><a href="#terugkerend">Terugkerende kosten</a></li>
-                <li><a href="#vergeten">Kosten die je makkelijk vergeet</a></li>
-                <li><a href="#oplevert">Wat levert een website op?</a></li>
-                <li><a href="#offertes">Zo vergelijk je offertes</a></li>
-                <li><a href="#faq">Veelgestelde vragen</a></li>
+                <li>
+                  <a href="#prijzen">Prijzen per optie</a>
+                </li>
+                <li>
+                  <a href="#bepaalt">Wat bepaalt de prijs?</a>
+                </li>
+                <li>
+                  <a href="#terugkerend">Terugkerende kosten</a>
+                </li>
+                <li>
+                  <a href="#vergeten">Kosten die je makkelijk vergeet</a>
+                </li>
+                <li>
+                  <a href="#oplevert">Wat levert een website op?</a>
+                </li>
+                <li>
+                  <a href="#offertes">Zo vergelijk je offertes</a>
+                </li>
+                <li>
+                  <a href="#faq">Veelgestelde vragen</a>
+                </li>
               </ol>
             </div>
           </div>
@@ -189,46 +214,117 @@ export default function WatKostEenWebsitePage() {
             <section id="prijzen" className="guide-section">
               <h2 className="display-h3">Prijzen per optie</h2>
               <div style={{ overflowX: "auto", margin: "2rem 0" }}>
-                <table style={{ width: "100%", borderCollapse: "collapse", fontSize: "0.95rem" }}>
+                <table
+                  style={{
+                    width: "100%",
+                    borderCollapse: "collapse",
+                    fontSize: "0.95rem",
+                  }}
+                >
                   <thead>
-                    <tr style={{ borderBottom: "2px solid var(--color-border)" }}>
-                      <th style={{ textAlign: "left", padding: "1rem 0.5rem", fontWeight: 600 }}>Optie</th>
-                      <th style={{ textAlign: "left", padding: "1rem 0.5rem", fontWeight: 600 }}>Eenmalig</th>
-                      <th style={{ textAlign: "left", padding: "1rem 0.5rem", fontWeight: 600 }}>Per maand</th>
-                      <th style={{ textAlign: "left", padding: "1rem 0.5rem", fontWeight: 600 }}>Geschikt voor</th>
+                    <tr
+                      style={{ borderBottom: "2px solid var(--color-border)" }}
+                    >
+                      <th
+                        style={{
+                          textAlign: "left",
+                          padding: "1rem 0.5rem",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Optie
+                      </th>
+                      <th
+                        style={{
+                          textAlign: "left",
+                          padding: "1rem 0.5rem",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Eenmalig
+                      </th>
+                      <th
+                        style={{
+                          textAlign: "left",
+                          padding: "1rem 0.5rem",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Per maand
+                      </th>
+                      <th
+                        style={{
+                          textAlign: "left",
+                          padding: "1rem 0.5rem",
+                          fontWeight: 600,
+                        }}
+                      >
+                        Geschikt voor
+                      </th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr style={{ borderBottom: "1px solid var(--color-border)" }}>
-                      <td style={{ padding: "1rem 0.5rem" }}>Websitebouwer (zelf)</td>
+                    <tr
+                      style={{ borderBottom: "1px solid var(--color-border)" }}
+                    >
+                      <td style={{ padding: "1rem 0.5rem" }}>
+                        Websitebouwer (zelf)
+                      </td>
                       <td style={{ padding: "1rem 0.5rem" }}>€ 0</td>
                       <td style={{ padding: "1rem 0.5rem" }}>ca. € 15–50</td>
-                      <td style={{ padding: "1rem 0.5rem" }}>Starters met tijd en een eenvoudige site</td>
+                      <td style={{ padding: "1rem 0.5rem" }}>
+                        Starters met tijd en een eenvoudige site
+                      </td>
                     </tr>
-                    <tr style={{ borderBottom: "1px solid var(--color-border)" }}>
+                    <tr
+                      style={{ borderBottom: "1px solid var(--color-border)" }}
+                    >
                       <td style={{ padding: "1rem 0.5rem" }}>Freelancer</td>
-                      <td style={{ padding: "1rem 0.5rem" }}>ca. € 800–3.000</td>
+                      <td style={{ padding: "1rem 0.5rem" }}>
+                        ca. € 800–3.000
+                      </td>
                       <td style={{ padding: "1rem 0.5rem" }}>€ 0–50</td>
-                      <td style={{ padding: "1rem 0.5rem" }}>Zzp'ers en kleine mkb'ers</td>
+                      <td style={{ padding: "1rem 0.5rem" }}>
+                        Zzp'ers en kleine mkb'ers
+                      </td>
                     </tr>
                     <tr>
                       <td style={{ padding: "1rem 0.5rem" }}>Webbureau</td>
-                      <td style={{ padding: "1rem 0.5rem" }}>ca. € 4.000–8.000+</td>
+                      <td style={{ padding: "1rem 0.5rem" }}>
+                        ca. € 4.000–8.000+
+                      </td>
                       <td style={{ padding: "1rem 0.5rem" }}>vaak € 50–250</td>
-                      <td style={{ padding: "1rem 0.5rem" }}>Grotere sites, webshops, koppelingen</td>
+                      <td style={{ padding: "1rem 0.5rem" }}>
+                        Grotere sites, webshops, koppelingen
+                      </td>
                     </tr>
                   </tbody>
                 </table>
               </div>
               <p>
-                De bedragen zijn indicaties voor een standaard bedrijfswebsite in Nederland. Webshops en maatwerkplatforms vallen hoger uit. Het uurtarief van een freelance webdeveloper ligt in 2026 doorgaans tussen € 60 en € 120.
+                De bedragen zijn indicaties voor een standaard bedrijfswebsite
+                in Nederland. Webshops en maatwerkplatforms vallen hoger uit.
+                Het uurtarief van een freelance webdeveloper ligt in 2026
+                doorgaans tussen € 60 en € 120.
               </p>
 
               <h3 className="guide-h4">Lorent Webworks</h3>
               <ul className="guide-list">
-                <li><strong>De Landingspagina:</strong> vanaf € 850 excl. btw, eenmalig, binnen 5 werkdagen. Een strategisch gesprek, een pagina op maat met teksten van mij, geoptimaliseerd voor Google, snel en mobielvriendelijk, één revisieronde.</li>
-                <li><strong>De Bedrijfswebsite:</strong> vanaf € 1.750 excl. btw, eenmalig. Alles uit de landingspagina, plus 4 tot 6 pagina's, SEO per pagina, conversietracking en twee revisierondes.</li>
-                <li><strong>De Website-audit:</strong> gratis, binnen 5 werkdagen. Voor als je al een site hebt die weinig oplevert.</li>
+                <li>
+                  <strong>De Landingspagina:</strong> vanaf € 850 excl. btw,
+                  eenmalig, binnen 5 werkdagen. Een strategisch gesprek, een
+                  pagina op maat met teksten van mij, geoptimaliseerd voor
+                  Google, snel en mobielvriendelijk, één revisieronde.
+                </li>
+                <li>
+                  <strong>De Bedrijfswebsite:</strong> vanaf € 1.750 excl. btw,
+                  eenmalig. Alles uit de landingspagina, plus 4 tot 6 pagina's,
+                  SEO per pagina, conversietracking en twee revisierondes.
+                </li>
+                <li>
+                  <strong>De Website-audit:</strong> gratis, binnen 5 werkdagen.
+                  Voor als je al een site hebt die weinig oplevert.
+                </li>
               </ul>
             </section>
 
@@ -238,32 +334,39 @@ export default function WatKostEenWebsitePage() {
 
               <h3 className="guide-h4">Aantal pagina's</h3>
               <p>
-                Een landingspagina is een ander project dan een site met tien dienstpagina's. Elke pagina vraagt structuur, tekst en ontwerp.
+                Een landingspagina is een ander project dan een site met tien
+                dienstpagina's. Elke pagina vraagt structuur, tekst en ontwerp.
               </p>
 
               <h3 className="guide-h4">Wie schrijft de teksten?</h3>
               <p>
-                Copywriting kost tijd, maar bepaalt grotendeels of je site aanvragen oplevert. Vraag of teksten in de prijs zitten.
+                Copywriting kost tijd, maar bepaalt grotendeels of je site
+                aanvragen oplevert. Vraag of teksten in de prijs zitten.
               </p>
 
               <h3 className="guide-h4">Ontwerp op maat of een template</h3>
               <p>
-                Een template is sneller en goedkoper. Maatwerk past beter bij je merk en is vaak sneller in laadtijd.
+                Een template is sneller en goedkoper. Maatwerk past beter bij je
+                merk en is vaak sneller in laadtijd.
               </p>
 
               <h3 className="guide-h4">Functionaliteit</h3>
               <p>
-                Een afsprakenplanner, meertaligheid, een klantportaal of een webshop maken een project groter.
+                Een afsprakenplanner, meertaligheid, een klantportaal of een
+                webshop maken een project groter.
               </p>
 
               <h3 className="guide-h4">SEO en snelheid</h3>
               <p>
-                Basis-SEO hoort er standaard bij. Uitgebreid zoekwoordonderzoek, extra content of technische optimalisatie kost meer, en levert op de lange termijn vaak het meeste op.
+                Basis-SEO hoort er standaard bij. Uitgebreid zoekwoordonderzoek,
+                extra content of technische optimalisatie kost meer, en levert
+                op de lange termijn vaak het meeste op.
               </p>
 
               <h3 className="guide-h4">Revisierondes</h3>
               <p>
-                Hoe meer rondes, hoe meer uren. Een vaste afspraak voorkomt verrassingen.
+                Hoe meer rondes, hoe meer uren. Een vaste afspraak voorkomt
+                verrassingen.
               </p>
             </section>
 
@@ -271,11 +374,18 @@ export default function WatKostEenWebsitePage() {
             <div className="guide-cta-mid">
               <div className="guide-cta-card">
                 <span className="eyebrow">Pakketten</span>
-                <h3 className="display-h3" style={{ marginBottom: "0.75rem" }}>Helder wat je krijgt, helder wat het kost</h3>
+                <h3 className="display-h3" style={{ marginBottom: "0.75rem" }}>
+                  Helder wat je krijgt, helder wat het kost
+                </h3>
                 <p>
-                  Geen urenbriefjes. Een landingspagina vanaf € 850 of een bedrijfswebsite vanaf € 1.750, eenmalig, excl. btw.
+                  Geen urenbriefjes. Een landingspagina vanaf € 850 of een
+                  bedrijfswebsite vanaf € 1.750, eenmalig, excl. btw.
                 </p>
-                <Link href="/#pakketten" className="btn btn-primary" style={{ marginTop: "1rem" }}>
+                <Link
+                  href="/#pakketten"
+                  className="btn btn-primary"
+                  style={{ marginTop: "1rem" }}
+                >
                   Bekijk de pakketten →
                 </Link>
               </div>
@@ -285,14 +395,30 @@ export default function WatKostEenWebsitePage() {
             <section id="terugkerend" className="guide-section">
               <h2 className="display-h3">Terugkerende kosten</h2>
               <ul className="guide-list">
-                <li><strong>Domeinnaam:</strong> een .nl-domein kost meestal een paar euro tot ruim een tientje per jaar.</li>
-                <li><strong>Hosting:</strong> van een paar euro per maand voor eenvoudige hosting tot meer voor snelle, beheerde hosting.</li>
-                <li><strong>Websitebouwer-abonnement:</strong> als je site op Wix of Squarespace draait, betaal je maandelijks.</li>
-                <li><strong>Onderhoud:</strong> updates, back-ups en beveiliging. Bij WordPress-sites is dit belangrijk vanwege plugins.</li>
-                <li><strong>E-mail:</strong> zakelijke mail via bijvoorbeeld Google Workspace of Microsoft 365.</li>
+                <li>
+                  <strong>Domeinnaam:</strong> een .nl-domein kost meestal een
+                  paar euro tot ruim een tientje per jaar.
+                </li>
+                <li>
+                  <strong>Hosting:</strong> van een paar euro per maand voor
+                  eenvoudige hosting tot meer voor snelle, beheerde hosting.
+                </li>
+                <li>
+                  <strong>Websitebouwer-abonnement:</strong> als je site op Wix
+                  of Squarespace draait, betaal je maandelijks.
+                </li>
+                <li>
+                  <strong>Onderhoud:</strong> updates, back-ups en beveiliging.
+                  Bij WordPress-sites is dit belangrijk vanwege plugins.
+                </li>
+                <li>
+                  <strong>E-mail:</strong> zakelijke mail via bijvoorbeeld
+                  Google Workspace of Microsoft 365.
+                </li>
               </ul>
               <p>
-                Vraag altijd wat er na oplevering maandelijks of jaarlijks bijkomt, en of je ergens aan vastzit.
+                Vraag altijd wat er na oplevering maandelijks of jaarlijks
+                bijkomt, en of je ergens aan vastzit.
               </p>
             </section>
 
@@ -300,11 +426,26 @@ export default function WatKostEenWebsitePage() {
             <section id="vergeten" className="guide-section">
               <h2 className="display-h3">Kosten die je makkelijk vergeet</h2>
               <ul className="guide-list">
-                <li><strong>Fotografie:</strong> eigen foto's maken een site persoonlijker dan stockbeelden.</li>
-                <li><strong>Logo of huisstijl:</strong> heb je die nog niet, dan komt dat vaak eerst.</li>
-                <li><strong>Teksten vertalen:</strong> voor een Engelstalige versie.</li>
-                <li><strong>Je eigen tijd:</strong> input geven, feedback, teksten checken.</li>
-                <li><strong>Doorontwikkeling:</strong> nieuwe pagina's of aanpassingen na een jaar.</li>
+                <li>
+                  <strong>Fotografie:</strong> eigen foto's maken een site
+                  persoonlijker dan stockbeelden.
+                </li>
+                <li>
+                  <strong>Logo of huisstijl:</strong> heb je die nog niet, dan
+                  komt dat vaak eerst.
+                </li>
+                <li>
+                  <strong>Teksten vertalen:</strong> voor een Engelstalige
+                  versie.
+                </li>
+                <li>
+                  <strong>Je eigen tijd:</strong> input geven, feedback, teksten
+                  checken.
+                </li>
+                <li>
+                  <strong>Doorontwikkeling:</strong> nieuwe pagina's of
+                  aanpassingen na een jaar.
+                </li>
               </ul>
             </section>
 
@@ -312,10 +453,17 @@ export default function WatKostEenWebsitePage() {
             <section id="oplevert" className="guide-section">
               <h2 className="display-h3">Wat levert een website op?</h2>
               <p>
-                De echte vraag is wat je website je oplevert. Reken het eens uit: als een nieuwe klant voor jou gemiddeld € 500 waard is, heb je een site van € 1.750 terugverdiend met vier klanten. Een site die maandelijks een paar aanvragen extra binnenhaalt, betaalt zich snel terug.
+                De echte vraag is wat je website je oplevert. Reken het eens
+                uit: als een nieuwe klant voor jou gemiddeld € 500 waard is, heb
+                je een site van € 1.750 terugverdiend met vier klanten. Een site
+                die maandelijks een paar aanvragen extra binnenhaalt, betaalt
+                zich snel terug.
               </p>
               <p>
-                Uit mijn eigen werk: bij GrandVision leverde een nieuwe feature 425 nieuwe betalende klanten op uit 13.000 interacties. Dezelfde aandacht voor wat een pagina moet opleveren, pas ik toe bij sites voor zzp en mkb.
+                Uit mijn eigen werk: bij GrandVision leverde een nieuwe feature
+                425 nieuwe betalende klanten op uit 13.000 interacties. Dezelfde
+                aandacht voor wat een pagina moet opleveren, pas ik toe bij
+                sites voor zzp en mkb.
               </p>
             </section>
 
@@ -324,15 +472,37 @@ export default function WatKostEenWebsitePage() {
               <h2 className="display-h3">Zo vergelijk je offertes</h2>
               <p>Leg offertes naast elkaar en check:</p>
               <ol className="guide-list">
-                <li><strong>Wat zit erin?</strong> Aantal pagina's, teksten, SEO, revisierondes, tracking.</li>
-                <li><strong>Wat zit er niet in?</strong> Hosting, domein, foto's, onderhoud.</li>
-                <li><strong>Wat zijn de terugkerende kosten?</strong></li>
-                <li><strong>Van wie zijn de site en het domein na oplevering?</strong></li>
-                <li><strong>Hoe lang duurt het?</strong></li>
-                <li><strong>Wat gebeurt er als je later iets wilt veranderen?</strong></li>
+                <li>
+                  <strong>Wat zit erin?</strong> Aantal pagina's, teksten, SEO,
+                  revisierondes, tracking.
+                </li>
+                <li>
+                  <strong>Wat zit er niet in?</strong> Hosting, domein, foto's,
+                  onderhoud.
+                </li>
+                <li>
+                  <strong>Wat zijn de terugkerende kosten?</strong>
+                </li>
+                <li>
+                  <strong>
+                    Van wie zijn de site en het domein na oplevering?
+                  </strong>
+                </li>
+                <li>
+                  <strong>Hoe lang duurt het?</strong>
+                </li>
+                <li>
+                  <strong>
+                    Wat gebeurt er als je later iets wilt veranderen?
+                  </strong>
+                </li>
               </ol>
               <p>
-                Meer vragen om te stellen vind je in <a href="/vragen-aan-webdesigner">25 vragen voordat je een website laat maken</a>.
+                Meer vragen om te stellen vind je in{" "}
+                <a href="/vragen-aan-webdesigner">
+                  25 vragen voordat je een website laat maken
+                </a>
+                .
               </p>
             </section>
 
@@ -340,10 +510,26 @@ export default function WatKostEenWebsitePage() {
             <section className="guide-related">
               <h2 className="display-h3">Meer lezen</h2>
               <ul>
-                <li><Link href="/website-laten-maken">→ Website laten maken: de complete gids</Link></li>
-                <li><Link href="/webdesigner-kiezen">→ Hoe kies je een goede webdesigner?</Link></li>
-                <li><Link href="/website-checklist">→ Website checklist: 30 punten</Link></li>
-                <li><Link href="/vragen-aan-webdesigner">→ 25 vragen voor je webdesigner</Link></li>
+                <li>
+                  <Link href="/website-laten-maken">
+                    → Website laten maken: de complete gids
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/webdesigner-kiezen">
+                    → Hoe kies je een goede webdesigner?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/website-checklist">
+                    → Website checklist: 30 punten
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/vragen-aan-webdesigner">
+                    → 25 vragen voor je webdesigner
+                  </Link>
+                </li>
               </ul>
             </section>
           </div>
@@ -352,7 +538,10 @@ export default function WatKostEenWebsitePage() {
         {/* FAQ */}
         <section id="faq" className="section-alt">
           <div className="container">
-            <div className="faq-head" style={{ textAlign: "center", margin: "0 auto 3rem" }}>
+            <div
+              className="faq-head"
+              style={{ textAlign: "center", margin: "0 auto 3rem" }}
+            >
               <span className="eyebrow">FAQ</span>
               <h2 className="display-h2">Veelgestelde vragen</h2>
             </div>
@@ -367,9 +556,14 @@ export default function WatKostEenWebsitePage() {
               <span className="eyebrow">Lorent Webworks</span>
               <h2 className="display-h2">Weten wat jouw website kost?</h2>
               <p className="lead" style={{ marginTop: "1rem" }}>
-                Plan een gratis gesprek van 30 minuten. Je krijgt een helder beeld en een vaste prijs. Ik reageer binnen één werkdag.
+                Plan een gratis gesprek van 30 minuten. Je krijgt een helder
+                beeld en een vaste prijs. Ik reageer binnen één werkdag.
               </p>
-              <Link href="/#contact" className="btn btn-primary" style={{ marginTop: "2rem" }}>
+              <Link
+                href="/#contact"
+                className="btn btn-primary"
+                style={{ marginTop: "2rem" }}
+              >
                 Plan een gesprek →
               </Link>
             </div>

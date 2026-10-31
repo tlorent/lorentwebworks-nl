@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { DM_Mono, Manrope } from "next/font/google";
+import { site } from "@/config/site";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -17,33 +18,33 @@ const dmMono = DM_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://lorentwebworks.nl"),
-  title: "Website laten maken voor zzp & MKB | Lorent Webworks Amsterdam",
+  metadataBase: new URL(site.url),
+  title: "Website laten maken voor zzp en mkb | Lorent Webworks Amsterdam",
   description:
-    "Senior frontend engineer Tim Lorent bouwt websites die klanten opleveren — voor zzp'ers en MKB in heel Nederland. Direct contact, geen bureau ertussen.",
+    "Senior frontend engineer Tim Lorent bouwt websites die klanten opleveren, voor zzp'ers en mkb in heel Nederland. Direct contact, geen bureau ertussen.",
   alternates: { canonical: "/" },
   openGraph: {
-    title: "Website laten maken voor zzp & MKB | Lorent Webworks Amsterdam",
+    title: "Website laten maken voor zzp en mkb | Lorent Webworks Amsterdam",
     description:
-      "Websites die klanten opleveren. 8+ jaar ervaring bij bol.com, GrandVision, T-Mobile — nu toegepast voor ZZP en MKB.",
-    url: "https://lorentwebworks.nl",
-    siteName: "Lorent Webworks",
-    locale: "nl_NL",
+      "Websites die klanten opleveren. 8+ jaar ervaring bij bol.com, GrandVision, T-Mobile, nu toegepast voor zzp en mkb.",
+    url: site.url,
+    siteName: site.name,
+    locale: site.locale,
     type: "website",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Lorent Webworks — Websites die klanten opleveren",
+        alt: "Lorent Webworks, websites die klanten opleveren",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Website laten maken voor zzp & MKB | Lorent Webworks",
+    title: "Website laten maken voor zzp en mkb | Lorent Webworks",
     description:
-      "Websites die klanten opleveren. Senior-ervaring, nu toegepast voor ZZP en MKB.",
+      "Websites die klanten opleveren. Senior-ervaring, nu toegepast voor zzp en mkb.",
     images: ["/og-image.png"],
   },
 };
@@ -54,7 +55,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="nl-NL" className={`${manrope.variable} ${dmMono.variable}`}>
+    <html lang="nl" className={`${manrope.variable} ${dmMono.variable}`}>
       <body>{children}</body>
     </html>
   );

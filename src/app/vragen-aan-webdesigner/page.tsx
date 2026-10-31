@@ -72,7 +72,8 @@ export default function VragenAanWebdesignerPage() {
             "@graph": [
               {
                 "@type": "Article",
-                headline: "25 vragen om te stellen voordat je een website laat maken",
+                headline:
+                  "25 vragen om te stellen voordat je een website laat maken",
                 description:
                   "Voorkom verrassingen. 25 vragen om aan een webdesigner of webbouwer te stellen over aanpak, prijs, teksten, SEO, snelheid, eigendom, onderhoud en wat er na oplevering gebeurt.",
                 author: {
@@ -142,9 +143,14 @@ export default function VragenAanWebdesignerPage() {
             </div>
             <div className="guide-header">
               <span className="guide-label">gids</span>
-              <h1 className="display-h1">25 vragen om te stellen voordat je een website laat maken</h1>
+              <h1 className="display-h1">
+                25 vragen om te stellen voordat je een website laat maken
+              </h1>
               <p className="lead" style={{ marginTop: "1.5rem" }}>
-                Het eerste gesprek met een webdesigner of webbouwer bepaalt veel. Met de juiste vragen weet je snel of iemand bij je past, wat je precies krijgt en waar je later niet voor verrast wilt worden. Hieronder vind je 25 vragen, per onderwerp.
+                Het eerste gesprek met een webdesigner of webbouwer bepaalt
+                veel. Met de juiste vragen weet je snel of iemand bij je past,
+                wat je precies krijgt en waar je later niet voor verrast wilt
+                worden. Hieronder vind je 25 vragen, per onderwerp.
               </p>
             </div>
           </div>
@@ -155,7 +161,12 @@ export default function VragenAanWebdesignerPage() {
             <div className="kort-antwoord">
               <h2 className="kort-antwoord-title">Kort antwoord</h2>
               <p>
-                Vraag naar de aanpak ("Hoe ziet het traject eruit?"), de prijs ("Wat zit er wel en niet in?"), de teksten ("Wie schrijft ze?"), vindbaarheid en snelheid ("Hoe snel laadt de site en hoe zit het met SEO?"), eigendom ("Staan domein en site op mijn naam?") en wat er na oplevering gebeurt ("Kan ik zelf dingen aanpassen en zit ik ergens aan vast?").
+                Vraag naar de aanpak ("Hoe ziet het traject eruit?"), de prijs
+                ("Wat zit er wel en niet in?"), de teksten ("Wie schrijft ze?"),
+                vindbaarheid en snelheid ("Hoe snel laadt de site en hoe zit het
+                met SEO?"), eigendom ("Staan domein en site op mijn naam?") en
+                wat er na oplevering gebeurt ("Kan ik zelf dingen aanpassen en
+                zit ik ergens aan vast?").
               </p>
             </div>
           </div>
@@ -166,14 +177,32 @@ export default function VragenAanWebdesignerPage() {
             <div className="guide-toc">
               <h2>In dit artikel</h2>
               <ol>
-                <li><a href="#aanpak">Vragen over ervaring en aanpak</a></li>
-                <li><a href="#prijs">Vragen over prijs en planning</a></li>
-                <li><a href="#teksten">Vragen over teksten en ontwerp</a></li>
-                <li><a href="#seo">Vragen over SEO, snelheid en toegankelijkheid</a></li>
-                <li><a href="#eigendom">Vragen over eigendom en techniek</a></li>
-                <li><a href="#na-oplevering">Vragen over na de oplevering</a></li>
-                <li><a href="#voorbereiden">Wat jij zelf moet voorbereiden</a></li>
-                <li><a href="#faq">Veelgestelde vragen</a></li>
+                <li>
+                  <a href="#aanpak">Vragen over ervaring en aanpak</a>
+                </li>
+                <li>
+                  <a href="#prijs">Vragen over prijs en planning</a>
+                </li>
+                <li>
+                  <a href="#teksten">Vragen over teksten en ontwerp</a>
+                </li>
+                <li>
+                  <a href="#seo">
+                    Vragen over SEO, snelheid en toegankelijkheid
+                  </a>
+                </li>
+                <li>
+                  <a href="#eigendom">Vragen over eigendom en techniek</a>
+                </li>
+                <li>
+                  <a href="#na-oplevering">Vragen over na de oplevering</a>
+                </li>
+                <li>
+                  <a href="#voorbereiden">Wat jij zelf moet voorbereiden</a>
+                </li>
+                <li>
+                  <a href="#faq">Veelgestelde vragen</a>
+                </li>
               </ol>
             </div>
           </div>
@@ -184,37 +213,81 @@ export default function VragenAanWebdesignerPage() {
             <section id="aanpak" className="guide-section">
               <h2 className="display-h3">Vragen over ervaring en aanpak</h2>
               <ol className="guide-list">
-                <li><strong>Voor welke bedrijven heb je eerder gewerkt?</strong> Bij voorkeur in een vergelijkbare branche of grootte.</li>
-                <li><strong>Kun je voorbeelden laten zien met resultaten?</strong> Meer aanvragen, betere vindbaarheid, hogere conversie.</li>
-                <li><strong>Hoe ziet je traject eruit, van eerste gesprek tot livegang?</strong></li>
-                <li><strong>Werk ik rechtstreeks met jou of met iemand anders?</strong></li>
-                <li><strong>Wat heb je van mij nodig, en wanneer?</strong></li>
+                <li>
+                  <strong>Voor welke bedrijven heb je eerder gewerkt?</strong>{" "}
+                  Bij voorkeur in een vergelijkbare branche of grootte.
+                </li>
+                <li>
+                  <strong>Kun je voorbeelden laten zien met resultaten?</strong>{" "}
+                  Meer aanvragen, betere vindbaarheid, hogere conversie.
+                </li>
+                <li>
+                  <strong>
+                    Hoe ziet je traject eruit, van eerste gesprek tot livegang?
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    Werk ik rechtstreeks met jou of met iemand anders?
+                  </strong>
+                </li>
+                <li>
+                  <strong>Wat heb je van mij nodig, en wanneer?</strong>
+                </li>
               </ol>
             </section>
 
             <section id="prijs" className="guide-section">
               <h2 className="display-h3">Vragen over prijs en planning</h2>
               <ol className="guide-list" start={6}>
-                <li><strong>Wat kost het, en wat zit daar precies in?</strong> Aantal pagina's, teksten, SEO, revisierondes, tracking.</li>
-                <li><strong>Wat zit er niet in?</strong> Hosting, domein, foto's, extra pagina's.</li>
-                <li><strong>Hoeveel revisierondes zijn inbegrepen?</strong></li>
-                <li><strong>Wat kost een aanpassing of uitbreiding later?</strong></li>
-                <li><strong>Wanneer staat de site live?</strong> En wat gebeurt er als het uitloopt?</li>
-                <li><strong>Hoe verloopt de betaling?</strong> Vooraf, in termijnen of bij oplevering?</li>
+                <li>
+                  <strong>Wat kost het, en wat zit daar precies in?</strong>{" "}
+                  Aantal pagina's, teksten, SEO, revisierondes, tracking.
+                </li>
+                <li>
+                  <strong>Wat zit er niet in?</strong> Hosting, domein, foto's,
+                  extra pagina's.
+                </li>
+                <li>
+                  <strong>Hoeveel revisierondes zijn inbegrepen?</strong>
+                </li>
+                <li>
+                  <strong>Wat kost een aanpassing of uitbreiding later?</strong>
+                </li>
+                <li>
+                  <strong>Wanneer staat de site live?</strong> En wat gebeurt er
+                  als het uitloopt?
+                </li>
+                <li>
+                  <strong>Hoe verloopt de betaling?</strong> Vooraf, in
+                  termijnen of bij oplevering?
+                </li>
               </ol>
               <p>
-                Een overzicht van gangbare prijzen vind je in <a href="/wat-kost-een-website">wat kost een website laten maken</a>.
+                Een overzicht van gangbare prijzen vind je in{" "}
+                <a href="/wat-kost-een-website">
+                  wat kost een website laten maken
+                </a>
+                .
               </p>
             </section>
 
             <div className="guide-cta-mid">
               <div className="guide-cta-card">
                 <span className="eyebrow">Lorent Webworks</span>
-                <h3 className="display-h3" style={{ marginBottom: "0.75rem" }}>Stel je vragen gewoon aan mij</h3>
+                <h3 className="display-h3" style={{ marginBottom: "0.75rem" }}>
+                  Stel je vragen gewoon aan mij
+                </h3>
                 <p>
-                  In een gratis gesprek van 30 minuten beantwoord ik al je vragen en krijg je een helder beeld van wat er kan, en wat het kost.
+                  In een gratis gesprek van 30 minuten beantwoord ik al je
+                  vragen en krijg je een helder beeld van wat er kan, en wat het
+                  kost.
                 </p>
-                <Link href="/#contact" className="btn btn-primary" style={{ marginTop: "1rem" }}>
+                <Link
+                  href="/#contact"
+                  className="btn btn-primary"
+                  style={{ marginTop: "1rem" }}
+                >
                   Plan een gesprek →
                 </Link>
               </div>
@@ -223,63 +296,147 @@ export default function VragenAanWebdesignerPage() {
             <section id="teksten" className="guide-section">
               <h2 className="display-h3">Vragen over teksten en ontwerp</h2>
               <ol className="guide-list" start={12}>
-                <li><strong>Wie schrijft de teksten?</strong> En zit dat in de prijs?</li>
-                <li><strong>Werk je met een template of ontwerp je op maat?</strong></li>
-                <li><strong>Hoe zorg je dat de site past bij mijn merk en mijn klanten?</strong></li>
-                <li><strong>Krijg ik tussentijds een preview om op te reageren?</strong></li>
+                <li>
+                  <strong>Wie schrijft de teksten?</strong> En zit dat in de
+                  prijs?
+                </li>
+                <li>
+                  <strong>
+                    Werk je met een template of ontwerp je op maat?
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    Hoe zorg je dat de site past bij mijn merk en mijn klanten?
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    Krijg ik tussentijds een preview om op te reageren?
+                  </strong>
+                </li>
               </ol>
             </section>
 
             <section id="seo" className="guide-section">
-              <h2 className="display-h3">Vragen over SEO, snelheid en toegankelijkheid</h2>
+              <h2 className="display-h3">
+                Vragen over SEO, snelheid en toegankelijkheid
+              </h2>
               <ol className="guide-list" start={16}>
-                <li><strong>Wat doe je standaard aan vindbaarheid in Google?</strong> Titels, meta descriptions, structuur, Google Bedrijfsprofiel.</li>
-                <li><strong>Hoe snel laadt de site?</strong> Vraag naar een PageSpeed-score of laadtijd van eerdere projecten.</li>
-                <li><strong>Werkt de site goed op mobiel?</strong></li>
-                <li><strong>Hoe zit het met toegankelijkheid?</strong> Contrast, alt-teksten, bediening met het toetsenbord.</li>
-                <li><strong>Stel je conversietracking in,</strong> zodat ik zie hoeveel aanvragen de site oplevert?</li>
+                <li>
+                  <strong>
+                    Wat doe je standaard aan vindbaarheid in Google?
+                  </strong>{" "}
+                  Titels, meta descriptions, structuur, Google Bedrijfsprofiel.
+                </li>
+                <li>
+                  <strong>Hoe snel laadt de site?</strong> Vraag naar een
+                  PageSpeed-score of laadtijd van eerdere projecten.
+                </li>
+                <li>
+                  <strong>Werkt de site goed op mobiel?</strong>
+                </li>
+                <li>
+                  <strong>Hoe zit het met toegankelijkheid?</strong> Contrast,
+                  alt-teksten, bediening met het toetsenbord.
+                </li>
+                <li>
+                  <strong>Stel je conversietracking in,</strong> zodat ik zie
+                  hoeveel aanvragen de site oplevert?
+                </li>
               </ol>
             </section>
 
             <section id="eigendom" className="guide-section">
               <h2 className="display-h3">Vragen over eigendom en techniek</h2>
               <ol className="guide-list" start={21}>
-                <li><strong>Staan de domeinnaam, hosting en de site zelf op mijn naam?</strong></li>
-                <li><strong>Op welk platform of met welke techniek bouw je de site?</strong> En wat betekent dat voor onderhoud?</li>
-                <li><strong>Kan ik later met de site naar een andere partij?</strong></li>
+                <li>
+                  <strong>
+                    Staan de domeinnaam, hosting en de site zelf op mijn naam?
+                  </strong>
+                </li>
+                <li>
+                  <strong>
+                    Op welk platform of met welke techniek bouw je de site?
+                  </strong>{" "}
+                  En wat betekent dat voor onderhoud?
+                </li>
+                <li>
+                  <strong>
+                    Kan ik later met de site naar een andere partij?
+                  </strong>
+                </li>
               </ol>
             </section>
 
             <section id="na-oplevering" className="guide-section">
               <h2 className="display-h3">Vragen over na de oplevering</h2>
               <ol className="guide-list" start={24}>
-                <li><strong>Kan ik zelf kleine dingen aanpassen,</strong> zoals teksten, foto's en openingstijden? Laat je zien hoe dat werkt?</li>
-                <li><strong>Zit ik na oplevering ergens aan vast?</strong> Een abonnement, onderhoudscontract of minimale looptijd?</li>
+                <li>
+                  <strong>Kan ik zelf kleine dingen aanpassen,</strong> zoals
+                  teksten, foto's en openingstijden? Laat je zien hoe dat werkt?
+                </li>
+                <li>
+                  <strong>Zit ik na oplevering ergens aan vast?</strong> Een
+                  abonnement, onderhoudscontract of minimale looptijd?
+                </li>
               </ol>
             </section>
 
             <section id="voorbereiden" className="guide-section">
               <h2 className="display-h3">Wat jij zelf moet voorbereiden</h2>
-              <p>Een goed gesprek werkt twee kanten op. Zet vooraf op papier:</p>
+              <p>
+                Een goed gesprek werkt twee kanten op. Zet vooraf op papier:
+              </p>
               <ul className="guide-list">
-                <li><strong>Het doel van je website in één zin.</strong></li>
-                <li><strong>Je ideale klant:</strong> wie is het, en wat zoekt die?</li>
-                <li><strong>Twee of drie sites die je goed vindt,</strong> en waarom.</li>
-                <li><strong>Je budget en gewenste livedatum.</strong></li>
-                <li><strong>Wat je al hebt:</strong> logo, huisstijl, foto's, teksten, een bestaande site.</li>
+                <li>
+                  <strong>Het doel van je website in één zin.</strong>
+                </li>
+                <li>
+                  <strong>Je ideale klant:</strong> wie is het, en wat zoekt
+                  die?
+                </li>
+                <li>
+                  <strong>Twee of drie sites die je goed vindt,</strong> en
+                  waarom.
+                </li>
+                <li>
+                  <strong>Je budget en gewenste livedatum.</strong>
+                </li>
+                <li>
+                  <strong>Wat je al hebt:</strong> logo, huisstijl, foto's,
+                  teksten, een bestaande site.
+                </li>
               </ul>
               <p>
-                Zo kan een webbouwer je veel gerichter adviseren, en vergelijk je offertes beter.
+                Zo kan een webbouwer je veel gerichter adviseren, en vergelijk
+                je offertes beter.
               </p>
             </section>
 
             <section className="guide-related">
               <h2 className="display-h3">Meer lezen</h2>
               <ul>
-                <li><Link href="/website-laten-maken">→ Website laten maken: de complete gids</Link></li>
-                <li><Link href="/wat-kost-een-website">→ Wat kost een website laten maken in 2026?</Link></li>
-                <li><Link href="/webdesigner-kiezen">→ Hoe kies je een goede webdesigner?</Link></li>
-                <li><Link href="/website-checklist">→ Website checklist: 30 punten</Link></li>
+                <li>
+                  <Link href="/website-laten-maken">
+                    → Website laten maken: de complete gids
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/wat-kost-een-website">
+                    → Wat kost een website laten maken in 2026?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/webdesigner-kiezen">
+                    → Hoe kies je een goede webdesigner?
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/website-checklist">
+                    → Website checklist: 30 punten
+                  </Link>
+                </li>
               </ul>
             </section>
           </div>
@@ -287,7 +444,10 @@ export default function VragenAanWebdesignerPage() {
 
         <section id="faq" className="section-alt">
           <div className="container">
-            <div className="faq-head" style={{ textAlign: "center", margin: "0 auto 3rem" }}>
+            <div
+              className="faq-head"
+              style={{ textAlign: "center", margin: "0 auto 3rem" }}
+            >
               <span className="eyebrow">FAQ</span>
               <h2 className="display-h2">Veelgestelde vragen</h2>
             </div>
@@ -299,11 +459,19 @@ export default function VragenAanWebdesignerPage() {
           <div className="container">
             <div className="guide-cta-final">
               <span className="eyebrow">Lorent Webworks</span>
-              <h2 className="display-h2">Al je vragen beantwoord in 30 minuten</h2>
+              <h2 className="display-h2">
+                Al je vragen beantwoord in 30 minuten
+              </h2>
               <p className="lead" style={{ marginTop: "1rem" }}>
-                Plan een gratis gesprek. Je krijgt eerlijke antwoorden, een vaste prijs en geen offerte die je over je heen krijgt. Ik reageer binnen één werkdag.
+                Plan een gratis gesprek. Je krijgt eerlijke antwoorden, een
+                vaste prijs en geen offerte die je over je heen krijgt. Ik
+                reageer binnen één werkdag.
               </p>
-              <Link href="/#contact" className="btn btn-primary" style={{ marginTop: "2rem" }}>
+              <Link
+                href="/#contact"
+                className="btn btn-primary"
+                style={{ marginTop: "2rem" }}
+              >
                 Plan een gesprek →
               </Link>
             </div>

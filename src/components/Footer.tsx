@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { site } from "@/config/site";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -20,7 +21,7 @@ export default function Footer() {
             </p>
           </div>
           <div className="footer-col">
-            <h2>Diensten</h2>
+            <p className="footer-col-title">Diensten</p>
             <ul>
               <li>
                 <Link href="/diensten/landingspagina">Landingspagina</Link>
@@ -34,7 +35,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-col">
-            <h2>Gids</h2>
+            <p className="footer-col-title">Gids</p>
             <ul>
               <li>
                 <Link href="/gids">Overzicht</Link>
@@ -52,12 +53,14 @@ export default function Footer() {
                 <Link href="/website-checklist">Website checklist</Link>
               </li>
               <li>
-                <Link href="/vragen-aan-webdesigner">Vragen aan webdesigner</Link>
+                <Link href="/vragen-aan-webdesigner">
+                  Vragen aan webdesigner
+                </Link>
               </li>
             </ul>
           </div>
           <div className="footer-col">
-            <h2>Site</h2>
+            <p className="footer-col-title">Site</p>
             <ul>
               <li>
                 <Link href="/#voor-wie">Voor wie</Link>
@@ -71,7 +74,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-col">
-            <h2>Contact</h2>
+            <p className="footer-col-title">Contact</p>
             <ul>
               <li>
                 <a
@@ -95,10 +98,19 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <span>
-            © {new Date().getFullYear()} Lorent Webworks · Amsterdam, NL
-          </span>
-          <span>KvK op aanvraag · BTW-plichtig</span>
+          <div>
+            <span>
+              © {new Date().getFullYear()} {site.name} · {site.city},{" "}
+              {site.country}
+            </span>
+            <span className="footer-meta-divider">·</span>
+            <span>KvK {site.kvk}</span>
+          </div>
+          <div className="footer-legal-links">
+            <Link href="/privacy">Privacy</Link>
+            <span className="footer-meta-divider">·</span>
+            <Link href="/voorwaarden">Voorwaarden</Link>
+          </div>
         </div>
       </div>
     </footer>

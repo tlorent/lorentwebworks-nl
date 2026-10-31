@@ -134,7 +134,9 @@ export default function GidsPage() {
               <span className="guide-label">overzicht</span>
               <h1 className="display-h1">Gids</h1>
               <p className="lead" style={{ marginTop: "1.5rem" }}>
-                Praktische gidsen over website laten maken, kosten, een webdesigner kiezen en meer. Geschreven voor zzp'ers en mkb'ers die een site willen die klanten oplevert.
+                Praktische gidsen over website laten maken, kosten, een
+                webdesigner kiezen en meer. Geschreven voor zzp'ers en mkb'ers
+                die een site willen die klanten oplevert.
               </p>
             </div>
           </div>
@@ -145,11 +147,7 @@ export default function GidsPage() {
           <div className="container">
             <div className="guides-grid">
               {GUIDES.map((guide) => (
-                <Link
-                  key={guide.slug}
-                  href={guide.slug}
-                  className="guide-card"
-                >
+                <Link key={guide.slug} href={guide.slug} className="guide-card">
                   <div className="guide-card-meta">
                     <span className="guide-card-label">Gids</span>
                     <span className="guide-card-time">{guide.readTime}</span>

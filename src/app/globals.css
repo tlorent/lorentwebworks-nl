@@ -1715,7 +1715,7 @@ footer {
   background: var(--color-amber);
   color: var(--color-ink);
 }
-.service-cta-band .btn:hover {
+.service-cta-band .btn.btn:hover {
   background: #f0b730;
 }
 
