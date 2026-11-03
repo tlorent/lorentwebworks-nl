@@ -2,42 +2,42 @@
 import { Image } from "astro:assets";
 import timPortret from "../../assets/photos/tim-2.jpg";
 import BookButton from "../../components/BookButton.astro";
+import Icon from "../../components/Icon.astro";
+import Pattern from "../../components/Pattern.astro";
 import Schema from "../../components/Schema.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
 import SlotPhoto from "../../components/SlotPhoto.astro";
-import { ownStory } from "../../data/booking.mjs";
 import { personSchema, site } from "../../data/site";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const title = "Over Tim Lorent, senior frontend developer | Lorent Webworks";
+const title = "Over Tim Lorent | Lorent Webworks";
 const description =
-  "Ik ben Tim Lorent, senior frontend developer in Amsterdam. Sinds 2017 bouw ik websites die iets moeten opleveren, voor zzp'ers, mkb en goede doelen.";
+  "Ik ben Tim Lorent, senior frontend developer in Amsterdam. Ik bouw websites voor zzp, mkb en goede doelen met een vaste prijs en duidelijke afspraken.";
 
-// Alinea's uit {{OVER_VERHAAL}}. Zolang de waarde leeg is, valt de sectie weg.
-const storyParagraphs = ownStory
-  .split(/\n\s*\n/)
-  .map((p) => p.trim())
-  .filter(Boolean);
-
-const steps = [
+const werkwijze = [
   {
-    title: "Ik begin bij je doel.",
-    text: "We bepalen eerst wat de site moet opleveren.",
+    kop: "Ik begin bij je doel.",
+    tekst:
+      "Wat moet iemand doen nadat hij op je site is geweest? Bellen, boeken, doneren? Daar bouw ik alles omheen. Soms sneuvelt daardoor je favoriete animatie. Ik help je er graag doorheen.",
   },
   {
-    title: "Je weet vooraf waar je aan toe bent.",
-    text: "Prijs, planning en afbakening spreken we vooraf af.",
+    kop: "Je weet vooraf waar je aan toe bent.",
+    tekst:
+      "We spreken vooraf de prijs, planning en inhoud af. Mijn pakketten hebben grenzen en die staan gewoon op de site.",
   },
   {
-    title: "Alles staat op jouw naam.",
-    text: "Domein, site en accounts blijven van jou.",
+    kop: "Je houdt de sleutels.",
+    tekst:
+      "Domein, site en accounts staan op jouw naam. Voor Impacked bouwde ik bijvoorbeeld een landingspagina die ze daarna zelf konden bijwerken. Zo hoef je mij niet te bellen voor een nieuwe openingstijd.",
   },
 ];
 
 const schema = [
   {
-    "@type": "ProfilePage",
+    "@type": "AboutPage",
     url: `${site.url}/over/`,
     name: title,
+    inLanguage: "nl-NL",
     mainEntity: personSchema,
   },
 ];
@@ -46,55 +46,115 @@ const schema = [
 <BaseLayout title={title} description={description} nav="over" ogType="website">
   <Schema slot="head" data={schema} />
 
-  <header class="container-page pt-14 pb-16 md:pt-20 md:pb-20">
-    <div class="flex flex-wrap items-center gap-x-12 gap-y-10">
-      <div class="min-w-0 grow basis-110">
-        <h1 class="text-display font-stretch-116% text-balance">Hoi, ik ben Tim</h1>
-        <p class="mt-6 max-w-2xl text-intro text-text-soft">
-          Ik ben senior frontend developer in Amsterdam en werk sinds 2017 aan websites die iets moeten opleveren.
-        </p>
+  <header class="relative pt-14 pb-16 md:pt-20 md:pb-24">
+    <Pattern variant="dots" />
+    <div class="relative container-page">
+      <div class="grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-7">
+          <SectionLabel>Over mij</SectionLabel>
+          <h1 class="mt-6 text-display font-stretch-116% text-balance">Hoi, ik ben Tim</h1>
+          <p class="mt-6 max-w-2xl text-intro text-text-soft">
+            Ik bouw websites voor ondernemers en organisaties die liever met hun eigen vak bezig zijn. Mijn vak is
+            toevallig websites bouwen, dus dat komt goed uit.
+          </p>
+        </div>
+        <div class="lg:col-span-5">
+          <Image
+            src={timPortret}
+            alt="Portret van Tim Lorent"
+            width={500}
+            height={625}
+            widths={[320, 500]}
+            sizes="(min-width: 1024px) 40vw, 80vw"
+            class="h-auto w-full max-w-sm rounded-hero lg:ml-auto"
+          />
+        </div>
       </div>
-      <Image src={timPortret} alt="Portret van Tim Lorent" class="h-auto w-56 rounded-hero md:w-72" widths={[224, 288, 500]} sizes="(min-width: 768px) 288px, 224px" />
     </div>
   </header>
 
-  {
-    storyParagraphs.length > 0 && (
-      <section aria-labelledby="verhaal-titel" class="container-page pb-20 md:pb-28">
-        <h2 id="verhaal-titel" class="text-title font-stretch-115%">Mijn verhaal</h2>
-        <div class="mt-8 max-w-3xl space-y-6 text-body-lg text-text-soft">
-          {storyParagraphs.map((p) => <p>{p}</p>)}
-        </div>
-      </section>
-    )
-  }
-
-  <section aria-labelledby="zo-werk-ik" class="container-page pb-20 md:pb-28">
-    <h2 id="zo-werk-ik" class="text-title font-stretch-115%">Zo werk ik</h2>
-    <ul class="mt-8 grid grid-fit-70 gap-4">
-      {
-        steps.map((step) => (
-          <li class="rounded-panel bg-surface p-6 md:p-8">
-            <p class="text-h3 font-stretch-110%">{step.title}</p>
-            <p class="mt-3 text-text-soft">{step.text}</p>
-          </li>
-        ))
-      }
-    </ul>
+  <section aria-labelledby="platforms-titel" class="container-page section-y pt-0">
+    <div class="reveal max-w-3xl">
+      <h2 id="platforms-titel" class="text-h2 font-stretch-115% text-balance">
+        Van grote platforms naar jouw website
+      </h2>
+      <div class="mt-8 flex flex-col gap-6 text-body-lg text-text-soft">
+        <p>
+          Ik was al een nerd voordat ik er geld mee verdiende. Na Informatiekunde aan de Universiteit van Amsterdam en
+          een master Business in Utrecht begon ik als junior developer. Inmiddels heb ik meer dan acht jaar ervaring bij
+          bedrijven als bol., GrandVision, T-Mobile en HEMA, en was ik ook teamlead.
+        </p>
+        <p>
+          Daar leerde ik kijken naar wat een pagina oplevert. Bij GrandVision zorgde een nieuwe functie voor 425
+          betalende klanten uit 13.000 interacties. Sindsdien kan ik geen website meer bezoeken zonder me af te vragen
+          waar mensen afhaken. Heel gezellig op verjaardagen.
+        </p>
+        <p>
+          Grote bedrijven hebben hele teams om dat uit te zoeken. Een coach, restaurant of stichting heeft dat team
+          meestal niet. Die heeft een website die al jaren staat en een agenda die vol zit met het echte werk. Daarom
+          startte ik Lorent Webworks: dezelfde manier van denken, in een vorm die past bij een kleine organisatie.
+        </p>
+      </div>
+    </div>
   </section>
 
-  <section aria-labelledby="waar-titel" class="container-page pb-20 md:pb-28">
-    <h2 id="waar-titel" class="text-title font-stretch-115%">Waar ik heb gewerkt</h2>
-    <p class="mt-6 max-w-3xl text-body-lg text-text-soft">
-      Ik werkte voor HEMA, GrandVision, bol. en T-Mobile. Daarnaast geef ik les bij HackYourFuture.
-    </p>
+  <section aria-labelledby="zo-werk-ik" class="relative section-y bg-surface">
+    <Pattern variant="grid" />
+    <div class="reveal relative container-page">
+      <h2 id="zo-werk-ik" class="text-h2 font-stretch-115% text-balance">Zo werk ik</h2>
+      <ul class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
+        {
+          werkwijze.map((punt) => (
+            <li class="flex flex-col rounded-panel bg-inner p-6 md:p-9">
+              <span class="grid size-11 place-items-center rounded-input bg-surface text-accent-text">
+                <Icon name="check" class="size-5" strokeWidth={2.4} />
+              </span>
+              <p class="mt-6 text-h3 font-stretch-110%">{punt.kop}</p>
+              <p class="mt-4 text-text-soft">{punt.tekst}</p>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="rechtstreeks-titel" class="container-page section-y">
+    <div class="reveal grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-6">
+        <h2 id="rechtstreeks-titel" class="text-h2 font-stretch-115% text-balance">Je werkt rechtstreeks met mij</h2>
+      </div>
+      <div class="max-w-2xl text-body-lg text-text-soft lg:col-span-6">
+        <p>
+          Overdag werk ik als senior frontend developer bij HEMA. Lorent Webworks doe ik daarnaast, met een klein aantal
+          projecten tegelijk. Je spreekt dus altijd mij, en ik plan alleen in wat ik kan waarmaken.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="buiten-titel" class="container-page section-y pt-0">
+    <div class="reveal grid gap-12 lg:grid-cols-12 lg:gap-16">
+      <div class="lg:col-span-6">
+        <h2 id="buiten-titel" class="text-h2 font-stretch-115% text-balance">Als ik geen websites bouw</h2>
+      </div>
+      <div class="max-w-2xl text-body-lg text-text-soft lg:col-span-6">
+        <p>
+          Ik geef frontendles bij HackYourFuture aan mensen die developer willen worden. Via Beyond Commit help ik
+          developers en teams groeien, en ik schreef het e-book <em>From Hello World to Team Lead</em>. Zit ik even niet
+          achter een scherm, dan zit ik achter een ander scherm: ik maak muziek en draai als DJ.
+        </p>
+      </div>
+    </div>
   </section>
 
   <section aria-labelledby="over-cta" class="container-page pb-20 md:pb-28">
     <div class="on-block flex flex-wrap items-center justify-between gap-x-10 gap-y-6 rounded-hero p-6 md:p-12">
       <div class="max-w-2xl">
         <h2 id="over-cta" class="text-heading font-stretch-115%">Benieuwd of we bij elkaar passen?</h2>
-        <p class="mt-3 text-on-block-muted">Plan een gratis kennismaking van 30 minuten.</p>
+        <p class="mt-3 text-on-block-muted">
+          In 30 minuten hoor ik wat je doet en wat je website moet opleveren. Daarna weet je wat het kost en of ik de
+          juiste persoon voor je ben.
+        </p>
       </div>
       <div class="flex flex-wrap items-center gap-4">
         <SlotPhoto name="tim-2" alt="Foto van Tim Lorent" size={56} />

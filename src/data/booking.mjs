@@ -10,9 +10,6 @@ export const btwId = "";
 /** {{HOSTING_PRIJS}}: hostingprijs per maand, bijvoorbeeld "€ 15". */
 export const hostingPrice = "";
 
-/** {{OVER_VERHAAL}}: Tims verhaal voor de over-pagina. Alinea's zijn gescheiden door een lege regel. */
-export const ownStory = "";
-
 /**
  * Waar een kennismakingsknop naartoe gaat.
  * Met een boekingslink gaat de knop naar die link, in een nieuw tabblad.
