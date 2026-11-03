@@ -55,7 +55,7 @@ export const services: Service[] = [
       "Eén revisieronde",
     ],
     notIncluded:
-      "Extra pagina's, een bestaande tool plaatsen, metingen en zelf aanpassen zijn niet inbegrepen.",
+      "Extra pagina's, een bestaande tool plaatsen, metingen en zelf aanpassen.",
     variant: "light",
   },
   {
@@ -76,7 +76,7 @@ export const services: Service[] = [
       "Zelf één soort content bijhouden, zoals nieuws of cases",
     ],
     notIncluded:
-      "Extra pagina's, teksten laten schrijven en extra feedbackrondes zijn niet inbegrepen.",
+      "Extra pagina's, teksten laten schrijven en extra feedbackrondes.",
     variant: "inverse",
   },
 ];

@@ -18,6 +18,13 @@ import ServiceCard from "./ServiceCard.astro";
     <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
       {services.map((service) => <ServiceCard service={service} />)}
     </div>
+    <p class="mt-8">
+      <a
+        href="/tarieven/"
+        class="rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
+        >Bekijk alle tarieven en extra's</a
+      >
+    </p>
     <NonprofitDiscount />
   </div>
 </section>
