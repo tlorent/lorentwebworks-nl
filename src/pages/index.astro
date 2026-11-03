@@ -86,7 +86,12 @@ const schema = [
   <Audiences />
   <Process />
   <Services />
-  <Faq items={faq} number="05" title="Vragen over een website laten maken">
+  <Faq
+    items={faq}
+    number="05"
+    title="Vragen over een website laten maken"
+    photo={{ name: "faq", alt: "Foto van Tim Lorent" }}
+  >
     <div slot="after" class="mt-12 flex justify-center md:mt-14">
       <BookButton />
     </div>

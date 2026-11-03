@@ -5,6 +5,7 @@ import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
+import SlotPhoto from "./SlotPhoto.astro";
 
 const options = [
   { value: "Een landingspagina", id: "landingspagina" },
@@ -27,6 +28,7 @@ const onBlockLink =
     <div class="on-block flex flex-wrap gap-x-12 gap-y-8 rounded-hero p-5 md:p-12">
       <div class="flex min-w-0 grow basis-95 flex-col">
         <SectionLabel number="06" onBlock>Contact</SectionLabel>
+        <SlotPhoto name="contact" alt="Foto van Tim Lorent" size={72} class="mb-6" />
         <h2 id="contact-titel" class="mt-5 text-h2 font-stretch-115% text-balance">
           Vertel me wat je website moet opleveren.
         </h2>

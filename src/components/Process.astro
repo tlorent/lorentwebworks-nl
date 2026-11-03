@@ -1,6 +1,7 @@
 ---
 import BookButton from "./BookButton.astro";
 import SectionHeader from "./SectionHeader.astro";
+import SlotPhoto from "./SlotPhoto.astro";
 
 const steps = [
   {
@@ -50,6 +51,7 @@ const steps = [
     </ol>
 
     <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-20">
+      <SlotPhoto name="aanpak" alt="Foto van Tim Lorent" size={96} />
       <BookButton variant="on-block" />
       <p class="text-on-block-muted">De eerste stap is gratis en duurt 30 minuten.</p>
     </div>

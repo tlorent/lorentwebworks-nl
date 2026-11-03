@@ -1,0 +1,40 @@
+---
+// Kleine, afgeronde foto (72, 96 of 120 pixels) naast tekst.
+// Het bestand komt uit src/assets/photos/<naam>.jpg (of .png, .webp). Ontbreekt het, dan rendert dit niets,
+// zodat er geen lege plek blijft staan.
+import { Image } from "astro:assets";
+
+type Props = {
+  name: string;
+  alt: string;
+  size?: 72 | 96 | 120;
+  class?: string;
+};
+const { name, alt, size = 96, class: className = "" } = Astro.props;
+
+const photos = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/photos/*.{jpg,jpeg,png,webp}",
+  { eager: true },
+);
+const key = Object.keys(photos).find(
+  (path) =>
+    path
+      .split("/")
+      .pop()
+      ?.replace(/\.(jpe?g|png|webp)$/, "") === name,
+);
+const src = key ? photos[key].default : undefined;
+const box = { 72: "size-18", 96: "size-24", 120: "size-30" }[size];
+---
+
+{
+  src && (
+    <Image
+      src={src}
+      alt={alt}
+      width={size}
+      height={size}
+      class:list={["shrink-0 rounded-full object-cover", box, className]}
+    />
+  )
+}
