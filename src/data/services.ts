@@ -184,7 +184,7 @@ export const improvements: {
       "De tien belangrijkste verbeteringen, op volgorde",
       "30 minuten om de verbeteringen door te nemen",
     ],
-    note: "Verrekenbaar bij een opdracht binnen 30 dagen.",
+    note: "",
   },
   {
     name: "Verbeterronde",

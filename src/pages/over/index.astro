@@ -1,7 +1,9 @@
 ---
+import { Image } from "astro:assets";
+import timPortret from "../../assets/photos/tim-2.jpg";
 import BookButton from "../../components/BookButton.astro";
-import Portrait from "../../components/Portrait.astro";
 import Schema from "../../components/Schema.astro";
+import SlotPhoto from "../../components/SlotPhoto.astro";
 import { ownStory } from "../../data/booking.mjs";
 import { personSchema, site } from "../../data/site";
 import BaseLayout from "../../layouts/BaseLayout.astro";
@@ -52,7 +54,7 @@ const schema = [
           Ik ben senior frontend developer in Amsterdam en werk sinds 2017 aan websites die iets moeten opleveren.
         </p>
       </div>
-      <Portrait size={120} class="size-44 rounded-hero md:size-60" />
+      <Image src={timPortret} alt="Portret van Tim Lorent" class="h-auto w-56 rounded-hero md:w-72" widths={[224, 288, 500]} sizes="(min-width: 768px) 288px, 224px" />
     </div>
   </header>
 
@@ -94,7 +96,10 @@ const schema = [
         <h2 id="over-cta" class="text-heading font-stretch-115%">Benieuwd of we bij elkaar passen?</h2>
         <p class="mt-3 text-on-block-muted">Plan een gratis kennismaking van 30 minuten.</p>
       </div>
-      <BookButton base="/" variant="on-block" />
+      <div class="flex flex-wrap items-center gap-4">
+        <SlotPhoto name="tim-2" alt="Foto van Tim Lorent" size={56} />
+        <BookButton base="/" variant="on-block" />
+      </div>
     </div>
   </section>
 </BaseLayout>

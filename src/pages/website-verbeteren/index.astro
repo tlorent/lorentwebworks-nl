@@ -4,6 +4,7 @@ import Icon from "../../components/Icon.astro";
 import Pattern from "../../components/Pattern.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
+import SlotPhoto from "../../components/SlotPhoto.astro";
 import { formatPrice, improvements } from "../../data/services";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
@@ -47,7 +48,8 @@ const stappen = [
   </section>
 
   <section aria-labelledby="diensten-verbeteren" class="relative section-y">
-    <div class="reveal container-page">
+    <Pattern variant="dots" />
+    <div class="reveal relative container-page">
       <SectionHeader number="01" label="Diensten" titleId="diensten-verbeteren">
         <Fragment slot="title">Kies de hulp die bij je past</Fragment>
         <Fragment slot="lead">Drie diensten met een vaste prijs. Je weet vooraf wat je krijgt.</Fragment>
@@ -153,7 +155,8 @@ const stappen = [
   </section>
 
   <section aria-labelledby="zo-werkt-het" class="relative section-y">
-    <div class="reveal container-page">
+    <Pattern variant="grid" />
+    <div class="reveal relative container-page">
       <SectionHeader number="03" label="Werkwijze" titleId="zo-werkt-het">
         <Fragment slot="title">Zo werkt het</Fragment>
         <Fragment slot="lead">Vier stappen, van kennismaking tot overzicht van de wijzigingen.</Fragment>
@@ -180,7 +183,10 @@ const stappen = [
           Plan een gratis kennismaking van 30 minuten. Dan kijken we samen welke dienst bij je site past.
         </p>
       </div>
-      <BookButton base="/" variant="on-block" />
+      <div class="flex flex-wrap items-center gap-4">
+        <SlotPhoto name="tim-2" alt="Foto van Tim Lorent" size={56} />
+        <BookButton base="/" variant="on-block" />
+      </div>
     </div>
   </section>
 </BaseLayout>

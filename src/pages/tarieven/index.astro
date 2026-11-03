@@ -5,6 +5,7 @@ import Pattern from "../../components/Pattern.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
+import SlotPhoto from "../../components/SlotPhoto.astro";
 import { hostingPrice } from "../../data/booking.mjs";
 import {
   extras,
@@ -38,7 +39,8 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
   </section>
 
   <section aria-labelledby="pakketten-titel" class="relative section-y">
-    <div class="reveal container-page">
+    <Pattern variant="dots" />
+    <div class="reveal relative container-page">
       <SectionHeader number="01" label="Pakketten" titleId="pakketten-titel">
         <Fragment slot="title">Twee pakketten met een vaste prijs</Fragment>
         <Fragment slot="lead"
@@ -95,7 +97,8 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
   </section>
 
   <section aria-labelledby="extras-titel" class="relative section-y">
-    <div class="reveal container-page">
+    <Pattern variant="grid" />
+    <div class="reveal relative container-page">
       <SectionHeader number="03" label="Extra's" titleId="extras-titel">
         <Fragment slot="title">Extra's die je erbij kunt nemen</Fragment>
         <Fragment slot="lead">Los te bestellen, naast een pakket. Je kiest alleen wat je nodig hebt.</Fragment>
@@ -149,7 +152,10 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
           Plan een gratis kennismaking van 30 minuten. We bespreken je doel en wat het kost voordat je iets kiest.
         </p>
       </div>
-      <BookButton base="/" variant="on-block" />
+      <div class="flex flex-wrap items-center gap-4">
+        <SlotPhoto name="tim-2" alt="Foto van Tim Lorent" size={56} />
+        <BookButton base="/" variant="on-block" />
+      </div>
     </div>
   </section>
 </BaseLayout>

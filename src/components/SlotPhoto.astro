@@ -7,7 +7,7 @@ import { Image } from "astro:assets";
 type Props = {
   name: string;
   alt: string;
-  size?: 72 | 96 | 120;
+  size?: 56 | 72 | 96 | 120;
   class?: string;
 };
 const { name, alt, size = 96, class: className = "" } = Astro.props;
@@ -24,7 +24,9 @@ const key = Object.keys(photos).find(
       ?.replace(/\.(jpe?g|png|webp)$/, "") === name,
 );
 const src = key ? photos[key].default : undefined;
-const box = { 72: "size-18", 96: "size-24", 120: "size-30" }[size];
+const box = { 56: "size-14", 72: "size-18", 96: "size-24", 120: "size-30" }[
+  size
+];
 ---
 
 {
