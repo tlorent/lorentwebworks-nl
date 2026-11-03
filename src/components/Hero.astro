@@ -16,10 +16,17 @@ import Portrait from "./Portrait.astro";
     <div class="mt-12 flex flex-wrap items-end justify-between gap-x-18 gap-y-8 border-t border-border-strong pt-8 md:mt-16">
       <div class="flex max-w-2xl grow basis-110 items-start gap-4 md:gap-5">
         <Portrait size={88} class="size-16 rounded-card md:size-22" />
-        <p class="text-lead text-text-soft">
-          Voor zzp'ers, mkb en goede doelen die hun website willen uitbesteden. Vaste prijs vooraf, live binnen 5
-          werkdagen tot 4 weken, en alles op jouw naam.
-        </p>
+        <div>
+          <p class="text-lead text-text-soft">
+            Voor zzp'ers, mkb en goede doelen die hun website willen uitbesteden. Vaste prijs vooraf, live binnen 5
+            werkdagen tot 4 weken, en alles op jouw naam.
+          </p>
+          <a
+            href="/over/"
+            class="mt-4 inline-block rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
+            >Meer over mij</a
+          >
+        </div>
       </div>
 
       <div class="flex w-full flex-col gap-4 sm:w-auto">
