@@ -1,9 +1,8 @@
 ---
-type Props = { number?: string; onBlock?: boolean; class?: string };
-const { number, onBlock = false, class: className = "" } = Astro.props;
+type Props = { onBlock?: boolean; class?: string };
+const { onBlock = false, class: className = "" } = Astro.props;
 ---
 
 <p class:list={["text-label font-semibold", onBlock ? "text-on-block-muted" : "text-text", className]}>
-  {number && <span class={onBlock ? "text-on-block" : "text-accent-text"}>({number}) </span>}
   <slot />
 </p>

@@ -2,24 +2,17 @@
 import SectionLabel from "./SectionLabel.astro";
 
 type Props = {
-  number: string;
   label: string;
   titleId: string;
   onBlock?: boolean;
   class?: string;
 };
-const {
-  number,
-  label,
-  titleId,
-  onBlock = false,
-  class: className = "",
-} = Astro.props;
+const { label, titleId, onBlock = false, class: className = "" } = Astro.props;
 ---
 
 <div class:list={["flex flex-wrap items-end justify-between gap-x-16 gap-y-6", className]}>
   <div class="max-w-3xl grow basis-130">
-    <SectionLabel number={number} onBlock={onBlock}>{label}</SectionLabel>
+    <SectionLabel onBlock={onBlock}>{label}</SectionLabel>
     <h2 id={titleId} class="mt-5 text-h2 font-stretch-115% text-balance">
       <slot name="title" />
     </h2>

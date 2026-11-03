@@ -2,6 +2,7 @@
 // Korte kennismaking op de homepage, direct onder de strook met bedrijfsnamen.
 import { Image } from "astro:assets";
 import timPortret from "../assets/tim.jpg";
+import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
 
 const punten = [
@@ -12,7 +13,8 @@ const punten = [
 ---
 
 <section id="over" aria-labelledby="over-titel" class="relative section-y">
-  <div class="reveal container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
+  <Pattern variant="dots" />
+  <div class="reveal relative container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
     <div class="lg:col-span-5">
       <Image
         src={timPortret}
@@ -23,7 +25,7 @@ const punten = [
       />
     </div>
     <div class="lg:col-span-7">
-      <SectionLabel number="01">Over mij</SectionLabel>
+      <SectionLabel>Over mij</SectionLabel>
       <p class="mt-5 text-lead font-semibold">Hoi, ik ben Tim van Lorent Webworks</p>
       <h2 id="over-titel" class="mt-5 text-h2 font-stretch-115% text-balance">
         Ervaring van grote merken, op de schaal van jouw zaak

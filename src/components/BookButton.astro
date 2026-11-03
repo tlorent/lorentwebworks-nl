@@ -6,8 +6,10 @@ import { bookingLink } from "../data/booking.mjs";
 import Button from "./Button.astro";
 
 type Props = Omit<HTMLAttributes<"a">, "href"> & {
-  /** "/" op pagina's die niet de homepage zijn, zodat #contact naar de homepage wijst. */
+  /** "/" op pagina's die niet de homepage zijn, zodat het formulier op de homepage wordt geopend. */
   base?: string;
+  /** Dienst die in het formulier wordt gekozen. Zonder dienst: 'weet-niet'. */
+  dienst?: string;
   label?: string;
   variant?: "primary" | "secondary" | "on-block" | "inverse";
   size?: "sm" | "compact" | "md" | "lg";
@@ -17,6 +19,7 @@ type Props = Omit<HTMLAttributes<"a">, "href"> & {
 };
 const {
   base = "",
+  dienst = "weet-niet",
   label = "Plan een kennismaking",
   variant = "primary",
   size = "md",
@@ -25,7 +28,7 @@ const {
   class: className = "",
   ...rest
 } = Astro.props;
-const link = bookingLink(base);
+const link = bookingLink(base, dienst);
 ---
 
 <Button
@@ -37,6 +40,7 @@ const link = bookingLink(base);
   class={className}
   target={link.external ? "_blank" : undefined}
   rel={link.external ? "noopener" : undefined}
+  data-dienst-link={!link.external && base === "" ? dienst : undefined}
   {...rest}
 >
   {label}

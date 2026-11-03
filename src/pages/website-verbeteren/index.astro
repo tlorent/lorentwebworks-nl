@@ -50,7 +50,7 @@ const stappen = [
   <section aria-labelledby="diensten-verbeteren" class="relative section-y">
     <Pattern variant="dots" />
     <div class="reveal relative container-page">
-      <SectionHeader number="01" label="Diensten" titleId="diensten-verbeteren">
+      <SectionHeader label="Diensten" titleId="diensten-verbeteren">
         <Fragment slot="title">Kies de hulp die bij je past</Fragment>
         <Fragment slot="lead">Drie diensten met een vaste prijs. Je weet vooraf wat je krijgt.</Fragment>
       </SectionHeader>
@@ -99,6 +99,7 @@ const stappen = [
 
                 <BookButton
                   base="/"
+                  dienst="verbeteren"
                   variant={inverse ? "inverse" : "primary"}
                   full
                   size="lg"
@@ -115,7 +116,7 @@ const stappen = [
 
   <section aria-labelledby="afbakening" class="relative section-y bg-surface">
     <div class="reveal container-page">
-      <SectionHeader number="02" label="Afbakening" titleId="afbakening">
+      <SectionHeader label="Afbakening" titleId="afbakening">
         <Fragment slot="title">Wat past en wat niet</Fragment>
         <Fragment slot="lead">Zo weet je vooraf waar je aan toe bent.</Fragment>
       </SectionHeader>
@@ -157,7 +158,7 @@ const stappen = [
   <section aria-labelledby="zo-werkt-het" class="relative section-y">
     <Pattern variant="grid" />
     <div class="reveal relative container-page">
-      <SectionHeader number="03" label="Werkwijze" titleId="zo-werkt-het">
+      <SectionHeader label="Werkwijze" titleId="zo-werkt-het">
         <Fragment slot="title">Zo werkt het</Fragment>
         <Fragment slot="lead">Vier stappen, van kennismaking tot overzicht van de wijzigingen.</Fragment>
       </SectionHeader>
