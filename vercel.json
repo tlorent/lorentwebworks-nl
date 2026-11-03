@@ -15,7 +15,42 @@
       "permanent": true
     },
     {
+      "source": "/diensten/landingspagina",
+      "destination": "/tarieven/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten/landingspagina/",
+      "destination": "/tarieven/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten/bedrijfswebsite",
+      "destination": "/tarieven/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten/bedrijfswebsite/",
+      "destination": "/tarieven/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten/website-audit",
+      "destination": "/website-verbeteren/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten/website-audit/",
+      "destination": "/website-verbeteren/",
+      "permanent": true
+    },
+    {
       "source": "/website-laten-maken",
+      "destination": "/gids/website-laten-maken/",
+      "permanent": true
+    },
+    {
+      "source": "/website-laten-maken/",
       "destination": "/gids/website-laten-maken/",
       "permanent": true
     },
@@ -25,7 +60,17 @@
       "permanent": true
     },
     {
+      "source": "/wat-kost-een-website/",
+      "destination": "/gids/wat-kost-een-website/",
+      "permanent": true
+    },
+    {
       "source": "/webdesigner-kiezen",
+      "destination": "/gids/webdesigner-kiezen/",
+      "permanent": true
+    },
+    {
+      "source": "/webdesigner-kiezen/",
       "destination": "/gids/webdesigner-kiezen/",
       "permanent": true
     },
@@ -35,7 +80,17 @@
       "permanent": true
     },
     {
+      "source": "/website-checklist/",
+      "destination": "/gids/website-checklist/",
+      "permanent": true
+    },
+    {
       "source": "/vragen-aan-webdesigner",
+      "destination": "/gids/vragen-aan-webdesigner/",
+      "permanent": true
+    },
+    {
+      "source": "/vragen-aan-webdesigner/",
       "destination": "/gids/vragen-aan-webdesigner/",
       "permanent": true
     },

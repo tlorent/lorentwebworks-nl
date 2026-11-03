@@ -24,7 +24,7 @@ export const audiences: Audience[] = [
     goal: "Doel: kennismakingsgesprekken",
     want: "Opdrachtgevers willen zien dat je hun vraagstuk begrijpt voordat ze contact opnemen.",
     approach:
-      "Ik zet je expertise, werkwijze en resultaten helder neer en koppel je agenda, zodat een gesprek plannen één klik is.",
+      "Ik zet je expertise, werkwijze en resultaten helder neer en plaats je online agenda, zodat een gesprek plannen één klik is.",
     icon: "chat",
   },
   {
@@ -40,7 +40,7 @@ export const audiences: Audience[] = [
     goal: "Doel: donaties en vrijwilligers",
     want: "Je wilt dat bezoekers je missie snappen en meteen kunnen bijdragen.",
     approach:
-      "Ik laat je impact zien met verhalen en cijfers, koppel je doneerplatform en maak aanmelden als vrijwilliger eenvoudig.",
+      "Ik laat je impact zien met verhalen en cijfers, plaats de doneerknop van je eigen platform en maak aanmelden als vrijwilliger eenvoudig.",
     icon: "heart",
   },
   {
@@ -48,7 +48,7 @@ export const audiences: Audience[] = [
     goal: "Doel: reserveringen",
     want: "Gasten willen de kaart zien, de sfeer proeven en een tafel boeken, meestal op hun telefoon.",
     approach:
-      "Ik bouw een snelle mobiele site met menukaart, openingstijden, sfeerbeelden en je reserveringssysteem direct op de pagina.",
+      "Ik bouw een snelle mobiele site met menukaart, openingstijden, sfeerbeelden en de reserveerknop van je eigen systeem.",
     icon: "cutlery",
   },
   {
@@ -64,7 +64,7 @@ export const audiences: Audience[] = [
     goal: "Doel: afspraken en winkelbezoek",
     want: "Klanten willen weten wat je aanbiedt, waar je zit en wanneer ze terecht kunnen.",
     approach:
-      "Ik zet je aanbod, prijzen, route en openingstijden overzichtelijk neer en koppel je boekingssysteem, zodat je ook goed gevonden wordt in de buurt.",
+      "Ik zet je aanbod, prijzen, route en openingstijden overzichtelijk neer, met de boekingsknop van je eigen systeem. Zo word je ook in de buurt goed gevonden.",
     icon: "store",
   },
   {

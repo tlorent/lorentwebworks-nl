@@ -9,12 +9,12 @@ intro: "Het eerste gesprek met een webdesigner of webbouwer bepaalt veel. Met de
 slug: "vragen-aan-webdesigner"
 readingTime: 10
 published: 2026-01-15
-updated: 2026-01-15
+updated: 2026-11-03
 order: 5
 cta:
   title: "Al je vragen beantwoord in 30 minuten"
-  text: "Plan een gratis gesprek. Je krijgt eerlijke antwoorden, een vaste prijs en geen offerte die je over je heen krijgt. Ik reageer binnen één werkdag."
-  button: "Plan een gesprek"
+  text: "Plan een gratis kennismaking van 30 minuten. Je krijgt eerlijke antwoorden, een vaste prijs en geen offerte die je over je heen krijgt. Ik reageer binnen één werkdag."
+  button: "Plan een kennismaking"
   href: "/#contact"
 faq:
   - q: "Wat moet ik vragen aan een webdesigner?"
@@ -54,8 +54,8 @@ Een overzicht van gangbare prijzen vind je in [wat kost een website laten maken]
 <aside class="callout">
 <p>Lorent Webworks</p>
 <h3>Stel je vragen gewoon aan mij</h3>
-<p>In een gratis gesprek van 30 minuten beantwoord ik al je vragen en krijg je een helder beeld van wat er kan, en wat het kost.</p>
-<p><a href="/#contact">Plan een gesprek →</a></p>
+<p>In een gratis kennismaking van 30 minuten beantwoord ik al je vragen en krijg je een helder beeld van wat er kan, en wat het kost.</p>
+<p><a href="/#contact">Plan een kennismaking →</a></p>
 </aside>
 
 ## Vragen over teksten en ontwerp

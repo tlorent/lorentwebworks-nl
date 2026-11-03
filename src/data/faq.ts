@@ -1,13 +1,17 @@
+import { formatPrice, nonprofitDiscount, services } from "./services";
+
 export type FaqItem = { q: string; a: string };
+
+const [lp, bw] = services;
 
 export const faq: FaqItem[] = [
   {
     q: "Wat kost een website laten maken?",
-    a: "Een landingspagina kost bij mij vanaf €850 en een complete website van vier tot zes pagina's vanaf €1.750. Beide bedragen zijn eenmalig en excl. btw. Goede doelen en ngo's krijgen 20% korting.",
+    a: `Een landingspagina kost bij mij vanaf ${formatPrice(lp.price)} en een complete website van vier tot zes pagina's vanaf ${formatPrice(bw.price)}. Beide bedragen zijn eenmalig en excl. btw. Goede doelen en ngo's krijgen ${nonprofitDiscount}% korting.`,
   },
   {
     q: "Hoe lang duurt het?",
-    a: "Een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. Dat tempo halen we als je input en foto's op tijd binnen zijn.",
+    a: `Een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. Dat tempo halen we als je input en foto's op tijd binnen zijn.`,
   },
   {
     q: "Moet ik zelf de teksten schrijven?",
@@ -31,7 +35,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Krijgen goede doelen korting?",
-    a: "Ja, 20% op de Landingspagina en de Bedrijfswebsite. Je stuurt een ANBI-beschikking of een KvK-inschrijving als stichting of vereniging mee.",
+    a: `Ja, ${nonprofitDiscount}% op de Landingspagina en de Bedrijfswebsite. Je stuurt een ANBI-beschikking of een KvK-inschrijving als stichting of vereniging mee.`,
   },
   {
     q: "Werk je alleen in Amsterdam?",

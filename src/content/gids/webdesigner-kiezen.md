@@ -9,12 +9,12 @@ intro: "Er zijn duizenden webdesigners en webbouwers in Nederland, van studenten
 slug: "webdesigner-kiezen"
 readingTime: 10
 published: 2026-01-15
-updated: 2026-01-15
+updated: 2026-11-03
 order: 3
 cta:
   title: "Laten we eens praten"
-  text: "Een gesprek van 30 minuten over wat beter kan aan je website. Zonder verplichtingen, en ik reageer binnen één werkdag."
-  button: "Plan een gesprek"
+  text: "Een kennismaking van 30 minuten over wat beter kan aan je website. Zonder verplichtingen, en ik reageer binnen één werkdag."
+  button: "Plan een kennismaking"
   href: "/#contact"
 faq:
   - q: "Waar vind ik een goede webdesigner?"
@@ -64,7 +64,7 @@ Scroll naar de footer van een site die je mooi en duidelijk vindt. Vaak staat de
 <p>Lorent Webworks</p>
 <h3>Senior ervaring, direct contact</h3>
 <p>8+ jaar ervaring bij bol.com, GrandVision en T-Mobile, nu voor zzp en mkb. Je werkt rechtstreeks met mij, van eerste gesprek tot livegang.</p>
-<p><a href="/#contact">Plan een gratis gesprek →</a></p>
+<p><a href="/#contact">Plan een kennismaking →</a></p>
 </aside>
 
 ## Freelancer of bureau?

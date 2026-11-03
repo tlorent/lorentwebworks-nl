@@ -9,7 +9,7 @@ intro: "Je hebt een website, maar de aanvragen blijven uit. Waar ligt het aan? M
 slug: "website-checklist"
 readingTime: 15
 published: 2026-01-15
-updated: 2026-01-15
+updated: 2026-11-03
 order: 4
 cta:
   title: "Benieuwd hoe jouw site scoort?"
@@ -64,7 +64,7 @@ Een website die klanten oplevert, maakt binnen vijf seconden duidelijk wat je do
 
 ## Snelheid en techniek
 
-15. **Laadt je site snel?** Test hem in Google PageSpeed Insights. Ik streef naar een score van 95 of hoger en een laadtijd onder de twee seconden.
+15. **Laadt je site snel?** Test hem in Google PageSpeed Insights. Ik bouw sites die snel laden, ook op mobiel.
 16. **Zijn afbeeldingen gecomprimeerd** en in een modern formaat zoals WebP of AVIF?
 17. **Haal je de Core Web Vitals?** Google kijkt naar laadsnelheid (LCP onder 2,5 seconde), reactiesnelheid (INP onder 200 milliseconden) en visuele stabiliteit (CLS onder 0,1).
 18. **Werken alle links en formulieren?** Test je contactformulier zelf.

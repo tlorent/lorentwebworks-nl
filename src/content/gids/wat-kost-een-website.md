@@ -9,12 +9,12 @@ intro: "\"Wat kost een website?\" is een van de meest gestelde vragen van ondern
 slug: "wat-kost-een-website"
 readingTime: 8
 published: 2026-01-15
-updated: 2026-01-15
+updated: 2026-11-03
 order: 2
 cta:
   title: "Weten wat jouw website kost?"
-  text: "Plan een gratis gesprek van 30 minuten. Je krijgt een helder beeld en een vaste prijs. Ik reageer binnen één werkdag."
-  button: "Plan een gesprek"
+  text: "Plan een gratis kennismaking van 30 minuten. Je krijgt een helder beeld en een vaste prijs. Ik reageer binnen één werkdag."
+  button: "Plan een kennismaking"
   href: "/#contact"
 faq:
   - q: "Wat kost een simpele website?"
@@ -44,9 +44,9 @@ De bedragen zijn indicaties voor een standaard bedrijfswebsite in Nederland. Web
 
 ### Lorent Webworks
 
-- **De Landingspagina:** vanaf € 850 excl. btw, eenmalig, binnen 5 werkdagen. Een strategisch gesprek, een pagina op maat met teksten van mij, geoptimaliseerd voor Google, snel en mobielvriendelijk, één revisieronde.
+- **De Landingspagina:** vanaf € 850 excl. btw, eenmalig, binnen 5 werkdagen. Een kennismakingsgesprek, een pagina op maat op basis van jouw teksten, opgezet om gevonden te worden, snel op mobiel en één revisieronde.
 - **De Bedrijfswebsite:** vanaf € 1.750 excl. btw, eenmalig. Alles uit de landingspagina, plus 4 tot 6 pagina's, SEO per pagina, conversietracking en twee revisierondes.
-- **Gratis kennismaking:** 30 minuten, bij jou, met koffie of via video. Je krijgt een helder beeld van wat er kan en wat het kost.
+- **Gratis kennismaking:** 30 minuten via video. In en rond Amsterdam kan het ook bij jou op locatie. Je krijgt een helder beeld van wat er kan en wat het kost.
 
 ## Wat bepaalt de prijs?
 

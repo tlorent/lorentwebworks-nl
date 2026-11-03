@@ -9,22 +9,22 @@ intro: "Een website laten maken voelt voor veel ondernemers als een sprong in he
 slug: "website-laten-maken"
 readingTime: 12
 published: 2026-01-15
-updated: 2026-01-15
+updated: 2026-11-03
 order: 1
 cta:
   title: "Klaar voor een website die klanten oplevert?"
-  text: "Plan een gratis gesprek van 30 minuten. Je krijgt een helder beeld van wat er kan, zonder verplichtingen. Ik reageer binnen één werkdag."
-  button: "Plan een gesprek"
+  text: "Plan een gratis kennismaking van 30 minuten. Je krijgt een helder beeld van wat er kan, zonder verplichtingen. Ik reageer binnen één werkdag."
+  button: "Plan een kennismaking"
   href: "/#contact"
 faq:
   - q: "Wat kost een website laten maken voor een zzp'er?"
     a: "Bij een freelancer betaal je voor een kleine, professionele bedrijfswebsite grofweg € 800 tot € 3.000. Bij een bureau begin je vaak rond € 4.000."
   - q: "Hoe lang duurt het om een website te laten maken?"
-    a: "Een landingspagina kan binnen een week live staan. Een bedrijfswebsite van 4 tot 6 pagina's duurt meestal 2 tot 4 weken, afhankelijk van hoe snel teksten en beelden klaar zijn."
+    a: "Een landingspagina staat binnen 5 werkdagen live. Een bedrijfswebsite van 4 tot 6 pagina's duurt meestal 3 tot 4 weken, afhankelijk van hoe snel teksten en beelden klaar zijn."
   - q: "Is een websitebouwer zoals Wix genoeg?"
     a: "Voor een eenvoudige site kan dat prima, als je zelf de tijd hebt. Een professional helpt vooral bij strategie, teksten, snelheid en vindbaarheid, en bespaart je veel uren."
   - q: "Moet ik zelf de teksten schrijven?"
-    a: "Dat hoeft niet. Veel webbouwers bieden copywriting aan. Bij mij zitten de teksten in de pakketten."
+    a: "Dat hoeft niet. Jij levert de teksten aan en ik help waar nodig. Wil je het schrijven helemaal uit handen geven? Dan schrijf ik de teksten tegen een meerprijs."
   - q: "Wat moet er op een bedrijfswebsite staan?"
     a: "Minimaal een homepage met heldere boodschap, een pagina over je diensten, iets over jou of je team, bewijs zoals reviews, en een makkelijke manier om contact op te nemen."
 ---
@@ -82,7 +82,7 @@ Reviews, logo's van klanten, voor-en-na-foto's, cijfers. Bewijs maakt de stap na
 
 ### Snelheid
 
-Een trage site kost bezoekers, zeker op mobiel. Ik bouw sites die in Google PageSpeed Insights 95 of hoger scoren en binnen twee seconden laden.
+Een trage site kost bezoekers, zeker op mobiel. Ik bouw sites die snel laden, ook op mobiel.
 
 ### Vindbaarheid
 
@@ -100,9 +100,9 @@ Een contactformulier met weinig velden, een klikbaar telefoonnummer, een WhatsAp
 
 Bij mij verloopt een project in drie stappen:
 
-1. **We spreken af.** Een kop koffie, videocall of ik kom bij je langs. Ik stel scherpe vragen over je bedrijf, je klanten en wat de site moet doen. Dat gesprek duurt 30 tot 60 minuten en is gratis.
+1. **We spreken af.** We bellen via video. Zit je in of rond Amsterdam, dan kom ik ook graag langs. Ik stel scherpe vragen over je bedrijf, je klanten en wat de site moet doen. Dat gesprek duurt 30 minuten en is gratis.
 2. **Ik bouw.** Structuur, teksten, ontwerp en techniek neem ik voor mijn rekening. Je krijgt tussentijds een preview om op te reageren.
-3. **Live en opleveren.** De site gaat live, analytics draait en ik laat je zien hoe je zelf kleine dingen aanpast. Jij houdt de sleutels.
+3. **Live en opleveren.** De site gaat live en ik laat je zien hoe je zelf kleine dingen aanpast. Bij de Bedrijfswebsite stel ik ook metingen in. Jij houdt de sleutels.
 
 Bij een ander traject ziet het er vaak vergelijkbaar uit, met soms extra stappen voor ontwerp, contentcreatie of fotografie.
 
@@ -115,7 +115,7 @@ Mijn eigen startpunten:
 - **De Landingspagina:** één scherpe pagina, vanaf € 850 excl. btw, binnen 5 werkdagen.
 - **De Bedrijfswebsite:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf € 1.750 excl. btw.
 
-Qua doorlooptijd: een landingspagina staat binnen een week live, een bedrijfswebsite binnen 2 tot 4 weken. De grootste vertraging zit meestal in het aanleveren van teksten en foto's, dus begin daar op tijd mee.
+Qua doorlooptijd: een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. De grootste vertraging zit meestal in het aanleveren van teksten en foto's, dus begin daar op tijd mee.
 
 ## Na de oplevering
 

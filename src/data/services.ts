@@ -1,3 +1,16 @@
+// Alle prijzen, pakketinhoud en extra's. Wijzig prijzen alleen hier; de site rekent de rest uit.
+
+const priceFormat = new Intl.NumberFormat("nl-NL", {
+  style: "currency",
+  currency: "EUR",
+  maximumFractionDigits: 0,
+});
+
+/** Bijvoorbeeld "€ 1.750". */
+export function formatPrice(price: number): string {
+  return priceFormat.format(price);
+}
+
 export type Service = {
   id: "landingspagina" | "bedrijfswebsite";
   label: string;
@@ -6,7 +19,22 @@ export type Service = {
   price: number;
   duration: string;
   included: string[];
+  notIncluded: string;
   variant: "light" | "inverse";
+};
+
+export const prices = {
+  landingspagina: 850,
+  bedrijfswebsite: 1750,
+  extraPagina: 295,
+  teksten: 150,
+  tool: 95,
+  zelfAanpassen: 295,
+  extraRonde: 125,
+  googleProfiel: 125,
+  websitecheck: 195,
+  verbeterronde: 595,
+  vraaguur: 125,
 };
 
 export const services: Service[] = [
@@ -16,7 +44,7 @@ export const services: Service[] = [
     name: "De Landingspagina",
     description:
       "Eén pagina die in een paar seconden laat zien wat je doet en bezoekers laat contact opnemen. Ideaal als je snel online wilt.",
-    price: 850,
+    price: prices.landingspagina,
     duration: "Live binnen 5 werkdagen",
     included: [
       "Kennismakingsgesprek over doel en doelgroep",
@@ -26,6 +54,8 @@ export const services: Service[] = [
       "Snel en prettig op mobiel",
       "Eén revisieronde",
     ],
+    notIncluded:
+      "Extra pagina's, een bestaande tool plaatsen, metingen en zelf aanpassen zijn niet inbegrepen.",
     variant: "light",
   },
   {
@@ -34,25 +64,128 @@ export const services: Service[] = [
     name: "De Bedrijfswebsite",
     description:
       "Vier tot zes pagina's voor als je meer te vertellen hebt: je diensten, je werkwijze, jezelf of je team.",
-    price: 1750,
+    price: prices.bedrijfswebsite,
     duration: "Live binnen 3 tot 4 weken",
     included: [
       "Alles uit de Landingspagina",
       "4 tot 6 pagina's op maat",
       "SEO per pagina",
       "Metingen die laten zien wat de site oplevert",
+      "1 bestaande boekings-, doneer- of nieuwsbrieftool plaatsen",
       "Twee revisierondes",
-      "Zelf nieuws of updates plaatsen, waar dat nodig is",
+      "Zelf één soort content bijhouden, zoals nieuws of cases",
     ],
+    notIncluded:
+      "Extra pagina's, teksten laten schrijven en extra feedbackrondes zijn niet inbegrepen.",
     variant: "inverse",
   },
 ];
 
-const priceFormat = new Intl.NumberFormat("nl-NL", {
-  style: "currency",
-  currency: "EUR",
-  maximumFractionDigits: 0,
-});
+/** Extra's, los te bestellen bij een pakket. */
+export const extras = [
+  { label: "Extra pagina", price: prices.extraPagina, unit: "" },
+  {
+    label: "Teksten laten schrijven",
+    price: prices.teksten,
+    unit: "per pagina",
+  },
+  {
+    label: "Boekings-, doneer- of nieuwsbrieftool plaatsen",
+    price: prices.tool,
+    unit: "",
+  },
+  {
+    label: "Zelf aanpassen op de Landingspagina",
+    price: prices.zelfAanpassen,
+    unit: "",
+  },
+  { label: "Extra feedbackronde", price: prices.extraRonde, unit: "" },
+  {
+    label: "Google Bedrijfsprofiel inrichten",
+    price: prices.googleProfiel,
+    unit: "",
+  },
+];
 
-/** Bijvoorbeeld "€ 1.750". */
-export const formatPrice = (price: number) => priceFormat.format(price);
+/** Vergelijking van de twee pakketten, op de tarievenpagina. */
+export const packageRows: {
+  label: string;
+  landingspagina: string;
+  bedrijfswebsite: string;
+}[] = [
+  {
+    label: "Omvang",
+    landingspagina: "1 pagina in 1 taal",
+    bedrijfswebsite: "4 tot 6 pagina's in 1 taal",
+  },
+  {
+    label: "Levertijd",
+    landingspagina: "Live binnen 5 werkdagen nadat je input compleet is",
+    bedrijfswebsite: "Live binnen 3 tot 4 weken nadat je input compleet is",
+  },
+  {
+    label: "Teksten",
+    landingspagina: "Jij levert aan, ik help waar nodig",
+    bedrijfswebsite: "Jij levert aan, ik help waar nodig",
+  },
+  {
+    label: "Vindbaarheid",
+    landingspagina: "Opgezet voor Google en AI-assistenten",
+    bedrijfswebsite: "SEO per pagina",
+  },
+  {
+    label: "Formulier",
+    landingspagina: "1 contactformulier",
+    bedrijfswebsite: "1 contactformulier",
+  },
+  {
+    label: "Bestaande tool plaatsen",
+    landingspagina: `Extra, ${formatPrice(prices.tool)}`,
+    bedrijfswebsite: "1 tool inbegrepen",
+  },
+  {
+    label: "Metingen",
+    landingspagina: "Niet inbegrepen",
+    bedrijfswebsite: "Inbegrepen",
+  },
+  {
+    label: "Zelf aanpassen",
+    landingspagina: `Extra, ${formatPrice(prices.zelfAanpassen)}`,
+    bedrijfswebsite: "1 soort content, zoals nieuws of cases",
+  },
+  {
+    label: "Feedback",
+    landingspagina: "1 gebundelde ronde",
+    bedrijfswebsite: "2 gebundelde rondes",
+  },
+  {
+    label: "Oplevering",
+    landingspagina: "Korte uitleg",
+    bedrijfswebsite: "Korte uitleg",
+  },
+];
+
+/** Diensten voor bestaande websites, op de pagina website-verbeteren. */
+export const improvements = [
+  {
+    name: "Websitecheck",
+    price: prices.websitecheck,
+    text: "Ik bekijk je site op boodschap, structuur, snelheid, vindbaarheid en contact. Je krijgt de tien belangrijkste verbeteringen op volgorde en we bespreken ze in 30 minuten.",
+    note: "Verrekenbaar bij een opdracht binnen 30 dagen.",
+  },
+  {
+    name: "Verbeterronde",
+    price: prices.verbeterronde,
+    text: "We spreken vooraf een lijst af. Ik besteed tot 6 uur aan tekst, structuur, snelheid of vindbaarheid.",
+    note: "Klaar binnen 10 werkdagen nadat ik toegang en input heb.",
+  },
+  {
+    name: "Vraaguur",
+    price: prices.vraaguur,
+    text: "60 minuten samen naar je site kijken. Je krijgt antwoord op je vragen en we bepalen de volgende stap.",
+    note: "",
+  },
+];
+
+/** Korting voor goede doelen, in procenten. Geldt voor de pakketten. */
+export const nonprofitDiscount = 20;
