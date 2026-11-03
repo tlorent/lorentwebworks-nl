@@ -3,7 +3,6 @@ export const defaultCta = {
   title: "Liever dat iemand het voor je regelt?",
   text: "In een gratis kennismaking van 30 minuten kijken we wat jouw website moet opleveren en wat dat kost.",
   button: "Plan een kennismaking",
-  href: "/#contact",
 };
 
 // Klassen van het CTA-blok, gedeeld door GuideCta.astro en de rehype-plugin.

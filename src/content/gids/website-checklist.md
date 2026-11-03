@@ -15,7 +15,6 @@ cta:
   title: "Benieuwd hoe jouw site scoort?"
   text: "Plan een gratis kennismaking van 30 minuten. We lopen samen door je website en je hoort direct wat je kunt verbeteren. Ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
-  href: "/#contact"
 faq:
   - q: "Hoe controleer ik mijn website?"
     a: "Loop een checklist door op boodschap, teksten, vertrouwen, snelheid, mobiel, vindbaarheid, toegankelijkheid en contact. Test de snelheid in Google PageSpeed Insights."

@@ -1,6 +1,7 @@
 ---
 import { site } from "../data/site";
 import { buttonClass, buttonIconClass } from "../lib/button.mjs";
+import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
@@ -32,6 +33,9 @@ const onBlockLink =
         <p class="mt-6 max-w-lg text-body-lg text-on-block-muted">
           Plan direct 30 minuten in, via video of in en rond Amsterdam op locatie.
         </p>
+        <div class="mt-8">
+          <BookButton base="" variant="on-block" />
+        </div>
 
         <ul class="mt-10 flex flex-col gap-3 text-on-block-muted">
           <li class="flex items-center gap-3">
@@ -46,16 +50,6 @@ const onBlockLink =
           </li>
         </ul>
 
-        {
-          site.bookingUrl && (
-            <p class="mt-6 flex items-center gap-3 text-on-block-muted">
-              <Icon name="calendar" class="size-5 shrink-0 text-on-block" />
-              <a href={site.bookingUrl} class={onBlockLink}>
-                Liever direct een tijd kiezen? Plan het hier in je agenda.
-              </a>
-            </p>
-          )
-        }
       </div>
 
       <div class="focus-accent min-w-0 grow basis-110 rounded-panel bg-form-card p-5 text-text md:p-7">
@@ -68,7 +62,8 @@ const onBlockLink =
           </p>
         </div>
 
-        <form action={site.formEndpoint} method="POST" data-contact-form aria-labelledby="contact-titel">
+        <h3 id="formulier-titel" class="text-h3 font-stretch-110%">Liever eerst een bericht sturen?</h3>
+        <form action={site.formEndpoint} method="POST" data-contact-form aria-labelledby="formulier-titel" class="mt-5">
           <input type="hidden" name="_subject" value="Nieuwe aanvraag via lorentwebworks.nl" />
           <!-- Honeypot van Formspree: mensen zien en bereiken dit veld niet, bots vullen het in. -->
           <div class="sr-only" aria-hidden="true">

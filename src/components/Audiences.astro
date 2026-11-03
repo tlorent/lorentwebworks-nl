@@ -2,7 +2,7 @@
 import { audiences } from "../data/audiences";
 import { formatPrice, prices } from "../data/services";
 import AudienceItem from "./AudienceItem.astro";
-import Button from "./Button.astro";
+import BookButton from "./BookButton.astro";
 import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
 ---
@@ -19,7 +19,7 @@ import SectionLabel from "./SectionLabel.astro";
         Een restaurant wil reserveringen, een coach wil intakes en een goed doel wil donaties. Ik begin daarom bij
         jouw doel en bouw de site daaromheen.
       </p>
-      <Button href="#contact" class="mt-8">Plan een kennismaking</Button>
+      <BookButton class="mt-8" />
     </div>
     <div class="flex min-w-0 grow-3 basis-130 flex-col gap-2">
       {audiences.map((audience, i) => <AudienceItem audience={audience} open={i === 0} />)}

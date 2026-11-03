@@ -15,7 +15,6 @@ cta:
   title: "Weten wat jouw website kost?"
   text: "Plan een gratis kennismaking van 30 minuten. Je krijgt een helder beeld en een vaste prijs. Ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
-  href: "/#contact"
 faq:
   - q: "Wat kost een simpele website?"
     a: "Zelf bouwen kan vanaf ongeveer € 15 per maand. Een professionele landingspagina laten maken kost bij een freelancer vaak vanaf zo'n € 800."
@@ -78,7 +77,7 @@ Hoe meer rondes, hoe meer uren. Een vaste afspraak voorkomt verrassingen.
 <p>Pakketten</p>
 <h3>Helder wat je krijgt, helder wat het kost</h3>
 <p>Geen urenbriefjes. Een landingspagina vanaf € 850 of een bedrijfswebsite vanaf € 1.750, eenmalig, excl. btw.</p>
-<p><a href="/#diensten">Bekijk de pakketten →</a></p>
+<p><a href="/tarieven/">Bekijk de pakketten →</a></p>
 </aside>
 
 ## Terugkerende kosten

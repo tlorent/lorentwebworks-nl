@@ -1,5 +1,6 @@
 ---
 import { ctaClass, defaultCta } from "../lib/guide-cta.mjs";
+import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
 
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
   title?: string;
   text?: string;
   button?: string;
+  /** Zonder href gaat de knop naar de boekingslink van de site. */
   href?: string;
 };
 const {
@@ -14,7 +16,7 @@ const {
   title = defaultCta.title,
   text = defaultCta.text,
   button = defaultCta.button,
-  href = defaultCta.href,
+  href,
 } = Astro.props;
 const titleId = "gids-cta-titel";
 ---
@@ -22,5 +24,11 @@ const titleId = "gids-cta-titel";
 <aside aria-labelledby={titleId} class:list={[ctaClass.box, className]}>
   <p id={titleId} class={ctaClass.title}>{title}</p>
   <p class={ctaClass.text}>{text}</p>
-  <Button href={href} variant="on-block" class="mt-6">{button}</Button>
+  {
+    href ? (
+      <Button href={href} variant="on-block" class="mt-6">{button}</Button>
+    ) : (
+      <BookButton variant="on-block" label={button} class="mt-6" />
+    )
+  }
 </aside>

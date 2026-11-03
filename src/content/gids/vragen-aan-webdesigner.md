@@ -15,7 +15,6 @@ cta:
   title: "Al je vragen beantwoord in 30 minuten"
   text: "Plan een gratis kennismaking van 30 minuten. Je krijgt eerlijke antwoorden, een vaste prijs en geen offerte die je over je heen krijgt. Ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
-  href: "/#contact"
 faq:
   - q: "Wat moet ik vragen aan een webdesigner?"
     a: "Vraag naar ervaring en aanpak, wat er wel en niet in de prijs zit, wie de teksten schrijft, wat er gebeurt aan SEO en snelheid, van wie de site en het domein zijn, en of je na oplevering ergens aan vastzit."

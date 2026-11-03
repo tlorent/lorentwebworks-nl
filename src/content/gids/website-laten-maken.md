@@ -15,7 +15,6 @@ cta:
   title: "Klaar voor een website die klanten oplevert?"
   text: "Plan een gratis kennismaking van 30 minuten. Je krijgt een helder beeld van wat er kan, zonder verplichtingen. Ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
-  href: "/#contact"
 faq:
   - q: "Wat kost een website laten maken voor een zzp'er?"
     a: "Bij een freelancer betaal je voor een kleine, professionele bedrijfswebsite grofweg € 800 tot € 3.000. Bij een bureau begin je vaak rond € 4.000."

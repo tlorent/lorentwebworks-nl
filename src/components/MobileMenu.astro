@@ -1,5 +1,5 @@
 ---
-import Button from "./Button.astro";
+import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import Logo from "./Logo.astro";
 import { type NavKey, navLinks } from "./nav";
@@ -53,7 +53,7 @@ const links = navLinks(onHome);
       <ThemeToggle withLabel />
     </div>
     <div class="mt-auto pt-10">
-      <Button href={onHome ? "#contact" : "/#contact"} full size="lg" data-menu-link>Plan een kennismaking</Button>
+      <BookButton base={onHome ? "" : "/"} full size="lg" data-menu-link />
     </div>
   </nav>
 </dialog>

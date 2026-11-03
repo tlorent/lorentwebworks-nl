@@ -1,5 +1,6 @@
-// Gidsen: maakt tabellen toegankelijk (bijschrift, scrollbare regio) en voegt halverwege
-// (vóór de middelste H2) een CTA-blok in.
+// Gidsen: maakt tabellen toegankelijk (bijschrift, scrollbare regio), voegt halverwege
+// (vóór de middelste H2) een CTA-blok in, en stuurt kennismakingslinks naar de boekingslink.
+import { bookingLink } from "../data/booking.mjs";
 import { buttonClass, buttonIconClass } from "./button.mjs";
 import { ctaClass, defaultCta } from "./guide-cta.mjs";
 import { icons } from "./icons.mjs";
@@ -51,9 +52,20 @@ const arrowIcon = () =>
     },
   );
 
+// Externe boekingslink: opent in een nieuw tabblad, en dat staat ook in de tekst voor schermlezers.
+/** @param {{ href: string, external: boolean }} link */
+const linkAttributes = (link) =>
+  link.external ? { target: "_blank", rel: "noopener" } : {};
+/** @param {{ href: string, external: boolean }} link @returns {Node[]} */
+const newTabNote = (link) =>
+  link.external
+    ? [el("span", "sr-only", [text(" (opent in een nieuw tabblad)")])]
+    : [];
+
 /** @returns {Node} */
-const guideCta = () =>
-  el(
+const guideCta = () => {
+  const link = bookingLink("/");
+  return el(
     "aside",
     `my-12 ${ctaClass.box}`,
     [
@@ -64,14 +76,26 @@ const guideCta = () =>
       el(
         "a",
         `mt-6 ${buttonClass("on-block")}`,
-        [text(defaultCta.button), arrowIcon()],
-        {
-          href: defaultCta.href,
-        },
+        [text(defaultCta.button), ...newTabNote(link), arrowIcon()],
+        { href: link.href, ...linkAttributes(link) },
       ),
     ],
     { ariaLabelledby: "gids-cta-midden" },
   );
+};
+
+// Links naar "/#contact" in de gidsen gaan naar de boekingslink, zodat er maar één plek is om te wijzigen.
+/** @param {Node} node */
+const fixBookingLinks = (node) => {
+  if (isEl(node, "a") && node.properties?.href === "/#contact") {
+    const link = bookingLink("/");
+    node.properties.href = link.href;
+    Object.assign(node.properties, linkAttributes(link));
+    if (link.external)
+      node.children = [...(node.children ?? []), ...newTabNote(link)];
+  }
+  for (const child of node.children ?? []) fixBookingLinks(child);
+};
 
 // Elke tabel krijgt een (visueel verborgen) bijschrift met de tekst van de kop erboven,
 // en een scrollbare regio die naar dat bijschrift verwijst.
@@ -114,6 +138,7 @@ export default function rehypeGuide() {
   return (tree, file) => {
     const path = String(file.history?.[0] ?? file.path ?? "");
     if (!path.includes("/content/gids/")) return;
+    fixBookingLinks(tree);
     fixTables(tree);
     const children = tree.children ?? [];
     const h2Indexes = children.flatMap((node, i) =>

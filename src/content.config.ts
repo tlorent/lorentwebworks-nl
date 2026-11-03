@@ -25,7 +25,7 @@ const gids = defineCollection({
       title: z.string(),
       text: z.string(),
       button: z.string(),
-      href: z.string(),
+      href: z.string().optional(),
     }),
     faq: z.array(z.object({ q: z.string(), a: z.string() })).optional(),
   }),

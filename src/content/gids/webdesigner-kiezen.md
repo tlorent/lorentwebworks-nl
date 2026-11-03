@@ -15,7 +15,6 @@ cta:
   title: "Laten we eens praten"
   text: "Een kennismaking van 30 minuten over wat beter kan aan je website. Zonder verplichtingen, en ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
-  href: "/#contact"
 faq:
   - q: "Waar vind ik een goede webdesigner?"
     a: "Via aanbevelingen uit je netwerk, Google, LinkedIn en de footer van sites die je goed vindt."

@@ -1,7 +1,7 @@
 ---
 import { btwId } from "../data/booking.mjs";
 import { site } from "../data/site";
-import Button from "./Button.astro";
+import BookButton from "./BookButton.astro";
 import Wordmark from "./Wordmark.astro";
 
 type Props = { onHome?: boolean };
@@ -57,7 +57,7 @@ const linkClass =
         <p class="text-h3 font-stretch-112%">
           Websites die klanten opleveren voor zzp'ers, mkb, goede doelen en initiatieven in heel Nederland.
         </p>
-        <Button href={`${h}#contact`} class="mt-7">Plan een kennismaking</Button>
+        <BookButton base={h} class="mt-7" />
       </div>
       <nav aria-label="Footer" class="grid gap-12 sm:grid-cols-3 lg:col-span-8 lg:gap-10">
         {

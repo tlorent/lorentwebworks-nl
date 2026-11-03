@@ -1,10 +1,11 @@
 ---
 // Kennismakingsknop. Gaat naar de boekingslink uit src/data/booking.mjs, of naar het formulier
 // als die link nog niet is ingevuld. Een externe link opent in een nieuw tabblad, dat zegt de tekst ook.
+import type { HTMLAttributes } from "astro/types";
 import { bookingLink } from "../data/booking.mjs";
 import Button from "./Button.astro";
 
-type Props = {
+type Props = Omit<HTMLAttributes<"a">, "href"> & {
   /** "/" op pagina's die niet de homepage zijn, zodat #contact naar de homepage wijst. */
   base?: string;
   label?: string;
@@ -22,6 +23,7 @@ const {
   full = false,
   arrow,
   class: className = "",
+  ...rest
 } = Astro.props;
 const link = bookingLink(base);
 ---
@@ -35,6 +37,7 @@ const link = bookingLink(base);
   class={className}
   target={link.external ? "_blank" : undefined}
   rel={link.external ? "noopener" : undefined}
+  {...rest}
 >
   {label}
   {link.external && <span class="sr-only"> (opent in een nieuw tabblad)</span>}

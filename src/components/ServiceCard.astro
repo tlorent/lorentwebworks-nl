@@ -1,5 +1,7 @@
 ---
+import { bookingUrl } from "../data/booking.mjs";
 import { formatPrice, type Service } from "../data/services";
+import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 
@@ -61,15 +63,21 @@ const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
     <span class="font-bold">Niet inbegrepen:</span> {service.notIncluded}
   </p>
 
-  <Button
-    href={`?dienst=${service.id}#contact`}
-    variant={inverse ? "inverse" : "primary"}
-    full
-    size="lg"
-    data-dienst-link={service.id}
-    class="mt-auto"
-    aria-describedby={titleId}
-  >
-    Plan een kennismaking
-  </Button>
+  {
+    bookingUrl ? (
+      <BookButton variant={inverse ? "inverse" : "primary"} full size="lg" class="mt-auto" aria-describedby={titleId} />
+    ) : (
+      <Button
+        href={`?dienst=${service.id}#contact`}
+        variant={inverse ? "inverse" : "primary"}
+        full
+        size="lg"
+        data-dienst-link={service.id}
+        class="mt-auto"
+        aria-describedby={titleId}
+      >
+        Plan een kennismaking
+      </Button>
+    )
+  }
 </article>

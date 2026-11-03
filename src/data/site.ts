@@ -10,8 +10,6 @@ export const site = {
   linkedin: "https://www.linkedin.com/in/timlorent",
   // TODO: controleren (overgenomen uit de vorige site)
   kvk: "98545698",
-  // TODO: optioneel, bijvoorbeeld een Cal.com- of Calendly-link. Leeg = niet tonen.
-  bookingUrl: "",
   // Formspree-formulier. Overschrijfbaar met PUBLIC_FORM_ENDPOINT (zie .env.example).
   formEndpoint:
     import.meta.env.PUBLIC_FORM_ENDPOINT || "https://formspree.io/f/meepgagp",

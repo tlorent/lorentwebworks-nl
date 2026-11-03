@@ -1,5 +1,8 @@
 ---
 // Zwevende CTA-pil op mobiel en tablet. Verschijnt na de hero, verdwijnt bij de contactsectie.
+import { bookingLink } from "../data/booking.mjs";
+
+const link = bookingLink();
 ---
 
 <div
@@ -7,7 +10,9 @@
   class="invisible fixed inset-x-0 bottom-0 z-30 flex translate-y-7/5 justify-center px-3 pt-2.5 pb-safe transition-slide data-show:visible data-show:translate-y-0 motion-reduce:transition-none lg:hidden"
 >
   <a
-    href="#contact"
+    href={link.href}
+    target={link.external ? "_blank" : undefined}
+    rel={link.external ? "noopener" : undefined}
     class="flex w-full max-w-md items-center justify-between gap-3 rounded-full bg-text py-2 pr-2 pl-5 text-bg shadow-float focus-ring-wide"
   >
     <span class="text-label font-semibold">Gratis kennismaking, 30 min</span>

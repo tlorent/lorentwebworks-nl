@@ -1,5 +1,6 @@
 ---
 import Audiences from "../components/Audiences.astro";
+import BookButton from "../components/BookButton.astro";
 import ClientStrip from "../components/ClientStrip.astro";
 import Contact from "../components/Contact.astro";
 import Faq from "../components/Faq.astro";
@@ -85,6 +86,10 @@ const schema = [
   <Audiences />
   <Process />
   <Services />
-  <Faq items={faq} number="05" title="Vragen over een website laten maken" />
+  <Faq items={faq} number="05" title="Vragen over een website laten maken">
+    <div slot="after" class="mt-12 flex justify-center md:mt-14">
+      <BookButton />
+    </div>
+  </Faq>
   <Contact />
 </BaseLayout>
