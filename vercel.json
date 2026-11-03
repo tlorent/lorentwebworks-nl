@@ -1,0 +1,120 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "astro",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "lorentwebworks.nl"
+        }
+      ],
+      "destination": "https://www.lorentwebworks.nl/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/website-laten-maken",
+      "destination": "/gids/website-laten-maken/",
+      "permanent": true
+    },
+    {
+      "source": "/wat-kost-een-website",
+      "destination": "/gids/wat-kost-een-website/",
+      "permanent": true
+    },
+    {
+      "source": "/webdesigner-kiezen",
+      "destination": "/gids/webdesigner-kiezen/",
+      "permanent": true
+    },
+    {
+      "source": "/website-checklist",
+      "destination": "/gids/website-checklist/",
+      "permanent": true
+    },
+    {
+      "source": "/vragen-aan-webdesigner",
+      "destination": "/gids/vragen-aan-webdesigner/",
+      "permanent": true
+    },
+    {
+      "source": "/diensten/:path*",
+      "destination": "/#diensten",
+      "permanent": true
+    },
+    {
+      "source": "/diensten",
+      "destination": "/#diensten",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/sitemap-index.xml",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "frame-ancestors 'none'"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/_astro/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/og/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
+      ]
+    }
+  ]
+}

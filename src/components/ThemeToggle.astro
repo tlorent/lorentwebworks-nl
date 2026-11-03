@@ -1,0 +1,48 @@
+---
+import Icon from "./Icon.astro";
+
+type Props = { withLabel?: boolean; class?: string };
+const { withLabel = false, class: className = "" } = Astro.props;
+---
+
+<!-- Vaste naam "Donkere modus"; aria-pressed geeft aan of die aan staat. Zonder JS verborgen. -->
+<button
+  type="button"
+  data-theme-toggle
+  aria-pressed="false"
+  aria-label={withLabel ? undefined : "Donkere modus"}
+  class:list={[
+    "inline-flex items-center rounded-full bg-surface text-text transition-colors duration-150 hover:bg-border focus-ring-wide no-js:hidden",
+    withLabel ? "min-h-11 gap-3 py-2.5 pr-5 pl-3 text-base font-semibold" : "size-11 justify-center",
+    className,
+  ]}
+>
+  <span class="grid size-6 place-items-center">
+    <Icon name="moon" class="size-5 dark:hidden" />
+    <Icon name="sun" class="hidden size-5 dark:block" />
+  </span>
+  {withLabel && <span>Donkere modus</span>}
+</button>
+
+<script>
+  const root = document.documentElement;
+  const buttons = document.querySelectorAll<HTMLButtonElement>("[data-theme-toggle]");
+  const isDark = () => root.getAttribute("data-theme") === "dark";
+
+  const sync = () => {
+    for (const btn of buttons) btn.setAttribute("aria-pressed", String(isDark()));
+  };
+
+  for (const btn of buttons) {
+    btn.addEventListener("click", () => {
+      const next = isDark() ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try {
+        localStorage.setItem("theme", next);
+      } catch {}
+      sync();
+    });
+  }
+  document.addEventListener("themechange", sync);
+  sync();
+</script>

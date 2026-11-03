@@ -1,0 +1,23 @@
+---
+import { services } from "../data/services";
+import NonprofitDiscount from "./NonprofitDiscount.astro";
+import Pattern from "./Pattern.astro";
+import SectionHeader from "./SectionHeader.astro";
+import ServiceCard from "./ServiceCard.astro";
+---
+
+<section id="diensten" aria-labelledby="diensten-titel" class="relative section-y">
+  <Pattern variant="dots" />
+  <div class="reveal relative container-page">
+    <SectionHeader number="04" label="Diensten en prijzen" titleId="diensten-titel">
+      <Fragment slot="title">Kies de website die bij je past</Fragment>
+      <Fragment slot="lead"
+        >Je weet vooraf wat het kost en wanneer je live staat. De prijzen zijn eenmalig, zonder abonnement.</Fragment
+      >
+    </SectionHeader>
+    <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
+      {services.map((service) => <ServiceCard service={service} />)}
+    </div>
+    <NonprofitDiscount />
+  </div>
+</section>

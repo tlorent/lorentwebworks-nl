@@ -1,0 +1,13 @@
+---
+type Props = { variant: "dots" | "grid" };
+const { variant } = Astro.props;
+---
+
+<div
+  aria-hidden="true"
+  class:list={[
+    "pointer-events-none absolute inset-0",
+    variant === "dots" ? "pattern-1 mask-fade-down" : "pattern-2 mask-fade-both",
+  ]}
+>
+</div>

@@ -1,0 +1,13 @@
+---
+import { clients } from "../data/clients";
+---
+
+<section aria-label="Ervaring bij onder andere" class="border-y border-border">
+  <div class="reveal container-page py-7">
+    <ul
+      class="flex flex-wrap items-center justify-center gap-x-8 gap-y-3.5 text-lg font-bold font-stretch-108% tracking-tight text-text-muted xl:justify-between xl:gap-x-5"
+    >
+      {clients.map((name) => <li>{name}</li>)}
+    </ul>
+  </div>
+</section>

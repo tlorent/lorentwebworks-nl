@@ -1,0 +1,16 @@
+---
+import Button from "../components/Button.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="Pagina niet gevonden | Lorent Webworks" description="Deze pagina bestaat niet (meer)." noindex>
+  <div class="container-narrow py-20 md:py-32">
+    <p class="text-label font-semibold"><span class="text-accent-text">(404)</span> Niet gevonden</p>
+    <h1 class="mt-6 text-display font-stretch-116% text-balance">Deze pagina bestaat niet</h1>
+    <p class="mt-6 max-w-xl text-intro text-text-soft">De link klopt niet of de pagina is verhuisd.</p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <Button href="/">Naar de homepage</Button>
+      <Button href="/gids/" variant="secondary">Naar de gids</Button>
+    </div>
+  </div>
+</BaseLayout>
