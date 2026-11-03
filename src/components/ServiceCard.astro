@@ -1,0 +1,72 @@
+---
+import { formatPrice, type Service } from "../data/services";
+import Button from "./Button.astro";
+import Icon from "./Icon.astro";
+
+type Props = { service: Service };
+const { service } = Astro.props;
+const inverse = service.variant === "inverse";
+const titleId = `dienst-${service.id}`;
+const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
+---
+
+<article
+  aria-labelledby={titleId}
+  class:list={[
+    "flex flex-col rounded-panel p-6 md:p-11",
+    inverse ? "bg-inverse-bg bg-glow text-inverse-text" : "bg-surface text-text",
+  ]}
+>
+  <p class:list={["text-label font-semibold", muted]}>{service.label}</p>
+  <h3 id={titleId} class="mt-3 text-title font-stretch-115%">{service.name}</h3>
+  <p class:list={["mt-4 max-w-lg", inverse ? "text-inverse-text/80" : "text-text-soft"]}>{service.description}</p>
+
+  <div class:list={["mt-8 rounded-card p-5 md:p-6", inverse ? "bg-inverse-inner" : "bg-inner"]}>
+    <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
+      <span class:list={["pt-1 text-label", muted]}>vanaf</span>
+      <span
+        class:list={[
+          "rounded-full px-3.5 py-2 text-sm leading-tight font-semibold",
+          inverse ? "bg-accent text-on-accent" : "bg-chip-bg text-chip-text",
+        ]}
+      >
+        {service.duration}
+      </span>
+    </div>
+    <p class="mt-2 flex flex-col">
+      <strong class="text-price font-stretch-120% whitespace-nowrap">{formatPrice(service.price)}</strong>
+      <span class:list={["mt-1 text-label", muted]}>ex btw, eenmalig</span>
+    </p>
+  </div>
+
+  <h4 class:list={["mt-8 text-sm font-bold", muted]}>Inbegrepen</h4>
+  <ul class="mt-4 mb-10 flex flex-col gap-3">
+    {
+      service.included.map((item) => (
+        <li class="flex items-start gap-3">
+          <span
+            class:list={[
+              "mt-0.5 grid size-5.5 shrink-0 place-items-center rounded-full",
+              inverse ? "bg-inverse-text text-inverse-bg" : "bg-accent text-on-accent",
+            ]}
+          >
+            <Icon name="check" class="size-3.5" strokeWidth={2.6} />
+          </span>
+          <span>{item}</span>
+        </li>
+      ))
+    }
+  </ul>
+
+  <Button
+    href={`?dienst=${service.id}#contact`}
+    variant={inverse ? "inverse" : "primary"}
+    full
+    size="lg"
+    data-dienst-link={service.id}
+    class="mt-auto"
+    aria-describedby={titleId}
+  >
+    Plan een kennismaking
+  </Button>
+</article>

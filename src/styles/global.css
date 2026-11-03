@@ -1,0 +1,556 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+/* Alleen zichtbaar/verborgen zonder JS. ThemeScript zet .js op <html> vóór het renderen. */
+@custom-variant no-js (&:where(html:not(.js) *));
+
+/* Archivo, variabel (gewicht 400 tot 800, breedte 100% tot 125%), Latin-subset, zelf gehost. */
+@font-face {
+  font-family: "Archivo";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400 800;
+  font-stretch: 100% 125%;
+  src: url("/fonts/archivo-latin-wdth.woff2") format("woff2-variations");
+  unicode-range:
+    U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308,
+    U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Fallback met de maten van Archivo, zodat de tekst niet verspringt als het font binnenkomt (CLS). */
+@font-face {
+  font-family: "Archivo Fallback";
+  src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
+  size-adjust: 98.4%;
+  ascent-override: 89.2%;
+  descent-override: 21.3%;
+  line-gap-override: 0%;
+}
+
+@theme {
+  /* Kleuren die per thema wisselen staan als semantische tokens in :root en [data-theme="dark"]. */
+  --font-sans:
+    "Archivo", "Archivo Fallback", ui-sans-serif, system-ui, sans-serif;
+
+  --breakpoint-xs: 25rem;
+
+  --radius-input: 0.875rem;
+  --radius-card: 1.375rem;
+  --radius-panel: 1.75rem;
+  --radius-hero: 2.25rem;
+
+  --leading-prose: 1.7;
+
+  --shadow-float: 0 12px 32px -8px rgb(12 16 36 / 0.45);
+
+  /* Markering op "klanten" in de hero: schuift bij het laden van links naar rechts in. */
+  --animate-mark: mark-in 900ms cubic-bezier(0.65, 0, 0.35, 1) 250ms both;
+  @keyframes mark-in {
+    from {
+      background-size: 0% 100%;
+    }
+  }
+
+  /* Op blauwe blokken (bg-block, bg-accent): gelijk in licht en donker. */
+  --color-on-block: #ffffff;
+  --color-on-block-muted: rgb(255 255 255 / 0.85);
+  --color-on-block-subtle: rgb(255 255 255 / 0.35);
+  --color-on-block-ink: #0c1024;
+  --color-on-accent: #ffffff;
+  --color-brand: #f44728;
+
+  /* Typografie */
+  --text-caption: 0.8125rem;
+  --text-label: 0.9375rem;
+
+  --text-body-lg: clamp(1.0625rem, 1.35vw, 1.1875rem);
+  --text-body-lg--line-height: 1.625;
+  --text-lead: clamp(1.125rem, 1.6vw, 1.375rem);
+  --text-lead--line-height: 1.5;
+  --text-intro: clamp(1.1875rem, 1.7vw, 1.5rem);
+  --text-intro--line-height: 1.5;
+
+  --text-h3: clamp(1.375rem, 2vw, 1.75rem);
+  --text-h3--line-height: 1.25;
+  --text-h3--letter-spacing: -0.025em;
+  --text-h3--font-weight: 700;
+  --text-heading: clamp(1.5rem, 2.5vw, 2.25rem);
+  --text-heading--line-height: 1.25;
+  --text-heading--letter-spacing: -0.03em;
+  --text-heading--font-weight: 800;
+  --text-title: clamp(1.875rem, 3vw, 2.5rem);
+  --text-title--line-height: 1;
+  --text-title--letter-spacing: -0.04em;
+  --text-title--font-weight: 800;
+  --text-h2: clamp(2.125rem, 4vw, 3.75rem);
+  --text-h2--line-height: 1;
+  --text-h2--letter-spacing: -0.04em;
+  --text-h2--font-weight: 800;
+  --text-display: clamp(2.625rem, 6.4vw, 5.5rem);
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.045em;
+  --text-display--font-weight: 800;
+  --text-hero: clamp(3.25rem, 8.6vw, 8.5rem);
+  --text-hero--line-height: 0.92;
+  --text-hero--letter-spacing: -0.05em;
+  --text-hero--font-weight: 800;
+
+  --text-price: clamp(2.75rem, 5vw, 4rem);
+  --text-price--line-height: 0.95;
+  --text-price--letter-spacing: -0.05em;
+  --text-price--font-weight: 800;
+  --text-numeral: clamp(4rem, 6.5vw, 6rem);
+  --text-numeral--line-height: 0.9;
+  --text-numeral--letter-spacing: -0.05em;
+  --text-numeral--font-weight: 800;
+  /* Schalen met de breedte van de container (@container). */
+  --text-stat: clamp(3rem, 25cqi, 6.5rem);
+  --text-stat--line-height: 0.9;
+  --text-stat--letter-spacing: -0.055em;
+  --text-stat--font-weight: 800;
+  --text-wordmark: min(9.375rem, 10.6cqi);
+  --text-wordmark--line-height: 0.8;
+  --text-wordmark--letter-spacing: -0.06em;
+  --text-wordmark--font-weight: 800;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+:root {
+  --bg: #ffffff;
+  --surface: #f1f3f8;
+  --inner: #ffffff;
+  --text: #0c1024;
+  --text-soft: #363b52;
+  --text-muted: #50556b;
+  --border: #e1e4ee;
+  --border-strong: #d8dce8;
+  --accent: #14226e;
+  --accent-text: #14226e;
+  --accent-hover: #0f1b5c;
+  --chip-bg: #e3e7f6;
+  --chip-text: #0f1b5c;
+  --block: #0e1a55;
+  --inverse-bg: #0c1024;
+  --inverse-text: #ffffff;
+  --inverse-inner: #171c38;
+  --field-bg: #ffffff;
+  --field-border: #dde0eb;
+  --form-card: #ffffff;
+  --danger: #b3172b;
+  --inverse-glow: #2f46c4;
+  --mark: linear-gradient(
+    transparent 56%,
+    #c3cefb 56%,
+    #c3cefb 92%,
+    transparent 92%
+  );
+  --pattern-1: radial-gradient(
+    circle,
+    rgba(14, 26, 85, 0.22) 1px,
+    transparent 1.5px
+  );
+  --pattern-1-size: 24px 24px;
+  --pattern-2:
+    linear-gradient(rgba(14, 26, 85, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14, 26, 85, 0.07) 1px, transparent 1px);
+  --pattern-2-size: 56px 56px;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #080b16;
+  --surface: #101528;
+  --inner: #080b16;
+  --text: #f1f3fa;
+  --text-soft: #c8ccdd;
+  --text-muted: #9ca2ba;
+  --border: #1f2540;
+  --border-strong: #272e4c;
+  --accent: #4c5fd6;
+  --accent-text: #9daaf2;
+  --accent-hover: #3a4cc0;
+  --chip-bg: #161e4a;
+  --chip-text: #bec8f8;
+  --block: #12206b;
+  --inverse-bg: #f1f3fa;
+  --inverse-text: #0c1024;
+  --inverse-inner: #e1e5f2;
+  --field-bg: #080b16;
+  --field-border: #2b3354;
+  --form-card: #101528;
+  --danger: #ff8a97;
+  --inverse-glow: #bfcaf7;
+  --mark: linear-gradient(
+    transparent 56%,
+    rgba(76, 95, 214, 0.5) 56%,
+    rgba(76, 95, 214, 0.5) 92%,
+    transparent 92%
+  );
+  --pattern-1: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.14) 1px,
+    transparent 1.5px
+  );
+  --pattern-1-size: 24px 24px;
+  --pattern-2:
+    linear-gradient(rgba(255, 255, 255, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px);
+  --pattern-2-size: 56px 56px;
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-inner: var(--inner);
+  --color-text: var(--text);
+  --color-text-soft: var(--text-soft);
+  --color-text-muted: var(--text-muted);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-accent-hover: var(--accent-hover);
+  --color-chip-bg: var(--chip-bg);
+  --color-chip-text: var(--chip-text);
+  --color-block: var(--block);
+  --color-inverse-bg: var(--inverse-bg);
+  --color-inverse-text: var(--inverse-text);
+  --color-inverse-inner: var(--inverse-inner);
+  --color-field-bg: var(--field-bg);
+  --color-field-border: var(--field-border);
+  --color-form-card: var(--form-card);
+  --color-danger: var(--danger);
+  --color-inverse-glow: var(--inverse-glow);
+}
+
+@layer base {
+  /* Geen scrollen achter het open mobiele menu (modale dialog). */
+  html:has(dialog:modal) {
+    overflow: hidden;
+  }
+}
+
+/* Layout */
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-7xl);
+  padding-inline: calc(var(--spacing) * 5);
+  @variant md {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+}
+@utility container-narrow {
+  margin-inline: auto;
+  width: 100%;
+  max-width: var(--container-4xl);
+  padding-inline: calc(var(--spacing) * 5);
+  @variant md {
+    padding-inline: calc(var(--spacing) * 10);
+  }
+}
+@utility section-y {
+  padding-block: calc(var(--spacing) * 20);
+  @variant md {
+    padding-block: calc(var(--spacing) * 28);
+  }
+  @variant lg {
+    padding-block: calc(var(--spacing) * 34);
+  }
+}
+/* Responsief raster: grid-fit-75 = kolommen van minimaal 300px (75 x spacing). */
+@utility grid-fit-* {
+  grid-template-columns: repeat(
+      auto-fit,
+      minmax(min(calc(var(--spacing) * --value(integer)), 100%), 1fr)
+    );
+}
+
+/* Blauw blok met witte tekst; zet ook de focuskleur om. */
+@utility on-block {
+  background-color: var(--color-block);
+  color: var(--color-on-block);
+  --focus-color: var(--color-on-block);
+}
+/* Terug naar de standaard focuskleur, bijvoorbeeld voor het formulier binnen een blok. */
+@utility focus-accent {
+  --focus-color: var(--color-accent-text);
+}
+
+/* Focus */
+@utility focus-ring {
+  &:focus-visible {
+    outline: 2px solid var(--focus-color, var(--color-accent-text));
+    outline-offset: 2px;
+  }
+}
+@utility focus-ring-wide {
+  &:focus-visible {
+    outline: 2px solid var(--focus-color, var(--color-accent-text));
+    outline-offset: 4px;
+  }
+}
+@utility focus-ring-within {
+  &:has(:focus-visible) {
+    outline: 2px solid var(--focus-color, var(--color-accent-text));
+    outline-offset: 4px;
+  }
+}
+
+/* Decoratie */
+/* Markeerstift-achtergrond. Met animate-mark tekent hij zich van links naar rechts. */
+@utility mark {
+  background-image: var(--mark);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-size: 100% 100%;
+}
+@utility bg-glow {
+  background-image: radial-gradient(
+    120% 95% at 100% 0%,
+    var(--color-inverse-glow) 0%,
+    transparent 62%
+  );
+}
+@utility pattern-1 {
+  background-image: var(--pattern-1);
+  background-size: var(--pattern-1-size);
+  @media (prefers-reduced-data: reduce), print {
+    display: none;
+  }
+}
+@utility pattern-2 {
+  background-image: var(--pattern-2);
+  background-size: var(--pattern-2-size);
+  @media (prefers-reduced-data: reduce), print {
+    display: none;
+  }
+}
+@utility mask-fade-down {
+  mask-image: linear-gradient(to bottom, #000 0%, transparent 88%);
+}
+@utility mask-fade-both {
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #000 22%,
+    #000 78%,
+    transparent 100%
+  );
+}
+
+/* Inhoud komt binnen bij scrollen. Alleen voor inhoud onder de vouw.
+   Zonder JS en bij reduced motion is alles direct zichtbaar. */
+@utility reveal {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: view()) {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 240px;
+    }
+    @supports not (animation-timeline: view()) {
+      .js & {
+        opacity: 0;
+        transform: translateY(2rem);
+        transition:
+          opacity 700ms ease,
+          transform 700ms ease;
+        &[data-in] {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    }
+  }
+}
+
+/* Accordeons */
+@utility summary-reset {
+  list-style: none;
+  cursor: pointer;
+  &::-webkit-details-marker {
+    display: none;
+  }
+}
+/* Soepel openen waar de browser dat ondersteunt. */
+@utility details-anim {
+  @media (prefers-reduced-motion: no-preference) {
+    interpolate-size: allow-keywords;
+    &::details-content {
+      block-size: 0;
+      overflow: clip;
+      transition:
+        block-size 200ms ease,
+        content-visibility 200ms allow-discrete;
+    }
+    &[open]::details-content {
+      block-size: auto;
+    }
+  }
+}
+
+/* Kruimelpad: scheidingsteken met CSS, zodat de lijst alleen echte items bevat. */
+@utility breadcrumb {
+  & li + li::before {
+    content: "/";
+    margin-inline-end: calc(var(--spacing) * 2);
+    color: var(--color-accent-text);
+  }
+}
+
+/* Lopende tekst uit Markdown (gidsen, privacyverklaring). */
+@utility prose-content {
+  font-size: var(--text-lg);
+  line-height: var(--leading-prose);
+  color: var(--color-text-soft);
+
+  & > * + * {
+    margin-top: calc(var(--spacing) * 6);
+  }
+  & > h2 {
+    margin-top: calc(var(--spacing) * 14);
+    scroll-margin-top: calc(var(--spacing) * 28);
+    font-size: var(--text-heading);
+    line-height: var(--text-heading--line-height);
+    letter-spacing: var(--text-heading--letter-spacing);
+    font-weight: var(--font-weight-extrabold);
+    font-stretch: 112%;
+    color: var(--color-text);
+  }
+  & > h3 {
+    margin-top: calc(var(--spacing) * 10);
+    font-size: var(--text-h3);
+    line-height: var(--text-h3--line-height);
+    font-weight: var(--font-weight-bold);
+    font-stretch: 110%;
+    color: var(--color-text);
+  }
+  & > ul {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+  }
+  & > ul > li {
+    position: relative;
+    padding-left: calc(var(--spacing) * 6);
+  }
+  & > ul > li::before {
+    content: "";
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: calc(var(--spacing) * 2);
+    height: calc(var(--spacing) * 2);
+    background-color: var(--color-accent);
+  }
+  & > ol {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--spacing) * 2);
+    list-style: decimal;
+    padding-left: calc(var(--spacing) * 6);
+  }
+  & > ol > li {
+    padding-left: calc(var(--spacing) * 1);
+  }
+  & > ol > li::marker {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-accent-text);
+  }
+  & > blockquote {
+    border-radius: var(--radius-card);
+    background-color: var(--color-chip-bg);
+    padding: calc(var(--spacing) * 6);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-chip-text);
+  }
+  & strong {
+    color: var(--color-text);
+  }
+  /* Links in de tekst; knoppen (met eigen klassen) blijven zoals ze zijn. */
+  & a:not([class]) {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-accent-text);
+    text-decoration-line: underline;
+    text-underline-offset: 4px;
+  }
+
+  & table {
+    min-width: calc(var(--spacing) * 130);
+    font-size: var(--text-base);
+  }
+  & th {
+    padding-right: calc(var(--spacing) * 5);
+    padding-bottom: calc(var(--spacing) * 3);
+    text-align: left;
+    vertical-align: bottom;
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+  }
+  & td {
+    border-top: 1px solid var(--color-border);
+    padding-block: calc(var(--spacing) * 3);
+    padding-right: calc(var(--spacing) * 5);
+    vertical-align: top;
+  }
+  & td:first-child {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-text);
+  }
+
+  /* Call-out in de gidsen: <aside class="callout"> met <p>label</p>, <h3> en tekst. */
+  & > .callout {
+    border-radius: var(--radius-card);
+    background-color: var(--color-chip-bg);
+    padding: calc(var(--spacing) * var(--callout-padding, 6));
+    font-size: var(--text-base);
+    color: var(--color-chip-text);
+    @variant md {
+      --callout-padding: 8;
+    }
+  }
+  & > .callout > p:first-child {
+    font-size: var(--text-caption);
+    font-weight: var(--font-weight-bold);
+  }
+  & > .callout > h3 {
+    margin-top: calc(var(--spacing) * 2);
+    font-size: var(--text-h3);
+    line-height: var(--leading-snug);
+    letter-spacing: var(--tracking-tight);
+    font-weight: var(--font-weight-bold);
+    font-stretch: 110%;
+    color: var(--color-chip-text);
+  }
+  & > .callout > * + * {
+    margin-top: calc(var(--spacing) * 2);
+  }
+  & > .callout > p:last-child {
+    margin-top: calc(var(--spacing) * 4);
+  }
+}
+
+/* Zwevende CTA: ruimte voor de home-indicator op iOS, en in- en uitschuiven. */
+@utility pb-safe {
+  padding-bottom: max(calc(var(--spacing) * 3.5), env(safe-area-inset-bottom));
+}
+@utility transition-slide {
+  transition-property: translate, visibility;
+  transition-duration: 300ms;
+}
+
+/* Rand van formuliervelden en keuzerondjes. */
+@utility field-outline {
+  border: 1.5px solid var(--color-field-border);
+}

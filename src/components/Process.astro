@@ -1,0 +1,57 @@
+---
+import Button from "./Button.astro";
+import SectionHeader from "./SectionHeader.astro";
+
+const steps = [
+  {
+    title: "Kennismaken",
+    text: "We drinken koffie, bellen via video of ik kom bij je langs. Ik vraag wat je doet, voor wie, en wat de website moet opleveren.",
+    meta: "30 minuten, gratis",
+  },
+  {
+    title: "Ontwerpen en bouwen",
+    text: "Jij levert teksten en foto's aan, want jij kent je klanten het best. Ik help waar nodig of schrijf alles tegen een meerprijs. Tussendoor krijg je een preview om op te reageren.",
+    meta: "5 werkdagen tot 4 weken",
+  },
+  {
+    title: "Live en overdragen",
+    text: "De site gaat live, met metingen die laten zien wat hij oplevert. Ik laat je zien hoe je zelf kleine dingen aanpast.",
+    meta: "Domein, site en accounts op jouw naam",
+  },
+];
+---
+
+<section id="aanpak" aria-labelledby="aanpak-titel" class="on-block section-y">
+  <div class="reveal container-page">
+    <SectionHeader number="03" label="Aanpak" titleId="aanpak-titel" onBlock>
+      <Fragment slot="title">Van eerste gesprek tot live in drie stappen</Fragment>
+      <Fragment slot="lead"
+        >Jij hebt een zaak te runnen. Daarom neem ik het meeste werk uit handen en vraag ik je input alleen op de
+        momenten dat die telt.</Fragment
+      >
+    </SectionHeader>
+
+    <!-- De <ol> geeft het stapnummer al door aan schermlezers; het grote cijfer is decoratie. -->
+    <ol class="mt-12 grid grid-fit-70 gap-x-8 gap-y-12 md:mt-16">
+      {
+        steps.map((step, i) => (
+          <li class="flex flex-col border-t border-on-block-subtle pt-6">
+            <span aria-hidden="true" class="text-numeral font-stretch-125% text-on-block-subtle">
+              {i + 1}
+            </span>
+            <h3 class="mt-6 text-h3 font-stretch-110%">{step.title}</h3>
+            <p class="mt-3 text-on-block-muted">{step.text}</p>
+            <p class="mt-6 self-start rounded-full bg-on-block px-3.5 py-2 text-sm leading-tight font-semibold text-on-block-ink">
+              {step.meta}
+            </p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-20">
+      <Button href="#contact" variant="on-block">Plan een kennismaking</Button>
+      <p class="text-on-block-muted">De eerste stap is gratis en duurt 30 minuten.</p>
+    </div>
+  </div>
+</section>

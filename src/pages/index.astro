@@ -1,0 +1,90 @@
+---
+import Audiences from "../components/Audiences.astro";
+import ClientStrip from "../components/ClientStrip.astro";
+import Contact from "../components/Contact.astro";
+import Faq from "../components/Faq.astro";
+import Hero from "../components/Hero.astro";
+import Process from "../components/Process.astro";
+import Results from "../components/Results.astro";
+import Schema from "../components/Schema.astro";
+import Services from "../components/Services.astro";
+import { faq } from "../data/faq";
+import { services } from "../data/services";
+import { personSchema, schemaIds, site } from "../data/site";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const title =
+  "Website laten maken voor zzp, mkb en goede doelen | Lorent Webworks";
+const description =
+  "Website laten maken die klanten oplevert? Ik bouw snelle sites die bezoekers laten bellen, boeken, aanmelden of doneren. Vanaf €850. Gratis kennismaking.";
+
+const schema = [
+  {
+    "@type": "ProfessionalService",
+    "@id": schemaIds.organization,
+    name: site.name,
+    url: `${site.url}/`,
+    logo: `${site.url}/android-chrome-512x512.png`,
+    image: `${site.url}/og-image.png`,
+    description:
+      "Websites die klanten opleveren voor zzp'ers, mkb, goede doelen en initiatieven in heel Nederland.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: site.city,
+      addressCountry: site.country,
+    },
+    areaServed: { "@type": "Country", name: "Netherlands" },
+    founder: personSchema,
+    sameAs: [site.linkedin],
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: "Diensten en prijzen",
+      itemListElement: services.map((s) => ({
+        "@type": "Offer",
+        name: s.name,
+        description: s.description,
+        // "Vanaf"-prijs: minimumprijs, geen vaste prijs.
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          minPrice: s.price,
+          priceCurrency: "EUR",
+          valueAddedTaxIncluded: false,
+        },
+        itemOffered: {
+          "@type": "Service",
+          name: s.name,
+          description: s.description,
+        },
+      })),
+    },
+  },
+  {
+    "@type": "WebSite",
+    "@id": schemaIds.website,
+    url: `${site.url}/`,
+    name: site.name,
+    inLanguage: "nl-NL",
+    publisher: { "@id": schemaIds.organization },
+  },
+  {
+    "@type": "FAQPage",
+    mainEntity: faq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
+];
+---
+
+<BaseLayout title={title} description={description} nav="home" floatingCta>
+  <Schema slot="head" data={schema} />
+  <Hero />
+  <ClientStrip />
+  <Results />
+  <Audiences />
+  <Process />
+  <Services />
+  <Faq items={faq} number="05" title="Vragen over een website laten maken" />
+  <Contact />
+</BaseLayout>

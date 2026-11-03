@@ -1,0 +1,55 @@
+---
+import type { FaqItem } from "../data/faq";
+import Icon from "./Icon.astro";
+import SectionLabel from "./SectionLabel.astro";
+
+type Props = {
+  items: FaqItem[];
+  number?: string;
+  label?: string;
+  title: string;
+  id?: string;
+  contactHref?: string;
+};
+const {
+  items,
+  number,
+  label = "Veelgestelde vragen",
+  title,
+  id = "faq",
+  contactHref = "#contact",
+} = Astro.props;
+---
+
+<section id={id} aria-labelledby={`${id}-titel`} class="section-y bg-surface">
+  <div class="reveal container-narrow">
+    <div class="text-center">
+      <SectionLabel number={number}>{label}</SectionLabel>
+      <h2 id={`${id}-titel`} class="mt-5 text-h2 font-stretch-115% text-balance">{title}</h2>
+      <p class="mx-auto mt-6 max-w-xl text-body-lg text-text-muted">
+        Staat je vraag er niet bij? Stel hem in het <a
+          href={contactHref}
+          class="font-semibold text-accent-text underline underline-offset-4 focus-ring">kennismakingsgesprek</a
+        >.
+      </p>
+    </div>
+    <div class="mt-12 flex flex-col gap-2.5 md:mt-14">
+      {
+        items.map((item, i) => (
+          <details name={`${id}-item`} open={i === 0} class="details-anim group rounded-card bg-inner px-5 md:px-7">
+            <summary class="summary-reset flex min-h-11 items-center justify-between gap-5 rounded-card py-5.5 focus-ring">
+              <span class="text-body-lg leading-snug font-bold">{item.q}</span>
+              <span
+                aria-hidden="true"
+                class="grid size-8.5 shrink-0 place-items-center rounded-full bg-accent text-on-accent transition-transform duration-200 group-open:rotate-45 motion-reduce:transition-none"
+              >
+                <Icon name="plus" class="size-4.5" strokeWidth={2.2} />
+              </span>
+            </summary>
+            <p class="max-w-2xl pb-6 text-text-soft">{item.a}</p>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,104 @@
+---
+import { site } from "../data/site";
+import Button from "./Button.astro";
+import Wordmark from "./Wordmark.astro";
+
+type Props = { onHome?: boolean };
+const { onHome = false } = Astro.props;
+const h = onHome ? "" : "/";
+const year = new Date().getFullYear();
+
+const columns = [
+  {
+    title: "Diensten",
+    links: [
+      { label: "Landingspagina", href: `${h}#diensten` },
+      { label: "Bedrijfswebsite", href: `${h}#diensten` },
+      { label: "Korting voor goede doelen", href: `${h}#korting` },
+    ],
+  },
+  {
+    title: "Gids",
+    links: [
+      { label: "Overzicht", href: "/gids/" },
+      { label: "Website laten maken", href: "/gids/website-laten-maken/" },
+      { label: "Wat kost een website", href: "/gids/wat-kost-een-website/" },
+      { label: "Webdesigner kiezen", href: "/gids/webdesigner-kiezen/" },
+      { label: "Website checklist", href: "/gids/website-checklist/" },
+      {
+        label: "Vragen aan een webdesigner",
+        href: "/gids/vragen-aan-webdesigner/",
+      },
+    ],
+  },
+  {
+    title: "Site",
+    links: [
+      { label: "Resultaten", href: `${h}#resultaten` },
+      { label: "Voor wie", href: `${h}#voor-wie` },
+      { label: "Aanpak", href: `${h}#aanpak` },
+      { label: "Veelgestelde vragen", href: `${h}#faq` },
+      { label: "Contact", href: `${h}#contact` },
+      { label: "LinkedIn", href: site.linkedin, external: true },
+    ],
+  },
+];
+
+const linkClass =
+  "rounded-md text-label text-text-soft transition-colors duration-150 hover:text-accent-text focus-ring";
+---
+
+<footer class="overflow-hidden border-t border-border bg-surface pt-14 lg:pt-22">
+  <div class="container-page">
+    <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
+      <div class="max-w-lg lg:col-span-4">
+        <p class="text-h3 font-stretch-112%">
+          Websites die klanten opleveren voor zzp'ers, mkb, goede doelen en initiatieven in heel Nederland.
+        </p>
+        <Button href={`${h}#contact`} class="mt-7">Plan een kennismaking</Button>
+      </div>
+      <nav aria-label="Footer" class="grid gap-12 sm:grid-cols-3 lg:col-span-8 lg:gap-10">
+        {
+          columns.map((col) => (
+            <div>
+              <h2 class="text-sm font-bold text-text-muted">{col.title}</h2>
+              <ul class="mt-4 flex flex-col gap-2.5">
+                {col.links.map((link) => (
+                  <li>
+                    {"external" in link ? (
+                      <a href={link.href} class={linkClass} rel="noopener" target="_blank">
+                        {link.label}
+                        <span class="sr-only"> (opent in een nieuw tabblad)</span>
+                      </a>
+                    ) : (
+                      <a href={link.href} class={linkClass}>
+                        {link.label}
+                      </a>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </nav>
+    </div>
+
+    <div
+      class="mt-14 flex flex-wrap items-center justify-between gap-x-8 gap-y-2 border-t border-border-strong pt-6 text-sm text-text-muted"
+    >
+      <p>© {year} {site.name} · {site.city}</p>
+      <p>
+        KvK {site.kvk} · Btw-plichtig · <a
+          href="/privacy/"
+          class="rounded-md underline underline-offset-2 transition-colors duration-150 hover:text-accent-text focus-ring"
+          >Privacy</a
+        >
+      </p>
+    </div>
+
+    <div aria-hidden="true" class="@container mt-8 translate-y-1/7 select-none md:mt-12">
+      <Wordmark />
+    </div>
+  </div>
+</footer>

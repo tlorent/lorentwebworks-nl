@@ -1,0 +1,44 @@
+---
+import type { Audience } from "../data/audiences";
+import Icon from "./Icon.astro";
+
+type Props = { audience: Audience; open?: boolean };
+const { audience, open = false } = Astro.props;
+---
+
+<!-- Geen kop in <summary>: die heeft de rol 'button' en schermlezers negeren koppen daarin. -->
+<details
+  name="doelgroep"
+  open={open}
+  class="details-anim group rounded-card border border-border transition-colors duration-200 open:border-surface open:bg-surface motion-reduce:transition-none"
+>
+  <summary class="summary-reset flex min-h-11 items-center gap-4 rounded-card px-4.5 py-4 focus-ring">
+    <span
+      class="grid size-11.5 shrink-0 place-items-center rounded-input bg-surface text-accent-text transition-colors duration-200 group-open:bg-inner"
+    >
+      <Icon name={audience.icon} class="size-5.5" />
+    </span>
+    <span class="flex min-w-0 grow flex-col items-start gap-2">
+      <span class="text-lead leading-tight font-bold font-stretch-110% tracking-tight">{audience.title}</span>
+      <span class="rounded-full bg-chip-bg px-3 py-1.5 text-caption leading-none font-semibold text-chip-text"
+        >{audience.goal}</span
+      >
+    </span>
+    <span
+      aria-hidden="true"
+      class="grid size-8.5 shrink-0 place-items-center rounded-full bg-surface text-text transition-transform duration-200 group-open:rotate-45 group-open:bg-accent group-open:text-on-accent motion-reduce:transition-none"
+    >
+      <Icon name="plus" class="size-4.5" strokeWidth={2.2} />
+    </span>
+  </summary>
+  <div class="grid grid-fit-55 gap-x-8 gap-y-5 px-4 pb-5.5 md:pr-4.5 md:pl-20">
+    <div>
+      <p class="text-caption font-bold text-text-muted">Wat je wilt</p>
+      <p class="mt-1.5 text-text-soft">{audience.want}</p>
+    </div>
+    <div>
+      <p class="text-caption font-bold text-accent-text">Zo pak ik het aan</p>
+      <p class="mt-1.5 text-text">{audience.approach}</p>
+    </div>
+  </div>
+</details>

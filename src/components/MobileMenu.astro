@@ -1,0 +1,78 @@
+---
+import Button from "./Button.astro";
+import Icon from "./Icon.astro";
+import Logo from "./Logo.astro";
+import { type NavKey, navLinks } from "./nav";
+import ThemeToggle from "./ThemeToggle.astro";
+
+type Props = { current: NavKey };
+const { current } = Astro.props;
+const onHome = current === "home";
+const links = navLinks(onHome);
+---
+
+<!-- Modale dialog: focus blijft in het menu, de pagina erachter is inert, Escape sluit. -->
+<dialog
+  id="mobiel-menu"
+  aria-label="Menu"
+  class="m-0 hidden h-dvh max-h-none w-full max-w-none flex-col overflow-y-auto border-0 bg-bg p-0 text-text backdrop:bg-transparent open:flex lg:open:hidden"
+>
+  <div class="container-page flex h-19 shrink-0 items-center justify-between border-b border-border">
+    <a href="/" data-menu-link class="-mx-2 rounded-full px-2 py-2 focus-ring">
+      <Logo label="Lorent Webworks, naar de homepage" />
+    </a>
+    <button
+      type="button"
+      commandfor="mobiel-menu"
+      command="close"
+      aria-label="Menu sluiten"
+      data-menu-close
+      class="grid size-11 place-items-center rounded-full bg-surface text-text focus-ring-wide"
+    >
+      <Icon name="close" class="size-5.5" strokeWidth={2} />
+    </button>
+  </div>
+  <nav aria-label="Hoofdmenu" class="container-page flex flex-1 flex-col pt-8 pb-6">
+    <ul class="flex flex-col gap-1">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              data-menu-link
+              aria-current={link.key === current ? "page" : undefined}
+              class="block rounded-2xl py-2 text-h2 font-stretch-115% hover:text-accent-text focus-ring aria-[current=page]:text-accent-text"
+            >
+              {link.label}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+    <div class="mt-8">
+      <ThemeToggle withLabel />
+    </div>
+    <div class="mt-auto pt-10">
+      <Button href={onHome ? "#contact" : "/#contact"} full size="lg" data-menu-link>Plan een kennismaking</Button>
+    </div>
+  </nav>
+</dialog>
+
+<script>
+  const menu = document.getElementById("mobiel-menu");
+  if (menu instanceof HTMLDialogElement) {
+    // Fallback voor browsers zonder invoker commands (command/commandfor).
+    if (!("command" in HTMLButtonElement.prototype)) {
+      document.querySelector("[data-menu-open]")?.addEventListener("click", () => menu.showModal());
+      document.querySelector("[data-menu-close]")?.addEventListener("click", () => menu.close());
+    }
+    for (const link of menu.querySelectorAll("[data-menu-link]")) {
+      link.addEventListener("click", () => menu.close());
+    }
+    // Menu sluiten als het scherm breed genoeg wordt voor de gewone navigatie.
+    const desktop = matchMedia("(width >= 64rem)");
+    desktop.addEventListener("change", (event) => {
+      if (event.matches) menu.close();
+    });
+  }
+</script>

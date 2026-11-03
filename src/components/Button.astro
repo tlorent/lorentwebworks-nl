@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from "astro/types";
+import { buttonClass, buttonIconClass } from "../lib/button.mjs";
+import Icon from "./Icon.astro";
+
+type ButtonVariant = Parameters<typeof buttonClass>[0];
+type ButtonSize = Parameters<typeof buttonClass>[1];
+
+type Props = Omit<HTMLAttributes<"a">, "class"> & {
+  href: string;
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+  full?: boolean;
+  arrow?: boolean;
+  class?: string;
+};
+
+const {
+  href,
+  variant = "primary",
+  size = "md",
+  full = false,
+  arrow,
+  class: className = "",
+  ...rest
+} = Astro.props;
+const showArrow = arrow ?? variant !== "secondary";
+---
+
+<a href={href} class:list={[buttonClass(variant, size), full && "w-full justify-center", className]} {...rest}>
+  <slot />
+  {showArrow && <Icon name="arrow" strokeWidth={2.2} class={buttonIconClass(size)} />}
+</a>

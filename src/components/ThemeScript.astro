@@ -1,0 +1,27 @@
+---
+// Zet data-theme vóór het renderen, zodat er geen flits van de verkeerde modus is.
+---
+
+<script is:inline>
+  (() => {
+    const root = document.documentElement;
+    root.classList.add("js");
+    let stored = null;
+    try {
+      stored = localStorage.getItem("theme");
+    } catch (e) {}
+    const mq = window.matchMedia("(prefers-color-scheme: dark)");
+    const apply = (t) => root.setAttribute("data-theme", t);
+    apply(stored === "light" || stored === "dark" ? stored : mq.matches ? "dark" : "light");
+    mq.addEventListener("change", (e) => {
+      let s = null;
+      try {
+        s = localStorage.getItem("theme");
+      } catch (err) {}
+      if (s !== "light" && s !== "dark") {
+        apply(e.matches ? "dark" : "light");
+        document.dispatchEvent(new CustomEvent("themechange"));
+      }
+    });
+  })();
+</script>

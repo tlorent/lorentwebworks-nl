@@ -1,0 +1,196 @@
+---
+import type { CollectionEntry } from "astro:content";
+import type { MarkdownHeading } from "astro";
+import Faq from "../components/Faq.astro";
+import GuideCard from "../components/GuideCard.astro";
+import GuideCta from "../components/GuideCta.astro";
+import Schema from "../components/Schema.astro";
+import { personSchema, schemaIds, site } from "../data/site";
+import BaseLayout from "./BaseLayout.astro";
+
+type Props = {
+  guide: CollectionEntry<"gids">;
+  headings: MarkdownHeading[];
+  others: CollectionEntry<"gids">[];
+};
+const { guide, headings, others } = Astro.props;
+const { data } = guide;
+const url = `${site.url}/gids/${data.slug}/`;
+const ogImage = `${site.url}/og/${data.slug}.png`;
+const toc = headings.filter((h) => h.depth === 2);
+const isoDate = (date: Date) => date.toISOString().slice(0, 10);
+const updated = new Intl.DateTimeFormat("nl-NL", {
+  day: "numeric",
+  month: "long",
+  year: "numeric",
+}).format(data.updated);
+
+const schema = [
+  {
+    "@type": "Article",
+    headline: data.title,
+    description: data.description,
+    inLanguage: "nl-NL",
+    datePublished: isoDate(data.published),
+    dateModified: isoDate(data.updated),
+    mainEntityOfPage: url,
+    image: ogImage,
+    author: personSchema,
+    publisher: {
+      "@type": "Organization",
+      "@id": schemaIds.organization,
+      name: site.name,
+      url: `${site.url}/`,
+      logo: `${site.url}/android-chrome-512x512.png`,
+    },
+  },
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${site.url}/` },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Gids",
+        item: `${site.url}/gids/`,
+      },
+      { "@type": "ListItem", position: 3, name: data.crumb, item: url },
+    ],
+  },
+  ...(data.faq?.length
+    ? [
+        {
+          "@type": "FAQPage",
+          mainEntity: data.faq.map((f) => ({
+            "@type": "Question",
+            name: f.q,
+            acceptedAnswer: { "@type": "Answer", text: f.a },
+          })),
+        },
+      ]
+    : []),
+];
+
+const crumbLink = "rounded-md hover:text-accent-text focus-ring";
+const chip = "inline-flex rounded-full px-3 py-1.5 text-caption font-semibold";
+---
+
+<BaseLayout title={data.seoTitle} description={data.description} nav="gids" ogType="article" ogImage={ogImage}>
+  <Fragment slot="head">
+    <meta property="article:published_time" content={isoDate(data.published)} />
+    <meta property="article:modified_time" content={isoDate(data.updated)} />
+    <meta property="article:author" content={site.linkedin} />
+    <Schema data={schema} />
+  </Fragment>
+
+  <div class="container-page pt-10 md:pt-14">
+    <nav aria-label="Kruimelpad">
+      <ol class="breadcrumb flex flex-wrap items-center gap-x-2 gap-y-1 text-label text-text-muted">
+        <li><a href="/" class={crumbLink}>Home</a></li>
+        <li><a href="/gids/" class={crumbLink}>Gids</a></li>
+        <li><a href={`/gids/${data.slug}/`} aria-current="page" class="rounded-md font-semibold text-text focus-ring">{data.crumb}</a></li>
+      </ol>
+    </nav>
+  </div>
+
+  <article>
+    <!-- Geen reveal-animatie: de kop staat boven de vouw. -->
+    <header class="container-page pt-8 pb-12 md:pb-16">
+      <p class="flex flex-wrap items-center gap-x-4 gap-y-3">
+        <span class:list={[chip, "bg-accent text-on-accent"]}>Gids</span>
+        <span class:list={[chip, "bg-surface text-text"]}>{data.readingTime} min lezen</span>
+        <span class="text-label text-text-muted">
+          Bijgewerkt op <time datetime={isoDate(data.updated)}>{updated}</time> · Door <a
+            href={site.linkedin}
+            rel="author noopener"
+            target="_blank"
+            class="underline underline-offset-2 hover:text-accent-text focus-ring"
+            >{site.founder}<span class="sr-only"> (opent in een nieuw tabblad)</span></a
+          >
+        </span>
+      </p>
+      <h1 class="mt-6 max-w-6xl text-display font-stretch-116% text-balance">{data.title}</h1>
+      <p class="mt-6 max-w-3xl text-intro text-text-soft">{data.intro}</p>
+    </header>
+
+    <div class="container-page">
+      <div
+        class="flex flex-col gap-10 border-t border-border pt-12 pb-20 lg:flex-row-reverse lg:items-start lg:justify-between lg:gap-16 lg:pb-28"
+      >
+        {
+          toc.length > 0 && (
+            <nav aria-label="Inhoudsopgave" class="rounded-card bg-surface p-5 md:p-6 lg:sticky lg:top-28 lg:w-80 lg:shrink-0">
+              <h2 class="text-sm font-bold text-text-muted">Inhoud</h2>
+              <ol class="mt-3 flex flex-col gap-1">
+                {toc.map((h) => (
+                  <li>
+                    <a
+                      href={`#${h.slug}`}
+                      data-toc-link={h.slug}
+                      class="block rounded-input px-3 py-2.5 text-label font-semibold text-text-soft transition-colors duration-150 hover:text-accent-text focus-ring data-active:bg-inner data-active:text-text"
+                    >
+                      {h.text}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )
+        }
+
+        <div class="min-w-0 flex-1 lg:max-w-3xl">
+          <div class="prose-content">
+            <slot />
+          </div>
+          <GuideCta class="mt-14" {...data.cta} />
+        </div>
+      </div>
+    </div>
+
+    {
+      data.faq?.length ? (
+        <Faq items={data.faq} label="FAQ" title="Veelgestelde vragen" id="gids-faq" contactHref="/#contact" />
+      ) : null
+    }
+  </article>
+
+  <section aria-labelledby="verder-lezen" class="bg-surface py-20 md:py-28">
+    <div class="reveal container-page">
+      <h2 id="verder-lezen" class="text-title font-stretch-115%">Verder lezen</h2>
+      <div class="mt-10 grid grid-fit-65 gap-3.5">
+        {
+          others.map((g) => (
+            <GuideCard
+              title={g.data.cardTitle}
+              teaser={g.data.teaser}
+              slug={g.data.slug}
+              readingTime={g.data.readingTime}
+              order={g.data.order}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const links = document.querySelectorAll<HTMLElement>("[data-toc-link]");
+  if (links.length && "IntersectionObserver" in window) {
+    const setActive = (id: string) => {
+      for (const l of links) l.toggleAttribute("data-active", l.dataset.tocLink === id);
+    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries.filter((e) => e.isIntersecting);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-20% 0px -70% 0px" },
+    );
+    for (const l of links) {
+      const target = document.getElementById(l.dataset.tocLink ?? "");
+      if (target) observer.observe(target);
+    }
+    setActive(links[0].dataset.tocLink ?? "");
+  }
+</script>
