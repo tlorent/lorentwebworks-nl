@@ -550,11 +550,14 @@
   transition-duration: 300ms;
 }
 
-/* Ruimte boven en onder de hero: groeit mee met de schermhoogte (minimaal 48px, maximaal 96px),
-   zodat de strook met bedrijfsnamen op laptops boven de vouw blijft. */
-@utility hero-pad {
-  padding-top: clamp(2.5rem, 6vh, 5rem);
-  padding-bottom: clamp(5rem, 13vh, 9rem);
+/* Hero: de hele hoogte tot de vouw, met de strook met bedrijfsnamen onderaan.
+   100svh min de header (77px) en de strook (86px). Gelijke ruimte boven en onder. */
+@utility hero-fill {
+  min-height: calc(100svh - 163px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: clamp(3rem, 6vh, 5rem);
 }
 
 /* Rand van formuliervelden en keuzerondjes. */

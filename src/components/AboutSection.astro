@@ -1,7 +1,7 @@
 ---
 // Korte kennismaking op de homepage, direct onder de strook met bedrijfsnamen.
 import { Image } from "astro:assets";
-import timPortret from "../assets/photos/tim-2.jpg";
+import timPortret from "../assets/tim.jpg";
 import SectionLabel from "./SectionLabel.astro";
 
 const punten = [
@@ -17,11 +17,9 @@ const punten = [
       <Image
         src={timPortret}
         alt="Portret van Tim Lorent"
-        width={500}
-        height={625}
-        widths={[320, 500]}
+        widths={[320, 380]}
         sizes="(min-width: 1024px) 40vw, 80vw"
-        class="h-auto w-full max-w-sm rounded-hero"
+        class="aspect-square h-auto w-full max-w-sm rounded-hero object-cover"
       />
     </div>
     <div class="lg:col-span-7">
