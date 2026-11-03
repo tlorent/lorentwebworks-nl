@@ -1,4 +1,5 @@
 ---
+import AboutSection from "../components/AboutSection.astro";
 import Audiences from "../components/Audiences.astro";
 import BookButton from "../components/BookButton.astro";
 import ClientStrip from "../components/ClientStrip.astro";
@@ -82,13 +83,14 @@ const schema = [
   <Schema slot="head" data={schema} />
   <Hero />
   <ClientStrip />
+  <AboutSection />
   <Results />
   <Audiences />
   <Process />
   <Services />
   <Faq
     items={faq}
-    number="05"
+    number="06"
     title="Vragen over een website laten maken"
     photo={{ name: "tim-2", alt: "Foto van Tim Lorent" }}
   >
