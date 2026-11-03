@@ -1,27 +1,43 @@
 ---
 import { audiences } from "../data/audiences";
-import AudienceItem from "./AudienceItem.astro";
+import { formatPrice, prices } from "../data/services";
 import BookButton from "./BookButton.astro";
+import Icon from "./Icon.astro";
 import Pattern from "./Pattern.astro";
-import SectionLabel from "./SectionLabel.astro";
+import SectionHeader from "./SectionHeader.astro";
 ---
 
 <section id="voor-wie" aria-labelledby="voor-wie-titel" class="relative section-y">
   <Pattern variant="grid" />
-  <div class="reveal relative container-page flex flex-wrap items-start gap-x-16 gap-y-10">
-    <div class="grow-2 basis-90 lg:sticky lg:top-28">
-      <SectionLabel number="02">Voor wie</SectionLabel>
-      <h2 id="voor-wie-titel" class="mt-5 text-h2 font-stretch-115% text-balance">
-        Een website laten maken die past bij wat jij wilt bereiken
-      </h2>
-      <p class="mt-6 max-w-md text-body-lg text-text-muted">
-        Een restaurant wil reserveringen, een coach wil intakes en een goed doel wil donaties. Ik begin daarom bij
-        jouw doel en bouw de site daaromheen.
+  <div class="reveal relative container-page">
+    <SectionHeader number="03" label="Voor wie" titleId="voor-wie-titel">
+      <Fragment slot="title">Wat moet jouw website opleveren?</Fragment>
+      <Fragment slot="lead">Ik begin bij je doel en bouw de site daaromheen. Herken je jezelf in een van deze vier?</Fragment>
+    </SectionHeader>
+
+    <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-16">
+      {
+        audiences.map((audience) => (
+          <li class="flex flex-col rounded-panel bg-surface p-6 md:p-7">
+            <span class="grid size-11 place-items-center rounded-input bg-inner text-accent-text">
+              <Icon name={audience.icon} class="size-5.5" />
+            </span>
+            <h3 class="mt-6 text-h3 font-stretch-110%">{audience.title}</h3>
+            <p class="mt-3 text-caption font-bold text-accent-text">{audience.forWho}</p>
+            <p class="mt-4 text-text-soft">{audience.text}</p>
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-12 flex flex-col gap-6 md:mt-16">
+      <div>
+        <BookButton />
+      </div>
+      <p class="max-w-3xl text-text-muted">
+        Reserveren, boeken of doneren? Ik plaats de knop of widget van je eigen systeem. Bij de Bedrijfswebsite zit dat
+        inbegrepen, bij de Landingspagina kost het {formatPrice(prices.tool)}. Een koppeling op maat bespreken we vooraf.
       </p>
-      <BookButton class="mt-8" />
-    </div>
-    <div class="flex min-w-0 grow-3 basis-130 flex-col gap-2">
-      {audiences.map((audience, i) => <AudienceItem audience={audience} open={i === 0} />)}
     </div>
   </div>
 </section>

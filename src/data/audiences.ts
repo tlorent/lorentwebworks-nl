@@ -4,83 +4,35 @@ type IconName = keyof typeof icons;
 
 export type Audience = {
   title: string;
-  goal: string;
-  want: string;
-  approach: string;
+  forWho: string;
+  text: string;
   icon: IconName;
 };
 
+// Vier kaarten, altijd zichtbaar. De teksten staan letterlijk in de brief.
 export const audiences: Audience[] = [
   {
-    title: "Zzp'ers en starters",
-    goal: "Doel: aanvragen",
-    want: "Je wilt snel professioneel online staan en je eerste opdrachten binnenhalen.",
-    approach:
-      "Ik bouw een pagina die in één oogopslag laat zien wat je doet en voor wie, met je werk, je aanpak en een contactknop die altijd in beeld is.",
-    icon: "briefcase",
-  },
-  {
-    title: "Adviseurs en consultants",
-    goal: "Doel: kennismakingsgesprekken",
-    want: "Opdrachtgevers willen zien dat je hun vraagstuk begrijpt voordat ze contact opnemen.",
-    approach:
-      "Ik zet je expertise, werkwijze en resultaten helder neer en plaats je online agenda, zodat een gesprek plannen één klik is.",
+    title: "Aanvragen en opdrachten",
+    forWho: "Zzp'ers, starters, adviseurs en creatieven",
+    text: "Bezoekers zien snel wat je doet, voor wie en welk werk je eerder deed. Daarna is contact opnemen of een gesprek plannen één klik.",
     icon: "chat",
   },
   {
-    title: "Coaches en therapeuten",
-    goal: "Doel: intakes",
-    want: "Mensen zoeken iemand bij wie ze zich veilig voelen en willen weten wat een traject inhoudt.",
-    approach:
-      "Ik maak een rustige site met jouw verhaal, je werkwijze, tarieven en een laagdrempelige manier om een intake te plannen.",
+    title: "Intakes en afspraken",
+    forWho: "Coaches, therapeuten en salons",
+    text: "Je site laat zien wie je bent, hoe je werkt en wat het kost. Zo voelt de eerste stap klein en plannen mensen makkelijk een afspraak.",
     icon: "sprout",
   },
   {
-    title: "Goede doelen en ngo's",
-    goal: "Doel: donaties en vrijwilligers",
-    want: "Je wilt dat bezoekers je missie snappen en meteen kunnen bijdragen.",
-    approach:
-      "Ik laat je impact zien met verhalen en cijfers, plaats de doneerknop van je eigen platform en maak aanmelden als vrijwilliger eenvoudig.",
-    icon: "heart",
-  },
-  {
-    title: "Horeca",
-    goal: "Doel: reserveringen",
-    want: "Gasten willen de kaart zien, de sfeer proeven en een tafel boeken, meestal op hun telefoon.",
-    approach:
-      "Ik bouw een snelle mobiele site met menukaart, openingstijden, sfeerbeelden en de reserveerknop van je eigen systeem.",
+    title: "Reserveringen en bezoekers",
+    forWho: "Horeca en winkels",
+    text: "Op mobiel vinden gasten direct je kaart of aanbod, openingstijden en route, met de reserveer- of boekingsknop van je eigen systeem.",
     icon: "cutlery",
   },
   {
-    title: "Scholen en opleiders",
-    goal: "Doel: aanmeldingen",
-    want: "Studenten en ouders vergelijken opleidingen en willen snel weten waar ze aan toe zijn.",
-    approach:
-      "Ik maak overzichtelijke pagina's met inhoud, data en kosten, en een aanmeldformulier of inschrijving voor de open dag.",
-    icon: "cap",
-  },
-  {
-    title: "Winkels en salons",
-    goal: "Doel: afspraken en winkelbezoek",
-    want: "Klanten willen weten wat je aanbiedt, waar je zit en wanneer ze terecht kunnen.",
-    approach:
-      "Ik zet je aanbod, prijzen, route en openingstijden overzichtelijk neer, met de boekingsknop van je eigen systeem. Zo word je ook in de buurt goed gevonden.",
-    icon: "store",
-  },
-  {
-    title: "Creatieven",
-    goal: "Doel: opdrachten",
-    want: "Je werk moet voor zich spreken en potentiële opdrachtgevers moeten direct zien wat je kunt.",
-    approach:
-      "Ik bouw een portfolio waarin je werk groot en snel in beeld komt, met per project het verhaal erachter en een duidelijke weg naar een aanvraag.",
-    icon: "pen",
-  },
-  {
-    title: "Maatschappelijke initiatieven",
-    goal: "Doel: deelnemers en steun",
-    want: "Je wilt buurtbewoners, deelnemers en partners bereiken die je nog niet kennen.",
-    approach:
-      "Ik maak een site met je activiteiten, een agenda, aanmelden voor activiteiten of nieuwsbrief en een plek voor partners en sponsors.",
-    icon: "people",
+    title: "Donaties en aanmeldingen",
+    forWho: "Goede doelen, ngo's, scholen en initiatieven",
+    text: "Bezoekers snappen snel je missie of aanbod en kunnen meteen doneren, zich aanmelden of meedoen.",
+    icon: "heart",
   },
 ];
