@@ -45,7 +45,7 @@ De bedragen zijn indicaties voor een standaard bedrijfswebsite in Nederland. Web
 
 - **De Landingspagina:** vanaf € 850 excl. btw, eenmalig, binnen 5 werkdagen. Een kennismakingsgesprek, een pagina op maat op basis van jouw teksten, opgezet om gevonden te worden, snel op mobiel en één revisieronde.
 - **De Bedrijfswebsite:** vanaf € 1.750 excl. btw, eenmalig. Alles uit de landingspagina, plus 4 tot 6 pagina's, SEO per pagina, conversietracking en twee revisierondes.
-- **Gratis kennismaking:** 30 minuten via video. In en rond Amsterdam kan het ook bij jou op locatie. Je krijgt een helder beeld van wat er kan en wat het kost.
+- **Gratis kennismaking:** 30 minuten via video. Je krijgt een helder beeld van wat er kan en wat het kost.
 
 ## Wat bepaalt de prijs?
 

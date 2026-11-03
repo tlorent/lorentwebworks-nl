@@ -5,8 +5,10 @@ import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 
-type Props = { service: Service };
-const { service } = Astro.props;
+type Props = { service: Service; onHome?: boolean };
+const { service, onHome = true } = Astro.props;
+// Op de homepage kiest de knop het pakket in het formulier; elders gaat hij gewoon naar de kennismaking.
+const preselect = onHome && !bookingUrl;
 const inverse = service.variant === "inverse";
 const titleId = `dienst-${service.id}`;
 const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
@@ -64,9 +66,7 @@ const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
   </p>
 
   {
-    bookingUrl ? (
-      <BookButton variant={inverse ? "inverse" : "primary"} full size="lg" class="mt-auto" aria-describedby={titleId} />
-    ) : (
+    preselect ? (
       <Button
         href={`?dienst=${service.id}#contact`}
         variant={inverse ? "inverse" : "primary"}
@@ -78,6 +78,15 @@ const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
       >
         Plan een kennismaking
       </Button>
+    ) : (
+      <BookButton
+        base={onHome ? "" : "/"}
+        variant={inverse ? "inverse" : "primary"}
+        full
+        size="lg"
+        class="mt-auto"
+        aria-describedby={titleId}
+      />
     )
   }
 </article>

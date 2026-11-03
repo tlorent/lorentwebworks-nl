@@ -166,23 +166,47 @@ export const packageRows: {
 ];
 
 /** Diensten voor bestaande websites, op de pagina website-verbeteren. */
-export const improvements = [
+export const improvements: {
+  name: string;
+  label: string;
+  price: number;
+  variant: "light" | "inverse";
+  included: string[];
+  note: string;
+}[] = [
   {
     name: "Websitecheck",
+    label: "Eerst zien waar het misgaat",
     price: prices.websitecheck,
-    text: "Ik bekijk je site op boodschap, structuur, snelheid, vindbaarheid en contact. Je krijgt de tien belangrijkste verbeteringen op volgorde en we bespreken ze in 30 minuten.",
+    variant: "light",
+    included: [
+      "Check op boodschap, structuur, snelheid, vindbaarheid en contact",
+      "De tien belangrijkste verbeteringen, op volgorde",
+      "30 minuten om de verbeteringen door te nemen",
+    ],
     note: "Verrekenbaar bij een opdracht binnen 30 dagen.",
   },
   {
     name: "Verbeterronde",
+    label: "Verbeteren in één ronde",
     price: prices.verbeterronde,
-    text: "We spreken vooraf een lijst af. Ik besteed tot 6 uur aan tekst, structuur, snelheid of vindbaarheid.",
+    variant: "inverse",
+    included: [
+      "Vooraf een lijst met afspraken",
+      "Tot 6 uur werk aan tekst, structuur, snelheid of vindbaarheid",
+    ],
     note: "Klaar binnen 10 werkdagen nadat ik toegang en input heb.",
   },
   {
     name: "Vraaguur",
+    label: "Vragen stellen en een volgende stap kiezen",
     price: prices.vraaguur,
-    text: "60 minuten samen naar je site kijken. Je krijgt antwoord op je vragen en we bepalen de volgende stap.",
+    variant: "light",
+    included: [
+      "60 minuten samen naar je site kijken",
+      "Antwoord op je vragen",
+      "We bepalen samen de volgende stap",
+    ],
     note: "",
   },
 ];

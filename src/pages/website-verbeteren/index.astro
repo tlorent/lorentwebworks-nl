@@ -1,12 +1,16 @@
 ---
 import BookButton from "../../components/BookButton.astro";
+import Icon from "../../components/Icon.astro";
+import Pattern from "../../components/Pattern.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
 import { formatPrice, improvements } from "../../data/services";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const title =
   "Website verbeteren zonder alles opnieuw te bouwen | Lorent Webworks";
 const description =
-  "Heb je al een website die te weinig oplevert? Ik help je met de punten die het meeste verschil maken, ook op WordPress, Wix of Squarespace. Vanaf € 125.";
+  "Heb je al een website die te weinig oplevert? Ik help je met de punten die het meeste verschil maken. Vanaf € 125, excl. btw.";
 
 const hiervoor = [
   "Teksten en pagina-indeling verbeteren",
@@ -26,70 +30,146 @@ const stappen = [
   "Je geeft toegang tot je site.",
   "Ik voer het werk uit en je krijgt een overzicht van de wijzigingen.",
 ];
-
-const listClass = "mt-6 flex flex-col gap-3 text-text-soft";
-const bullet =
-  "relative pl-6 before:absolute before:top-3 before:left-0 before:size-2 before:bg-accent";
 ---
 
 <BaseLayout title={title} description={description} nav="verbeteren" ogType="website">
-  <header class="container-page pt-14 pb-12 md:pt-20">
-    <h1 class="max-w-4xl text-display font-stretch-116% text-balance">
-      Je website verbeteren zonder alles opnieuw te bouwen
-    </h1>
-    <p class="mt-6 max-w-3xl text-intro text-text-soft">
-      Heb je al een site die te weinig oplevert? Ik help je met de punten die het meeste verschil maken, ook als je site
-      op WordPress, Wix of Squarespace draait.
-    </p>
-  </header>
-
-  <section aria-labelledby="diensten-verbeteren" class="container-page pb-20 md:pb-28">
-    <h2 id="diensten-verbeteren" class="sr-only">Diensten</h2>
-    <div class="grid grid-fit-80 gap-4">
-      {
-        improvements.map((item) => (
-          <article class="flex flex-col rounded-panel bg-surface p-6 md:p-9">
-            <h3 class="text-title font-stretch-115%">{item.name}</h3>
-            <p class="mt-4 text-title font-stretch-115%">{formatPrice(item.price)}</p>
-            <p class="mt-1 text-label text-text-muted">excl. btw, eenmalig</p>
-            <p class="mt-6 text-text-soft">{item.text}</p>
-            {item.note && <p class="mt-auto pt-6 text-label font-semibold text-text">{item.note}</p>}
-          </article>
-        ))
-      }
+  <section class="relative pt-14 pb-12 md:pt-20 md:pb-16">
+    <Pattern variant="dots" />
+    <div class="relative container-page">
+      <SectionLabel>Bestaande website</SectionLabel>
+      <h1 class="mt-6 max-w-5xl text-display font-stretch-116% text-balance">
+        Je website verbeteren zonder alles opnieuw te bouwen
+      </h1>
+      <p class="mt-6 max-w-3xl text-intro text-text-soft">
+        Heb je al een site die te weinig oplevert? Ik help je met de punten die het meeste verschil maken.
+      </p>
     </div>
   </section>
 
-  <section aria-labelledby="hiervoor-titel" class="container-page pb-20 md:pb-28">
-    <div class="grid grid-fit-80 gap-12">
-      <div>
-        <h2 id="hiervoor-titel" class="text-title font-stretch-115%">Hiervoor kun je terecht</h2>
-        <ul class={listClass}>
-          {hiervoor.map((item) => <li class={bullet}>{item}</li>)}
-        </ul>
-      </div>
-      <div>
-        <h2 class="text-title font-stretch-115%">Dit valt erbuiten</h2>
-        <ul class={listClass}>
-          {erbuiten.map((item) => <li class={bullet}>{item}</li>)}
-        </ul>
+  <section aria-labelledby="diensten-verbeteren" class="relative section-y">
+    <div class="reveal container-page">
+      <SectionHeader number="01" label="Diensten" titleId="diensten-verbeteren">
+        <Fragment slot="title">Kies de hulp die bij je past</Fragment>
+        <Fragment slot="lead">Drie diensten met een vaste prijs. Je weet vooraf wat je krijgt.</Fragment>
+      </SectionHeader>
+
+      <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
+        {
+          improvements.map((item, i) => {
+            const inverse = item.variant === "inverse";
+            const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
+            const titleId = `dienst-verbeteren-${i}`;
+            return (
+              <article
+                aria-labelledby={titleId}
+                class:list={[
+                  "flex flex-col rounded-panel p-6 md:p-11",
+                  inverse ? "bg-inverse-bg bg-glow text-inverse-text" : "bg-surface text-text",
+                ]}
+              >
+                <p class:list={["text-label font-semibold", muted]}>{item.label}</p>
+                <h3 id={titleId} class="mt-3 text-title font-stretch-115%">{item.name}</h3>
+
+                <div class:list={["mt-8 rounded-card p-5 md:p-6", inverse ? "bg-inverse-inner" : "bg-inner"]}>
+                  <p class="flex flex-col">
+                    <strong class="text-price font-stretch-120% whitespace-nowrap">{formatPrice(item.price)}</strong>
+                    <span class:list={["mt-1 text-label", muted]}>excl. btw, eenmalig</span>
+                  </p>
+                </div>
+
+                <h4 class:list={["mt-8 text-sm font-bold", muted]}>Wat je krijgt</h4>
+                <ul class="mt-4 flex flex-col gap-3">
+                  {item.included.map((line) => (
+                    <li class="flex items-start gap-3">
+                      <span
+                        class:list={[
+                          "mt-0.5 grid size-5.5 shrink-0 place-items-center rounded-full",
+                          inverse ? "bg-inverse-text text-inverse-bg" : "bg-accent text-on-accent",
+                        ]}
+                      >
+                        <Icon name="check" class="size-3.5" strokeWidth={2.6} />
+                      </span>
+                      <span>{line}</span>
+                    </li>
+                  ))}
+                </ul>
+                {item.note && <p class:list={["mt-6 text-label font-semibold", muted]}>{item.note}</p>}
+
+                <BookButton
+                  base="/"
+                  variant={inverse ? "inverse" : "primary"}
+                  full
+                  size="lg"
+                  class="mt-auto"
+                  aria-describedby={titleId}
+                />
+              </article>
+            );
+          })
+        }
       </div>
     </div>
   </section>
 
-  <section aria-labelledby="zo-werkt-het" class="container-page pb-20 md:pb-28">
-    <h2 id="zo-werkt-het" class="text-title font-stretch-115%">Zo werkt het</h2>
-    <ol class="mt-8 grid grid-fit-70 gap-6">
-      {
-        stappen.map((stap, i) => (
-          <li class="border-t border-border-strong pt-5">
-            <span class="text-numeral font-stretch-125% text-accent-text" aria-hidden="true">{i + 1}</span>
-            <p class="sr-only">Stap {i + 1}:</p>
-            <p class="mt-4 text-lead text-text-soft">{stap}</p>
-          </li>
-        ))
-      }
-    </ol>
+  <section aria-labelledby="afbakening" class="relative section-y bg-surface">
+    <div class="reveal container-page">
+      <SectionHeader number="02" label="Afbakening" titleId="afbakening">
+        <Fragment slot="title">Wat past en wat niet</Fragment>
+        <Fragment slot="lead">Zo weet je vooraf waar je aan toe bent.</Fragment>
+      </SectionHeader>
+      <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
+        <div class="rounded-panel bg-inner p-6 md:p-10">
+          <h3 class="text-h3 font-stretch-110%">Hiervoor kun je terecht</h3>
+          <ul class="mt-6 flex flex-col gap-4">
+            {
+              hiervoor.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-0.5 grid size-5.5 shrink-0 place-items-center rounded-full bg-accent text-on-accent">
+                    <Icon name="check" class="size-3.5" strokeWidth={2.6} />
+                  </span>
+                  <span class="text-text-soft">{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div class="rounded-panel border border-border bg-inner p-6 md:p-10">
+          <h3 class="text-h3 font-stretch-110%">Dit valt erbuiten</h3>
+          <ul class="mt-6 flex flex-col gap-4">
+            {
+              erbuiten.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-0.5 grid size-5.5 shrink-0 place-items-center rounded-full bg-surface text-text-muted">
+                    <Icon name="close" class="size-3" strokeWidth={2.6} />
+                  </span>
+                  <span class="text-text-soft">{item}</span>
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="zo-werkt-het" class="relative section-y">
+    <div class="reveal container-page">
+      <SectionHeader number="03" label="Werkwijze" titleId="zo-werkt-het">
+        <Fragment slot="title">Zo werkt het</Fragment>
+        <Fragment slot="lead">Vier stappen, van kennismaking tot overzicht van de wijzigingen.</Fragment>
+      </SectionHeader>
+      <ol class="mt-12 grid grid-fit-70 gap-3.5 md:mt-16">
+        {
+          stappen.map((stap, i) => (
+            <li class="flex flex-col gap-6 rounded-card bg-surface p-6 md:p-7">
+              <span class="text-numeral font-stretch-125% text-accent-text" aria-hidden="true">{i + 1}</span>
+              <p class="sr-only">Stap {i + 1}:</p>
+              <p class="text-lead text-text-soft">{stap}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
   </section>
 
   <section aria-labelledby="verbeteren-cta" class="container-page pb-20 md:pb-28">

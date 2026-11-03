@@ -550,6 +550,12 @@
   transition-duration: 300ms;
 }
 
+/* Ruimte boven en onder de hero: groeit mee met de schermhoogte (minimaal 48px, maximaal 96px),
+   zodat de strook met bedrijfsnamen op laptops boven de vouw blijft. */
+@utility hero-pad {
+  padding-block: clamp(3rem, 7vh, 6rem);
+}
+
 /* Rand van formuliervelden en keuzerondjes. */
 @utility field-outline {
   border: 1.5px solid var(--color-field-border);

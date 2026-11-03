@@ -99,7 +99,7 @@ Een contactformulier met weinig velden, een klikbaar telefoonnummer, een WhatsAp
 
 Bij mij verloopt een project in drie stappen:
 
-1. **We spreken af.** We bellen via video. Zit je in of rond Amsterdam, dan kom ik ook graag langs. Ik stel scherpe vragen over je bedrijf, je klanten en wat de site moet doen. Dat gesprek duurt 30 minuten en is gratis.
+1. **We spreken af.** We bellen via video. Ik stel scherpe vragen over je bedrijf, je klanten en wat de site moet doen. Dat gesprek duurt 30 minuten en is gratis.
 2. **Ik bouw.** Structuur, teksten, ontwerp en techniek neem ik voor mijn rekening. Je krijgt tussentijds een preview om op te reageren.
 3. **Live en opleveren.** De site gaat live en ik laat je zien hoe je zelf kleine dingen aanpast. Bij de Bedrijfswebsite stel ik ook metingen in. Jij houdt de sleutels.
 

@@ -1,6 +1,10 @@
 ---
 import BookButton from "../../components/BookButton.astro";
 import NonprofitDiscount from "../../components/NonprofitDiscount.astro";
+import Pattern from "../../components/Pattern.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
+import ServiceCard from "../../components/ServiceCard.astro";
 import { hostingPrice } from "../../data/booking.mjs";
 import {
   extras,
@@ -14,80 +18,73 @@ const [lp, bw] = services;
 const title = "Tarieven voor je website | Lorent Webworks";
 const description = `Vaste prijzen voor een Landingspagina (vanaf ${formatPrice(lp.price)}) en een Bedrijfswebsite (vanaf ${formatPrice(bw.price)}). Eenmalig, excl. btw, met een overzicht van de extra's.`;
 
-const headCell = "pb-4 pr-6 text-left align-bottom font-bold text-text";
+const headCell =
+  "pb-5 pr-6 text-left align-bottom text-label font-semibold text-text-muted";
+const rowHead =
+  "border-t border-border py-4 pr-6 text-left align-top font-semibold text-text";
+const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
 ---
 
 <BaseLayout title={title} description={description} nav="tarieven">
-  <header class="container-page pt-14 pb-12 md:pt-20">
-    <h1 class="text-display font-stretch-116% text-balance">Tarieven</h1>
-    <p class="mt-6 max-w-3xl text-intro text-text-soft">
-      Je weet vooraf wat het kost en wat erin zit. Alle prijzen zijn eenmalig en exclusief btw.
-    </p>
-  </header>
+  <section class="relative pt-14 pb-12 md:pt-20 md:pb-16">
+    <Pattern variant="dots" />
+    <div class="relative container-page">
+      <SectionLabel>Prijzen</SectionLabel>
+      <h1 class="mt-6 text-display font-stretch-116% text-balance">Tarieven</h1>
+      <p class="mt-6 max-w-3xl text-intro text-text-soft">
+        Je weet vooraf wat het kost en wat erin zit. Alle prijzen zijn eenmalig en exclusief btw.
+      </p>
+    </div>
+  </section>
 
-  <section aria-labelledby="pakketten-titel" class="container-page pb-20 md:pb-28">
-    <h2 id="pakketten-titel" class="text-title font-stretch-115%">Pakketten</h2>
-    <div
-      role="region"
-      tabindex="0"
-      aria-labelledby="pakketten-titel"
-      class="mt-8 overflow-x-auto rounded-md focus-ring-wide"
-    >
-      <div class="prose-content">
-        <table>
+  <section aria-labelledby="pakketten-titel" class="relative section-y">
+    <div class="reveal container-page">
+      <SectionHeader number="01" label="Pakketten" titleId="pakketten-titel">
+        <Fragment slot="title">Twee pakketten met een vaste prijs</Fragment>
+        <Fragment slot="lead"
+          >Kies het pakket dat past bij wat je website moet opleveren. De prijzen zijn eenmalig, zonder abonnement.</Fragment
+        >
+      </SectionHeader>
+      <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
+        <ServiceCard service={lp} onHome={false} />
+        <ServiceCard service={bw} onHome={false} />
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="vergelijk-titel" class="relative section-y bg-surface">
+    <div class="reveal container-page">
+      <SectionHeader number="02" label="Vergelijken" titleId="vergelijk-titel">
+        <Fragment slot="title">Wat zit er in welk pakket?</Fragment>
+        <Fragment slot="lead">Het verschil tussen de twee pakketten in één overzicht.</Fragment>
+      </SectionHeader>
+      <div
+        role="region"
+        tabindex="0"
+        aria-labelledby="vergelijk-titel"
+        class="mt-12 overflow-x-auto rounded-panel bg-inner p-6 focus-ring-wide md:mt-16 md:p-10"
+      >
+        <table class="w-full min-w-2xl border-collapse">
           <thead>
             <tr>
               <th scope="col"><span class="sr-only">Onderwerp</span></th>
-              <th scope="col" class={headCell}>{lp.name}, vanaf {formatPrice(lp.price)}</th>
-              <th scope="col" class={headCell}>{bw.name}, vanaf {formatPrice(bw.price)}</th>
+              <th scope="col" class={headCell}>
+                <span class="block text-h3 font-stretch-110% text-text">{lp.name}</span>
+                <span class="mt-1 block text-accent-text">vanaf {formatPrice(lp.price)}</span>
+              </th>
+              <th scope="col" class={headCell}>
+                <span class="block text-h3 font-stretch-110% text-text">{bw.name}</span>
+                <span class="mt-1 block text-accent-text">vanaf {formatPrice(bw.price)}</span>
+              </th>
             </tr>
           </thead>
           <tbody>
             {
               packageRows.map((row) => (
                 <tr>
-                  <th scope="row" class="pr-6 py-3 text-left align-top font-semibold text-text">{row.label}</th>
-                  <td>{row.landingspagina}</td>
-                  <td>{row.bedrijfswebsite}</td>
-                </tr>
-              ))
-            }
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <aside class="mt-8 rounded-card bg-surface p-6 md:p-8">
-      <p class="text-text-soft">
-        <strong class="text-text">Valt buiten beide pakketten:</strong> webshops, inlogomgevingen, koppelingen op maat,
-        logo-ontwerp, fotografie en het overzetten van bestaande content. Heb je dit nodig, dan bespreken we het vooraf en
-        krijg je een aparte prijs.
-      </p>
-    </aside>
-  </section>
-
-  <section aria-labelledby="extras-titel" class="container-page pb-20 md:pb-28">
-    <h2 id="extras-titel" class="text-title font-stretch-115%">Extra's</h2>
-    <div
-      role="region"
-      tabindex="0"
-      aria-labelledby="extras-titel"
-      class="mt-8 overflow-x-auto rounded-md focus-ring-wide"
-    >
-      <div class="prose-content">
-        <table>
-          <thead>
-            <tr>
-              <th scope="col" class={headCell}>Extra</th>
-              <th scope="col" class={headCell}>Prijs</th>
-            </tr>
-          </thead>
-          <tbody>
-            {
-              extras.map((extra) => (
-                <tr>
-                  <th scope="row" class="pr-6 py-3 text-left align-top font-semibold text-text">{extra.label}</th>
-                  <td>{extra.unit ? `${formatPrice(extra.price)} ${extra.unit}` : formatPrice(extra.price)}</td>
+                  <th scope="row" class={rowHead}>{row.label}</th>
+                  <td class={cell}>{row.landingspagina}</td>
+                  <td class={cell}>{row.bedrijfswebsite}</td>
                 </tr>
               ))
             }
@@ -97,16 +94,49 @@ const headCell = "pb-4 pr-6 text-left align-bottom font-bold text-text";
     </div>
   </section>
 
-  <section aria-labelledby="erbij-titel" class="container-page pb-20 md:pb-28">
-    <h2 id="erbij-titel" class="text-title font-stretch-115%">Wat komt er nog bij?</h2>
-    <p class="mt-6 max-w-3xl text-body-lg text-text-soft">
-      Je betaalt eenmalig voor de website. Daarnaast heb je een domeinnaam van ongeveer € 10 tot € 15 per jaar{
-        hostingPrice ? ` en hosting van ${hostingPrice} per maand` : ""
-      }. Die staan op jouw naam. Betaalde boekings- of doneertools reken je rechtstreeks met de aanbieder af.
-    </p>
+  <section aria-labelledby="extras-titel" class="relative section-y">
+    <div class="reveal container-page">
+      <SectionHeader number="03" label="Extra's" titleId="extras-titel">
+        <Fragment slot="title">Extra's die je erbij kunt nemen</Fragment>
+        <Fragment slot="lead">Los te bestellen, naast een pakket. Je kiest alleen wat je nodig hebt.</Fragment>
+      </SectionHeader>
+      <ul class="mt-12 grid grid-fit-70 gap-3.5 md:mt-16">
+        {
+          extras.map((extra) => (
+            <li class="flex flex-col justify-between gap-6 rounded-card border border-border bg-inner p-6 md:p-7">
+              <span class="text-lead leading-snug font-bold font-stretch-110%">{extra.label}</span>
+              <span class="flex flex-wrap items-baseline gap-x-2">
+                <strong class="text-h3 font-stretch-110% text-accent-text">{formatPrice(extra.price)}</strong>
+                {extra.unit && <span class="text-label text-text-muted">{extra.unit}</span>}
+              </span>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
   </section>
 
-  <section aria-labelledby="korting-titel-pagina" class="container-page pb-20 md:pb-28">
+  <section aria-labelledby="erbij-titel" class="relative section-y pt-0">
+    <div class="reveal container-page grid grid-fit-80 gap-4">
+      <div class="rounded-panel bg-chip-bg p-6 text-chip-text md:p-10">
+        <h2 id="erbij-titel" class="text-h3 font-stretch-110%">Valt buiten beide pakketten</h2>
+        <p class="mt-4">
+          Webshops, inlogomgevingen, koppelingen op maat, logo-ontwerp, fotografie en het overzetten van bestaande
+          content. Heb je dit nodig, dan bespreken we het vooraf en krijg je een aparte prijs.
+        </p>
+      </div>
+      <div class="rounded-panel bg-surface p-6 md:p-10">
+        <h2 class="text-h3 font-stretch-110%">Wat komt er nog bij?</h2>
+        <p class="mt-4 text-text-soft">
+          Je betaalt eenmalig voor de website. Daarnaast heb je een domeinnaam van ongeveer € 10 tot € 15 per jaar{
+            hostingPrice ? ` en hosting van ${hostingPrice} per maand` : ""
+          }. Die staan op jouw naam. Betaalde boekings- of doneertools reken je rechtstreeks met de aanbieder af.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="korting-titel-pagina" class="container-page section-y pt-0">
     <h2 id="korting-titel-pagina" class="sr-only">Korting</h2>
     <NonprofitDiscount />
   </section>

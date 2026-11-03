@@ -2,40 +2,31 @@
 import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
 import Pattern from "./Pattern.astro";
-import Portrait from "./Portrait.astro";
 ---
 
 <!-- Geen reveal-animatie: de hero staat boven de vouw en moet direct zichtbaar zijn (LCP). -->
-<section id="hero" aria-labelledby="hero-titel" class="relative py-12">
+<section id="hero" aria-labelledby="hero-titel" class="relative hero-pad">
   <Pattern variant="dots" />
-  <div class="relative container-page">
-    <h1 id="hero-titel" class="text-hero font-stretch-116% text-balance">
+  <div class="relative container-page text-center">
+    <h1 id="hero-titel" class="mx-auto text-hero font-stretch-116% text-balance">
       Websites die <span class="mark text-accent-text motion-safe:animate-mark">klanten</span> opleveren
     </h1>
 
-    <div class="mt-12 flex flex-wrap items-end justify-between gap-x-18 gap-y-8 border-t border-border-strong pt-8 md:mt-16">
-      <div class="flex max-w-2xl grow basis-110 items-start gap-4 md:gap-5">
-        <Portrait size={88} class="size-16 rounded-card md:size-22" />
-        <div>
-          <p class="text-lead text-text-soft">
-            Voor zzp'ers, mkb en goede doelen die hun website willen uitbesteden. Vaste prijs vooraf, live binnen 5
-            werkdagen tot 4 weken, en alles op jouw naam.
-          </p>
-          <a
-            href="/over/"
-            class="mt-4 inline-block rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
-            >Meer over mij</a
-          >
-        </div>
-      </div>
+    <div class="mx-auto mt-8 max-w-2xl">
+      <p class="text-lead text-text-soft">
+        Voor zzp'ers, mkb en goede doelen die hun website willen uitbesteden. Vaste prijs vooraf, live binnen 5
+        werkdagen tot 4 weken, en alles op jouw naam.
+      </p>
+      <a
+        href="/over/"
+        class="mt-4 inline-block rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
+        >Meer over mij</a
+      >
+    </div>
 
-      <div class="flex w-full flex-col gap-4 sm:w-auto">
-        <div class="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <BookButton size="lg" class="justify-center" />
-          <Button href="#diensten" variant="secondary" size="lg" class="justify-center">Bekijk diensten en prijzen</Button>
-        </div>
-        <p class="text-label text-text-muted">Gratis kennismaking van 30 minuten. Ik reageer binnen één werkdag.</p>
-      </div>
+    <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:mt-10">
+      <BookButton size="lg" class="justify-center" />
+      <Button href="#diensten" variant="secondary" size="lg" class="justify-center">Bekijk diensten en prijzen</Button>
     </div>
   </div>
 </section>
