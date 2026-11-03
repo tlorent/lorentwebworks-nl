@@ -5,14 +5,10 @@ import Portrait from "./Portrait.astro";
 ---
 
 <!-- Geen reveal-animatie: de hero staat boven de vouw en moet direct zichtbaar zijn (LCP). -->
-<section id="hero" aria-labelledby="hero-titel" class="relative pt-10 pb-14 md:pt-14 md:pb-20 lg:pt-16 lg:pb-24">
+<section id="hero" aria-labelledby="hero-titel" class="relative py-12">
   <Pattern variant="dots" />
   <div class="relative container-page">
-    <p class="flex items-start gap-2.5 text-label font-semibold">
-      <span aria-hidden="true" class="mt-1.75 size-2.5 shrink-0 bg-accent"></span>
-      Beschikbaar voor projecten
-    </p>
-    <h1 id="hero-titel" class="mt-5 text-hero font-stretch-116% text-balance md:mt-6">
+    <h1 id="hero-titel" class="text-hero font-stretch-116% text-balance">
       Websites die <span class="mark text-accent-text motion-safe:animate-mark">klanten</span> opleveren
     </h1>
 
@@ -20,8 +16,8 @@ import Portrait from "./Portrait.astro";
       <div class="flex max-w-2xl grow basis-110 items-start gap-4 md:gap-5">
         <Portrait size={88} class="size-16 rounded-card md:size-22" />
         <p class="text-lead text-text-soft">
-          Een goede website werkt voor je, ook als jij met iets anders bezig bent. Ik bouw een duidelijke site die
-          bezoekers laat bellen, boeken, zich aanmelden of doneren.
+          Voor zzp'ers, mkb en goede doelen die hun website willen uitbesteden. Vaste prijs vooraf, live binnen 5
+          werkdagen tot 4 weken, en alles op jouw naam.
         </p>
       </div>
 

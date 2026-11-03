@@ -90,7 +90,7 @@
   --text-display--line-height: 0.95;
   --text-display--letter-spacing: -0.045em;
   --text-display--font-weight: 800;
-  --text-hero: clamp(3.25rem, 8.6vw, 8.5rem);
+  --text-hero: clamp(3rem, 6vw, 5.5rem);
   --text-hero--line-height: 0.92;
   --text-hero--letter-spacing: -0.05em;
   --text-hero--font-weight: 800;
