@@ -11,7 +11,7 @@ const require = createRequire(import.meta.url);
 const font = (weight: 600 | 800) =>
   readFile(
     require.resolve(
-      `@fontsource/archivo/files/archivo-latin-${weight}-normal.woff`,
+      `@fontsource/figtree/files/figtree-latin-${weight}-normal.woff`,
     ),
   );
 
@@ -58,7 +58,7 @@ export const GET: APIRoute = async ({ props }) => {
         padding: 72,
         backgroundColor: colors.block,
         color: colors.white,
-        fontFamily: "Archivo",
+        fontFamily: "Figtree",
       },
       [
         h(
@@ -102,8 +102,8 @@ export const GET: APIRoute = async ({ props }) => {
       width: 1200,
       height: 630,
       fonts: [
-        { name: "Archivo", data: semibold, weight: 600, style: "normal" },
-        { name: "Archivo", data: extrabold, weight: 800, style: "normal" },
+        { name: "Figtree", data: semibold, weight: 600, style: "normal" },
+        { name: "Figtree", data: extrabold, weight: 800, style: "normal" },
       ],
     },
   );
