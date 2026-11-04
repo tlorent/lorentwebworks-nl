@@ -5,30 +5,35 @@ import SectionHeader from "./SectionHeader.astro";
 import SlotPhoto from "./SlotPhoto.astro";
 import StepPhoto from "./StepPhoto.astro";
 
-// Vijf stappen. Foto's komen uit src/assets/aanpak-1.jpg t/m aanpak-5.jpg.
+// Vijf stappen. Elke stap heeft een foto uit src/assets/ (zie photo).
 const steps = [
   {
     title: "Kennismaking",
+    photo: "call",
     text: "We bellen via video. Ik vraag wat je doet, voor wie, en wat de website moet opleveren.",
     meta: "30 minuten, gratis",
   },
   {
     title: "Voorstel",
+    photo: "voorstel",
     text: "Na het gesprek krijg je een voorstel met prijs, planning en afbakening.",
     meta: "",
   },
   {
     title: "Ontwerpen en bouwen",
+    photo: "bouwen",
     text: "Jij levert teksten en foto's aan, want jij kent je klanten het best. Ik help waar nodig of schrijf alles tegen een meerprijs. Tussendoor krijg je een preview om op te reageren.",
     meta: "5 werkdagen tot 4 weken",
   },
   {
     title: "Lancering",
+    photo: "oplevering",
     text: "De site gaat live. Bij de Bedrijfswebsite stel ik ook metingen in, zodat je ziet wat de site oplevert.",
     meta: "",
   },
   {
     title: "Overdracht en nazorg",
+    photo: "nazorg",
     text: "Ik laat je zien hoe je zelf kleine dingen aanpast. Je krijgt een uitlegvideo en 14 dagen support.",
     meta: "Domein, site en accounts op jouw naam",
   },
@@ -79,7 +84,7 @@ const arrowClass =
                 aria-label={`${i + 1} van ${steps.length}: ${step.title}`}
                 class="flex shrink-0 snap-start flex-col basis-4/5 md:basis-1/2 lg:basis-2/5"
               >
-                <StepPhoto name={`aanpak-${i + 1}`} alt={`Foto bij stap ${i + 1}: ${step.title}`} />
+                <StepPhoto name={step.photo} alt={`Foto bij stap ${i + 1}: ${step.title}`} />
                 <h3 class="mt-6 text-h3 font-stretch-110%">{step.title}</h3>
                 <p class="mt-3 text-on-block-muted">{step.text}</p>
                 {step.meta && (
