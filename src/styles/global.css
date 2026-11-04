@@ -95,7 +95,7 @@
   --text-hero--letter-spacing: -0.05em;
   --text-hero--font-weight: 800;
 
-  --text-price: clamp(2.75rem, 5vw, 4rem);
+  --text-price: clamp(2rem, 3.4vw, 2.75rem);
   --text-price--line-height: 0.95;
   --text-price--letter-spacing: -0.05em;
   --text-price--font-weight: 800;
@@ -104,7 +104,7 @@
   --text-numeral--letter-spacing: -0.05em;
   --text-numeral--font-weight: 800;
   /* Schalen met de breedte van de container (@container). */
-  --text-stat: clamp(3rem, 25cqi, 6.5rem);
+  --text-stat: clamp(2.25rem, 17cqi, 4.5rem);
   --text-stat--line-height: 0.9;
   --text-stat--letter-spacing: -0.055em;
   --text-stat--font-weight: 800;

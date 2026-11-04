@@ -1,6 +1,6 @@
 ---
 // Kleine, afgeronde foto (72, 96 of 120 pixels) naast tekst.
-// Het bestand komt uit src/assets/photos/<naam>.jpg (of .png, .webp). Ontbreekt het, dan rendert dit niets,
+// Het bestand komt uit src/assets/<naam>.jpg (of .png, .webp). Ontbreekt het, dan rendert dit niets,
 // zodat er geen lege plek blijft staan.
 import { Image } from "astro:assets";
 
@@ -13,7 +13,7 @@ type Props = {
 const { name, alt, size = 96, class: className = "" } = Astro.props;
 
 const photos = import.meta.glob<{ default: ImageMetadata }>(
-  "../assets/photos/*.{jpg,jpeg,png,webp}",
+  "../assets/*.{jpg,jpeg,png,webp}",
   { eager: true },
 );
 const key = Object.keys(photos).find(

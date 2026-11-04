@@ -10,6 +10,7 @@ import { hostingPrice } from "../../data/booking.mjs";
 import {
   extras,
   formatPrice,
+  maintenance,
   packageRows,
   services,
 } from "../../data/services";
@@ -29,7 +30,7 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
 <BaseLayout title={title} description={description} nav="tarieven">
   <section class="relative pt-14 pb-12 md:pt-20 md:pb-16">
     <Pattern variant="dots" />
-    <div class="relative container-page">
+        <div class="relative container-page">
       <SectionLabel>Prijzen</SectionLabel>
       <h1 class="mt-6 text-display font-stretch-116% text-balance">Tarieven</h1>
       <p class="mt-6 max-w-3xl text-intro text-text-soft">
@@ -39,8 +40,7 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
   </section>
 
   <section aria-labelledby="pakketten-titel" class="relative section-y">
-    <Pattern variant="dots" />
-    <div class="reveal relative container-page">
+        <div class="reveal relative container-page">
       <SectionHeader label="Pakketten" titleId="pakketten-titel">
         <Fragment slot="title">Twee pakketten met een vaste prijs</Fragment>
         <Fragment slot="lead"
@@ -109,7 +109,7 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
             <li class="flex flex-col justify-between gap-6 rounded-card border border-border bg-inner p-6 md:p-7">
               <span class="text-lead leading-snug font-bold font-stretch-110%">{extra.label}</span>
               <span class="flex flex-wrap items-baseline gap-x-2">
-                <strong class="text-h3 font-stretch-110% text-accent-text">{formatPrice(extra.price)}</strong>
+                <strong class="text-lead font-stretch-110% text-accent-text">{formatPrice(extra.price)}</strong>
                 {extra.unit && <span class="text-label text-text-muted">{extra.unit}</span>}
               </span>
             </li>
@@ -121,6 +121,12 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
 
   <section aria-labelledby="erbij-titel" class="relative section-y pt-0">
     <div class="reveal container-page grid grid-fit-80 gap-4">
+      <div class="rounded-panel border border-border bg-inner p-6 md:p-10">
+        <h2 class="text-h3 font-stretch-110%">{maintenance.name}</h2>
+        <p class="mt-4 text-text-soft">
+          <strong class="text-lead font-stretch-110% text-accent-text">{formatPrice(maintenance.price)}</strong> per maand, excl. btw.
+        </p>
+      </div>
       <div class="rounded-panel bg-chip-bg p-6 text-chip-text md:p-10">
         <h2 id="erbij-titel" class="text-h3 font-stretch-110%">Valt buiten beide pakketten</h2>
         <p class="mt-4">
@@ -153,7 +159,7 @@ const cell = "border-t border-border py-4 pr-6 align-top text-text-soft";
         </p>
       </div>
       <div class="flex flex-wrap items-center gap-4">
-        <SlotPhoto name="tim-2" alt="Foto van Tim Lorent" size={56} />
+        <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={56} />
         <BookButton base="/" variant="on-block" />
       </div>
     </div>

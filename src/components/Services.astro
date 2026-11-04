@@ -1,14 +1,12 @@
 ---
 import { services } from "../data/services";
 import NonprofitDiscount from "./NonprofitDiscount.astro";
-import Pattern from "./Pattern.astro";
 import SectionHeader from "./SectionHeader.astro";
 import ServiceCard from "./ServiceCard.astro";
 ---
 
 <section id="diensten" aria-labelledby="diensten-titel" class="relative section-y">
-  <Pattern variant="dots" />
-  <div class="reveal relative container-page">
+    <div class="reveal relative container-page">
     <SectionHeader label="Diensten en prijzen" titleId="diensten-titel">
       <Fragment slot="title">Kies de website die bij je past</Fragment>
       <Fragment slot="lead"

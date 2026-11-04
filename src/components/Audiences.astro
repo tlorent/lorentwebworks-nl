@@ -1,6 +1,5 @@
 ---
 import { audiences } from "../data/audiences";
-import { formatPrice, prices } from "../data/services";
 import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import Pattern from "./Pattern.astro";
@@ -34,10 +33,6 @@ import SectionHeader from "./SectionHeader.astro";
       <div>
         <BookButton />
       </div>
-      <p class="max-w-3xl text-text-muted">
-        Reserveren, boeken of doneren? Ik plaats de knop of widget van je eigen systeem. Bij de Bedrijfswebsite zit dat
-        inbegrepen, bij de Landingspagina kost het {formatPrice(prices.tool)}. Een koppeling op maat bespreken we vooraf.
-      </p>
     </div>
   </div>
 </section>

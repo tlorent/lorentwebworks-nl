@@ -72,8 +72,7 @@ export const services: Service[] = [
       "SEO per pagina",
       "Metingen die laten zien wat de site oplevert",
       "1 bestaande boekings-, doneer- of nieuwsbrieftool plaatsen",
-      "Twee revisierondes",
-      "Zelf één soort content bijhouden, zoals nieuws of cases",
+      "Eén revisieronde",
     ],
     notIncluded:
       "Extra pagina's, teksten laten schrijven en extra feedbackrondes.",
@@ -151,12 +150,12 @@ export const packageRows: {
   {
     label: "Zelf aanpassen",
     landingspagina: `Extra, ${formatPrice(prices.zelfAanpassen)}`,
-    bedrijfswebsite: "1 soort content, zoals nieuws of cases",
+    bedrijfswebsite: "Niet inbegrepen",
   },
   {
     label: "Feedback",
     landingspagina: "1 gebundelde ronde",
-    bedrijfswebsite: "2 gebundelde rondes",
+    bedrijfswebsite: "1 gebundelde ronde",
   },
   {
     label: "Oplevering",
@@ -165,9 +164,13 @@ export const packageRows: {
   },
 ];
 
+/** Onderhoudsabonnement, per maand, excl. btw. */
+export const maintenance = { name: "Onderhoudsabonnement", price: 50 };
+
 /** Diensten voor bestaande websites, op de pagina website-verbeteren. */
 export const improvements: {
   name: string;
+  cta: string;
   label: string;
   price: number;
   variant: "light" | "inverse";
@@ -176,6 +179,7 @@ export const improvements: {
 }[] = [
   {
     name: "Websitecheck",
+    cta: "Boek websitecheck",
     label: "Eerst zien waar het misgaat",
     price: prices.websitecheck,
     variant: "light",
@@ -188,6 +192,7 @@ export const improvements: {
   },
   {
     name: "Verbeterronde",
+    cta: "Plan een verbeterronde",
     label: "Verbeteren in één ronde",
     price: prices.verbeterronde,
     variant: "inverse",
@@ -195,10 +200,11 @@ export const improvements: {
       "Vooraf een lijst met afspraken",
       "Tot 6 uur werk aan tekst, structuur, snelheid of vindbaarheid",
     ],
-    note: "Klaar binnen 10 werkdagen nadat ik toegang en input heb.",
+    note: "",
   },
   {
     name: "Vraaguur",
+    cta: "Boek een vraaguur",
     label: "Vragen stellen en een volgende stap kiezen",
     price: prices.vraaguur,
     variant: "light",

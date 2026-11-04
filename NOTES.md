@@ -63,7 +63,7 @@ De vijf gidsen bevatten letterlijk de copy van lorentwebworks.nl (opgehaald op 2
 
 - **Centrale waarden:** prijzen, pakketten, extra's en diensten staan in `src/data/services.ts`. De boekingslink, het btw-id, de hostingprijs en het verhaal van Tim staan in `src/data/booking.mjs`. Eén wijziging van de boekingslink zet alle kennismakingsknoppen en gidslinks om (getest).
 - **Lege waarden:** zolang `{{CAL_URL}}`, `{{BTW_ID}}` en `{{HOSTING_PRIJS}}` leeg zijn, verdwijnt het onderdeel. Knoppen gaan naar `#contact`.
-- **Foto's:** `src/assets/photos/` bestaat nog niet. `SlotPhoto` rendert pas als `aanpak.jpg`, `faq.jpg` of `contact.jpg` er staat. Pakketten heeft nog geen fotoplek, omdat die een persoonlijke regel van Tim vraagt.
+- **Foto's:** Foto's staan in `src/assets/`: `tim-full.jpg` (over-pagina), `tim-small.jpg` (homepage) en `tim-extra.jpg` (kleine ronde foto's). De stappen van de aanpak hebben lege plekken voor `aanpak-1.jpg` t/m `aanpak-5.jpg`; die verschijnen zodra ze in `src/assets/` staan. Pakketten heeft nog geen fotoplek, omdat die een persoonlijke regel van Tim vraagt.
 - **Gidsen:** de prijzen in de markdown zijn tekst en niet gekoppeld aan `services.ts`. Bij een prijswijziging moeten de gidsen met de hand mee.
 - **Controle:** `pnpm check:links` na `pnpm build` controleert interne links en de redirects in `vercel.json`.
 

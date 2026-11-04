@@ -1,13 +1,21 @@
 ---
 import BookButton from "./BookButton.astro";
+import Icon from "./Icon.astro";
 import SectionHeader from "./SectionHeader.astro";
 import SlotPhoto from "./SlotPhoto.astro";
+import StepPhoto from "./StepPhoto.astro";
 
+// Vijf stappen. Foto's komen uit src/assets/aanpak-1.jpg t/m aanpak-5.jpg.
 const steps = [
   {
-    title: "Kennismaken",
+    title: "Kennismaking",
     text: "We bellen via video. Ik vraag wat je doet, voor wie, en wat de website moet opleveren.",
     meta: "30 minuten, gratis",
+  },
+  {
+    title: "Voorstel",
+    text: "Na het gesprek krijg je een voorstel met prijs, planning en afbakening.",
+    meta: "",
   },
   {
     title: "Ontwerpen en bouwen",
@@ -15,45 +23,102 @@ const steps = [
     meta: "5 werkdagen tot 4 weken",
   },
   {
-    title: "Live en overdragen",
-    text: "De site gaat live en ik laat je zien hoe je zelf kleine dingen aanpast. Bij de Bedrijfswebsite stel ik ook metingen in, zodat je ziet wat de site oplevert.",
+    title: "Lancering",
+    text: "De site gaat live. Bij de Bedrijfswebsite stel ik ook metingen in, zodat je ziet wat de site oplevert.",
+    meta: "",
+  },
+  {
+    title: "Overdracht en nazorg",
+    text: "Ik laat je zien hoe je zelf kleine dingen aanpast. Je krijgt een uitlegvideo en 14 dagen support.",
     meta: "Domein, site en accounts op jouw naam",
   },
 ];
+
+const arrowClass =
+  "grid size-11 place-items-center rounded-full bg-on-block text-on-block-ink transition-colors duration-150 hover:bg-on-block-muted focus-ring-wide disabled:opacity-40 motion-reduce:transition-none";
 ---
 
 <section id="aanpak" aria-labelledby="aanpak-titel" class="on-block section-y">
   <div class="reveal container-page">
     <SectionHeader label="Aanpak" titleId="aanpak-titel" onBlock>
-      <Fragment slot="title">Van eerste gesprek tot live in drie stappen</Fragment>
+      <Fragment slot="title">Van eerste gesprek tot live in vijf stappen</Fragment>
       <Fragment slot="lead"
         >Jij hebt een zaak te runnen. Daarom neem ik het meeste werk uit handen en vraag ik je input alleen op de
         momenten dat die telt.</Fragment
       >
     </SectionHeader>
 
-    <!-- De <ol> geeft het stapnummer al door aan schermlezers; het grote cijfer is decoratie. -->
-    <ol class="mt-12 grid grid-fit-70 gap-x-8 gap-y-12 md:mt-16">
-      {
-        steps.map((step, i) => (
-          <li class="flex flex-col border-t border-on-block-subtle pt-6">
-            <span aria-hidden="true" class="text-numeral font-stretch-125% text-on-block-subtle">
-              {i + 1}
-            </span>
-            <h3 class="mt-6 text-h3 font-stretch-110%">{step.title}</h3>
-            <p class="mt-3 text-on-block-muted">{step.text}</p>
-            <p class="mt-6 self-start rounded-full bg-on-block px-3.5 py-2 text-sm leading-tight font-semibold text-on-block-ink">
-              {step.meta}
-            </p>
-          </li>
-        ))
-      }
-    </ol>
+    <div class="mt-12 md:mt-16">
+      <div class="no-js:hidden mb-6 flex justify-end gap-3">
+        <button type="button" data-prev aria-label="Vorige stap" class={arrowClass}>
+          <Icon name="arrow" class="size-4.5 rotate-180" strokeWidth={2.2} />
+        </button>
+        <button type="button" data-next aria-label="Volgende stap" class={arrowClass}>
+          <Icon name="arrow" class="size-4.5" strokeWidth={2.2} />
+        </button>
+      </div>
+
+      <!-- Zonder JavaScript blijft de lijst gewoon horizontaal te scrollen. -->
+      <div
+        data-track
+        role="region"
+        aria-roledescription="carrousel"
+        aria-label="Stappen van de aanpak"
+        tabindex="0"
+        class="flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 motion-reduce:scroll-auto focus-ring-wide"
+      >
+        <ol class="contents">
+          {
+            steps.map((step, i) => (
+              <li
+                role="group"
+                aria-roledescription="dia"
+                aria-label={`${i + 1} van ${steps.length}: ${step.title}`}
+                class="flex shrink-0 snap-start flex-col basis-4/5 md:basis-1/2 lg:basis-1/3"
+              >
+                <StepPhoto name={`aanpak-${i + 1}`} alt={`Foto bij stap ${i + 1}: ${step.title}`} />
+                <h3 class="mt-6 text-h3 font-stretch-110%">{step.title}</h3>
+                <p class="mt-3 text-on-block-muted">{step.text}</p>
+                {step.meta && (
+                  <p class="mt-6 self-start rounded-full bg-on-block px-3.5 py-2 text-sm leading-tight font-semibold text-on-block-ink">
+                    {step.meta}
+                  </p>
+                )}
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </div>
 
     <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-20">
-      <SlotPhoto name="tim-2" alt="Foto van Tim Lorent" size={56} />
+      <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={56} />
       <BookButton variant="on-block" />
       <p class="text-on-block-muted">De eerste stap is gratis en duurt 30 minuten.</p>
     </div>
   </div>
 </section>
+
+<script>
+  const track = document.querySelector<HTMLElement>("[data-track]");
+  const prev = document.querySelector<HTMLButtonElement>("[data-prev]");
+  const next = document.querySelector<HTMLButtonElement>("[data-next]");
+  if (track && prev && next) {
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const move = (direction: number) => {
+      const item = track.querySelector<HTMLElement>("li");
+      const gap = parseFloat(getComputedStyle(track).columnGap) || 0;
+      const step = (item?.offsetWidth ?? track.clientWidth) + gap;
+      track.scrollBy({ left: direction * step, behavior: reduce ? "auto" : "smooth" });
+    };
+    const update = () => {
+      prev.disabled = track.scrollLeft <= 2;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    };
+    prev.addEventListener("click", () => move(-1));
+    next.addEventListener("click", () => move(1));
+    track.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+  }
+</script>

@@ -1,18 +1,12 @@
 ---
 // Korte kennismaking op de homepage, direct onder de strook met bedrijfsnamen.
 import { Image } from "astro:assets";
-import timPortret from "../assets/tim.jpg";
+import timPortret from "../assets/tim-small.jpg";
 import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
-
-const punten = [
-  "Een knop die niemand vindt? Dan blijft je telefoon stil.",
-  "Een trage site op mobiel? Je bezoeker is alweer weg.",
-  'Tekst over "passie en kwaliteit"? Niemand weet wat je doet.',
-];
 ---
 
-<section id="over" aria-labelledby="over-titel" class="relative section-y">
+<section id="over" aria-labelledby="over-titel" class="relative section-y bg-surface">
   <Pattern variant="dots" />
   <div class="reveal relative container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
     <div class="lg:col-span-5">
@@ -34,16 +28,6 @@ const punten = [
         Ik bouw al sinds 2017 aan websites en webplatforms, onder meer voor bol., GrandVision en HEMA. Daar zag ik wat
         bezoekers overtuigt en waar ze afhaken.
       </p>
-      <ul class="mt-8 flex flex-col gap-3 text-text-soft">
-        {
-          punten.map((punt) => (
-            <li class="flex items-start gap-3">
-              <span aria-hidden="true" class="mt-2.5 size-2 shrink-0 bg-accent"></span>
-              <span>{punt}</span>
-            </li>
-          ))
-        }
-      </ul>
       <p class="mt-8 text-lead font-semibold">Daarom begin ik bij wat je website moet opleveren.</p>
       <a
         href="/over/"

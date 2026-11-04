@@ -1,0 +1,29 @@
+---
+// Foto van een stap in de aanpak. Het bestand komt uit src/assets/<naam>.jpg (of .png, .webp).
+// Zonder bestand blijft de vaste beeldverhouding staan, zodat de plek voor de foto is gereserveerd.
+import { Image } from "astro:assets";
+
+type Props = { name: string; alt: string };
+const { name, alt } = Astro.props;
+
+const photos = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/*.{jpg,jpeg,png,webp}",
+  { eager: true },
+);
+const key = Object.keys(photos).find(
+  (path) =>
+    path
+      .split("/")
+      .pop()
+      ?.replace(/\.(jpe?g|png|webp)$/, "") === name,
+);
+const src = key ? photos[key].default : undefined;
+---
+
+{
+  src ? (
+    <Image src={src} alt={alt} class="aspect-4/3 h-auto w-full rounded-card object-cover" />
+  ) : (
+    <div aria-hidden="true" class="aspect-4/3 w-full rounded-card bg-on-block-subtle" />
+  )
+}
