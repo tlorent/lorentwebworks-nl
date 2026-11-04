@@ -1,7 +1,7 @@
 ---
 // Korte kennismaking op de homepage, direct onder de strook met bedrijfsnamen.
 import { Image } from "astro:assets";
-import timPortret from "../assets/tim-small.jpg";
+import timPortret from "../assets/tim-full.jpg";
 import SectionLabel from "./SectionLabel.astro";
 ---
 
@@ -11,10 +11,10 @@ import SectionLabel from "./SectionLabel.astro";
       <Image
         src={timPortret}
         alt="Portret van Tim Lorent"
-        widths={[384, 768]}
-        sizes="(min-width: 1024px) 384px, 90vw"
+        widths={[256, 512]}
+        sizes="(min-width: 1024px) 256px, 90vw"
         quality={90}
-        class="h-auto w-full max-w-sm rounded-hero"
+        class="h-auto w-full max-w-64 rounded-hero"
       />
     </div>
     <div class="lg:col-span-7">
