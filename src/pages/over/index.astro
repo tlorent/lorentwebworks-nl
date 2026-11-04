@@ -46,7 +46,7 @@ const schema = [
 <BaseLayout title={title} description={description} nav="over" ogType="website">
   <Schema slot="head" data={schema} />
 
-  <header class="relative pt-14 pb-16 md:pt-20 md:pb-24">
+  <header class="relative pt-14 pb-12 md:pt-20 md:pb-16">
     <Pattern variant="dots" />
     <div class="relative container-page">
       <div class="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
@@ -57,23 +57,9 @@ const schema = [
             Ik bouw websites voor ondernemers en organisaties die liever met hun eigen vak bezig zijn. Mijn vak is
             toevallig websites bouwen, dus dat komt goed uit.
           </p>
-        </div>
-        <div class="lg:col-span-5">
-          <Image
-            src={timPortret}
-            alt="Portret van Tim Lorent"
-            widths={[320, 640]}
-            sizes="(min-width: 1024px) 320px, 90vw"
-            quality={90}
-            class="h-auto w-full max-w-xs rounded-hero"
-          />
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <section aria-labelledby="platforms-titel" class="container-page section-y pt-0">
-    <div class="reveal max-w-3xl">
+          <section aria-labelledby="platforms-titel" class="mt-16 md:mt-20">
+            <div class="reveal">
       <h2 id="platforms-titel" class="text-h2 font-stretch-115% text-balance">
         Van grote platforms naar jouw website
       </h2>
@@ -95,7 +81,21 @@ const schema = [
         </p>
       </div>
     </div>
-  </section>
+          </section>
+        </div>
+        <div class="lg:col-span-5">
+          <Image
+            src={timPortret}
+            alt="Portret van Tim Lorent"
+            widths={[320, 640]}
+            sizes="(min-width: 1024px) 320px, 90vw"
+            quality={90}
+            class="h-auto w-full max-w-xs rounded-hero"
+          />
+        </div>
+      </div>
+    </div>
+  </header>
 
   <section aria-labelledby="zo-werk-ik" class="relative section-y bg-surface">
     <Pattern variant="grid" />
