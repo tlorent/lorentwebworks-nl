@@ -49,7 +49,7 @@ const arrowClass =
     </SectionHeader>
 
     <div class="mt-12 md:mt-16">
-      <div class="no-js:hidden mb-6 flex justify-end gap-3">
+      <div class="no-js:hidden flex justify-end gap-3">
         <button type="button" data-prev aria-label="Vorige stap" class={arrowClass}>
           <Icon name="arrow" class="size-4.5 rotate-180" strokeWidth={2.2} />
         </button>
@@ -57,16 +57,19 @@ const arrowClass =
           <Icon name="arrow" class="size-4.5" strokeWidth={2.2} />
         </button>
       </div>
+    </div>
+  </div>
 
-      <!-- Zonder JavaScript blijft de lijst gewoon horizontaal te scrollen. -->
-      <div
-        data-track
-        role="region"
-        aria-roledescription="carrousel"
-        aria-label="Stappen van de aanpak"
-        tabindex="0"
-        class="no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 motion-reduce:scroll-auto focus-ring-wide"
-      >
+  <!-- Buiten de container: de kaarten lopen door tot de rand van het scherm, de eerste staat op de lijn van de tekst. -->
+  <div class="reveal mt-6">
+    <div
+      data-track
+      role="region"
+      aria-roledescription="carrousel"
+      aria-label="Stappen van de aanpak"
+      tabindex="0"
+      class="carousel-bleed no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 motion-reduce:scroll-auto focus-ring-wide"
+    >
         <ol class="contents">
           {
             steps.map((step, i) => (
@@ -74,7 +77,7 @@ const arrowClass =
                 role="group"
                 aria-roledescription="dia"
                 aria-label={`${i + 1} van ${steps.length}: ${step.title}`}
-                class="flex shrink-0 snap-start flex-col basis-4/5 md:basis-1/2 lg:basis-1/3"
+                class="flex shrink-0 snap-start flex-col basis-4/5 md:basis-1/2 lg:basis-2/5"
               >
                 <StepPhoto name={`aanpak-${i + 1}`} alt={`Foto bij stap ${i + 1}: ${step.title}`} />
                 <h3 class="mt-6 text-h3 font-stretch-110%">{step.title}</h3>
@@ -88,10 +91,11 @@ const arrowClass =
             ))
           }
         </ol>
-      </div>
     </div>
+  </div>
 
-    <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-20">
+  <div class="reveal container-page">
+  <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-20">
       <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={56} />
       <BookButton variant="on-block" />
       <p class="text-on-block-muted">De eerste stap is gratis en duurt 30 minuten.</p>

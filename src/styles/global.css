@@ -400,6 +400,29 @@
   }
 }
 
+/* Carrousel die tot de rand van het scherm loopt. De inspringing volgt de container, zodat de eerste
+   kaart op de lijn van de tekst begint en de volgende aan de rand zichtbaar is. */
+@utility carousel-bleed {
+  padding-inline: max(
+    calc(var(--spacing) * 5),
+    calc((100% - var(--container-7xl)) / 2 + calc(var(--spacing) * 5))
+  );
+  scroll-padding-inline: max(
+    calc(var(--spacing) * 5),
+    calc((100% - var(--container-7xl)) / 2 + calc(var(--spacing) * 5))
+  );
+  @variant md {
+    padding-inline: max(
+      calc(var(--spacing) * 10),
+      calc((100% - var(--container-7xl)) / 2 + calc(var(--spacing) * 10))
+    );
+    scroll-padding-inline: max(
+      calc(var(--spacing) * 10),
+      calc((100% - var(--container-7xl)) / 2 + calc(var(--spacing) * 10))
+    );
+  }
+}
+
 /* Horizontaal scrollen zonder zichtbare scrollbar; bediening blijft via swipe, trackpad en pijlen. */
 @utility no-scrollbar {
   scrollbar-width: none;
