@@ -126,8 +126,8 @@ export const packageRows: {
   },
   {
     label: "Teksten",
-    landingspagina: "Jij levert aan, ik help waar nodig",
-    bedrijfswebsite: "Jij levert aan, ik help waar nodig",
+    landingspagina: "Jij levert aan",
+    bedrijfswebsite: "Jij levert aan",
   },
   {
     label: "CMS",

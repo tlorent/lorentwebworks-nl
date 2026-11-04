@@ -15,7 +15,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Moet ik zelf de teksten schrijven?",
-    a: "Ja, je levert de teksten zelf aan, want niemand kent jouw klanten zo goed als jij. Je krijgt van mij een lijst met vragen per pagina, zodat je weet wat er nodig is. Ik lees mee, help waar het lastig wordt en zorg dat de teksten goed vindbaar zijn in Google. Wil je het schrijven helemaal uit handen geven? Dan schrijf ik alle teksten tegen een meerprijs.",
+    a: "Ja, je levert de teksten zelf aan, want niemand kent jouw klanten zo goed als jij. Je krijgt van mij een lijst met vragen per pagina, zodat je weet wat er nodig is. Ik lees mee en zorg dat de teksten goed vindbaar zijn in Google. Wil je het schrijven helemaal uit handen geven? Dan schrijf ik alle teksten tegen een meerprijs.",
   },
   {
     q: "Word ik gevonden in Google en ChatGPT?",

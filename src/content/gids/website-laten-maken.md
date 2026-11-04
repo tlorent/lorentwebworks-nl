@@ -9,7 +9,7 @@ intro: "Een website laten maken voelt voor veel ondernemers als een sprong in he
 slug: "website-laten-maken"
 readingTime: 12
 published: 2026-01-15
-updated: 2026-11-03
+updated: 2026-11-04
 order: 1
 cta:
   title: "Klaar voor een website die klanten oplevert?"
@@ -23,7 +23,7 @@ faq:
   - q: "Is een websitebouwer zoals Wix genoeg?"
     a: "Voor een eenvoudige site kan dat prima, als je zelf de tijd hebt. Een professional helpt vooral bij strategie, teksten, snelheid en vindbaarheid, en bespaart je veel uren."
   - q: "Moet ik zelf de teksten schrijven?"
-    a: "Dat hoeft niet. Jij levert de teksten aan en ik help waar nodig. Wil je het schrijven helemaal uit handen geven? Dan schrijf ik de teksten tegen een meerprijs."
+    a: "Dat hoeft niet. Jij levert de teksten aan. Wil je het schrijven helemaal uit handen geven? Dan schrijf ik de teksten tegen een meerprijs."
   - q: "Wat moet er op een bedrijfswebsite staan?"
     a: "Minimaal een homepage met heldere boodschap, een pagina over je diensten, iets over jou of je team, bewijs zoals reviews, en een makkelijke manier om contact op te nemen."
 ---
