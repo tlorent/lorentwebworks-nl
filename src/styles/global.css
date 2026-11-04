@@ -400,6 +400,14 @@
   }
 }
 
+/* Horizontaal scrollen zonder zichtbare scrollbar; bediening blijft via swipe, trackpad en pijlen. */
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 /* Kruimelpad: scheidingsteken met CSS, zodat de lijst alleen echte items bevat. */
 @utility breadcrumb {
   & li + li::before {

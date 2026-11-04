@@ -34,9 +34,10 @@ const box = { 56: "size-14", 72: "size-18", 96: "size-24", 120: "size-30" }[
     <Image
       src={src}
       alt={alt}
-      width={size}
-      height={size}
-      class:list={["shrink-0 rounded-full object-cover", box, className]}
+      width={size * 2}
+      height={size * 2}
+      quality={90}
+      class:list={["shrink-0 rounded-full object-cover object-top", box, className]}
     />
   )
 }

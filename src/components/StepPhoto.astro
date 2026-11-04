@@ -22,7 +22,7 @@ const src = key ? photos[key].default : undefined;
 
 {
   src ? (
-    <Image src={src} alt={alt} class="aspect-4/3 h-auto w-full rounded-card object-cover" />
+    <Image src={src} alt={alt} widths={[480, 720, 960]} quality={90} class="aspect-4/3 h-auto w-full rounded-card object-cover" />
   ) : (
     <div aria-hidden="true" class="aspect-4/3 w-full rounded-card bg-on-block-subtle" />
   )
