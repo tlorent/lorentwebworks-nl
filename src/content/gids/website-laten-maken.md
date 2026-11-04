@@ -111,8 +111,8 @@ De prijs hangt af van het aantal pagina's, wie de teksten schrijft, maatwerk in 
 
 Mijn eigen startpunten:
 
-- **De Landingspagina:** één scherpe pagina, vanaf € 850 excl. btw, binnen 5 werkdagen.
-- **De Bedrijfswebsite:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf € 1.750 excl. btw.
+- **De Landingspagina:** één scherpe pagina, vanaf € 950 excl. btw, binnen 5 werkdagen.
+- **De Bedrijfswebsite:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf € 2.150 excl. btw.
 
 Qua doorlooptijd: een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. De grootste vertraging zit meestal in het aanleveren van teksten en foto's, dus begin daar op tijd mee.
 

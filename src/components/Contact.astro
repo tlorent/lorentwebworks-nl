@@ -1,11 +1,11 @@
 ---
+import { Image } from "astro:assets";
+import timSmall from "../assets/tim-small.jpg";
 import { site } from "../data/site";
 import { buttonClass, buttonIconClass } from "../lib/button.mjs";
-import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
-import SlotPhoto from "./SlotPhoto.astro";
 
 const options = [
   { value: "Een landingspagina", id: "landingspagina" },
@@ -27,6 +27,13 @@ const onBlockLink =
   <div class="reveal relative container-page">
     <div class="on-block flex flex-wrap gap-x-12 gap-y-8 rounded-hero p-5 md:p-12">
       <div class="flex min-w-0 grow basis-95 flex-col">
+        <Image
+          src={timSmall}
+          alt="Foto van Tim Lorent"
+          widths={[176, 352]}
+          sizes="176px"
+          class="mb-8 h-auto w-44 self-start rounded-card"
+        />
         <SectionLabel onBlock>Contact</SectionLabel>
         <h2 id="contact-titel" class="mt-5 text-h2 font-stretch-115% text-balance">
           Vertel me wat je website moet opleveren.
@@ -34,11 +41,6 @@ const onBlockLink =
         <p class="mt-6 max-w-lg text-body-lg text-on-block-muted">
           Plan direct 30 minuten in.
         </p>
-        <div class="mt-8 flex flex-wrap items-center gap-4">
-          <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={56} />
-          <BookButton base="" variant="on-block" />
-        </div>
-
         <ul class="mt-10 flex flex-col gap-3 text-on-block-muted">
           <li class="flex items-center gap-3">
             <Icon name="pin" class="size-5 shrink-0 text-on-block" />
@@ -95,7 +97,7 @@ const onBlockLink =
           </div>
 
           <fieldset class="mt-5">
-            <legend class={label}>Wat heb je nodig? <span class="font-normal text-text-muted">(optioneel)</span></legend>
+            <legend class={label}>Wat heb je nodig?</legend>
             <div class="flex flex-wrap gap-2">
               {
                 options.map((o) => (
@@ -106,18 +108,32 @@ const onBlockLink =
                 ))
               }
             </div>
+            <p id="dienst-fout" class={error} hidden>Kies wat je nodig hebt</p>
           </fieldset>
 
           <div class="mt-5">
-            <label for="bericht" class={label}
-              >Vertel kort over je zaak <span class="font-normal text-text-muted">(optioneel)</span></label
+            <label for="gevonden" class={label}
+              >Hoe heb je mij gevonden? <span class="font-normal text-text-muted">(optioneel)</span></label
             >
+            <input
+              id="gevonden"
+              name="gevonden"
+              type="text"
+              placeholder="Bijvoorbeeld via Google, LinkedIn of een kennis"
+              class={field}
+            />
+          </div>
+
+          <div class="mt-5">
+            <label for="bericht" class={label}>Vertel kort over je zaak</label>
             <textarea
               id="bericht"
               name="message"
               rows="4"
               placeholder="Wat doe je, voor wie, en wat moet de website opleveren?"
+              required
               class={`${field} resize-y`}></textarea>
+            <p id="bericht-fout" class={error} hidden>Vertel kort over je zaak</p>
           </div>
 
           <p data-form-error role="alert" class="mt-5 text-sm font-semibold text-danger empty:hidden"></p>
@@ -170,8 +186,10 @@ const onBlockLink =
     // Eigen foutmeldingen in plaats van de browserballon. De melding hangt alleen aan het veld
     // (aria-describedby) zolang het veld ongeldig is, zodat schermlezers hem niet altijd voorlezen.
     form.noValidate = true;
-    const fields = [...form.querySelectorAll<HTMLInputElement>("input[required]")];
-    const check = (input: HTMLInputElement) => {
+    const fields = [...form.querySelectorAll<HTMLInputElement | HTMLTextAreaElement>("input[required], textarea[required]")];
+    const radios = [...form.querySelectorAll<HTMLInputElement>('input[name="dienst"]')];
+    const dienstFout = document.getElementById("dienst-fout");
+    const check = (input: HTMLInputElement | HTMLTextAreaElement) => {
       const valid = input.checkValidity();
       const message = document.getElementById(`${input.id}-fout`);
       if (message) message.hidden = valid;
@@ -197,9 +215,11 @@ const onBlockLink =
 
     form.addEventListener("submit", async (event) => {
       event.preventDefault();
+      const chosen = radios.some((radio) => radio.checked);
+      if (dienstFout) dienstFout.hidden = chosen;
       const invalid = fields.filter((input) => !check(input));
-      if (invalid.length) {
-        invalid[0].focus();
+      if (!chosen || invalid.length) {
+        (chosen ? invalid[0] : radios[0]).focus();
         return;
       }
 

@@ -2,11 +2,16 @@
 import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
 import Pattern from "./Pattern.astro";
+import SlotPhoto from "./SlotPhoto.astro";
 ---
 
 <!-- Geen reveal-animatie: de hero staat boven de vouw en moet direct zichtbaar zijn (LCP). -->
 <section id="hero" aria-labelledby="hero-titel" class="relative hero-fill">
   <Pattern variant="dots" />
+  <!-- Klein, los van de tekst: de foto verandert de hoogte van de hero niet. -->
+  <div class="pointer-events-none absolute top-8 right-6 hidden md:block lg:right-12 lg:top-12">
+    <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={56} />
+  </div>
   <div class="relative container-page text-center">
     <h1 id="hero-titel" class="mx-auto text-hero font-stretch-116% text-balance">
       <span class="block">Websites die</span>
@@ -18,11 +23,6 @@ import Pattern from "./Pattern.astro";
         Voor zzp'ers, mkb en goede doelen die hun website willen uitbesteden. Vaste prijs vooraf, live binnen 5
         werkdagen tot 4 weken, en alles op jouw naam.
       </p>
-      <a
-        href="/over/"
-        class="mt-4 inline-block rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
-        >Meer over mij</a
-      >
     </div>
 
     <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:mt-10">

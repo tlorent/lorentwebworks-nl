@@ -1,13 +1,16 @@
+---
+import { nonprofitDiscount } from "../data/services";
+---
 <aside
   id="korting"
   aria-labelledby="korting-titel"
   class="mt-4 flex flex-wrap items-center gap-x-12 gap-y-4 rounded-panel bg-chip-bg p-6 text-chip-text md:p-10"
 >
-  <p aria-hidden="true" class="text-numeral font-stretch-125% text-accent-text">20%</p>
+  <p aria-hidden="true" class="text-numeral font-stretch-125% text-accent-text">{nonprofitDiscount}%</p>
   <div class="max-w-3xl grow basis-80">
-    <h3 id="korting-titel" class="text-h3 font-stretch-110%">20% korting voor goede doelen en ngo's</h3>
+    <h3 id="korting-titel" class="text-h3 font-stretch-110%">{nonprofitDiscount}% korting voor goede doelen en ngo's</h3>
     <p class="mt-3">
-      Werk je voor een geregistreerd goed doel, een stichting of een ngo? Dan krijg je 20% korting op de
+      Werk je voor een geregistreerd goed doel, een stichting of een ngo? Dan krijg je {nonprofitDiscount}% korting op de
       Landingspagina en de Bedrijfswebsite. Stuur bij je aanvraag een ANBI-beschikking of een KvK-inschrijving als
       stichting of vereniging mee.
     </p>

@@ -24,14 +24,12 @@ export type Service = {
 };
 
 export const prices = {
-  landingspagina: 850,
-  bedrijfswebsite: 1750,
+  landingspagina: 950,
+  bedrijfswebsite: 2150,
   extraPagina: 295,
   teksten: 150,
   tool: 95,
-  zelfAanpassen: 295,
   extraRonde: 125,
-  googleProfiel: 125,
   websitecheck: 195,
   verbeterronde: 595,
   vraaguur: 125,
@@ -56,7 +54,7 @@ export const services: Service[] = [
       "Eén revisieronde",
     ],
     notIncluded:
-      "Extra pagina's, teksten laten schrijven, een bestaande tool plaatsen, metingen en zelf aanpassen.",
+      "Extra pagina's, teksten laten schrijven, een bestaande tool plaatsen en metingen.",
     variant: "light",
   },
   {
@@ -95,17 +93,7 @@ export const extras = [
     price: prices.tool,
     unit: "",
   },
-  {
-    label: "Zelf aanpassen op de Landingspagina",
-    price: prices.zelfAanpassen,
-    unit: "",
-  },
   { label: "Extra feedbackronde", price: prices.extraRonde, unit: "" },
-  {
-    label: "Google Bedrijfsprofiel inrichten",
-    price: prices.googleProfiel,
-    unit: "",
-  },
 ];
 
 /** Vergelijking van de twee pakketten, op de tarievenpagina. */
@@ -153,11 +141,6 @@ export const packageRows: {
     label: "Metingen",
     landingspagina: "Niet inbegrepen",
     bedrijfswebsite: "Inbegrepen",
-  },
-  {
-    label: "Zelf aanpassen",
-    landingspagina: `Extra, ${formatPrice(prices.zelfAanpassen)}`,
-    bedrijfswebsite: "Niet inbegrepen",
   },
   {
     label: "Feedback",
@@ -225,4 +208,4 @@ export const improvements: {
 ];
 
 /** Korting voor goede doelen, in procenten. Geldt voor de pakketten. */
-export const nonprofitDiscount = 20;
+export const nonprofitDiscount = 10;

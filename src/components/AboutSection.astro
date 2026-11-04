@@ -2,19 +2,17 @@
 // Korte kennismaking op de homepage, direct onder de strook met bedrijfsnamen.
 import { Image } from "astro:assets";
 import timPortret from "../assets/tim-small.jpg";
-import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
 ---
 
 <section id="over" aria-labelledby="over-titel" class="relative section-y bg-surface">
-  <Pattern variant="dots" />
   <div class="reveal relative container-page grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
     <div class="lg:col-span-5">
       <Image
         src={timPortret}
         alt="Portret van Tim Lorent"
-        widths={[480, 720, 960]}
-        sizes="(min-width: 1024px) 480px, 90vw"
+        widths={[384, 768]}
+        sizes="(min-width: 1024px) 384px, 90vw"
         quality={90}
         class="h-auto w-full max-w-sm rounded-hero"
       />
@@ -29,7 +27,6 @@ import SectionLabel from "./SectionLabel.astro";
         Ik bouw al sinds 2017 aan websites en webplatforms, onder meer voor bol., GrandVision en HEMA. Daar zag ik wat
         bezoekers overtuigt en waar ze afhaken.
       </p>
-      <p class="mt-8 text-lead font-semibold">Daarom begin ik bij wat je website moet opleveren.</p>
       <a
         href="/over/"
         class="mt-6 inline-block rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
