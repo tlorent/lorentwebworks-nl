@@ -262,12 +262,15 @@
   }
 }
 @utility section-y {
-  padding-block: calc(var(--spacing) * 20);
+  padding-top: calc(var(--spacing) * 14);
+  padding-bottom: calc(var(--spacing) * 20);
   @variant md {
-    padding-block: calc(var(--spacing) * 28);
+    padding-top: calc(var(--spacing) * 18);
+    padding-bottom: calc(var(--spacing) * 28);
   }
   @variant lg {
-    padding-block: calc(var(--spacing) * 34);
+    padding-top: calc(var(--spacing) * 22);
+    padding-bottom: calc(var(--spacing) * 34);
   }
 }
 /* Responsief raster: grid-fit-75 = kolommen van minimaal 300px (75 x spacing). */

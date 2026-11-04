@@ -13,18 +13,6 @@ const title =
 const description =
   "Heb je al een website die te weinig oplevert? Ik help je met de punten die het meeste verschil maken. Vanaf € 125, excl. btw.";
 
-const hiervoor = [
-  "Teksten en pagina-indeling verbeteren",
-  "Knoppen en contactroutes aanpassen",
-  "Snelheid verbeteren",
-  "SEO-basis op orde brengen",
-];
-const erbuiten = [
-  "De hele site herbouwen",
-  "Webshops",
-  "Kapotte plugins repareren",
-  "Maatwerkcode",
-];
 const stappen = [
   "Je plant een kennismaking.",
   "We kiezen de juiste dienst.",
@@ -111,47 +99,6 @@ const stappen = [
             );
           })
         }
-      </div>
-    </div>
-  </section>
-
-  <section aria-labelledby="afbakening" class="relative section-y bg-surface">
-    <div class="reveal container-page">
-      <SectionHeader label="Afbakening" titleId="afbakening">
-        <Fragment slot="title">Wat past en wat niet</Fragment>
-        <Fragment slot="lead">Zo weet je vooraf waar je aan toe bent.</Fragment>
-      </SectionHeader>
-      <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
-        <div class="rounded-panel bg-inner p-6 md:p-10">
-          <h3 class="text-h3 font-stretch-110%">Hiervoor kun je terecht</h3>
-          <ul class="mt-6 flex flex-col gap-4">
-            {
-              hiervoor.map((item) => (
-                <li class="flex items-start gap-3">
-                  <span class="mt-0.5 grid size-5.5 shrink-0 place-items-center rounded-full bg-accent text-on-accent">
-                    <Icon name="check" class="size-3.5" strokeWidth={2.6} />
-                  </span>
-                  <span class="text-text-soft">{item}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
-        <div class="rounded-panel border border-border bg-inner p-6 md:p-10">
-          <h3 class="text-h3 font-stretch-110%">Dit valt erbuiten</h3>
-          <ul class="mt-6 flex flex-col gap-4">
-            {
-              erbuiten.map((item) => (
-                <li class="flex items-start gap-3">
-                  <span class="mt-0.5 grid size-5.5 shrink-0 place-items-center rounded-full bg-surface text-text-muted">
-                    <Icon name="close" class="size-3" strokeWidth={2.6} />
-                  </span>
-                  <span class="text-text-soft">{item}</span>
-                </li>
-              ))
-            }
-          </ul>
-        </div>
       </div>
     </div>
   </section>
