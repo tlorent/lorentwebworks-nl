@@ -48,14 +48,15 @@ export const services: Service[] = [
     duration: "Live binnen 5 werkdagen",
     included: [
       "Kennismakingsgesprek over doel en doelgroep",
-      "Jij levert de teksten aan, ik help waar nodig (alle teksten laten schrijven kan tegen meerprijs)",
+      "Jij levert de teksten aan",
+      "Een CMS gekoppeld, zodat je zelf de teksten kunt aanpassen",
       "Ontwerp op maat",
       "Opgezet om gevonden te worden in Google en AI-assistenten",
       "Snel en prettig op mobiel",
       "Eén revisieronde",
     ],
     notIncluded:
-      "Extra pagina's, een bestaande tool plaatsen, metingen en zelf aanpassen.",
+      "Extra pagina's, teksten laten schrijven, een bestaande tool plaatsen, metingen en zelf aanpassen.",
     variant: "light",
   },
   {
@@ -69,6 +70,7 @@ export const services: Service[] = [
     included: [
       "Alles uit de Landingspagina",
       "4 tot 6 pagina's op maat",
+      "Een CMS gekoppeld, zodat je zelf de teksten kunt aanpassen",
       "SEO per pagina",
       "Metingen die laten zien wat de site oplevert",
       "1 bestaande boekings-, doneer- of nieuwsbrieftool plaatsen",
@@ -126,6 +128,11 @@ export const packageRows: {
     label: "Teksten",
     landingspagina: "Jij levert aan, ik help waar nodig",
     bedrijfswebsite: "Jij levert aan, ik help waar nodig",
+  },
+  {
+    label: "CMS",
+    landingspagina: "Gekoppeld, zodat je zelf teksten aanpast",
+    bedrijfswebsite: "Gekoppeld, zodat je zelf teksten aanpast",
   },
   {
     label: "Vindbaarheid",

@@ -10,32 +10,27 @@ const steps = [
   {
     title: "Kennismaking",
     photo: "call",
-    text: "We bellen via video. Ik vraag wat je doet, voor wie, en wat de website moet opleveren.",
-    meta: "30 minuten, gratis",
+    text: "We bellen via video, 30 minuten. Ik vraag wat je doet, voor wie, en wat de website moet opleveren.",
   },
   {
     title: "Voorstel",
     photo: "voorstel",
-    text: "Na het gesprek krijg je een voorstel met prijs, planning en afbakening.",
-    meta: "",
+    text: "Na het gesprek krijg je een voorstel met prijs, planning en afbakening. Zo weet je precies wat ik ga bouwen.",
   },
   {
     title: "Ontwerpen en bouwen",
     photo: "bouwen",
-    text: "Jij levert teksten en foto's aan, want jij kent je klanten het best. Ik help waar nodig of schrijf alles tegen een meerprijs. Tussendoor krijg je een preview om op te reageren.",
-    meta: "5 werkdagen tot 4 weken",
+    text: "Jij levert teksten en foto's aan, want jij kent je klanten het best. Tussendoor krijg je een preview om op te reageren.",
   },
   {
     title: "Lancering",
     photo: "oplevering",
-    text: "De site gaat live. Bij de Bedrijfswebsite stel ik ook metingen in, zodat je ziet wat de site oplevert.",
-    meta: "",
+    text: "De site gaat live, volledig getest. Dit is het moment!",
   },
   {
     title: "Overdracht en nazorg",
     photo: "nazorg",
-    text: "Ik laat je zien hoe je zelf kleine dingen aanpast. Je krijgt een uitlegvideo en 14 dagen support.",
-    meta: "Domein, site en accounts op jouw naam",
+    text: "Ik laat je zien hoe je zelf kleine dingen aanpast. Je krijgt een uitlegvideo, handleiding en 14 dagen gratis support.",
   },
 ];
 
@@ -87,11 +82,6 @@ const arrowClass =
                 <StepPhoto name={step.photo} alt={`Foto bij stap ${i + 1}: ${step.title}`} />
                 <h3 class="mt-6 text-h3 font-stretch-110%">{step.title}</h3>
                 <p class="mt-3 text-on-block-muted">{step.text}</p>
-                {step.meta && (
-                  <p class="mt-6 self-start rounded-full bg-on-block px-3.5 py-2 text-sm leading-tight font-semibold text-on-block-ink">
-                    {step.meta}
-                  </p>
-                )}
               </li>
             ))
           }
