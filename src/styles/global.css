@@ -91,7 +91,9 @@
   --text-display--letter-spacing: -0.045em;
   --text-display--font-weight: 800;
   /* Groter op breed scherm; op smal scherm past de tekst precies in de breedte van de regel 'klanten opleveren'. */
-  --text-hero: min(clamp(3.25rem, 9vw, 5.75rem), calc((100vw - 2.5rem) / 6.3));
+  --text-hero: min(clamp(3.375rem, 9vw, 5.75rem), calc((100vw - 2rem) / 6.25));
+  --text-hero-lead: clamp(1rem, 2.4vw, 1.125rem);
+  --text-hero-lead--line-height: 1.5;
   --text-hero--line-height: 0.92;
   --text-hero--letter-spacing: -0.05em;
   --text-hero--font-weight: 800;

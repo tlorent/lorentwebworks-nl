@@ -8,8 +8,8 @@ import Pattern from "./Pattern.astro";
 <section id="hero" aria-labelledby="hero-titel" class="relative hero-fill">
   <Pattern variant="dots" />
   <div class="relative container-page text-center">
-    <p class="mb-6 flex items-center justify-center gap-2.5 text-label font-semibold">
-      <span aria-hidden="true" class="size-2.5 shrink-0 bg-accent"></span>
+    <p class="mx-auto mb-6 max-w-sm text-label font-semibold text-balance">
+      <span aria-hidden="true" class="mr-2.5 inline-block size-2.5 bg-accent align-middle"></span>
       Voor zelfstandigen, ondernemers en stichtingen
     </p>
     <h1 id="hero-titel" class="mx-auto text-hero font-stretch-116% text-balance">
@@ -18,15 +18,15 @@ import Pattern from "./Pattern.astro";
     </h1>
 
     <div class="mx-auto mt-8 max-w-2xl">
-      <p class="text-lead text-text-soft">
+      <p class="text-hero-lead text-text-soft">
         <span class="block">Een website die online staat voordat je er zelf aan toe komt.</span>
         <span class="block">Vaste prijs vooraf, live binnen 5 werkdagen tot 4 weken, en alles op jouw naam.</span>
       </p>
     </div>
 
     <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:mt-10">
-      <BookButton size="lg" class="justify-center" />
-      <Button href="#diensten" variant="secondary" size="lg" class="justify-center">Bekijk diensten en prijzen</Button>
+      <BookButton size="hero" class="justify-center" />
+      <Button href="#diensten" variant="secondary" size="hero" class="justify-center">Bekijk diensten en prijzen</Button>
     </div>
   </div>
 </section>

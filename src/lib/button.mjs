@@ -1,6 +1,6 @@
 // Knopstijlen, gedeeld door Button.astro, het formulier en de CTA in de gidsen (rehype).
 /** @typedef {"primary" | "secondary" | "on-block" | "inverse"} ButtonVariant */
-/** @typedef {"sm" | "compact" | "md" | "lg"} ButtonSize */
+/** @typedef {"sm" | "compact" | "md" | "lg" | "hero"} ButtonSize */
 
 const base =
   "group inline-flex min-h-11 items-center rounded-full font-semibold transition-colors duration-150 focus-ring-wide motion-reduce:transition-none";
@@ -19,6 +19,8 @@ const sizes = {
   compact: "gap-2.5 px-7 py-3.5 text-base",
   md: "gap-2.5 px-7 py-4.5 text-base",
   lg: "gap-2.5 px-7.5 py-4.75 text-lg",
+  // Hero: kleiner op mobiel en tablet, vanaf lg gelijk aan lg.
+  hero: "gap-2 px-6 py-3.5 text-base lg:gap-2.5 lg:px-7.5 lg:py-4.75 lg:text-lg",
 };
 
 /**
