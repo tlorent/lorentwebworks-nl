@@ -2,6 +2,7 @@
 import { ctaClass, defaultCta } from "../lib/guide-cta.mjs";
 import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
+import SlotPhoto from "./SlotPhoto.astro";
 
 type Props = {
   class?: string;
@@ -24,11 +25,14 @@ const titleId = "gids-cta-titel";
 <aside aria-labelledby={titleId} class:list={[ctaClass.box, className]}>
   <p id={titleId} class={ctaClass.title}>{title}</p>
   <p class={ctaClass.text}>{text}</p>
-  {
-    href ? (
-      <Button href={href} variant="on-block" class="mt-6">{button}</Button>
-    ) : (
-      <BookButton variant="on-block" label={button} class="mt-6" />
-    )
-  }
+  <div class="mt-6 flex flex-wrap items-center gap-4">
+    <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={56} />
+    {
+      href ? (
+        <Button href={href} variant="on-block">{button}</Button>
+      ) : (
+        <BookButton variant="on-block" label={button} />
+      )
+    }
+  </div>
 </aside>
