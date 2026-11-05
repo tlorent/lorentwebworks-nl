@@ -2,7 +2,6 @@
 import { getCollection } from "astro:content";
 import GuideCard from "../../components/GuideCard.astro";
 import GuideCta from "../../components/GuideCta.astro";
-import Pattern from "../../components/Pattern.astro";
 import Schema from "../../components/Schema.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import { site } from "../../data/site";
@@ -21,11 +20,18 @@ const schema = [
     name: "Alles wat je wilt weten over een website laten maken",
     url: `${site.url}/gids/`,
     inLanguage: "nl-NL",
-    hasPart: guides.map((g) => ({
-      "@type": "Article",
-      headline: g.data.title,
-      url: `${site.url}/gids/${g.data.slug}/`,
-    })),
+    hasPart: [
+      ...guides.map((g) => ({
+        "@type": "Article",
+        headline: g.data.title,
+        url: `${site.url}/gids/${g.data.slug}/`,
+      })),
+      {
+        "@type": "Article",
+        headline: "Lighthouse-score uitgelegd",
+        url: `${site.url}/lighthouse-score/`,
+      },
+    ],
   },
   {
     "@type": "BreadcrumbList",
@@ -46,7 +52,6 @@ const schema = [
   <Schema slot="head" data={schema} />
   <!-- Geen reveal-animatie: de kop staat boven de vouw. -->
   <header class="relative pt-14 pb-16 md:pt-20 md:pb-20">
-    <Pattern variant="dots" />
     <div class="relative container-page">
       <SectionLabel>Gids</SectionLabel>
       <h1 class="mt-6 max-w-6xl text-display font-stretch-116% text-balance">
@@ -73,6 +78,14 @@ const schema = [
             />
           ))
         }
+              <GuideCard
+          title="Lighthouse-score uitgelegd"
+          teaser="Wat een score van 100 meet, wat hij niet zegt en hoe je jouw eigen website zelf controleert."
+          slug="lighthouse-score"
+          href="/lighthouse-score/"
+          readingTime={4}
+          order={6}
+        />
       </div>
       <GuideCta class="mt-14" />
     </div>

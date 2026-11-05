@@ -1,7 +1,6 @@
 ---
 import BookButton from "../components/BookButton.astro";
 import Button from "../components/Button.astro";
-import Pattern from "../components/Pattern.astro";
 import SectionLabel from "../components/SectionLabel.astro";
 import { device, measured, reportUrl, scores } from "../data/lighthouse";
 import BaseLayout from "../layouts/BaseLayout.astro";
@@ -40,7 +39,6 @@ const onderdelen = [
 
 <BaseLayout title={title} description={description} nav="other">
   <header class="relative pt-14 pb-12 md:pt-20 md:pb-16">
-    <Pattern variant="dots" />
     <div class="relative container-narrow">
       <SectionLabel>Gids</SectionLabel>
       <h1 class="mt-6 text-display font-stretch-116% text-balance">Wat een Lighthouse-score van 100 betekent</h1>
