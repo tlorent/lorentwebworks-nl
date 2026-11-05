@@ -172,7 +172,7 @@
 [data-theme="dark"] {
   --bg: #080b16;
   --surface: #101528;
-  --inner: #27316c;
+  --inner: #080b16;
   --text: #f1f3fa;
   --text-soft: #c8ccdd;
   --text-muted: #9ca2ba;
@@ -184,14 +184,14 @@
   --chip-bg: #161e4a;
   --chip-text: #bec8f8;
   --block: #12206b;
-  --inverse-bg: #f1f3fa;
-  --inverse-text: #0c1024;
-  --inverse-inner: #e1e5f2;
+  --inverse-bg: #27316c;
+  --inverse-text: #f1f3fa;
+  --inverse-inner: #1b2353;
   --field-bg: #080b16;
   --field-border: #2b3354;
   --form-card: #101528;
   --danger: #ff8a97;
-  --inverse-glow: #bfcaf7;
+  --inverse-glow: #4c5fd6;
   --mark: linear-gradient(
     transparent 56%,
     rgba(76, 95, 214, 0.5) 56%,
