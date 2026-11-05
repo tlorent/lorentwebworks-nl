@@ -21,9 +21,9 @@
 @font-face {
   font-family: "Figtree Fallback";
   src: local("Arial"), local("Helvetica Neue"), local("Helvetica");
-  size-adjust: 98.4%;
-  ascent-override: 89.2%;
-  descent-override: 21.3%;
+  size-adjust: 100%;
+  ascent-override: 95%;
+  descent-override: 25%;
   line-gap-override: 0%;
 }
 
@@ -42,14 +42,6 @@
   --leading-prose: 1.7;
 
   --shadow-float: 0 12px 32px -8px rgb(12 16 36 / 0.45);
-
-  /* Markering op "klanten" in de hero: schuift bij het laden van links naar rechts in. */
-  --animate-mark: mark-in 900ms cubic-bezier(0.65, 0, 0.35, 1) 250ms both;
-  @keyframes mark-in {
-    from {
-      background-size: 0% 100%;
-    }
-  }
 
   /* Op blauwe blokken (bg-block, bg-accent): gelijk in licht en donker. */
   --color-on-block: #ffffff;
@@ -322,12 +314,35 @@
 }
 
 /* Decoratie */
-/* Markeerstift-achtergrond. Met animate-mark tekent hij zich van links naar rechts. */
+/* Markeerstift achter een woord. De band is een pseudo-element dat met transform inschuift; dat draait op de compositor. */
 @utility mark {
-  background-image: var(--mark);
-  background-repeat: no-repeat;
-  background-position: left center;
-  background-size: 100% 100%;
+  position: relative;
+  isolation: isolate;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: var(--mark);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    transform-origin: left center;
+  }
+}
+
+@keyframes mark-in {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .mark::before {
+    animation: mark-in 900ms cubic-bezier(0.65, 0, 0.35, 1) 250ms both;
+  }
 }
 @utility bg-glow {
   background-image: radial-gradient(
