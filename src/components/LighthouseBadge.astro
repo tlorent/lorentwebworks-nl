@@ -1,0 +1,178 @@
+---
+// Verwijzing naar de gidspagina over de Lighthouse-score. Twee varianten:
+// "pill" (kleine knop op de homepage) en "card" (rustige kaart op de tarieven-pagina).
+import { guideUrl, laagste, measured } from "../data/lighthouse";
+
+type Props = { variant: "pill" | "card" };
+const { variant } = Astro.props;
+
+const titel =
+  laagste === 100
+    ? "Mijn eigen website scoort 100"
+    : `Mijn eigen website scoort minimaal ${laagste}`;
+const pillTekst =
+  laagste === 100
+    ? "Mijn website scoort 100 op Lighthouse"
+    : `Mijn website scoort minimaal ${laagste} op Lighthouse`;
+---
+
+{
+  variant === "pill" ? (
+    <a href={guideUrl} class="lh pill">
+      <span class="check" aria-hidden="true">
+        <svg viewBox="0 0 16 16" focusable="false">
+          <path d="M4 8.5l2.5 2.5L12 5.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+      <span class="pill-tekst">{pillTekst}</span>
+      <span class="meer">
+        Lees hoe ik dat doe <span class="pijl" aria-hidden="true">→</span>
+      </span>
+    </a>
+  ) : (
+    <div class="lh card">
+      <p class="eyebrow">Gemeten met Google Lighthouse</p>
+      <h3 class="card-kop">{titel}</h3>
+      <p class="card-tekst">
+        Op snelheid, toegankelijkheid, vindbaarheid en techniek, gemeten op {measured}. Zo bouw ik ook jouw website.
+      </p>
+      <a href={guideUrl} class="stretch">
+        Lees de gids <span class="pijl" aria-hidden="true">→</span>
+      </a>
+    </div>
+  )
+}
+
+<style>
+  .lh {
+    --card: var(--inner);
+    --ink: var(--text);
+    --muted: var(--text-muted);
+    --line: var(--border-strong);
+    --chip: var(--chip-bg);
+    font-family: var(--font-sans);
+    color: var(--ink);
+  }
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 44px;
+    padding: 8px 16px 8px 12px;
+    border-radius: 999px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: none;
+    max-width: 100%;
+    transition: border-color 150ms ease;
+  }
+  .pill:hover {
+    border-color: var(--ink);
+  }
+  .pill:hover .pijl {
+    transform: translateX(2px);
+  }
+  .pill:focus-visible,
+  .stretch:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .check {
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: var(--accent);
+    color: #ffffff;
+    flex-shrink: 0;
+  }
+  .check svg {
+    width: 12px;
+    height: 12px;
+    display: block;
+  }
+  .pill-tekst {
+    text-wrap: balance;
+  }
+  .meer {
+    color: var(--muted);
+    font-weight: 500;
+    text-wrap: balance;
+  }
+  .pijl {
+    display: inline-block;
+    transition: transform 150ms ease;
+  }
+  .card {
+    position: relative;
+    max-width: 720px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 20px 24px;
+    display: grid;
+    gap: 8px;
+  }
+  .card:has(.stretch:focus-visible) {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+  }
+  .eyebrow {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+  }
+  .card-kop {
+    font-size: 1.15rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: var(--ink);
+  }
+  .card-tekst {
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  .stretch {
+    margin-top: 6px;
+    font-weight: 600;
+    color: var(--ink);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    justify-self: start;
+    border-radius: 2px;
+  }
+  .stretch::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+  }
+  .card:hover .pijl {
+    transform: translateX(2px);
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pill,
+    .pijl {
+      transition: none;
+    }
+    .pill:hover .pijl,
+    .card:hover .pijl {
+      transform: none;
+    }
+  }
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+</style>

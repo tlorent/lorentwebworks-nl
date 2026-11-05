@@ -468,6 +468,11 @@
   }
 }
 
+/* Regelbreedte van lopende tekst: maximaal 68 tekens. */
+@utility measure {
+  max-width: 68ch;
+}
+
 /* Lopende tekst uit Markdown (gidsen, privacyverklaring). */
 @utility prose-content {
   font-size: var(--text-body-lg);
