@@ -1,5 +1,6 @@
 ---
 import BookButton from "./BookButton.astro";
+import ProofStrip from "./ProofStrip.astro";
 import SectionHeader from "./SectionHeader.astro";
 
 const results = [
@@ -57,6 +58,9 @@ const results = [
         })
       }
     </dl>
+    <div class="mt-12 md:mt-16">
+      <ProofStrip />
+    </div>
     <div class="mt-12 flex justify-start md:mt-16">
       <BookButton />
     </div>
