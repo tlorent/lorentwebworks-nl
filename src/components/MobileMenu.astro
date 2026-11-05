@@ -59,6 +59,10 @@ const links = navLinks(onHome);
 </dialog>
 
 <script>
+  // Onthoud of de laatste bediening met de muis of aanraking was, of met het toetsenbord.
+  document.addEventListener("pointerdown", () => (document.documentElement.dataset.input = "pointer"), true);
+  document.addEventListener("keydown", () => delete document.documentElement.dataset.input, true);
+
   const menu = document.getElementById("mobiel-menu");
   if (menu instanceof HTMLDialogElement) {
     // Fallback voor browsers zonder invoker commands (command/commandfor).
