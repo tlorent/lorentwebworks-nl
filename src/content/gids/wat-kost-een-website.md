@@ -102,7 +102,7 @@ Vraag altijd wat er na oplevering maandelijks of jaarlijks bijkomt, en of je erg
 
 De echte vraag is wat je website je oplevert. Reken het eens uit: als een nieuwe klant voor jou gemiddeld € 500 waard is, heb je een site van € 2.450 terugverdiend met vier klanten. Een site die maandelijks een paar aanvragen extra binnenhaalt, betaalt zich snel terug.
 
-Uit mijn eigen werk: bij GrandVision leverde een nieuwe feature 425 nieuwe betalende klanten op uit 13.000 interacties. Dezelfde aandacht voor wat een pagina moet opleveren, pas ik toe bij sites voor zzp en mkb.
+Uit mijn eigen werk: bij GrandVision leverde een nieuwe feature 425 nieuwe betalende klanten op. Dat zijn er 425 van de 13.000 interacties, een conversie van 3,3%. Dezelfde aandacht voor wat een pagina moet opleveren, pas ik toe bij sites voor zelfstandigen en kleine ondernemers.
 
 ## Zo vergelijk je offertes
 
