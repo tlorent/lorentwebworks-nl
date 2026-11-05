@@ -91,7 +91,7 @@
   --text-display--letter-spacing: -0.045em;
   --text-display--font-weight: 800;
   /* Groter op breed scherm; op smal scherm past de tekst precies in de breedte van de regel 'klanten opleveren'. */
-  --text-hero: min(clamp(3rem, 7.2vw, 6.5rem), calc((100vw - 2.5rem) / 7.6));
+  --text-hero: min(clamp(3.25rem, 9vw, 5.75rem), calc((100vw - 2.5rem) / 6.3));
   --text-hero--line-height: 0.92;
   --text-hero--letter-spacing: -0.05em;
   --text-hero--font-weight: 800;
@@ -113,6 +113,13 @@
   --text-wordmark--line-height: 0.8;
   --text-wordmark--letter-spacing: -0.06em;
   --text-wordmark--font-weight: 800;
+}
+
+/* Vanaf 1280px blijft de hero-kop op de eerdere maat, zodat de bedrijfsnamen op de vouw blijven. */
+@media (min-width: 80rem) {
+  :root {
+    --text-hero: clamp(3rem, 7.2vw, 6.5rem);
+  }
 }
 
 @keyframes reveal {
