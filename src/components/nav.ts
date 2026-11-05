@@ -6,10 +6,8 @@ export type NavKey =
   | "over"
   | "other";
 
-export const navLinks = (onHome: boolean) => {
-  const base = onHome ? "" : "/";
+export const navLinks = (_onHome: boolean) => {
   return [
-    { label: "Aanpak", href: `${base}#aanpak`, key: "aanpak" },
     { label: "Tarieven", href: "/tarieven/", key: "tarieven" },
     {
       label: "Bestaande website",

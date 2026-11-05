@@ -35,7 +35,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Krijgen goede doelen korting?",
-    a: `Ja, ${nonprofitDiscount}% op de Landingspagina en de Bedrijfswebsite. Je stuurt een ANBI-beschikking of een KvK-inschrijving als stichting of vereniging mee.`,
+    a: `Ja, ${nonprofitDiscount}% op de landingspagina en de complete website. Je stuurt een ANBI-beschikking of een KvK-inschrijving als stichting of vereniging mee.`,
   },
   {
     q: "Werk je alleen in Amsterdam?",

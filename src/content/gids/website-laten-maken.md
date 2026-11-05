@@ -101,7 +101,7 @@ Bij mij verloopt een project in drie stappen:
 
 1. **We spreken af.** We bellen via video. Ik stel scherpe vragen over je bedrijf, je klanten en wat de site moet doen. Dat gesprek duurt 30 minuten en is gratis.
 2. **Ik bouw.** Structuur, teksten, ontwerp en techniek neem ik voor mijn rekening. Je krijgt tussentijds een preview om op te reageren.
-3. **Live en opleveren.** De site gaat live en ik laat je zien hoe je zelf kleine dingen aanpast. Bij de Bedrijfswebsite stel ik ook metingen in. Jij houdt de sleutels.
+3. **Live en opleveren.** De site gaat live en ik laat je zien hoe je zelf kleine dingen aanpast. Bij de complete website stel ik ook metingen in. Jij houdt de sleutels.
 
 Bij een ander traject ziet het er vaak vergelijkbaar uit, met soms extra stappen voor ontwerp, contentcreatie of fotografie.
 
@@ -111,8 +111,8 @@ De prijs hangt af van het aantal pagina's, wie de teksten schrijft, maatwerk in 
 
 Mijn eigen startpunten:
 
-- **De Landingspagina:** één scherpe pagina, vanaf € 950 excl. btw, binnen 5 werkdagen.
-- **De Bedrijfswebsite:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf € 2.150 excl. btw.
+- **Landingspagina:** één scherpe pagina, vanaf € 950 excl. btw, binnen 5 werkdagen.
+- **Complete website:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf € 2.450 excl. btw.
 
 Qua doorlooptijd: een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. De grootste vertraging zit meestal in het aanleveren van teksten en foto's, dus begin daar op tijd mee.
 

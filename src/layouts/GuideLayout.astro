@@ -16,7 +16,7 @@ type Props = {
 const { guide, headings, others } = Astro.props;
 const { data } = guide;
 const url = `${site.url}/gids/${data.slug}/`;
-const ogImage = `${site.url}/og/${data.slug}.png`;
+const ogImage = `${site.url}/og-image.png`;
 const toc = headings.filter((h) => h.depth === 2);
 const isoDate = (date: Date) => date.toISOString().slice(0, 10);
 const updated = new Intl.DateTimeFormat("nl-NL", {
