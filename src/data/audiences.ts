@@ -31,7 +31,7 @@ export const audiences: Audience[] = [
   },
   {
     title: "Donaties en aanmeldingen",
-    forWho: "Goede doelen, ngo's, scholen en initiatieven",
+    forWho: "Goede doelen, stichtingen, scholen en initiatieven",
     text: "Bezoekers snappen snel je missie of aanbod en kunnen meteen doneren, zich aanmelden of meedoen.",
     icon: "heart",
   },

@@ -7,7 +7,7 @@ const [lp, bw] = services;
 export const faq: FaqItem[] = [
   {
     q: "Wat kost een website laten maken?",
-    a: `Een landingspagina kost bij mij vanaf ${formatPrice(lp.price)} en een complete website van vier tot zes pagina's vanaf ${formatPrice(bw.price)}. Beide bedragen zijn eenmalig en excl. btw. Goede doelen en ngo's krijgen ${nonprofitDiscount}% korting.`,
+    a: `Een landingspagina kost bij mij vanaf ${formatPrice(lp.price)} en een complete website van vier tot zes pagina's vanaf ${formatPrice(bw.price)}. Beide bedragen zijn eenmalig en excl. btw. Goede doelen en stichtingen krijgen ${nonprofitDiscount}% korting.`,
   },
   {
     q: "Hoe lang duurt het?",

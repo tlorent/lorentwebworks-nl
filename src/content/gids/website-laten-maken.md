@@ -29,7 +29,7 @@ faq:
 ---
 ## Kort antwoord
 
-Bepaal eerst wat je website moet opleveren (aanvragen, boekingen, telefoontjes) en voor wie hij is. Kies daarna hoe je hem laat bouwen: zelf met een websitebouwer, via een freelancer of via een bureau. Voor zzp'ers en mkb'ers kost een professionele site bij een freelancer grofweg € 800 tot € 3.000, bij een bureau vaak € 4.000 of meer. Een eenvoudige site staat binnen een paar dagen tot een paar weken live. Let bij de keuze op snelheid, vindbaarheid in Google, duidelijke teksten en een heldere knop naar contact.
+Bepaal eerst wat je website moet opleveren (aanvragen, boekingen, telefoontjes) en voor wie hij is. Kies daarna hoe je hem laat bouwen: zelf met een websitebouwer, via een freelancer of via een bureau. Voor zelfstandigen en kleine ondernemers kost een professionele site bij een freelancer grofweg € 800 tot € 3.000, bij een bureau vaak € 4.000 of meer. Een eenvoudige site staat binnen een paar dagen tot een paar weken live. Let bij de keuze op snelheid, vindbaarheid in Google, duidelijke teksten en een heldere knop naar contact.
 
 ## Begin bij het doel
 
@@ -56,7 +56,7 @@ Een freelance webbouwer of webdesigner bouwt de site voor je, vaak met direct co
 
 ### Een webbureau inschakelen
 
-Een bureau heeft een team met strategen, ontwerpers en developers. Logisch bij grotere projecten met veel pagina's, koppelingen of een webshop. Voor een professionele mkb-site begin je vaak rond € 4.000, en het kan flink hoger uitvallen.
+Een bureau heeft een team met strategen, ontwerpers en developers. Logisch bij grotere projecten met veel pagina's, koppelingen of een webshop. Voor een professionele site voor een klein bedrijf begin je vaak rond € 4.000, en het kan flink hoger uitvallen.
 
 <aside class="callout">
 <p>Gratis kennismaking</p>

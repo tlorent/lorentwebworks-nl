@@ -4,7 +4,7 @@ cardTitle: "Wat kost een website laten maken in 2026?"
 crumb: "Wat kost een website"
 seoTitle: "Wat kost een website laten maken in 2026? Prijzen en voorbeelden"
 description: "Wat kost een website laten maken in 2026? Prijzen voor zelf bouwen, een freelancer en een bureau, wat de prijs bepaalt, verborgen kosten en hoe je een eerlijke offerte herkent."
-teaser: "Prijzen per optie, wat de prijs bepaalt en welke kosten je makkelijk vergeet. Inclusief realistische budgetten voor zzp en mkb."
+teaser: "Prijzen per optie, wat de prijs bepaalt en welke kosten je makkelijk vergeet. Inclusief realistische budgetten voor zelfstandigen en kleine ondernemers."
 intro: "\"Wat kost een website?\" is een van de meest gestelde vragen van ondernemers, en het antwoord \"dat hangt ervan af\" helpt niemand. In deze gids zet ik de prijzen per optie op een rij, laat ik zien wat de prijs bepaalt en welke kosten je makkelijk vergeet."
 slug: "wat-kost-een-website"
 readingTime: 8
@@ -29,14 +29,14 @@ faq:
 ---
 ## Kort antwoord
 
-Zelf bouwen met een websitebouwer kost grofweg € 15 tot € 50 per maand, plus veel eigen tijd. Een freelancer rekent voor een kleine bedrijfswebsite meestal € 800 tot € 3.000. Een webbureau begint voor een mkb-site vaak rond € 4.000 tot € 8.000. Reken daarnaast op terugkerende kosten voor domein, hosting en onderhoud. Bij Lorent Webworks begint een landingspagina vanaf € 950 en een bedrijfswebsite vanaf € 2.450 (excl. btw).
+Zelf bouwen met een websitebouwer kost grofweg € 15 tot € 50 per maand, plus veel eigen tijd. Een freelancer rekent voor een kleine bedrijfswebsite meestal € 800 tot € 3.000. Een webbureau begint voor een site voor een klein bedrijf vaak rond € 4.000 tot € 8.000. Reken daarnaast op terugkerende kosten voor domein, hosting en onderhoud. Bij Lorent Webworks begint een landingspagina vanaf € 950 en een bedrijfswebsite vanaf € 2.450 (excl. btw).
 
 ## Prijzen per optie
 
 | Optie | Eenmalig | Per maand | Geschikt voor |
 |---|---|---|---|
 | Websitebouwer (zelf) | € 0 | ca. € 15 tot 50 | Starters met tijd en een eenvoudige site |
-| Freelancer | ca. € 800 tot 3.000 | € 0 tot 50 | Zzp'ers en kleine mkb'ers |
+| Freelancer | ca. € 800 tot 3.000 | € 0 tot 50 | Zzp'ers en kleine ondernemers |
 | Webbureau | ca. € 4.000 tot 8.000+ | vaak € 50 tot 250 | Grotere sites, webshops, koppelingen |
 
 De bedragen zijn indicaties voor een standaard bedrijfswebsite in Nederland. Webshops en maatwerkplatforms vallen hoger uit. Het uurtarief van een freelance webdeveloper ligt in 2026 doorgaans tussen € 60 en € 120.
