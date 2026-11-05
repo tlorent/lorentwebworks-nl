@@ -74,9 +74,6 @@ const arrowClass =
           {
             steps.map((step, i) => (
               <li
-                role="group"
-                aria-roledescription="dia"
-                aria-label={`${i + 1} van ${steps.length}: ${step.title}`}
                 class="flex shrink-0 snap-start flex-col basis-4/5 md:basis-1/2 lg:basis-2/5"
               >
                 <StepPhoto name={step.photo} alt={`Foto bij stap ${i + 1}: ${step.title}`} />
