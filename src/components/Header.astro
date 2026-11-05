@@ -3,13 +3,12 @@ import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import Logo from "./Logo.astro";
 import MobileMenu from "./MobileMenu.astro";
-import { type NavKey, navLinks } from "./nav";
+import { isCurrent, isGroup, type NavKey, navItems } from "./nav";
 import ThemeToggle from "./ThemeToggle.astro";
 
 type Props = { current: NavKey };
 const { current } = Astro.props;
 const onHome = current === "home";
-const links = navLinks(onHome);
 ---
 
 <a
@@ -26,17 +25,46 @@ const links = navLinks(onHome);
     <nav aria-label="Hoofdmenu" class="hidden items-center gap-1 lg:flex">
       <ul class="mr-3 flex items-center gap-1">
         {
-          links.map((link) => (
-            <li>
-              <a
-                href={link.href}
-                aria-current={link.key === current ? "page" : undefined}
-                class="inline-flex min-h-11 items-center rounded-full px-3.5 py-2.5 text-label font-semibold transition-colors duration-150 hover:bg-surface focus-ring aria-[current=page]:bg-surface"
-              >
-                {link.label}
-              </a>
-            </li>
-          ))
+          navItems.map((item) =>
+            isGroup(item) ? (
+              <li class="relative">
+                <details class="nav-group group">
+                  <summary
+                    class:list={[
+                      "summary-reset inline-flex min-h-11 cursor-pointer items-center gap-1.5 rounded-full px-3.5 py-2.5 text-label font-semibold transition-colors duration-150 hover:bg-surface focus-ring",
+                      isCurrent(item, current) && "bg-surface",
+                    ]}
+                  >
+                    {item.label}
+                    <svg viewBox="0 0 16 16" class="size-3.5 shrink-0 transition-transform duration-150 group-open:rotate-180 motion-reduce:transition-none" aria-hidden="true" focusable="false"><path d="M4 6l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /></svg>
+                  </summary>
+                  <ul class="absolute right-0 top-full z-30 mt-2 flex min-w-56 flex-col gap-1 rounded-card border border-border bg-bg p-2 shadow-float">
+                    {item.children.map((c) => (
+                      <li>
+                        <a
+                          href={c.href}
+                          aria-current={c.key === current ? "page" : undefined}
+                          class="block rounded-input px-4 py-3 text-label font-semibold transition-colors duration-150 hover:bg-surface focus-ring aria-[current=page]:bg-surface"
+                        >
+                          {c.label}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </details>
+              </li>
+            ) : (
+              <li>
+                <a
+                  href={item.href}
+                  aria-current={item.key === current ? "page" : undefined}
+                  class="inline-flex min-h-11 items-center rounded-full px-3.5 py-2.5 text-label font-semibold transition-colors duration-150 hover:bg-surface focus-ring aria-[current=page]:bg-surface"
+                >
+                  {item.label}
+                </a>
+              </li>
+            ),
+          )
         }
       </ul>
       <ThemeToggle class="mr-2" />
@@ -61,3 +89,16 @@ const links = navLinks(onHome);
   </div>
 </header>
 <MobileMenu current={current} />
+
+<script>
+  // Sluit een open groep in het hoofdmenu bij een klik ernaast of bij Escape.
+  document.addEventListener("click", (event) => {
+    for (const d of document.querySelectorAll<HTMLDetailsElement>("details.nav-group[open]")) {
+      if (!d.contains(event.target as Node)) d.open = false;
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    for (const d of document.querySelectorAll<HTMLDetailsElement>("details.nav-group[open]")) d.open = false;
+  });
+</script>
