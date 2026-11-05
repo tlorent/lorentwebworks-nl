@@ -19,7 +19,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Word ik gevonden in Google en ChatGPT?",
-    a: "Ik bouw elke site zo dat zoekmachines en AI-assistenten goed begrijpen wat je doet en voor wie. Een vaste plek bovenaan kan niemand beloven. Met een snelle, duidelijk opgebouwde site geef je jezelf de beste kans.",
+    a: "Ik bouw elke site zo dat zoekmachines en AI-assistenten goed begrijpen wat je doet en voor wie. Een vaste plek bovenaan kan niemand beloven. Een korte, duidelijke opbouw helpt zoekmachines en AI-assistenten begrijpen wat je doet.",
   },
   {
     q: "Van wie is de website na de oplevering?",

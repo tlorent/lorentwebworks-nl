@@ -14,7 +14,7 @@ export const audiences: Audience[] = [
   {
     title: "Aanvragen en opdrachten",
     forWho: "Zzp'ers, starters, adviseurs en creatieven",
-    text: "Bezoekers zien snel wat je doet, voor wie en welk werk je eerder deed. Daarna is contact opnemen of een gesprek plannen één klik.",
+    text: "Bezoekers zien meteen wat je doet, voor wie, en welk werk je eerder deed. Daarna is contact opnemen of een gesprek plannen één klik.",
     icon: "chat",
   },
   {

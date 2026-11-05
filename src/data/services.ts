@@ -27,8 +27,8 @@ export const prices = {
   landingspagina: 950,
   bedrijfswebsite: 2450,
   extraPagina: 295,
-  teksten: 290,
-  tool: 150,
+  teksten: 150,
+  tool: 95,
   extraRonde: 125,
   websitecheck: 245,
   verbeterronde: 595,
@@ -41,7 +41,7 @@ export const services: Service[] = [
     label: "Voor als je snel online wilt",
     name: "Landingspagina",
     description:
-      "Eén pagina die in een paar seconden laat zien wat je doet en bezoekers laat contact opnemen. Ideaal als je snel online wilt.",
+      "Eén pagina met wat je doet, voor wie, en een knop naar contact. Ideaal als je snel online wilt.",
     price: prices.landingspagina,
     duration: "Live binnen 5 werkdagen",
     included: [
@@ -67,7 +67,7 @@ export const services: Service[] = [
     duration: "Live binnen 3 tot 4 weken",
     included: [
       "Alles uit de landingspagina",
-      "4 tot 6 pagina's op maat",
+      "4 tot 6 pagina's, elk met eigen teksten en opbouw",
       "Een CMS gekoppeld, zodat je zelf de teksten kunt aanpassen",
       "SEO per pagina",
       "Metingen die laten zien wat de site oplevert",

@@ -1,7 +1,7 @@
 // Vaste waarden voor de hele site. Tim wijzigt ze hier, de pagina's volgen.
 // Een lege waarde betekent: nog niet ingevuld. Dan verdwijnt het onderdeel en gaan knoppen naar het formulier.
 
-/** {{CAL_URL}}: Cal.com-link voor de kennismaking van 30 minuten. */
+/** {{CAL_URL}}: link naar de agenda voor de kennismaking van 30 minuten. */
 export const bookingUrl = "";
 
 /** {{BTW_ID}}: btw-identificatienummer, voor de footer. Bijvoorbeeld "NL000000000B01". */
