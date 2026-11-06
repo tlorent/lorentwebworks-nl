@@ -21,7 +21,7 @@ faq:
   - q: "Wat is het verschil tussen een webdesigner en een webdeveloper?"
     a: "Een webdesigner richt zich op het ontwerp en de gebruikservaring, een webdeveloper op de techniek. Veel freelancers voor kleine sites doen allebei."
   - q: "Is een freelancer goedkoper dan een bureau?"
-    a: "Meestal wel, door minder overhead. Voor een bedrijfswebsite betaal je bij een freelancer grofweg € 800 tot € 3.000."
+    a: "Meestal wel, door minder overhead. Voor een bedrijfswebsite betaal je bij een freelancer grofweg €800 tot €3.000."
   - q: "Hoe check ik of een webbouwer goed is?"
     a: "Bekijk het portfolio op duidelijkheid, snelheid en resultaten, test de eigen site in PageSpeed Insights, vraag naar referenties en let op welke vragen hij stelt."
   - q: "Moet mijn webdesigner in mijn stad zitten?"

@@ -9,6 +9,8 @@ export const scores = [
 ];
 
 export const measured = "5 november 2026";
+/** Zelfde datum als ISO, voor structured data (dateModified). */
+export const measuredIso = "2026-11-05";
 export const device = "desktop";
 export const reportUrl =
   "https://pagespeed.web.dev/analysis/https-www-lorentwebworks-nl/tjdw68yhbt?form_factor=desktop";

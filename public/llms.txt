@@ -1,0 +1,32 @@
+# Lorent Webworks
+
+> Lorent Webworks is het webbouwbedrijf van Tim Lorent, senior frontend developer in Amsterdam. Hij bouwt websites voor zelfstandigen, kleine ondernemers, coaches, horeca, goede doelen en stichtingen in heel Nederland. Prijzen zijn vast, eenmalig en excl. btw. Een landingspagina staat binnen 5 werkdagen live, een complete website binnen 3 tot 4 weken, mits de teksten en foto's op tijd worden aangeleverd.
+
+## Diensten en prijzen
+
+- [Tarieven](https://www.lorentwebworks.nl/tarieven/): overzicht van de pakketten, extra's en wat er per pakket in zit.
+- [Landingspagina](https://www.lorentwebworks.nl/tarieven/): één pagina met wat je doet, voor wie, en een knop naar contact. Vanaf €950, excl. btw.
+- [Complete website](https://www.lorentwebworks.nl/tarieven/): vier tot zes pagina's voor je diensten, werkwijze en jezelf of je team. Vanaf €2.450, excl. btw.
+- [Bestaande website verbeteren](https://www.lorentwebworks.nl/website-verbeteren/): gerichte verbeteringen aan een bestaande site. Vanaf €125, excl. btw.
+- [Lighthouse-score](https://www.lorentwebworks.nl/lighthouse-score/): wat een Lighthouse-score van 100 meet en hoe de website van Lorent Webworks die score haalt.
+
+## Gids: website laten maken
+
+- [Website laten maken: de complete gids](https://www.lorentwebworks.nl/gids/website-laten-maken/): doel bepalen, kiezen tussen zelf bouwen, freelancer of bureau, kosten en planning.
+- [Wat kost een website laten maken?](https://www.lorentwebworks.nl/gids/wat-kost-een-website/): prijzen voor zelf bouwen, een freelancer en een bureau.
+- [Hoe kies je een goede webdesigner of webbouwer?](https://www.lorentwebworks.nl/gids/webdesigner-kiezen/): waar je er een vindt, hoe je een portfolio beoordeelt en welke rode vlaggen je ziet.
+- [25 vragen om te stellen voordat je een website laat maken](https://www.lorentwebworks.nl/gids/vragen-aan-webdesigner/)
+- [Website checklist: 30 punten voor je site](https://www.lorentwebworks.nl/gids/website-checklist/)
+
+## Over
+
+- [Over Tim Lorent](https://www.lorentwebworks.nl/over/): achtergrond, werkwijze en ervaring van de maker van de site.
+- [Privacyverklaring](https://www.lorentwebworks.nl/privacy/)
+
+## Bedrijfsgegevens
+
+- Naam: Lorent Webworks
+- Eigenaar: Tim Lorent
+- Vestigingsplaats: Amsterdam, Nederland
+- KvK-nummer: 98545698
+- Website: https://www.lorentwebworks.nl/

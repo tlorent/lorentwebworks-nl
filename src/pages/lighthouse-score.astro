@@ -1,13 +1,43 @@
 ---
 import BookButton from "../components/BookButton.astro";
 import Button from "../components/Button.astro";
+import Schema from "../components/Schema.astro";
 import SectionLabel from "../components/SectionLabel.astro";
-import { device, measured, reportUrl, scores } from "../data/lighthouse";
+import {
+  device,
+  measured,
+  measuredIso,
+  reportUrl,
+  scores,
+} from "../data/lighthouse";
+import { schemaIds, site } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Lighthouse-score uitgelegd: wat 100 betekent | Lorent Webworks";
+const title = "Lighthouse-score: wat betekent 100? | Lorent Webworks";
 const description =
   "Mijn website scoort 100 op Google Lighthouse. Lees wat de score meet, wat hij niet vertelt en hoe ik jouw website op dezelfde manier bouw.";
+const url = `${site.url}/lighthouse-score/`;
+
+const schema = [
+  {
+    "@type": "Article",
+    headline: "Wat een Lighthouse-score van 100 betekent",
+    description,
+    inLanguage: "nl-NL",
+    dateModified: measuredIso,
+    mainEntityOfPage: url,
+    image: `${site.url}/og-image.png`,
+    author: { "@id": schemaIds.person },
+    publisher: { "@id": schemaIds.organization },
+  },
+  {
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${site.url}/` },
+      { "@type": "ListItem", position: 2, name: "Lighthouse-score", item: url },
+    ],
+  },
+];
 
 const onderdelen = [
   {
@@ -38,6 +68,7 @@ const onderdelen = [
 ---
 
 <BaseLayout title={title} description={description} nav="other">
+  <Schema slot="head" data={schema} />
   <header class="relative pt-14 pb-12 md:pt-20 md:pb-16">
     <div class="relative container-narrow">
       <SectionLabel>Gids</SectionLabel>
@@ -68,7 +99,7 @@ const onderdelen = [
       </dl>
       <p class="mt-4 text-sm text-text-muted">
         Gemeten op {device} op {measured} met Google Lighthouse via PageSpeed Insights.
-        <a href={reportUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-accent-text underline underline-offset-4 focus-ring">
+        <a href={reportUrl} target="_blank" rel="noopener noreferrer" class="mt-2 block font-semibold text-accent-text underline underline-offset-4 focus-ring">
           Bekijk het volledige rapport<span class="sr-only"> (opent in een nieuw tabblad)</span>
         </a>
       </p>

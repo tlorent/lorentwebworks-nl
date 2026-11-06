@@ -1,14 +1,12 @@
 // Alle prijzen, pakketinhoud en extra's. Wijzig prijzen alleen hier; de site rekent de rest uit.
 
 const priceFormat = new Intl.NumberFormat("nl-NL", {
-  style: "currency",
-  currency: "EUR",
   maximumFractionDigits: 0,
 });
 
-/** Bijvoorbeeld "€ 1.750". */
+/** Bijvoorbeeld "€1.750" (zonder spatie achter het eurosymbool). */
 export function formatPrice(price: number): string {
-  return priceFormat.format(price);
+  return `€${priceFormat.format(price)}`;
 }
 
 export type Service = {

@@ -36,6 +36,11 @@ const schema = [
     },
     areaServed: { "@type": "Country", name: "Netherlands" },
     founder: personSchema,
+    identifier: {
+      "@type": "PropertyValue",
+      propertyID: "KvK",
+      value: site.kvk,
+    },
     sameAs: [site.linkedin],
     hasOfferCatalog: {
       "@type": "OfferCatalog",

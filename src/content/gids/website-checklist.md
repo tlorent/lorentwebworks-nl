@@ -23,7 +23,7 @@ faq:
   - q: "Hoe snel moet een website laden?"
     a: "Streef naar een laadtijd onder de twee à drie seconden. Google gebruikt de Core Web Vitals, met een LCP onder 2,5 seconde als grens voor \"goed\"."
   - q: "Geldt de European Accessibility Act voor mijn website?"
-    a: "Dat hangt af van je bedrijf en je diensten. Micro-ondernemingen met minder dan 10 werknemers en maximaal € 2 miljoen omzet of balanstotaal zijn vrijgesteld voor diensten. Check bij twijfel de ACM of een specialist."
+    a: "Dat hangt af van je bedrijf en je diensten. Micro-ondernemingen met minder dan 10 werknemers en maximaal €2 miljoen omzet of balanstotaal zijn vrijgesteld voor diensten. Check bij twijfel de ACM of een specialist."
   - q: "Kan ik mijn website samen met jou doorlopen?"
     a: "Ja. In een gratis kennismaking van 30 minuten kijken we samen naar je site en wat die moet opleveren. Je hoort direct waar de grootste kansen liggen, zonder verplichting."
 ---

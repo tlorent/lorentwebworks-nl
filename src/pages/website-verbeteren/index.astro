@@ -3,15 +3,51 @@ import BookButton from "../../components/BookButton.astro";
 import Icon from "../../components/Icon.astro";
 import LighthouseBadge from "../../components/LighthouseBadge.astro";
 import Pattern from "../../components/Pattern.astro";
+import Schema from "../../components/Schema.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import SlotPhoto from "../../components/SlotPhoto.astro";
 import { formatPrice, improvements } from "../../data/services";
+import { schemaIds, site } from "../../data/site";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const title = "Bestaande website verbeteren | Lorent Webworks";
 const description =
-  "Heb je al een website die te weinig oplevert? Ik help je met de punten die het meeste verschil maken. Vanaf € 125, excl. btw.";
+  "Heb je al een website die te weinig oplevert? Ik help je met de punten die het meeste verschil maken. Vanaf €125, excl. btw.";
+const url = `${site.url}/website-verbeteren/`;
+const lowestPrice = Math.min(...improvements.map((item) => item.price));
+
+const schema = [
+  {
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name: title,
+    description,
+    inLanguage: "nl-NL",
+    isPartOf: { "@id": schemaIds.website },
+    about: { "@id": schemaIds.organization },
+  },
+  {
+    "@type": "Service",
+    name: "Bestaande website verbeteren",
+    description,
+    provider: { "@id": schemaIds.organization },
+    areaServed: { "@type": "Country", name: "Netherlands" },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "EUR",
+      lowPrice: lowestPrice,
+      offerCount: improvements.length,
+      priceSpecification: {
+        "@type": "PriceSpecification",
+        minPrice: lowestPrice,
+        priceCurrency: "EUR",
+        valueAddedTaxIncluded: false,
+      },
+    },
+  },
+];
 
 const stappen = [
   "Je plant een kennismaking.",
@@ -22,6 +58,7 @@ const stappen = [
 ---
 
 <BaseLayout title={title} description={description} nav="verbeteren" ogType="website">
+  <Schema slot="head" data={schema} />
   <section class="relative pt-14 pb-12 md:pt-20 md:pb-16">
             <div class="relative container-page">
       <SectionLabel>Bestaande website</SectionLabel>

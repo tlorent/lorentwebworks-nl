@@ -17,7 +17,7 @@ cta:
   button: "Plan een kennismaking"
 faq:
   - q: "Wat kost een website laten maken voor een zelfstandige?"
-    a: "Bij een freelancer betaal je voor een kleine, professionele bedrijfswebsite grofweg € 800 tot € 3.000. Bij een bureau begin je vaak rond € 4.000."
+    a: "Bij een freelancer betaal je voor een kleine, professionele bedrijfswebsite grofweg €800 tot €3.000. Bij een bureau begin je vaak rond €4.000."
   - q: "Hoe lang duurt het om een website te laten maken?"
     a: "Een landingspagina staat binnen 5 werkdagen live. Een bedrijfswebsite van 4 tot 6 pagina's duurt meestal 3 tot 4 weken, afhankelijk van hoe snel teksten en beelden klaar zijn."
   - q: "Is een websitebouwer zoals Wix genoeg?"
@@ -29,7 +29,7 @@ faq:
 ---
 ## Kort antwoord
 
-Bepaal eerst wat je website moet opleveren (aanvragen, boekingen, telefoontjes) en voor wie hij is. Kies daarna hoe je hem laat bouwen: zelf met een websitebouwer, via een freelancer of via een bureau. Voor zelfstandigen en kleine ondernemers kost een professionele site bij een freelancer grofweg € 800 tot € 3.000, bij een bureau vaak € 4.000 of meer. Een eenvoudige site staat binnen een paar dagen tot een paar weken live. Let bij de keuze op snelheid, vindbaarheid in Google, duidelijke teksten en een heldere knop naar contact.
+Bepaal eerst wat je website moet opleveren (aanvragen, boekingen, telefoontjes) en voor wie hij is. Kies daarna hoe je hem laat bouwen: zelf met een websitebouwer, via een freelancer of via een bureau. Voor zelfstandigen en kleine ondernemers kost een professionele site bij een freelancer grofweg €800 tot €3.000, bij een bureau vaak €4.000 of meer. Een eenvoudige site staat binnen een paar dagen tot een paar weken live. Let bij de keuze op snelheid, vindbaarheid in Google, duidelijke teksten en een heldere knop naar contact.
 
 ## Begin bij het doel
 
@@ -48,15 +48,15 @@ Denk ook na over je bezoeker. Wie is het, wat zoekt die persoon, en wat moet hij
 
 ### Zelf bouwen met een websitebouwer
 
-Met Wix, Squarespace of een vergelijkbare tool zet je zelf een site in elkaar, voor grofweg € 15 tot € 50 per maand. Prima als je tijd hebt, plezier hebt in het uitzoeken en een eenvoudige site nodig hebt. Reken wel op veel uren: teksten schrijven, foto's kiezen, instellingen voor Google en mobiel goed zetten.
+Met Wix, Squarespace of een vergelijkbare tool zet je zelf een site in elkaar, voor grofweg €15 tot €50 per maand. Prima als je tijd hebt, plezier hebt in het uitzoeken en een eenvoudige site nodig hebt. Reken wel op veel uren: teksten schrijven, foto's kiezen, instellingen voor Google en mobiel goed zetten.
 
 ### Een freelancer inhuren
 
-Een freelance webbouwer of webdesigner bouwt de site voor je, vaak met direct contact en korte lijnen. Voor een kleine bedrijfswebsite betaal je grofweg € 800 tot € 3.000. Het niveau verschilt sterk per freelancer, dus kijk goed naar portfolio, aanpak en wat er in de prijs zit. In [hoe kies je een goede webdesigner](/gids/webdesigner-kiezen/) lees je waar je op let.
+Een freelance webbouwer of webdesigner bouwt de site voor je, vaak met direct contact en korte lijnen. Voor een kleine bedrijfswebsite betaal je grofweg €800 tot €3.000. Het niveau verschilt sterk per freelancer, dus kijk goed naar portfolio, aanpak en wat er in de prijs zit. In [hoe kies je een goede webdesigner](/gids/webdesigner-kiezen/) lees je waar je op let.
 
 ### Een webbureau inschakelen
 
-Een bureau heeft een team met strategen, ontwerpers en developers. Logisch bij grotere projecten met veel pagina's, koppelingen of een webshop. Voor een professionele site voor een klein bedrijf begin je vaak rond € 4.000, en het kan flink hoger uitvallen.
+Een bureau heeft een team met strategen, ontwerpers en developers. Logisch bij grotere projecten met veel pagina's, koppelingen of een webshop. Voor een professionele site voor een klein bedrijf begin je vaak rond €4.000, en het kan flink hoger uitvallen.
 
 <aside class="callout">
 <p>Gratis kennismaking</p>
@@ -89,7 +89,7 @@ Een duidelijke paginastructuur, goede titels en meta descriptions, een Google Be
 
 ### Toegankelijkheid
 
-Een site die ook werkt voor mensen met een beperking: goede contrasten, leesbare lettergroottes, alt-teksten bij afbeeldingen en een site die met het toetsenbord te bedienen is. Sinds 28 juni 2025 geldt de European Accessibility Act voor veel bedrijven die online diensten of producten aanbieden. Micro-ondernemingen (minder dan 10 werknemers en maximaal € 2 miljoen omzet of balanstotaal) zijn vrijgesteld, maar een toegankelijke site werkt voor iedereen beter.
+Een site die ook werkt voor mensen met een beperking: goede contrasten, leesbare lettergroottes, alt-teksten bij afbeeldingen en een site die met het toetsenbord te bedienen is. Sinds 28 juni 2025 geldt de European Accessibility Act voor veel bedrijven die online diensten of producten aanbieden. Micro-ondernemingen (minder dan 10 werknemers en maximaal €2 miljoen omzet of balanstotaal) zijn vrijgesteld, maar een toegankelijke site werkt voor iedereen beter.
 
 ### Een duidelijke weg naar contact
 
@@ -111,8 +111,8 @@ De prijs hangt af van het aantal pagina's, wie de teksten schrijft, maatwerk in 
 
 Mijn eigen startpunten:
 
-- **Landingspagina:** één scherpe pagina, vanaf € 950 excl. btw, binnen 5 werkdagen.
-- **Complete website:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf € 2.450 excl. btw.
+- **Landingspagina:** één scherpe pagina, vanaf €950 excl. btw, binnen 5 werkdagen.
+- **Complete website:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf €2.450 excl. btw.
 
 Qua doorlooptijd: een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. De grootste vertraging zit meestal in het aanleveren van teksten en foto's, dus begin daar op tijd mee.
 

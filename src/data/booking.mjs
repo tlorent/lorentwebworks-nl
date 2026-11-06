@@ -7,7 +7,7 @@ export const bookingUrl = "";
 /** {{BTW_ID}}: btw-identificatienummer, voor de footer. Bijvoorbeeld "NL000000000B01". */
 export const btwId = "";
 
-/** {{HOSTING_PRIJS}}: hostingprijs per maand, bijvoorbeeld "€ 15". */
+/** {{HOSTING_PRIJS}}: hostingprijs per maand, bijvoorbeeld "€15". */
 export const hostingPrice = "";
 
 /**

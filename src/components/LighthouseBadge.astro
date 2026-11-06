@@ -36,7 +36,7 @@ const pillTekst =
     flex-wrap: wrap;
     gap: 10px;
     min-height: 44px;
-    padding: 8px 16px 8px 12px;
+    padding: 12px 20px 12px 16px;
     border-radius: 999px;
     background: var(--card);
     border: 1px solid var(--line);
@@ -46,6 +46,11 @@ const pillTekst =
     text-decoration: none;
     max-width: 100%;
     transition: border-color 150ms ease;
+  }
+  @media (max-width: 40rem) {
+    .pill {
+      padding: 14px 24px 14px 24px;
+    }
   }
   .pill:hover {
     border-color: var(--ink);

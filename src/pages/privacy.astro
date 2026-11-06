@@ -1,8 +1,20 @@
 ---
-import { site } from "../data/site";
+import Schema from "../components/Schema.astro";
+import { schemaIds, site } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const updated = new Date("2026-11-05");
+const url = `${site.url}/privacy/`;
+const schema = {
+  "@type": "WebPage",
+  "@id": `${url}#webpage`,
+  url,
+  name: "Privacyverklaring",
+  inLanguage: "nl-NL",
+  dateModified: updated.toISOString().slice(0, 10),
+  isPartOf: { "@id": schemaIds.website },
+  publisher: { "@id": schemaIds.organization },
+};
 const updatedLabel = new Intl.DateTimeFormat("nl-NL", {
   day: "numeric",
   month: "long",
@@ -14,6 +26,7 @@ const updatedLabel = new Intl.DateTimeFormat("nl-NL", {
   title="Privacyverklaring | Lorent Webworks"
   description="Hoe Lorent Webworks omgaat met je gegevens als je het contactformulier invult of de website bezoekt."
 >
+  <Schema slot="head" data={schema} />
   <article class="container-narrow py-16 md:py-24">
     <header>
       <h1 class="text-display font-stretch-116%">Privacyverklaring</h1>

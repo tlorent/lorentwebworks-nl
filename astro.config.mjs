@@ -1,4 +1,5 @@
 // @ts-check
+import { execFileSync } from "node:child_process";
 import { readdirSync, readFileSync } from "node:fs";
 import { unified } from "@astrojs/markdown-remark";
 import sitemap from "@astrojs/sitemap";
@@ -20,6 +21,30 @@ const lastmod = new Map(
       return [`${site}/gids/${slug}/`, updated];
     }),
 );
+
+// lastmod voor pagina's zonder gids: de datum van de laatste commit van de bronpagina.
+// Zonder git (of zonder commit voor dat bestand) blijft de lastmod leeg.
+/** @param {string} url */
+function pageLastmod(url) {
+  const path = url.replace(site, "").replace(/^\/|\/$/g, "");
+  const candidates = path
+    ? [`src/pages/${path}/index.astro`, `src/pages/${path}.astro`]
+    : ["src/pages/index.astro"];
+  for (const file of candidates) {
+    try {
+      const date = execFileSync(
+        "git",
+        ["log", "-1", "--format=%cI", "--", file],
+        {
+          cwd: new URL("./", import.meta.url),
+          encoding: "utf8",
+        },
+      ).trim();
+      if (date) return date;
+    } catch {}
+  }
+  return undefined;
+}
 
 export default defineConfig({
   site,
@@ -43,7 +68,7 @@ export default defineConfig({
     sitemap({
       filter: (page) => !page.includes("/404") && !page.includes("/og/"),
       serialize: (item) => {
-        const date = lastmod.get(item.url);
+        const date = lastmod.get(item.url) ?? pageLastmod(item.url);
         return date ? { ...item, lastmod: new Date(date).toISOString() } : item;
       },
     }),
