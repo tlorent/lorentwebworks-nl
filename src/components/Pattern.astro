@@ -1,5 +1,5 @@
 ---
-type Props = { variant: "dots" | "grid" };
+type Props = { variant: "grid" | "glow" };
 const { variant } = Astro.props;
 ---
 
@@ -7,7 +7,8 @@ const { variant } = Astro.props;
   aria-hidden="true"
   class:list={[
     "pointer-events-none absolute inset-0",
-    variant === "dots" ? "pattern-1 mask-fade-down" : "pattern-2 mask-fade-both",
+    variant === "grid" && "pattern-2 mask-fade-both",
+    variant === "glow" && "hero-glow",
   ]}
 >
 </div>

@@ -97,11 +97,13 @@ Een contactformulier met weinig velden, een klikbaar telefoonnummer, een WhatsAp
 
 ## Hoe het traject verloopt
 
-Bij mij verloopt een project in drie stappen:
+Bij mij verloopt een project in vijf stappen:
 
-1. **We spreken af.** We bellen via video. Ik stel scherpe vragen over je bedrijf, je klanten en wat de site moet doen. Dat gesprek duurt 30 minuten en is gratis.
-2. **Ik bouw.** Structuur, teksten, ontwerp en techniek neem ik voor mijn rekening. Je krijgt tussentijds een preview om op te reageren.
-3. **Live en opleveren.** De site gaat live en ik laat je zien hoe je zelf kleine dingen aanpast. Bij de complete website stel ik ook metingen in. Jij houdt de sleutels.
+1. **Kennismaking.** We bellen via video, 30 minuten. Ik vraag wat je doet, voor wie, en wat de website moet opleveren. Dit gesprek is gratis.
+2. **Voorstel.** Na het gesprek krijg je een voorstel met prijs, planning en afbakening. Zo weet je precies wat ik ga bouwen.
+3. **Ontwerpen en bouwen.** Structuur, ontwerp en techniek neem ik voor mijn rekening. Jij levert teksten en foto's aan, want jij kent je klanten het best. Tussendoor krijg je een preview om op te reageren.
+4. **Lancering.** De site gaat live, volledig getest. Bij de complete website stel ik ook metingen in.
+5. **Overdracht en nazorg.** Ik laat je zien hoe je zelf kleine dingen aanpast. Je krijgt een uitlegvideo, handleiding en 14 dagen gratis support. Jij houdt de sleutels.
 
 Bij een ander traject ziet het er vaak vergelijkbaar uit, met soms extra stappen voor ontwerp, contentcreatie of fotografie.
 
@@ -111,8 +113,8 @@ De prijs hangt af van het aantal pagina's, wie de teksten schrijft, maatwerk in 
 
 Mijn eigen startpunten:
 
-- **Landingspagina:** één scherpe pagina, vanaf €950 excl. btw, binnen 5 werkdagen.
-- **Complete website:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf €2.450 excl. btw.
+- **Landingspagina:** één scherpe pagina, vanaf €850 excl. btw, binnen 5 werkdagen.
+- **Complete website:** 4 tot 6 pagina's met SEO per pagina en conversietracking, vanaf €2.150 excl. btw.
 
 Qua doorlooptijd: een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. De grootste vertraging zit meestal in het aanleveren van teksten en foto's, dus begin daar op tijd mee.
 

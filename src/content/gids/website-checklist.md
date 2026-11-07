@@ -49,7 +49,7 @@ Een website die klanten oplevert, maakt binnen vijf seconden duidelijk wat je do
 <aside class="callout">
 <p>Gratis kennismaking</p>
 <h3>Liever dat ik meekijk?</h3>
-<p>In een gratis kennismaking van 30 minuten lopen we samen door je site. Je hoort meteen welke punten het meeste opleveren. We spreken af bij jou, met koffie of via video, zonder verplichting.</p>
+<p>In een gratis kennismaking van 30 minuten lopen we samen door je site. Je hoort meteen welke punten het meeste opleveren. We bellen via video, zonder verplichting.</p>
 <p><a href="/#contact">Plan een kennismaking →</a></p>
 </aside>
 

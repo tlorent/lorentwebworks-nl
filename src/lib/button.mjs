@@ -20,7 +20,7 @@ const sizes = {
   md: "gap-2.5 px-7 py-4.5 text-base",
   lg: "gap-2.5 px-7.5 py-4.75 text-lg",
   // Hero: kleiner op mobiel en tablet, vanaf lg gelijk aan lg.
-  hero: "gap-2 px-6 py-3.5 text-base lg:gap-2.5 lg:px-7.5 lg:py-4.75 lg:text-lg",
+  hero: "gap-2 px-6 py-3.5 text-sm lg:gap-2.5 lg:px-7.5 lg:py-4.75 lg:text-base",
 };
 
 /**

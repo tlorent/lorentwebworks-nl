@@ -22,8 +22,8 @@ export type Service = {
 };
 
 export const prices = {
-  landingspagina: 950,
-  bedrijfswebsite: 2450,
+  landingspagina: 850,
+  bedrijfswebsite: 2150,
   extraPagina: 295,
   teksten: 150,
   tool: 95,

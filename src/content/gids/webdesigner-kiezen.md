@@ -62,7 +62,7 @@ Scroll naar de footer van een site die je mooi en duidelijk vindt. Vaak staat de
 <aside class="callout">
 <p>Lorent Webworks</p>
 <h3>Senior ervaring, direct contact</h3>
-<p>8+ jaar ervaring bij bol.com, GrandVision en T-Mobile, nu voor zelfstandigen en kleine ondernemers. Je werkt rechtstreeks met mij, van eerste gesprek tot livegang.</p>
+<p>8+ jaar ervaring bij bol., GrandVision en T-Mobile, nu voor zelfstandigen en kleine ondernemers. Je werkt rechtstreeks met mij, van eerste gesprek tot livegang.</p>
 <p><a href="/#contact">Plan een kennismaking →</a></p>
 </aside>
 

@@ -5,8 +5,8 @@
 ## Diensten en prijzen
 
 - [Tarieven](https://www.lorentwebworks.nl/tarieven/): overzicht van de pakketten, extra's en wat er per pakket in zit.
-- [Landingspagina](https://www.lorentwebworks.nl/tarieven/): één pagina met wat je doet, voor wie, en een knop naar contact. Vanaf €950, excl. btw.
-- [Complete website](https://www.lorentwebworks.nl/tarieven/): vier tot zes pagina's voor je diensten, werkwijze en jezelf of je team. Vanaf €2.450, excl. btw.
+- [Landingspagina](https://www.lorentwebworks.nl/tarieven/): één pagina met wat je doet, voor wie, en een knop naar contact. Vanaf €850, excl. btw.
+- [Complete website](https://www.lorentwebworks.nl/tarieven/): vier tot zes pagina's voor je diensten, werkwijze en jezelf of je team. Vanaf €2.150, excl. btw.
 - [Bestaande website verbeteren](https://www.lorentwebworks.nl/website-verbeteren/): gerichte verbeteringen aan een bestaande site. Vanaf €125, excl. btw.
 - [Lighthouse-score](https://www.lorentwebworks.nl/lighthouse-score/): wat een Lighthouse-score van 100 meet en hoe de website van Lorent Webworks die score haalt.
 
