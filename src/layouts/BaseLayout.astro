@@ -61,12 +61,8 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
-    <!-- Privacy-friendly analytics by Plausible -->
-    <script is:inline async src="https://plausible.io/js/pa-apQxALwYRdrJkb1yusglG.js"></script>
-    <script is:inline>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
-    </script>
+    <!-- 100% privacy-first analytics -->
+    <script is:inline async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <slot name="head" />
   </head>
   <body class="bg-bg font-sans text-base leading-relaxed text-text antialiased transition-colors duration-200 motion-reduce:transition-none">
