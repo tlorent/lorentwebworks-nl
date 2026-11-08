@@ -34,7 +34,7 @@ const {
     <div class="mt-12 flex flex-col gap-2.5 md:mt-14">
       {
         items.map((item, i) => (
-          <details name={`${id}-item`} open={i === 0} class="details-anim group rounded-card bg-inner px-5 md:px-7">
+          <details name={`${id}-item`} class="details-anim group rounded-card bg-inner px-5 md:px-7">
             <summary class="summary-reset flex min-h-11 items-center justify-between gap-5 rounded-card py-5.5 focus-ring">
               <span class="text-body-lg leading-snug font-bold">{item.q}</span>
               <span
