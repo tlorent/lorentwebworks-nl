@@ -2,6 +2,7 @@
 import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
 import Pattern from "./Pattern.astro";
+import SlotPhoto from "./SlotPhoto.astro";
 ---
 
 <!-- Geen reveal-animatie: de hero staat boven de vouw en moet direct zichtbaar zijn (LCP). -->
@@ -23,9 +24,16 @@ import Pattern from "./Pattern.astro";
       </p>
     </div>
 
+    <div class="mt-8 flex justify-center md:mt-10">
+      <div class="relative size-24 -rotate-3">
+        <div aria-hidden="true" class="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-card bg-accent"></div>
+        <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={96} class="relative" />
+      </div>
+    </div>
+
     <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:mt-10">
       <BookButton size="hero" class="justify-center" />
-      <Button href="#diensten" variant="secondary" size="hero" class="justify-center">Bekijk diensten en prijzen</Button>
+      <Button href="#diensten" variant="secondary" size="hero" class="justify-center border border-text-soft">Bekijk diensten en prijzen</Button>
     </div>
   </div>
 </section>
