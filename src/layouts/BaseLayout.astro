@@ -1,6 +1,5 @@
 ---
 import "../styles/global.css";
-import FloatingCta from "../components/FloatingCta.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import type { NavKey } from "../components/nav";
@@ -15,7 +14,6 @@ type Props = {
   ogType?: "website" | "article";
   /** Absolute URL van de deelafbeelding (3024x1730, hoge resolutie). Standaard /og-image.png. */
   ogImage?: string;
-  floatingCta?: boolean;
 };
 
 const {
@@ -25,7 +23,6 @@ const {
   noindex = false,
   ogType = "website",
   ogImage = new URL("/og-image.png", site.url).href,
-  floatingCta = false,
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, site.url).href;
 ---
@@ -71,7 +68,6 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
       <slot />
     </main>
     <Footer onHome={nav === "home"} />
-    {floatingCta && <FloatingCta />}
 
     <script>
       // Fallback voor browsers zonder scroll-driven animations.
