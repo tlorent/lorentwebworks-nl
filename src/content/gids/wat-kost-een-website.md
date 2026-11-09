@@ -77,7 +77,7 @@ Hoe meer rondes, hoe meer uren. Een vaste afspraak voorkomt verrassingen.
 <p>Pakketten</p>
 <h3>Helder wat je krijgt, helder wat het kost</h3>
 <p>Geen urenbriefjes. Een landingspagina vanaf €850 of een bedrijfswebsite vanaf €2.150, eenmalig, excl. btw.</p>
-<p><a href="/tarieven/">Bekijk de pakketten →</a></p>
+<p><a href="/website-bouwen/">Bekijk de pakketten →</a></p>
 </aside>
 
 ## Terugkerende kosten

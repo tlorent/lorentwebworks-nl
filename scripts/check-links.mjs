@@ -77,8 +77,8 @@ for (const sample of samples) {
 
 // Het oude adres van elke gids moet naar de juiste gids gaan.
 const expected = {
-  "/diensten/landingspagina": "/tarieven/",
-  "/diensten/bedrijfswebsite": "/tarieven/",
+  "/diensten/landingspagina": "/website-bouwen/",
+  "/diensten/bedrijfswebsite": "/website-bouwen/",
   "/diensten/website-audit": "/website-verbeteren/",
   "/website-laten-maken": "/gids/website-laten-maken/",
   "/webdesigner-kiezen/": "/gids/webdesigner-kiezen/",

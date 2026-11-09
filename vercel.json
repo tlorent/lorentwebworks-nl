@@ -15,23 +15,33 @@
       "permanent": true
     },
     {
+      "source": "/tarieven",
+      "destination": "/website-bouwen/",
+      "permanent": true
+    },
+    {
+      "source": "/tarieven/",
+      "destination": "/website-bouwen/",
+      "permanent": true
+    },
+    {
       "source": "/diensten/landingspagina",
-      "destination": "/tarieven/",
+      "destination": "/website-bouwen/",
       "permanent": true
     },
     {
       "source": "/diensten/landingspagina/",
-      "destination": "/tarieven/",
+      "destination": "/website-bouwen/",
       "permanent": true
     },
     {
       "source": "/diensten/bedrijfswebsite",
-      "destination": "/tarieven/",
+      "destination": "/website-bouwen/",
       "permanent": true
     },
     {
       "source": "/diensten/bedrijfswebsite/",
-      "destination": "/tarieven/",
+      "destination": "/website-bouwen/",
       "permanent": true
     },
     {

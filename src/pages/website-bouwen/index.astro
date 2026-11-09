@@ -20,9 +20,9 @@ import { schemaIds, site } from "../../data/site";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const [lp, bw] = services;
-const title = "Tarieven voor je website | Lorent Webworks";
+const title = "Website bouwen met vaste prijzen | Lorent Webworks";
 const description = `Vaste prijzen voor een Landingspagina (vanaf ${formatPrice(lp.price)}) en een complete website (vanaf ${formatPrice(bw.price)}). Eenmalig, excl. btw, met een overzicht van de extra's.`;
-const url = `${site.url}/tarieven/`;
+const url = `${site.url}/website-bouwen/`;
 
 const schema = [
   {
@@ -37,7 +37,7 @@ const schema = [
   },
   {
     "@type": "ItemList",
-    name: "Tarieven Lorent Webworks",
+    name: "Website bouwen bij Lorent Webworks",
     itemListElement: services.map((service, i) => ({
       "@type": "ListItem",
       position: i + 1,
@@ -78,8 +78,8 @@ const rowClass =
   <Schema slot="head" data={schema} />
   <section class="relative pt-14 pb-12 md:pt-20 md:pb-16">
             <div class="relative container-page">
-      <SectionLabel>Prijzen</SectionLabel>
-      <h1 class="mt-6 text-display font-stretch-116% text-balance">Tarieven</h1>
+      <SectionLabel>Nieuwe website</SectionLabel>
+      <h1 class="mt-6 text-display font-stretch-116% text-balance">Website bouwen</h1>
       <p class="mt-6 max-w-3xl text-intro text-text-soft">
         Je weet vooraf wat het kost en wat erin zit. Alle prijzen zijn eenmalig en exclusief btw.
       </p>

@@ -6,16 +6,28 @@ export type NavKey =
   | "over"
   | "other";
 
-export type NavLink = { label: string; href: string; key: NavKey };
+// Zonder key is het geen pagina maar een anker op de homepage, dus nooit "huidig".
+export type NavLink = { label: string; href: string; key?: NavKey };
 export type NavGroup = { label: string; children: NavLink[] };
 export type NavItem = NavLink | NavGroup;
 
-// Hoofdmenu. "Diensten" is een uitklapbare groep; de namen van de items zijn de voorlopige keuze.
+// Hoofdmenu. "Diensten" en "Homepage" zijn uitklapbare groepen; de namen van de items zijn de voorlopige keuze.
 export const navItems: NavItem[] = [
+  {
+    label: "Homepage",
+    children: [
+      { label: "Voor wie", href: "/#voor-wie" },
+      { label: "Werkwijze", href: "/#aanpak" },
+      { label: "Resultaten", href: "/#resultaten" },
+      { label: "Diensten en prijzen", href: "/#diensten" },
+      { label: "Veelgestelde vragen", href: "/#faq" },
+      { label: "Contact", href: "/#contact" },
+    ],
+  },
   {
     label: "Diensten",
     children: [
-      { label: "Website bouwen", href: "/tarieven/", key: "tarieven" },
+      { label: "Website bouwen", href: "/website-bouwen/", key: "tarieven" },
       {
         label: "Website verbeteren",
         href: "/website-verbeteren/",
@@ -24,7 +36,7 @@ export const navItems: NavItem[] = [
     ],
   },
   { label: "Over", href: "/over/", key: "over" },
-  { label: "Gids", href: "/gids/", key: "gids" },
+  { label: "Artikelen", href: "/gids/", key: "gids" },
 ];
 
 export const isGroup = (item: NavItem): item is NavGroup => "children" in item;
