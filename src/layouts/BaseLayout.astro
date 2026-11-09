@@ -59,7 +59,7 @@ const canonical = new URL(Astro.url.pathname, site.url).href;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <!-- 100% privacy-first analytics -->
-    <script is:inline async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script is:inline async data-hostname="www.lorentwebworks.nl" src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
     <slot name="head" />
   </head>
   <body class="bg-bg font-sans text-base leading-relaxed text-text antialiased transition-colors duration-200 motion-reduce:transition-none">

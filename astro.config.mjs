@@ -55,13 +55,16 @@ export default defineConfig({
     csp: {
       directives: [
         "default-src 'self'",
-        "img-src 'self' data:",
+        "img-src 'self' data: https://queue.simpleanalyticscdn.com",
         "font-src 'self'",
-        "connect-src 'self' https://formspree.io",
+        "connect-src 'self' https://formspree.io https://queue.simpleanalyticscdn.com",
         "form-action https://formspree.io",
         "base-uri 'self'",
         "object-src 'none'",
       ],
+      scriptDirective: {
+        resources: ["'self'", "https://scripts.simpleanalyticscdn.com"],
+      },
     },
   },
   integrations: [
