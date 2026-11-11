@@ -25,16 +25,16 @@ import Pattern from "./Pattern.astro";
     </div>
 
     <div class="mt-8 flex flex-col items-center gap-6 md:mt-10">
-      <div class="flex w-full flex-col items-center gap-3 sm:flex-row">
+      <div class="flex w-full flex-col items-center gap-3 sm:flex-row sm:items-center">
         <!-- Twee gelijke flexkolommen naast de knop houden de knop precies in het midden. -->
-        <div class="flex justify-center sm:flex-1 sm:justify-end">
+        <div class="flex items-center justify-center sm:flex-1 sm:justify-end">
           <Image
             src={timExtra}
             alt="Foto van Tim Lorent"
             width={112}
             height={112}
             quality={90}
-            class="size-12 shrink-0 rounded-full object-cover object-top ring-2 ring-bg"
+            class="size-16 shrink-0 rounded-full sm:size-12 object-cover object-top ring-2 ring-bg"
           />
         </div>
         <BookButton size="hero" class="justify-center" />
