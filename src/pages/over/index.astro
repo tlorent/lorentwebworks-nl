@@ -47,17 +47,29 @@ const schema = [
   <Schema slot="head" data={schema} />
 
   <header class="relative pt-14 pb-12 md:pt-20 md:pb-16">
-        <div class="relative container-page">
+    <div class="relative container-page">
       <div class="grid items-start gap-12 lg:grid-cols-12 lg:gap-16">
-        <div class="lg:col-span-7">
+        <div class="lg:col-span-7 lg:row-start-1">
           <SectionLabel>Over mij</SectionLabel>
           <h1 class="mt-6 text-display font-stretch-116% text-balance">Hoi, ik ben Tim</h1>
           <p class="mt-6 max-w-2xl text-intro text-text-soft">
             Ik bouw websites voor ondernemers en organisaties die liever met hun eigen vak bezig zijn. Mijn vak is
             toevallig websites bouwen, dus dat komt goed uit.
           </p>
+        </div>
 
-          <section aria-labelledby="platforms-titel" class="mt-16 md:mt-20">
+        <div class="lg:col-span-5 lg:col-start-8 lg:row-span-2 lg:row-start-1">
+          <Image
+                        src={timPortret}
+                        alt="Portret van Tim Lorent"
+                        widths={[320, 560, 640]}
+                        sizes="(min-width: 1024px) 320px, min(90vw, 320px)"
+                        quality={90}
+                        class="aspect-4/3 w-48 max-w-xs rounded-hero object-cover object-top md:w-56 lg:aspect-auto lg:h-auto lg:w-full"
+                      />
+        </div>
+
+          <section aria-labelledby="platforms-titel" class="lg:col-span-7 lg:row-start-2">
             <div class="reveal">
       <h2 id="platforms-titel" class="text-h2 font-stretch-115% text-balance">
         Acht jaar bij grote merken.
@@ -87,17 +99,6 @@ const schema = [
       </div>
     </div>
           </section>
-        </div>
-        <div class="lg:col-span-5">
-          <Image
-            src={timPortret}
-            alt="Portret van Tim Lorent"
-            widths={[320, 560, 640]}
-            sizes="(min-width: 1024px) 320px, min(90vw, 320px)"
-            quality={90}
-            class="h-auto w-full max-w-xs rounded-hero"
-          />
-        </div>
       </div>
     </div>
   </header>
