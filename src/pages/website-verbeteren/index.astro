@@ -27,6 +27,10 @@ const rowClass =
   "block border-t border-border py-4 first:border-t-0 md:table-row md:border-0 md:py-0";
 const overviewRows: { label: string; values: string[] }[] = [
   {
+    label: "Prijs",
+    values: improvements.map((item) => formatPrice(item.price)),
+  },
+  {
     label: "Wat je krijgt",
     values: [
       "De 10 belangrijkste verbeterpunten, op volgorde van belang",
@@ -225,18 +229,17 @@ const stappen = [
           <tbody class="block md:table-row-group">
             {
               overviewRows.map((row) => (
-                <tr class={rowClass}>
+                <tr class:list={[row.label === "Prijs" ? "block py-4 md:hidden" : rowClass]}>
                   <th scope="row" class={rowHead}>{row.label}</th>
                   {row.values.map((value, i) => (
                     <td
                       class:list={[
                         cell,
-                        row.label === "Prijs" && "font-bold text-accent-text",
                         row.label === "Verrekening" && i === 0 && "font-semibold text-accent-text",
                       ]}
                     >
                       <span class="block text-label font-semibold text-text-muted md:hidden">{improvements[i].name}</span>
-                      {value}
+                      {row.label === "Prijs" ? <span class="font-bold text-accent-text">{value}</span> : value}
                     </td>
                   ))}
                 </tr>
