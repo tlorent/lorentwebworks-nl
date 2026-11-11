@@ -2,7 +2,6 @@
 import { btwId } from "../data/booking.mjs";
 import { site } from "../data/site";
 import BookButton from "./BookButton.astro";
-import Wordmark from "./Wordmark.astro";
 
 type Props = { onHome?: boolean };
 const { onHome = false } = Astro.props;
@@ -54,7 +53,7 @@ const linkClass =
   "rounded-md text-label text-text-soft transition-colors duration-150 hover:text-accent-text focus-ring";
 ---
 
-<footer class="overflow-hidden border-t border-border bg-surface pt-14 lg:pt-22">
+<footer class="overflow-hidden border-t border-border bg-surface pt-14 pb-10 lg:pt-22 lg:pb-14">
   <div class="container-page">
     <div class="grid gap-12 lg:grid-cols-12 lg:gap-10">
       <div class="max-w-lg lg:col-span-4">
@@ -101,10 +100,6 @@ const linkClass =
           >Privacy</a
         >
       </p>
-    </div>
-
-    <div aria-hidden="true" class="@container mt-8 translate-y-1/7 select-none md:mt-12">
-      <Wordmark />
     </div>
   </div>
 </footer>

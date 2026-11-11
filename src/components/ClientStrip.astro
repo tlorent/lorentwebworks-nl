@@ -1,19 +1,26 @@
 ---
 import { clients } from "../data/clients";
-// Doorlopende rij met bedrijfsnamen. De lijst staat er twee keer in, zodat de lus naadloos aansluit.
-// De randen vervagen. Zonder bewegingsvoorkeur staan de namen stil in één rij.
+
+// Op mobiel één rij met alle namen, zonder beweging. De rij is afgeknipt en vervaagt aan beide randen, zodat
+// op bredere schermen meer namen zichtbaar zijn. Vanaf tablet een doorlopende rij.
+// De lijst staat er twee keer in, zodat de lus naadloos aansluit.
+const nameClass =
+  "whitespace-nowrap font-bold font-stretch-108% tracking-tight text-text-muted";
 ---
 
 <section aria-label="Ervaring opgedaan bij" class="border-y border-border">
   <div class="reveal-load container-page py-7">
     <p class="mb-4 text-center text-caption font-semibold text-text-muted">Ervaring opgedaan bij</p>
-    <div class="mask-fade-x overflow-hidden">
-      <div class="marquee-track flex w-max text-lg font-bold font-stretch-108% tracking-tight text-text-muted motion-reduce:w-full">
-        <ul class="flex shrink-0 motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center">
-          {clients.map((name) => <li class="shrink-0 pr-10 whitespace-nowrap">{name}</li>)}
+    <ul class:list={["mask-fade-x flex gap-x-4 overflow-hidden text-sm max-xxs:text-xs md:hidden", nameClass]}>
+      {clients.map((name) => <li class="shrink-0">{name}</li>)}
+    </ul>
+    <div class="mask-fade-x hidden overflow-hidden md:block">
+      <div class:list={["marquee-track flex w-max text-lg", nameClass]}>
+        <ul class="flex shrink-0">
+          {clients.map((name) => <li class="shrink-0 pr-10">{name}</li>)}
         </ul>
-        <ul aria-hidden="true" class="flex shrink-0 motion-reduce:hidden">
-          {clients.map((name) => <li class="shrink-0 pr-10 whitespace-nowrap">{name}</li>)}
+        <ul aria-hidden="true" class="flex shrink-0">
+          {clients.map((name) => <li class="shrink-0 pr-10">{name}</li>)}
         </ul>
       </div>
     </div>

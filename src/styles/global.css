@@ -33,6 +33,7 @@
     "Figtree", "Figtree Fallback", ui-sans-serif, system-ui, sans-serif;
 
   --breakpoint-xs: 25rem;
+  --breakpoint-xxs: 21rem;
 
   --radius-input: 0.375rem;
   --radius-card: 0.5rem;
@@ -650,7 +651,9 @@ html[data-input="pointer"] #mobiel-menu :focus-visible {
 }
 @utility marquee-track {
   @media (prefers-reduced-motion: no-preference) {
-    animation: marquee 40s linear infinite;
+    @media (min-width: 48rem) {
+      animation: marquee 40s linear infinite;
+    }
   }
 }
 /* Vervaagt de randen horizontaal, zodat namen rustig in- en uitgaan. */
