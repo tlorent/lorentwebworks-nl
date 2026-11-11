@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import timSmall from "../assets/tim-small.jpg";
+import timExtra from "../assets/tim-extra.jpg";
 import { site } from "../data/site";
 import { buttonClass, buttonIconClass } from "../lib/button.mjs";
 import Icon from "./Icon.astro";
@@ -10,7 +10,9 @@ import SectionLabel from "./SectionLabel.astro";
 const options = [
   { value: "Een landingspagina", id: "landingspagina" },
   { value: "Een bedrijfswebsite", id: "bedrijfswebsite" },
-  { value: "Een bestaande website verbeteren", id: "verbeteren" },
+  { value: "Websitecheck", id: "websitecheck" },
+  { value: "Verbeterronde", id: "verbeterronde" },
+  { value: "Vraaguur", id: "vraaguur" },
   { value: "Weet ik nog niet", id: "weet-niet" },
 ];
 
@@ -28,7 +30,7 @@ const onBlockLink =
     <div class="on-block flex flex-wrap gap-x-12 gap-y-8 rounded-hero p-5 md:p-12">
       <div class="flex min-w-0 grow basis-95 flex-col">
         <Image
-          src={timSmall}
+          src={timExtra}
           alt="Foto van Tim Lorent"
           widths={[176, 352]}
           sizes="176px"
@@ -36,11 +38,8 @@ const onBlockLink =
         />
         <SectionLabel onBlock>Contact</SectionLabel>
         <h2 id="contact-titel" class="mt-5 text-h2 font-stretch-115% text-balance">
-          Vertel me wat je website moet opleveren.
+          Laten we in 30 minuten bespreken wat je website moet opleveren.
         </h2>
-        <p class="mt-6 max-w-lg text-body-lg text-on-block-muted">
-          Plan direct 30 minuten in.
-        </p>
         <ul class="mt-10 flex flex-col gap-3 text-on-block-muted">
           <li class="flex items-center gap-3">
             <Icon name="pin" class="size-5 shrink-0 text-on-block" />
@@ -124,7 +123,7 @@ const onBlockLink =
           </div>
 
           <div class="mt-5">
-            <label for="bericht" class={label}>Vertel kort over je zaak</label>
+            <label for="bericht" class={label}>Vertel kort over je bedrijf</label>
             <textarea
               id="bericht"
               name="message"
@@ -132,7 +131,7 @@ const onBlockLink =
               placeholder="Wat doe je, voor wie, en wat moet de website opleveren?"
               required
               class={`${field} resize-y`}></textarea>
-            <p id="bericht-fout" class={error} hidden>Vertel kort over je zaak</p>
+            <p id="bericht-fout" class={error} hidden>Vertel kort over je bedrijf</p>
           </div>
 
           <p data-form-error role="alert" class="mt-5 text-sm font-semibold text-danger empty:hidden"></p>

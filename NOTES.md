@@ -46,7 +46,7 @@ De vijf gidsen bevatten letterlijk de copy van lorentwebworks.nl (opgehaald op 2
 - Interne links wijzen naar `/gids/<slug>/`. Prijsbereiken in de tabel staan als "€ 800 tot 3.000" in plaats van met een en dash (copyregel).
 - Slimme aanhalingstekens staan uit (`smartypants: false`), zodat `pagina's` en `"..."` precies zo blijven als op de live site.
 - **Tegenstrijdig met de nieuwe homepage, graag nalopen:**
-  - "Een strategisch gesprek, een pagina op maat met teksten van mij" en "Bij mij zitten de teksten in de pakketten", terwijl de homepage zegt dat de klant de teksten aanlevert.
+  - "Een strategisch gesprek, een pagina op maat met teksten van mij" en "Bij mij zitten de teksten in de opties", terwijl de homepage zegt dat de klant de teksten aanlevert.
   - "Een bedrijfswebsite binnen 2 tot 4 weken"; de homepage zegt 3 tot 4 weken.
   - De afsluitende knoppen van vier gidsen zeggen "Plan een gesprek" in plaats van "Plan een kennismaking".
 - **Website-audit verwijderd (op verzoek van Tim):** de gidsen noemen nergens meer een gratis audit. Op die plekken staat nu de gratis kennismaking van 30 minuten, met de knop "Plan een kennismaking": de call-outs in "Website laten maken" en "Website checklist", het opsommingspunt in "Wat kost een website", de score-uitleg, de meta description, een FAQ-vraag ("Kan ik mijn website samen met jou doorlopen?") en de afsluitende CTA van de checklist. Deze copy wijkt dus af van de live site.
@@ -61,9 +61,9 @@ De vijf gidsen bevatten letterlijk de copy van lorentwebworks.nl (opgehaald op 2
 
 ## Verbeterronde (feat/verbeterronde-site)
 
-- **Centrale waarden:** prijzen, pakketten, extra's en diensten staan in `src/data/services.ts`. De boekingslink, het btw-id, de hostingprijs en het verhaal van Tim staan in `src/data/booking.mjs`. Eén wijziging van de boekingslink zet alle kennismakingsknoppen en gidslinks om (getest).
+- **Centrale waarden:** prijzen, opties, extra's en diensten staan in `src/data/services.ts`. De boekingslink, het btw-id, de hostingprijs en het verhaal van Tim staan in `src/data/booking.mjs`. Eén wijziging van de boekingslink zet alle kennismakingsknoppen en gidslinks om (getest).
 - **Lege waarden:** zolang `{{CAL_URL}}`, `{{BTW_ID}}` en `{{HOSTING_PRIJS}}` leeg zijn, verdwijnt het onderdeel. Knoppen gaan naar `#contact`.
-- **Foto's:** Foto's staan in `src/assets/`: `tim-full.jpg` (over-pagina), `tim-small.jpg` (homepage) en `tim-extra.jpg` (kleine ronde foto's). De stappen van de aanpak hebben lege plekken voor `aanpak-1.jpg` t/m `aanpak-5.jpg`; die verschijnen zodra ze in `src/assets/` staan. Pakketten heeft nog geen fotoplek, omdat die een persoonlijke regel van Tim vraagt.
+- **Foto's:** Foto's staan in `src/assets/`: `tim-full.jpg` (over-pagina), `tim-small.jpg` (homepage) en `tim-extra.jpg` (kleine ronde foto's). De stappen van de aanpak hebben lege plekken voor `aanpak-1.jpg` t/m `aanpak-5.jpg`; die verschijnen zodra ze in `src/assets/` staan. Opties heeft nog geen fotoplek, omdat die een persoonlijke regel van Tim vraagt.
 - **Gidsen:** de prijzen in de markdown zijn tekst en niet gekoppeld aan `services.ts`. Bij een prijswijziging moeten de gidsen met de hand mee.
 - **Controle:** `pnpm check:links` na `pnpm build` controleert interne links en de redirects in `vercel.json`.
 

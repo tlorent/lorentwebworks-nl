@@ -1,22 +1,22 @@
 ---
-import BookButton from "../components/BookButton.astro";
-import Button from "../components/Button.astro";
-import Schema from "../components/Schema.astro";
-import SectionLabel from "../components/SectionLabel.astro";
+import BookButton from "../../components/BookButton.astro";
+import Button from "../../components/Button.astro";
+import Schema from "../../components/Schema.astro";
+import SectionLabel from "../../components/SectionLabel.astro";
 import {
   device,
   measured,
   measuredIso,
   reportUrl,
   scores,
-} from "../data/lighthouse";
-import { schemaIds, site } from "../data/site";
-import BaseLayout from "../layouts/BaseLayout.astro";
+} from "../../data/lighthouse";
+import { schemaIds, site } from "../../data/site";
+import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const title = "Lighthouse-score: wat betekent 100? | Lorent Webworks";
 const description =
   "Mijn website scoort 100 op Google Lighthouse. Lees wat de score meet, wat hij niet vertelt en hoe ik jouw website op dezelfde manier bouw.";
-const url = `${site.url}/lighthouse-score/`;
+const url = `${site.url}/gids/lighthouse-score/`;
 
 const schema = [
   {

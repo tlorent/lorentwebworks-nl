@@ -5,13 +5,15 @@ import BookButton from "./BookButton.astro";
 import Button from "./Button.astro";
 import Icon from "./Icon.astro";
 
-type Props = { service: Service; onHome?: boolean };
-const { service, onHome = true } = Astro.props;
-// Op de homepage kiest de knop het pakket in het formulier; elders gaat hij gewoon naar de kennismaking.
+// compact: de korte kaart op de homepage (intro, prijs, drie voordelen en een knop).
+type Props = { service: Service; onHome?: boolean; compact?: boolean };
+const { service, onHome = true, compact = false } = Astro.props;
+// Op de homepage kiest de knop de optie in het formulier; elders gaat hij gewoon naar de kennismaking.
 const preselect = onHome && !bookingUrl;
 const inverse = service.variant === "inverse";
 const titleId = `dienst-${service.id}`;
 const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
+const list = compact ? service.highlights : service.included;
 ---
 
 <article
@@ -22,8 +24,22 @@ const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
   ]}
 >
   <p class:list={["text-label font-semibold", muted]}>{service.label}</p>
-  <h3 id={titleId} class="mt-3 text-title font-stretch-115%">{service.name}</h3>
-  <p class:list={["mt-4 max-w-lg", inverse ? "text-inverse-text/80" : "text-text-soft"]}>{service.description}</p>
+  <h3 id={titleId} class="mt-3 text-title font-stretch-115%">
+    {
+      compact ? (
+        <a href="/website-bouwen/#opties" class="rounded-sm underline-offset-4 hover:underline focus-ring">
+          {service.name}
+        </a>
+      ) : (
+        service.name
+      )
+    }
+  </h3>
+  {
+    !compact && (
+      <p class:list={["mt-4 max-w-lg", inverse ? "text-inverse-text/80" : "text-text-soft"]}>{service.description}</p>
+    )
+  }
 
   <div class:list={["mt-8 rounded-card p-5 md:p-6", inverse ? "bg-inverse-inner" : "bg-inner"]}>
     <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
@@ -43,10 +59,12 @@ const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
     </p>
   </div>
 
-  <h4 class:list={["mt-8 text-sm font-bold", muted]}>Inbegrepen</h4>
-  <ul class="mt-4 flex flex-col gap-3">
+  {
+    !compact && <h4 class:list={["mt-8 text-sm font-bold", muted]}>Inbegrepen</h4>
+  }
+  <ul class:list={[compact ? "mt-8 mb-10 flex flex-col gap-3" : "mt-4 flex flex-col gap-3"]}>
     {
-      service.included.map((item) => (
+      list.map((item) => (
         <li class="flex items-start gap-3">
           <span
             class:list={[
@@ -61,9 +79,13 @@ const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
       ))
     }
   </ul>
-  <p class:list={["mt-6 mb-10 text-label", muted]}>
-    <span class="font-bold">Niet inbegrepen:</span> {service.notIncluded}
-  </p>
+  {
+    !compact && (
+      <p class:list={["mt-6 mb-10 text-label", muted]}>
+        <span class="font-bold">Niet inbegrepen:</span> {service.notIncluded}
+      </p>
+    )
+  }
 
   {
     preselect ? (
@@ -88,6 +110,18 @@ const muted = inverse ? "text-inverse-text/80" : "text-text-muted";
         class="mt-auto"
         aria-describedby={titleId}
       />
+    )
+  }
+  {
+    compact && (
+      <a
+        href="/website-bouwen/#opties"
+        class:list={[
+          "mt-3 inline-flex min-h-11 items-center self-center rounded-sm px-3 font-semibold underline underline-offset-4 focus-ring",
+          inverse ? "text-inverse-text" : "text-accent-text",
+        ]}
+        >Bekijk wat er inbegrepen is →</a
+      >
     )
   }
 </article>

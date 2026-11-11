@@ -1,23 +1,35 @@
 ---
-import AboutSection from "../components/AboutSection.astro";
 import Audiences from "../components/Audiences.astro";
-import BookButton from "../components/BookButton.astro";
 import ClientStrip from "../components/ClientStrip.astro";
 import Contact from "../components/Contact.astro";
 import Faq from "../components/Faq.astro";
 import Hero from "../components/Hero.astro";
 import Process from "../components/Process.astro";
-import Results from "../components/Results.astro";
 import Schema from "../components/Schema.astro";
 import Services from "../components/Services.astro";
 import { faq } from "../data/faq";
-import { services } from "../data/services";
+import {
+  formatPrice,
+  improvements,
+  nonprofitDiscount,
+  services,
+} from "../data/services";
 import { personSchema, schemaIds, site } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
 const title = "Website laten maken voor ondernemers | Lorent Webworks";
-const description =
-  "Website laten maken die klanten oplevert? Ik bouw sites die bezoekers laten bellen, boeken, aanmelden of doneren. Live binnen 5 werkdagen. Vanaf €850.";
+// Op de homepage alleen deze vragen. De overige vragen blijven in src/data/faq.ts staan.
+const homeFaqQuestions = [
+  "Wat kost een website laten maken?",
+  "Wat als ik al een website heb?",
+  "Moet ik zelf de teksten schrijven?",
+  "Word ik gevonden in Google en ChatGPT?",
+  "Van wie is de website na de oplevering?",
+  "Kan ik later dingen laten aanpassen?",
+];
+const homeFaq = faq.filter((item) => homeFaqQuestions.includes(item.q));
+const [lp] = services;
+const description = `Website laten maken die klanten oplevert? Vanaf ${formatPrice(lp.price)}, eenmalig en excl. btw. Goede doelen en stichtingen krijgen ${nonprofitDiscount}% korting.`;
 
 const schema = [
   {
@@ -45,23 +57,41 @@ const schema = [
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Diensten en prijzen",
-      itemListElement: services.map((s) => ({
-        "@type": "Offer",
-        name: s.name,
-        description: s.description,
-        // "Vanaf"-prijs: minimumprijs, geen vaste prijs.
-        priceSpecification: {
-          "@type": "PriceSpecification",
-          minPrice: s.price,
-          priceCurrency: "EUR",
-          valueAddedTaxIncluded: false,
-        },
-        itemOffered: {
-          "@type": "Service",
+      itemListElement: [
+        ...services.map((s) => ({
+          "@type": "Offer",
           name: s.name,
           description: s.description,
-        },
-      })),
+          // "Vanaf"-prijs: minimumprijs, geen vaste prijs.
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: s.price,
+            priceCurrency: "EUR",
+            valueAddedTaxIncluded: false,
+          },
+          itemOffered: {
+            "@type": "Service",
+            name: s.name,
+            description: s.description,
+          },
+        })),
+        ...improvements.map((item) => ({
+          "@type": "Offer",
+          name: item.name,
+          description: item.label,
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: item.price,
+            priceCurrency: "EUR",
+            valueAddedTaxIncluded: false,
+          },
+          itemOffered: {
+            "@type": "Service",
+            name: item.name,
+            description: item.label,
+          },
+        })),
+      ],
     },
   },
   {
@@ -74,7 +104,7 @@ const schema = [
   },
   {
     "@type": "FAQPage",
-    mainEntity: faq.map((f) => ({
+    mainEntity: homeFaq.map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -87,18 +117,12 @@ const schema = [
   <Schema slot="head" data={schema} />
   <Hero />
   <ClientStrip />
-  <AboutSection />
   <Audiences />
   <Process />
-  <Results />
   <Services />
   <Faq
-    items={faq}
+    items={homeFaq}
     title="Vragen over een website laten maken"
-  >
-    <div slot="after" class="mt-12 flex justify-center md:mt-14">
-      <BookButton />
-    </div>
-  </Faq>
+  />
   <Contact />
 </BaseLayout>

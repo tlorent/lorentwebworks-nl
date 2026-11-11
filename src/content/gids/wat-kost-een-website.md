@@ -29,7 +29,7 @@ faq:
 ---
 ## Kort antwoord
 
-Zelf bouwen met een websitebouwer kost grofweg €15 tot €50 per maand, plus veel eigen tijd. Een freelancer rekent voor een kleine bedrijfswebsite meestal €800 tot €3.000. Een webbureau begint voor een site voor een klein bedrijf vaak rond €4.000 tot €8.000. Reken daarnaast op terugkerende kosten voor domein, hosting en onderhoud. Bij Lorent Webworks begint een landingspagina vanaf €850 en een bedrijfswebsite vanaf €2.150 (excl. btw).
+Zelf bouwen met een websitebouwer kost grofweg €15 tot €50 per maand, plus veel eigen tijd. Een freelancer rekent voor een kleine bedrijfswebsite meestal €800 tot €3.000. Een webbureau begint voor een site voor een klein bedrijf vaak rond €4.000 tot €8.000. Reken daarnaast op terugkerende kosten voor domein, hosting en onderhoud. Bij Lorent Webworks begint een landingspagina vanaf €950 en een bedrijfswebsite vanaf €2.150 (excl. btw).
 
 ## Prijzen per optie
 
@@ -43,7 +43,7 @@ De bedragen zijn indicaties voor een standaard bedrijfswebsite in Nederland. Web
 
 ### Lorent Webworks
 
-- **Landingspagina:** vanaf €850 excl. btw, eenmalig, binnen 5 werkdagen. Een kennismakingsgesprek, een pagina op maat op basis van jouw teksten, opgezet om gevonden te worden, snel op mobiel en één revisieronde.
+- **Landingspagina:** vanaf €950 excl. btw, eenmalig, binnen 5 werkdagen. Een kennismakingsgesprek, een pagina op maat op basis van jouw teksten, opgezet om gevonden te worden, snel op mobiel en één revisieronde.
 - **Complete website:** vanaf €2.150 excl. btw, eenmalig. Alles uit de landingspagina, plus 4 tot 6 pagina's, SEO per pagina, metingen die laten zien wat de site oplevert, en één revisieronde.
 - **Gratis kennismaking:** 30 minuten via video. Je krijgt een helder beeld van wat er kan en wat het kost.
 
@@ -74,10 +74,10 @@ Basis-SEO hoort er standaard bij. Uitgebreid zoekwoordonderzoek, extra content o
 Hoe meer rondes, hoe meer uren. Een vaste afspraak voorkomt verrassingen.
 
 <aside class="callout">
-<p>Pakketten</p>
+<p>Tarieven</p>
 <h3>Helder wat je krijgt, helder wat het kost</h3>
-<p>Geen urenbriefjes. Een landingspagina vanaf €850 of een bedrijfswebsite vanaf €2.150, eenmalig, excl. btw.</p>
-<p><a href="/website-bouwen/">Bekijk de pakketten →</a></p>
+<p>Geen urenbriefjes. Een landingspagina vanaf €950 of een bedrijfswebsite vanaf €2.150, eenmalig, excl. btw.</p>
+<p><a href="/website-bouwen/">Bekijk de tarieven →</a></p>
 </aside>
 
 ## Terugkerende kosten

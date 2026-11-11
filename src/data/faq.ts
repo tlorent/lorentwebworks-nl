@@ -1,4 +1,9 @@
-import { formatPrice, nonprofitDiscount, services } from "./services";
+import {
+  formatPrice,
+  improvements,
+  nonprofitDiscount,
+  services,
+} from "./services";
 
 export type FaqItem = { q: string; a: string };
 
@@ -10,12 +15,16 @@ export const faq: FaqItem[] = [
     a: `Een landingspagina kost bij mij vanaf ${formatPrice(lp.price)} en een complete website van vier tot zes pagina's vanaf ${formatPrice(bw.price)}. Beide bedragen zijn eenmalig en excl. btw. Goede doelen en stichtingen krijgen ${nonprofitDiscount}% korting.`,
   },
   {
+    q: "Wat als ik al een website heb?",
+    a: `Dan begin je meestal met een websitecheck van ${formatPrice(improvements[0].price)}. Je krijgt de 10 belangrijkste verbeterpunten op volgorde van belang en we lopen ze samen door. Boek je binnen 30 dagen een landingspagina of een complete website, dan gaat de ${formatPrice(improvements[0].price)} van die factuur af.`,
+  },
+  {
     q: "Hoe lang duurt het?",
     a: `Een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. Dat tempo halen we als je input en foto's op tijd binnen zijn.`,
   },
   {
     q: "Moet ik zelf de teksten schrijven?",
-    a: "Ja, je levert de teksten zelf aan, want niemand kent jouw klanten zo goed als jij. Je krijgt van mij een lijst met vragen per pagina, zodat je weet wat er nodig is. Ik lees mee en zorg dat de teksten goed vindbaar zijn in Google. Wil je het schrijven helemaal uit handen geven? Dan schrijf ik alle teksten tegen een meerprijs.",
+    a: "Ja, je levert de teksten zelf aan, want niemand kent jouw klanten zo goed als jij. Je krijgt van mij een lijst met vragen per pagina, zodat je weet wat er nodig is. Ik lees mee en zorg dat de teksten goed vindbaar zijn in Google.",
   },
   {
     q: "Word ik gevonden in Google en ChatGPT?",

@@ -4,11 +4,13 @@
 
 ## Diensten en prijzen
 
-- [Website bouwen](https://www.lorentwebworks.nl/website-bouwen/): overzicht van de pakketten, extra's en wat er per pakket in zit.
-- [Landingspagina](https://www.lorentwebworks.nl/website-bouwen/): één pagina met wat je doet, voor wie, en een knop naar contact. Vanaf €850, excl. btw.
+- [Website bouwen](https://www.lorentwebworks.nl/website-bouwen/): overzicht van de opties, extra's en wat er per optie in zit.
+- [Landingspagina](https://www.lorentwebworks.nl/website-bouwen/): één pagina met wat je doet, voor wie, en een knop naar contact. Vanaf €950, excl. btw.
 - [Complete website](https://www.lorentwebworks.nl/website-bouwen/): vier tot zes pagina's voor je diensten, werkwijze en jezelf of je team. Vanaf €2.150, excl. btw.
-- [Bestaande website verbeteren](https://www.lorentwebworks.nl/website-verbeteren/): gerichte verbeteringen aan een bestaande site. Vanaf €125, excl. btw.
-- [Lighthouse-score](https://www.lorentwebworks.nl/lighthouse-score/): wat een Lighthouse-score van 100 meet en hoe de website van Lorent Webworks die score haalt.
+- [Websitecheck](https://www.lorentwebworks.nl/website-verbeteren/#websitecheck): de 10 belangrijkste verbeterpunten van een bestaande site, op volgorde van belang. €245, excl. btw. Wordt verrekend bij een landingspagina of complete website binnen 30 dagen.
+- [Verbeterronde](https://www.lorentwebworks.nl/website-verbeteren/#verbeterronde): start met 30 minuten om te bepalen wat er moet veranderen, daarna tot 6 uur werk aan tekst, structuur, snelheid of vindbaarheid van een bestaande site. €595, excl. btw.
+- [Vraaguur](https://www.lorentwebworks.nl/website-verbeteren/#vraaguur): 60 minuten samen naar je site kijken en antwoord op je vragen. €125, excl. btw.
+- [Lighthouse-score](https://www.lorentwebworks.nl/gids/lighthouse-score/): wat een Lighthouse-score van 100 meet en hoe de website van Lorent Webworks die score haalt.
 
 ## Gids: website laten maken
 

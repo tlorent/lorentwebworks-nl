@@ -1,41 +1,27 @@
 ---
 import { services } from "../data/services";
-import NonprofitDiscount from "./NonprofitDiscount.astro";
+import ExistingSiteCard from "./ExistingSiteCard.astro";
 import Pattern from "./Pattern.astro";
 import SectionHeader from "./SectionHeader.astro";
 import ServiceCard from "./ServiceCard.astro";
 ---
 
-<section id="diensten" aria-labelledby="diensten-titel" class="relative section-y">
+<section id="diensten" aria-labelledby="diensten-titel" class="relative pt-14 pb-18 md:pt-18 md:pb-24 overflow-x-clip">
   <Pattern variant="grid" />
-    <div class="reveal relative container-page">
+  <div class="reveal relative container-page">
     <SectionHeader label="Diensten en prijzen" titleId="diensten-titel">
       <Fragment slot="title">Kies de website die bij je past</Fragment>
       <Fragment slot="lead"
         >Je weet vooraf wat het kost en wanneer je live staat. De prijzen zijn eenmalig, zonder abonnement.</Fragment
       >
     </SectionHeader>
+
     <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
-      {services.map((service) => <ServiceCard service={service} />)}
+      {services.map((service) => <ServiceCard service={service} compact />)}
     </div>
-    <p class="mt-8">
-      <a
-        href="/website-bouwen/"
-        class="rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
-        >Bekijk alle tarieven en extra's</a
-      >
-    </p>
-    <NonprofitDiscount />
-    <div class="mt-12 flex flex-wrap items-center justify-between gap-x-10 gap-y-4 rounded-panel border border-border p-6 md:p-8">
-      <div class="max-w-2xl">
-        <h3 class="text-h3 font-stretch-110%">Heb je al een website?</h3>
-        <p class="mt-2 text-text-soft">Dan kan ik je helpen die te verbeteren, zonder alles opnieuw te bouwen.</p>
-      </div>
-      <a
-        href="/website-verbeteren/"
-        class="rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring"
-        >Bekijk de hulp voor bestaande websites</a
-      >
+
+    <div class="mt-12 md:mt-16">
+      <ExistingSiteCard />
     </div>
   </div>
 </section>

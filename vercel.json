@@ -15,6 +15,11 @@
       "permanent": true
     },
     {
+      "source": "/lighthouse-score/",
+      "destination": "/gids/lighthouse-score/",
+      "permanent": true
+    },
+    {
       "source": "/tarieven",
       "destination": "/website-bouwen/",
       "permanent": true

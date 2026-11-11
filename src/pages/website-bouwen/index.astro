@@ -1,8 +1,9 @@
 ---
 import BookButton from "../../components/BookButton.astro";
-import LighthouseBadge from "../../components/LighthouseBadge.astro";
+import ExistingSiteCard from "../../components/ExistingSiteCard.astro";
 import NonprofitDiscount from "../../components/NonprofitDiscount.astro";
 import Pattern from "../../components/Pattern.astro";
+import ProofStrip from "../../components/ProofStrip.astro";
 import Schema from "../../components/Schema.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
@@ -12,6 +13,7 @@ import { hostingPrice } from "../../data/booking.mjs";
 import {
   extras,
   formatPrice,
+  improvements,
   maintenance,
   packageRows,
   services,
@@ -65,7 +67,7 @@ const schema = [
 
 const headCell =
   "pb-5 pr-6 text-left align-bottom text-label font-semibold text-text-muted";
-// Op mobiel staat elke rij als blok: onderwerp boven, daarna per pakket. Vanaf md is het een gewone tabel.
+// Op mobiel staat elke rij als blok: onderwerp boven, daarna per optie. Vanaf md is het een gewone tabel.
 const rowHead =
   "block pb-3 text-left font-semibold text-text md:table-cell md:border-t md:border-border md:py-4 md:pr-6 md:align-top";
 const cell =
@@ -86,12 +88,12 @@ const rowClass =
     </div>
   </section>
 
-  <section aria-labelledby="pakketten-titel" class="relative section-y">
+  <section id="opties" aria-labelledby="opties-titel" class="relative section-y">
         <div class="reveal relative container-page">
-      <SectionHeader label="Pakketten" titleId="pakketten-titel">
-        <Fragment slot="title">Twee pakketten met een vaste prijs</Fragment>
+      <SectionHeader label="Tarieven" titleId="opties-titel">
+        <Fragment slot="title">Twee opties met een vaste prijs</Fragment>
         <Fragment slot="lead"
-          >Kies het pakket dat past bij wat je website moet opleveren. De prijzen zijn eenmalig, zonder abonnement.</Fragment
+          >Kies de optie die past bij wat je website moet opleveren. De prijzen zijn eenmalig, zonder abonnement.</Fragment
         >
       </SectionHeader>
       <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
@@ -99,7 +101,7 @@ const rowClass =
         <ServiceCard service={bw} onHome={false} />
       </div>
       <div class="mt-10 md:mt-12">
-        <LighthouseBadge variant="pill" />
+        <ProofStrip />
       </div>
     </div>
   </section>
@@ -107,8 +109,8 @@ const rowClass =
   <section aria-labelledby="vergelijk-titel" class="relative section-y bg-surface">
     <div class="reveal container-page">
       <SectionHeader label="Vergelijken" titleId="vergelijk-titel">
-        <Fragment slot="title">Wat zit er in welk pakket?</Fragment>
-        <Fragment slot="lead">Het verschil tussen de twee pakketten in één overzicht.</Fragment>
+        <Fragment slot="title">Wat zit er in welke optie?</Fragment>
+        <Fragment slot="lead">Het verschil tussen de twee opties in één overzicht.</Fragment>
       </SectionHeader>
       <div
         role="region"
@@ -163,18 +165,18 @@ const rowClass =
     </div>
   </section>
 
-  <section aria-labelledby="extras-titel" class="relative section-y">
+  <section aria-labelledby="extras-titel" class="relative pt-14 pb-8 md:pt-18 md:pb-12">
     <Pattern variant="grid" />
     <div class="reveal relative container-page">
       <SectionHeader label="Extra's" titleId="extras-titel">
         <Fragment slot="title">Extra's die je erbij kunt nemen</Fragment>
-        <Fragment slot="lead">Los te bestellen, naast een pakket. Je kiest alleen wat je nodig hebt.</Fragment>
+        <Fragment slot="lead">Los te bestellen, naast een optie. Je kiest alleen wat je nodig hebt.</Fragment>
       </SectionHeader>
       <ul class="mt-12 grid grid-fit-70 gap-3.5 md:mt-16">
         {
           extras.map((extra) => (
             <li class="flex flex-col justify-between gap-6 rounded-card border border-border bg-inner p-6 md:p-7">
-              <span class="text-lead leading-snug font-bold font-stretch-110%">{extra.label}</span>
+              <span class="text-h3 font-stretch-110%">{extra.label}</span>
               <span class="flex flex-wrap items-baseline gap-x-2">
                 <strong class="text-lead font-stretch-110% text-accent-text">{formatPrice(extra.price)}</strong>
                 {extra.unit && <span class="text-label text-text-muted">{extra.unit}</span>}
@@ -186,16 +188,16 @@ const rowClass =
     </div>
   </section>
 
-  <section aria-labelledby="erbij-titel" class="relative section-y pt-0">
+  <section aria-labelledby="erbij-titel" class="relative pt-0 pb-8 md:pb-12">
     <div class="reveal container-page grid grid-fit-80 gap-4">
       <div class="rounded-panel border border-border bg-inner p-6 md:p-10">
         <h2 class="text-h3 font-stretch-110%">{maintenance.name}</h2>
         <p class="mt-4 text-text-soft">
-          <strong class="text-lead font-stretch-110% text-accent-text">{formatPrice(maintenance.price)}</strong> per maand, excl. btw.
+          <strong class="text-lead font-stretch-110% text-accent-text">{formatPrice(maintenance.price)}</strong> per maand, excl. btw
         </p>
       </div>
       <div class="rounded-panel bg-chip-bg p-6 text-chip-text md:p-10">
-        <h2 id="erbij-titel" class="text-h3 font-stretch-110%">Valt buiten beide pakketten</h2>
+        <h2 id="erbij-titel" class="text-h3 font-stretch-110%">Valt buiten beide opties</h2>
         <p class="mt-4">
           Webshops, inlogomgevingen, koppelingen op maat, logo-ontwerp, fotografie en het overzetten van bestaande
           content. Heb je dit nodig, dan bespreken we het vooraf en krijg je een aparte prijs.
@@ -212,15 +214,19 @@ const rowClass =
     </div>
   </section>
 
-  <section aria-labelledby="korting-titel-pagina" class="container-page section-y pt-0">
+  <section aria-labelledby="korting-titel-pagina" class="container-page pt-0 pb-8 md:pb-12">
     <h2 id="korting-titel-pagina" class="sr-only">Korting</h2>
     <NonprofitDiscount />
+  </section>
+
+  <section aria-label="Heb je al een website?" class="container-page pt-0 pb-8 md:pb-12">
+    <ExistingSiteCard />
   </section>
 
   <section aria-labelledby="tarieven-cta" class="container-page pb-20 md:pb-28">
     <div class="on-block flex flex-wrap items-center justify-between gap-x-10 gap-y-6 rounded-hero p-6 md:p-12">
       <div class="max-w-2xl">
-        <h2 id="tarieven-cta" class="text-heading font-stretch-115%">Wil je weten welk pakket bij je past?</h2>
+        <h2 id="tarieven-cta" class="text-heading font-stretch-115%">Wil je weten welke optie bij je past?</h2>
         <p class="mt-3 text-on-block-muted">
           Plan een gratis kennismaking van 30 minuten. We bespreken je doel en wat het kost voordat je iets kiest.
         </p>

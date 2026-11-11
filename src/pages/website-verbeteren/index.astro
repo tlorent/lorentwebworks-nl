@@ -1,8 +1,8 @@
 ---
 import BookButton from "../../components/BookButton.astro";
 import Icon from "../../components/Icon.astro";
-import LighthouseBadge from "../../components/LighthouseBadge.astro";
 import Pattern from "../../components/Pattern.astro";
+import ProofStrip from "../../components/ProofStrip.astro";
 import Schema from "../../components/Schema.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
@@ -12,8 +12,65 @@ import { schemaIds, site } from "../../data/site";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const title = "Bestaande website verbeteren | Lorent Webworks";
-const description =
-  "Heb je al een website die te weinig oplevert? Ik help je met de punten die het meeste verschil maken. Vanaf €125, excl. btw.";
+const fromPrice = Math.min(...improvements.map((item) => item.price));
+const [check] = improvements;
+const description = `Bestaande website verbeteren zonder alles opnieuw te bouwen. Websitecheck ${formatPrice(check.price)}, verrekend bij een landingspagina of complete website. Vaste prijzen, exclusief btw.`;
+
+// Vergelijkingstabel: dezelfde klassen als de tabel op website-bouwen.
+const headCell =
+  "pb-5 pr-6 text-left align-bottom text-label font-semibold text-text-muted";
+const rowHead =
+  "block pb-3 text-left font-semibold text-text md:table-cell md:border-t md:border-border md:py-4 md:pr-6 md:align-top";
+const cell =
+  "block pb-3 align-top text-text-soft md:table-cell md:border-t md:border-border md:py-4 md:pr-6";
+const rowClass =
+  "block border-t border-border py-4 first:border-t-0 md:table-row md:border-0 md:py-0";
+const overviewRows: { label: string; values: string[] }[] = [
+  {
+    label: "Prijs",
+    values: improvements.map((item) => formatPrice(item.price)),
+  },
+  {
+    label: "Wat je krijgt",
+    values: [
+      "De 10 belangrijkste verbeterpunten, op volgorde van belang",
+      "Ik voer de verbeteringen voor je uit",
+      "Een uur samen naar je site kijken",
+    ],
+  },
+  {
+    label: "Omvang",
+    values: [
+      "Boodschap, structuur, snelheid, vindbaarheid en contact",
+      "Tot 6 uur werk aan tekst, structuur, snelheid of vindbaarheid",
+      "60 minuten, gericht op jouw vragen",
+    ],
+  },
+  {
+    label: "Gesprek",
+    values: [
+      "30 minuten waarin ik de punten met je doorloop",
+      "30 minuten om te bepalen wat er moet veranderen, daarna een afsprakenlijst",
+      "Het uur zelf",
+    ],
+  },
+  {
+    label: "Wat je overhoudt",
+    values: [
+      "Een geprioriteerde lijst die je zelf kunt afwerken",
+      "Een overzicht van alle wijzigingen",
+      "Een afgesproken volgende stap",
+    ],
+  },
+  {
+    label: "Verrekening",
+    values: [
+      `${formatPrice(check.price)} verrekend bij een landingspagina of complete website binnen 30 dagen`,
+      "n.v.t.",
+      "n.v.t.",
+    ],
+  },
+];
 const url = `${site.url}/website-verbeteren/`;
 const lowestPrice = Math.min(...improvements.map((item) => item.price));
 
@@ -86,6 +143,7 @@ const stappen = [
             const titleId = `dienst-verbeteren-${i}`;
             return (
               <article
+                id={item.id}
                 aria-labelledby={titleId}
                 class:list={[
                   "flex flex-col rounded-panel p-6 md:p-11",
@@ -123,7 +181,7 @@ const stappen = [
                 <div class="mt-auto pt-10">
                   <BookButton
                     base="/"
-                    dienst="verbeteren"
+                    dienst={item.id}
                     label={item.cta}
                     variant={inverse ? "inverse" : "primary"}
                     full
@@ -137,11 +195,60 @@ const stappen = [
         }
       </div>
       <div class="mt-10 md:mt-12">
-        <LighthouseBadge variant="pill" />
+        <ProofStrip />
       </div>
     </div>
   </section>
 
+  <section id="overzicht" aria-labelledby="overzicht-titel" class="relative section-y bg-surface">
+    <div class="reveal container-page">
+      <SectionHeader label="Vergelijken" titleId="overzicht-titel">
+        <Fragment slot="title">Wat zit er in welke dienst?</Fragment>
+        <Fragment slot="lead">Het verschil tussen de drie diensten in één overzicht.</Fragment>
+      </SectionHeader>
+      <div
+        role="region"
+        tabindex="0"
+        aria-labelledby="overzicht-titel"
+        class="mt-12 overflow-x-auto rounded-panel bg-inner p-6 focus-ring-wide md:mt-16 md:p-10"
+      >
+        <table class="block w-full border-collapse md:table md:min-w-2xl">
+          <thead class="hidden md:table-header-group">
+            <tr>
+              <th scope="col"><span class="sr-only">Onderwerp</span></th>
+              {
+                improvements.map((item) => (
+                  <th scope="col" class={headCell}>
+                    <span class="block text-h3 font-stretch-110% text-text">{item.name}</span>
+                  </th>
+                ))
+              }
+            </tr>
+          </thead>
+          <tbody class="block md:table-row-group">
+            {
+              overviewRows.map((row) => (
+                <tr class={rowClass}>
+                  <th scope="row" class={rowHead}>{row.label}</th>
+                  {row.values.map((value, i) => (
+                    <td
+                      class:list={[
+                        cell,
+                        row.label === "Verrekening" && i === 0 && "font-semibold text-accent-text",
+                      ]}
+                    >
+                      <span class="block text-label font-semibold text-text-muted md:hidden">{improvements[i].name}</span>
+                      {value}
+                    </td>
+                  ))}
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
   <section aria-labelledby="zo-werkt-het" class="relative section-y">
     <Pattern variant="grid" />
     <div class="reveal relative container-page">

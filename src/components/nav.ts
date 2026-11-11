@@ -18,7 +18,6 @@ export const navItems: NavItem[] = [
     children: [
       { label: "Voor wie", href: "/#voor-wie" },
       { label: "Werkwijze", href: "/#aanpak" },
-      { label: "Resultaten", href: "/#resultaten" },
       { label: "Diensten en prijzen", href: "/#diensten" },
       { label: "Veelgestelde vragen", href: "/#faq" },
       { label: "Contact", href: "/#contact" },
@@ -36,7 +35,7 @@ export const navItems: NavItem[] = [
     ],
   },
   { label: "Over", href: "/over/", key: "over" },
-  { label: "Artikelen", href: "/gids/", key: "gids" },
+  { label: "Gids", href: "/gids/", key: "gids" },
 ];
 
 export const isGroup = (item: NavItem): item is NavGroup => "children" in item;

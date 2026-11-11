@@ -1,0 +1,115 @@
+---
+// Drie resultaten met een label. Standaard een donker paneel met het label erboven (website-bouwen,
+// website-verbeteren). Met variant="strip" een volledige breedte op de donkere achtergrond van het blok:
+// per resultaat de bedrijfsnaam (of het logo), het cijfer en een korte toelichting. De volgorde kies je
+// per pagina via order. Met links={false} verdwijnt de link naar de Lighthouse-uitleg.
+import Logo from "./Logo.astro";
+import SectionLabel from "./SectionLabel.astro";
+
+type ProofKey = "bol" | "grandvision" | "lighthouse";
+
+const proofs: Record<
+  ProofKey,
+  {
+    label: string;
+    number: string;
+    text: string;
+    logo?: boolean;
+    href?: string;
+  }
+> = {
+  bol: { label: "bol.", number: "+45%", text: "abonnementsgroei" },
+  grandvision: {
+    label: "GrandVision",
+    number: "425",
+    text: "nieuwe klanten via één functie",
+  },
+  lighthouse: {
+    label: "Lorent Webworks",
+    number: "100",
+    text: "snelheidsscore in Google Lighthouse",
+    logo: true,
+    href: "/gids/lighthouse-score/",
+  },
+};
+
+type Props = {
+  order?: ProofKey[];
+  links?: boolean;
+  variant?: "panel" | "strip";
+};
+const {
+  order = ["bol", "grandvision", "lighthouse"],
+  links = true,
+  variant = "panel",
+} = Astro.props;
+const strip = variant === "strip";
+---
+
+{
+  strip ? (
+    <div class="on-block relative left-1/2 w-screen -translate-x-1/2">
+      <div class="container-page grid gap-y-8 py-7 text-center sm:grid-cols-3">
+        {order.map((key) => {
+          const proof = proofs[key];
+          const linked = links && proof.href;
+          const content = (
+            <>
+              {proof.logo ? (
+                <Logo class="mx-auto h-5 w-auto text-brand" label={proof.label} />
+              ) : (
+                <span class="text-lg font-bold font-stretch-108% tracking-tight text-on-block-muted">
+                  {proof.label}
+                </span>
+              )}
+              <span class="mt-3 block text-h3 font-stretch-110% text-on-block">{proof.number}</span>
+              <span class="mt-1 block text-label text-on-block-muted">{proof.text}</span>
+            </>
+          );
+          return (
+            <div class="flex flex-col items-center">
+              {linked ? (
+                <a href={proof.href} class="flex flex-col items-center rounded-sm focus-ring">
+                  {content}
+                </a>
+              ) : (
+                content
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  ) : (
+    <div>
+      <SectionLabel>Resultaten</SectionLabel>
+      <div class="on-block mt-5 grid divide-y divide-on-block-muted/30 rounded-panel sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+        {order.map((key) => {
+          const proof = proofs[key];
+          const linked = links && proof.href;
+          const content = (
+            <>
+              <p class="text-caption font-semibold tracking-wider text-on-block-muted uppercase">{proof.label}</p>
+              <p class="mt-3 text-price font-stretch-115% text-on-block">{proof.number}</p>
+              <p class="mt-2 text-on-block-muted">{proof.text}</p>
+              {linked && (
+                <p class="mt-3 font-semibold text-on-block underline underline-offset-4">Lees hoe →</p>
+              )}
+            </>
+          );
+          return (
+            <div class="p-6 md:p-7">
+              {linked ? (
+                <a href={proof.href} class="block rounded-sm focus-ring">
+                  {content}
+                </a>
+              ) : (
+                content
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  )
+}

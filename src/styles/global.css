@@ -65,30 +65,30 @@
   --text-h3: clamp(1.25rem, 1.7vw, 1.5rem);
   --text-h3--line-height: 1.25;
   --text-h3--letter-spacing: -0.025em;
-  --text-h3--font-weight: 700;
+  --text-h3--font-weight: 600;
   --text-heading: clamp(1.375rem, 2.1vw, 1.875rem);
   --text-heading--line-height: 1.25;
   --text-heading--letter-spacing: -0.03em;
-  --text-heading--font-weight: 800;
+  --text-heading--font-weight: 700;
   --text-title: clamp(1.625rem, 2.5vw, 2.125rem);
   --text-title--line-height: 1;
   --text-title--letter-spacing: -0.04em;
-  --text-title--font-weight: 800;
+  --text-title--font-weight: 700;
   --text-h2: clamp(1.875rem, 3.4vw, 3rem);
   --text-h2--line-height: 1;
   --text-h2--letter-spacing: -0.04em;
-  --text-h2--font-weight: 800;
+  --text-h2--font-weight: 700;
   --text-display: clamp(2.25rem, 5.2vw, 4.25rem);
   --text-display--line-height: 0.95;
   --text-display--letter-spacing: -0.045em;
-  --text-display--font-weight: 800;
+  --text-display--font-weight: 700;
   /* Groter op breed scherm; op smal scherm past de tekst precies in de breedte van de regel 'klanten opleveren'. */
   --text-hero: min(clamp(3.375rem, 6.4vw, 4.5rem), calc((100vw - 2rem) / 6.25));
   --text-hero-lead: clamp(0.875rem, 2vw, 1.0625rem);
   --text-hero-lead--line-height: 1.5;
   --text-hero--line-height: 0.92;
   --text-hero--letter-spacing: -0.05em;
-  --text-hero--font-weight: 800;
+  --text-hero--font-weight: 700;
 
   --text-price: clamp(2rem, 3.4vw, 2.75rem);
   --text-price--line-height: 0.95;
@@ -119,7 +119,7 @@
 @keyframes reveal {
   from {
     opacity: 0;
-    transform: translateY(2rem);
+    transform: translateY(1.5rem);
   }
   to {
     opacity: 1;
@@ -160,6 +160,11 @@
     linear-gradient(rgba(14, 26, 85, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(14, 26, 85, 0.045) 1px, transparent 1px);
   --pattern-2-size: 88px 88px;
+  --pattern-stripes: repeating-linear-gradient(
+    135deg,
+    rgba(14, 26, 85, 0.04) 0 1px,
+    transparent 1px 14px
+  );
   --glow: radial-gradient(
     ellipse 60% 55% at 50% 100%,
     rgba(20, 34, 110, 0.14),
@@ -201,6 +206,11 @@
     linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   --pattern-2-size: 88px 88px;
+  --pattern-stripes: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.035) 0 1px,
+    transparent 1px 14px
+  );
   --glow: radial-gradient(
     ellipse 60% 55% at 50% 100%,
     rgba(76, 95, 214, 0.28),
@@ -355,6 +365,12 @@
 @utility mask-fade-down {
   mask-image: linear-gradient(to bottom, #000 0%, transparent 88%);
 }
+@utility pattern-stripes {
+  background-image: var(--pattern-stripes);
+  @media (prefers-reduced-data: reduce), print {
+    display: none;
+  }
+}
 @utility pattern-2 {
   background-image: var(--pattern-2);
   background-size: var(--pattern-2-size);
@@ -372,28 +388,23 @@
   );
 }
 
-/* Inhoud komt binnen bij scrollen. Alleen voor inhoud onder de vouw.
-   Zonder JS en bij reduced motion is alles direct zichtbaar. */
+/* Inhoud fade in en schuift iets omhoog terwijl die de viewport in scrollt.
+   Pure CSS: zonder scroll-driven animations (of bij reduced motion) is alles gewoon zichtbaar. */
 @utility reveal {
   @media (prefers-reduced-motion: no-preference) {
     @supports (animation-timeline: view()) {
       animation: reveal linear both;
       animation-timeline: view();
-      animation-range: entry 0% entry 240px;
+      animation-range: entry 0% entry 60%;
     }
-    @supports not (animation-timeline: view()) {
-      .js & {
-        opacity: 0;
-        transform: translateY(2rem);
-        transition:
-          opacity 700ms ease,
-          transform 700ms ease;
-        &[data-in] {
-          opacity: 1;
-          transform: none;
-        }
-      }
-    }
+  }
+}
+
+/* Voor inhoud die al in beeld is bij laden (bijv. de bedrijvenlijst onder de hero):
+   speelt één keer af bij het laden, in plaats van aan de scrollpositie gekoppeld. */
+@utility reveal-load {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: reveal 800ms ease-out both;
   }
 }
 
@@ -412,12 +423,15 @@
     &::details-content {
       block-size: 0;
       overflow: clip;
+      opacity: 0;
       transition:
         block-size 200ms ease,
+        opacity 200ms ease,
         content-visibility 200ms allow-discrete;
     }
     &[open]::details-content {
       block-size: auto;
+      opacity: 1;
     }
   }
 }
@@ -482,7 +496,7 @@
     font-size: var(--text-heading);
     line-height: var(--text-heading--line-height);
     letter-spacing: var(--text-heading--letter-spacing);
-    font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-bold);
     font-stretch: 112%;
     color: var(--color-text);
   }
@@ -626,4 +640,26 @@ html[data-input="pointer"] #mobiel-menu :focus-visible {
 /* Rand van formuliervelden en keuzerondjes. */
 @utility field-outline {
   border: 1.5px solid var(--color-field-border);
+}
+
+/* Doorlopende rij met bedrijfsnamen: schuift één lijstbreedte op. Uit bij gereduceerde beweging. */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@utility marquee-track {
+  @media (prefers-reduced-motion: no-preference) {
+    animation: marquee 40s linear infinite;
+  }
+}
+/* Vervaagt de randen horizontaal, zodat namen rustig in- en uitgaan. */
+@utility mask-fade-x {
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    #000 10%,
+    #000 90%,
+    transparent 100%
+  );
 }

@@ -1,8 +1,8 @@
 ---
+import { Image } from "astro:assets";
+import timExtra from "../assets/tim-extra.jpg";
 import BookButton from "./BookButton.astro";
-import Button from "./Button.astro";
 import Pattern from "./Pattern.astro";
-import SlotPhoto from "./SlotPhoto.astro";
 ---
 
 <!-- Geen reveal-animatie: de hero staat boven de vouw en moet direct zichtbaar zijn (LCP). -->
@@ -24,16 +24,26 @@ import SlotPhoto from "./SlotPhoto.astro";
       </p>
     </div>
 
-    <div class="mt-8 flex justify-center md:mt-10">
-      <div class="relative size-24 -rotate-3">
-        <div aria-hidden="true" class="absolute inset-0 translate-x-1.5 translate-y-1.5 rounded-card bg-accent"></div>
-        <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={96} class="relative" />
+    <div class="mt-8 flex flex-col items-center gap-6 md:mt-10">
+      <div class="flex w-full flex-col items-center gap-3 sm:flex-row">
+        <!-- Twee gelijke flexkolommen naast de knop houden de knop precies in het midden. -->
+        <div class="flex justify-center sm:flex-1 sm:justify-end">
+          <Image
+            src={timExtra}
+            alt="Foto van Tim Lorent"
+            width={112}
+            height={112}
+            quality={90}
+            class="size-12 shrink-0 rounded-full object-cover object-top ring-2 ring-bg"
+          />
+        </div>
+        <BookButton size="hero" class="justify-center" />
+        <div aria-hidden="true" class="hidden sm:block sm:flex-1"></div>
       </div>
-    </div>
-
-    <div class="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center md:mt-10">
-      <BookButton size="hero" class="justify-center" />
-      <Button href="#diensten" variant="secondary" size="hero" class="justify-center border border-text-soft">Bekijk diensten en prijzen</Button>
+      <div class="flex flex-col items-center sm:flex-row sm:justify-center">
+        <a href="#diensten" class="inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold text-accent-text md:text-base underline underline-offset-4 focus-ring">Bekijk diensten</a>
+        <a href="/over/" class="inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold text-accent-text md:text-base underline underline-offset-4 focus-ring">Over mij</a>
+      </div>
     </div>
   </div>
 </section>

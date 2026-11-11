@@ -1,4 +1,4 @@
-// Alle prijzen, pakketinhoud en extra's. Wijzig prijzen alleen hier; de site rekent de rest uit.
+// Alle prijzen, inhoud van de opties en extra's. Wijzig prijzen alleen hier; de site rekent de rest uit.
 
 const priceFormat = new Intl.NumberFormat("nl-NL", {
   maximumFractionDigits: 0,
@@ -18,16 +18,16 @@ export type Service = {
   duration: string;
   included: string[];
   notIncluded: string;
+  /** Drie voordelen voor de homepage-kaart. */
+  highlights: string[];
   variant: "light" | "inverse";
 };
 
 export const prices = {
-  landingspagina: 850,
+  landingspagina: 950,
   bedrijfswebsite: 2150,
   extraPagina: 295,
-  teksten: 150,
   tool: 95,
-  extraRonde: 125,
   websitecheck: 245,
   verbeterronde: 595,
   vraaguur: 125,
@@ -51,8 +51,12 @@ export const services: Service[] = [
       "Snel en prettig op mobiel",
       "Eén revisieronde",
     ],
-    notIncluded:
-      "Extra pagina's, teksten laten schrijven, een bestaande tool plaatsen en metingen.",
+    notIncluded: "Extra pagina's en metingen.",
+    highlights: [
+      "Ontwerp op maat voor jouw bedrijf",
+      "Zelf teksten aanpassen via een CMS",
+      "Gevonden in Google en AI-assistenten",
+    ],
     variant: "light",
   },
   {
@@ -72,29 +76,31 @@ export const services: Service[] = [
       "1 bestaande boekings-, doneer- of nieuwsbrieftool plaatsen",
       "Eén revisieronde",
     ],
-    notIncluded:
-      "Extra pagina's, teksten laten schrijven en extra feedbackrondes.",
+    notIncluded: "Extra pagina's.",
+    highlights: [
+      "4 tot 6 pagina's, elk met eigen opbouw",
+      "Je boekings-, doneer- of nieuwsbrieftool gekoppeld",
+      "Metingen die laten zien wat je site oplevert",
+    ],
     variant: "inverse",
   },
 ];
 
-/** Extra's, los te bestellen bij een pakket. */
+/** Extra's, los te bestellen bij een optie. */
 export const extras = [
-  { label: "Extra pagina", price: prices.extraPagina, unit: "" },
   {
-    label: "Teksten laten schrijven",
-    price: prices.teksten,
-    unit: "per pagina",
+    label: "Extra pagina",
+    price: prices.extraPagina,
+    unit: "per pagina, excl. btw",
   },
   {
     label: "Boekings-, doneer- of nieuwsbrieftool plaatsen",
     price: prices.tool,
-    unit: "",
+    unit: "per tool, excl. btw",
   },
-  { label: "Extra feedbackronde", price: prices.extraRonde, unit: "" },
 ];
 
-/** Vergelijking van de twee pakketten, op de tarievenpagina. */
+/** Vergelijking van de twee opties, op de tarievenpagina. */
 export const packageRows: {
   label: string;
   landingspagina: string;
@@ -131,8 +137,8 @@ export const packageRows: {
     bedrijfswebsite: "1 contactformulier",
   },
   {
-    label: "Bestaande tool plaatsen",
-    landingspagina: `Extra, ${formatPrice(prices.tool)}`,
+    label: "Boekings-, doneer- of nieuwsbrieftool",
+    landingspagina: "Niet inbegrepen",
     bedrijfswebsite: "1 tool inbegrepen",
   },
   {
@@ -157,6 +163,7 @@ export const maintenance = { name: "Onderhoudsabonnement", price: 50 };
 
 /** Diensten voor bestaande websites, op de pagina website-verbeteren. */
 export const improvements: {
+  id: "websitecheck" | "verbeterronde" | "vraaguur";
   name: string;
   cta: string;
   label: string;
@@ -166,6 +173,7 @@ export const improvements: {
   note: string;
 }[] = [
   {
+    id: "websitecheck",
     name: "Websitecheck",
     cta: "Boek websitecheck",
     label: "Eerst zien waar het misgaat",
@@ -176,21 +184,23 @@ export const improvements: {
       "De tien belangrijkste verbeteringen, op volgorde",
       "30 minuten om de verbeteringen door te nemen",
     ],
-    note: "",
+    note: "Wordt verrekend bij een landingspagina of complete website binnen 30 dagen.",
   },
   {
+    id: "verbeterronde",
     name: "Verbeterronde",
     cta: "Plan een verbeterronde",
     label: "Verbeteren in één ronde",
     price: prices.verbeterronde,
     variant: "inverse",
     included: [
-      "Vooraf een lijst met afspraken",
+      "30 minuten om te bepalen wat er moet veranderen, daarna een afsprakenlijst",
       "Tot 6 uur werk aan tekst, structuur, snelheid of vindbaarheid",
     ],
     note: "",
   },
   {
+    id: "vraaguur",
     name: "Vraaguur",
     cta: "Boek een vraaguur",
     label: "Vragen stellen en een volgende stap kiezen",
@@ -205,5 +215,5 @@ export const improvements: {
   },
 ];
 
-/** Korting voor goede doelen, in procenten. Geldt voor de pakketten. */
+/** Korting voor goede doelen, in procenten. Geldt voor de opties. */
 export const nonprofitDiscount = 10;

@@ -1,38 +1,35 @@
 ---
 import { audiences } from "../data/audiences";
 import BookButton from "./BookButton.astro";
-import Icon from "./Icon.astro";
-import Pattern from "./Pattern.astro";
-import SectionHeader from "./SectionHeader.astro";
+import SectionLabel from "./SectionLabel.astro";
 ---
 
 <section id="voor-wie" aria-labelledby="voor-wie-titel" class="relative section-y">
-  <Pattern variant="grid" />
   <div class="reveal relative container-page">
-    <SectionHeader label="Voor wie" titleId="voor-wie-titel">
-      <Fragment slot="title">Wat moet jouw website opleveren?</Fragment>
-      <Fragment slot="lead">Ik begin bij je doel en bouw de site daaromheen. Herken je jezelf in een van deze vier?</Fragment>
-    </SectionHeader>
+    <SectionLabel>Voor wie</SectionLabel>
+    <h2 id="voor-wie-titel" class="mt-5 text-h2 font-stretch-115% text-balance">Wat moet jouw website opleveren?</h2>
+    <p class="mt-5 max-w-2xl text-body-lg text-text-muted">
+      Een coach wil afspraken, een adviseur wil aanvragen, een restaurant wil reserveringen en een stichting wil donaties. Ik bouw je site rond dat ene doel.
+    </p>
+    <p class="mt-4 max-w-2xl text-body-lg text-text-muted">
+      Sinds 2017 bouw ik websites en platforms, onder meer voor bol., GrandVision en HEMA. Daar zag ik wat bezoekers
+      overtuigt en waar ze afhaken.
+    </p>
 
-    <ul class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4 md:mt-16">
+    <ul class="mt-12 border-t border-border md:mt-16">
       {
         audiences.map((audience) => (
-          <li class="flex flex-col rounded-panel bg-surface p-6 md:p-7">
-            <span class="grid size-11 place-items-center rounded-input bg-inner text-accent-text">
-              <Icon name={audience.icon} class="size-5.5" />
-            </span>
-            <h3 class="mt-6 text-h3 font-stretch-110%">{audience.title}</h3>
-            <p class="mt-3 text-caption font-bold text-accent-text">{audience.forWho}</p>
-            <p class="mt-4 text-text-soft">{audience.text}</p>
+          <li class="grid gap-2 border-b border-border py-6 sm:grid-cols-12 sm:items-baseline sm:gap-6 sm:py-8">
+            <h3 class="text-h3 font-stretch-110% sm:col-span-4">{audience.title}</h3>
+            <p class="text-label font-bold text-accent-text sm:col-span-3">{audience.forWho}</p>
+            <p class="text-text-soft sm:col-span-5">{audience.text}</p>
           </li>
         ))
       }
     </ul>
 
-    <div class="mt-12 flex flex-col gap-6 md:mt-16">
-      <div>
-        <BookButton />
-      </div>
+    <div class="mt-12 md:mt-16">
+      <BookButton />
     </div>
   </div>
 </section>

@@ -14,7 +14,7 @@ export const measuredIso = "2026-11-05";
 export const device = "desktop";
 export const reportUrl =
   "https://pagespeed.web.dev/analysis/https-www-lorentwebworks-nl/tjdw68yhbt?form_factor=desktop";
-export const guideUrl = "/lighthouse-score/";
+export const guideUrl = "/gids/lighthouse-score/";
 
 /** Laagste score, voor de kop: "scoort 100" of "scoort minimaal {laagste}". */
 export const laagste = Math.min(...scores.map((s) => s.score));

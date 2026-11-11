@@ -1,8 +1,6 @@
 ---
-import BookButton from "./BookButton.astro";
 import Icon from "./Icon.astro";
 import SectionHeader from "./SectionHeader.astro";
-import SlotPhoto from "./SlotPhoto.astro";
 import StepPhoto from "./StepPhoto.astro";
 
 // Vijf stappen. Elke stap heeft een foto uit src/assets/ (zie photo).
@@ -20,7 +18,7 @@ const steps = [
   {
     title: "Ontwerpen en bouwen",
     photo: "bouwen",
-    text: "Jij levert teksten en foto's aan, want jij kent je klanten het best. Tussendoor krijg je een preview om op te reageren.",
+    text: "Jij levert teksten en foto's aan, want jij kent je klanten het best. Ondertussen ga ik aan de slag met het bouwen.",
   },
   {
     title: "Lancering",
@@ -30,7 +28,7 @@ const steps = [
   {
     title: "Overdracht en nazorg",
     photo: "nazorg",
-    text: "Ik laat je zien hoe je zelf kleine dingen aanpast. Je krijgt een uitlegvideo, handleiding en 14 dagen gratis support.",
+    text: "Ik laat je zien hoe je zelf kleine dingen aanpast. Je krijgt een uitlegvideo, handleiding en 5 werkdagen support.",
   },
 ];
 
@@ -40,10 +38,10 @@ const arrowClass =
 
 <section id="aanpak" aria-labelledby="aanpak-titel" class="on-block section-y">
   <div class="reveal container-page">
-    <SectionHeader label="Aanpak" titleId="aanpak-titel" onBlock>
+    <SectionHeader label="Werkwijze" titleId="aanpak-titel" onBlock>
       <Fragment slot="title">Van eerste gesprek tot live in vijf stappen</Fragment>
       <Fragment slot="lead"
-        >Jij hebt een zaak te runnen. Daarom neem ik het meeste werk uit handen en vraag ik je input alleen op de
+        >Jij hebt het druk met je werk. Daarom neem ik het meeste werk uit handen en vraag ik je input alleen op de
         momenten dat die telt.</Fragment
       >
     </SectionHeader>
@@ -66,7 +64,7 @@ const arrowClass =
       data-track
       role="region"
       aria-roledescription="carrousel"
-      aria-label="Stappen van de aanpak"
+      aria-label="Stappen van de werkwijze"
       tabindex="0"
       class="carousel-bleed no-scrollbar flex snap-x snap-mandatory gap-5 overflow-x-auto scroll-smooth pb-4 motion-reduce:scroll-auto focus-ring-wide"
     >
@@ -83,14 +81,6 @@ const arrowClass =
             ))
           }
         </ol>
-    </div>
-  </div>
-
-  <div class="reveal container-page">
-  <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-4 md:mt-20">
-      <SlotPhoto name="tim-extra" alt="Foto van Tim Lorent" size={56} />
-      <BookButton variant="on-block" />
-      <p class="text-on-block-muted">De eerste stap is gratis en duurt 30 minuten.</p>
     </div>
   </div>
 </section>
