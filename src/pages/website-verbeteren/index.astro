@@ -294,9 +294,8 @@ const stappen = [
     </div>
   </section>
 
-  <Faq items={verbeterFaq} title="Vragen over de websitecheck en verbeterdiensten" id="verbeter-faq" contactHref="/?dienst=weet-niet#contact" />
-
-  <section aria-labelledby="verbeteren-cta" class="container-page pb-20 md:pb-28">
+  <Faq items={verbeterFaq} title="Vragen over de websitecheck en verbeterdiensten" id="verbeter-faq" contactHref="/?dienst=weet-niet#contact" >
+    <div slot="after" class="mt-12 md:mt-14">
     <div class="on-block flex flex-wrap items-center justify-between gap-x-10 gap-y-6 rounded-hero p-6 md:p-12">
       <div class="max-w-2xl">
         <h2 id="verbeteren-cta" class="text-heading font-stretch-115%">Welke punten maken het meeste verschil?</h2>
@@ -309,5 +308,7 @@ const stappen = [
         <BookButton base="/" variant="on-block" />
       </div>
     </div>
-  </section>
+    </div>
+  </Faq>
+
 </BaseLayout>
