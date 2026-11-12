@@ -1,5 +1,5 @@
 ---
-title: "Website checklist: 30 punten voor een site die klanten oplevert"
+title: "Website checklist: 30 punten om je eigen site te checken"
 cardTitle: "Website checklist: 30 punten"
 crumb: "Website checklist"
 seoTitle: "Website checklist: 30 punten voor je site"
@@ -13,8 +13,12 @@ updated: 2026-11-03
 order: 4
 cta:
   title: "Benieuwd hoe jouw site scoort?"
-  text: "Plan een gratis kennismaking van 30 minuten. We lopen samen door je website en je hoort direct wat je kunt verbeteren. Ik reageer binnen één werkdag."
-  button: "Plan een kennismaking"
+  text: "Laat mij de checklist voor je doorlopen. Met de websitecheck krijg je de 10 belangrijkste verbeterpunten op volgorde van belang en een gesprek van 30 minuten. €245, verrekend als je binnen 30 dagen een landingspagina of complete website boekt."
+  button: "Bekijk de websitecheck"
+  href: "/website-verbeteren/#websitecheck"
+  secondary:
+    text: "Weet je nog niet wat je nodig hebt? Plan een gratis kennismaking"
+    href: "/?dienst=weet-niet#contact"
 faq:
   - q: "Hoe controleer ik mijn website?"
     a: "Loop een checklist door op boodschap, teksten, vertrouwen, snelheid, mobiel, vindbaarheid, toegankelijkheid en contact. Test de snelheid in Google PageSpeed Insights."
@@ -25,15 +29,15 @@ faq:
   - q: "Geldt de European Accessibility Act voor mijn website?"
     a: "Dat hangt af van je bedrijf en je diensten. Micro-ondernemingen met minder dan 10 werknemers en maximaal €2 miljoen omzet of balanstotaal zijn vrijgesteld voor diensten. Check bij twijfel de ACM of een specialist."
   - q: "Kan ik mijn website samen met jou doorlopen?"
-    a: "Ja. In een gratis kennismaking van 30 minuten kijken we samen naar je site en wat die moet opleveren. Je hoort direct waar de grootste kansen liggen, zonder verplichting."
+    a: "Ja, dat is de websitecheck. Voor €245 loop ik je site door op deze punten en krijg je de 10 belangrijkste verbeteringen op volgorde van belang, plus een gesprek van 30 minuten. Boek je binnen 30 dagen een landingspagina of complete website, dan gaat het bedrag van die factuur af."
 ---
 ## Kort antwoord
 
-Een website die klanten oplevert, maakt binnen vijf seconden duidelijk wat je doet en voor wie, laat bewijs zien (reviews, resultaten), laadt binnen twee à drie seconden, werkt goed op mobiel, is vindbaar in Google met goede titels en een Google Bedrijfsprofiel, is toegankelijk en maakt contact opnemen heel makkelijk. Check daarnaast of je meet hoeveel aanvragen je site oplevert.
+Een website die werkt, maakt binnen vijf seconden duidelijk wat je doet en voor wie, laat bewijs zien (reviews, resultaten), laadt binnen twee à drie seconden, werkt goed op mobiel, is vindbaar in Google met goede titels en een Google Bedrijfsprofiel, is toegankelijk en maakt contact opnemen heel makkelijk. Check daarnaast of je meet hoeveel aanvragen je site oplevert.
 
 ## Boodschap en eerste indruk
 
-1. **Ziet een bezoeker binnen vijf seconden wat je doet?** Laat iemand die je bedrijf niet kent je homepage vijf seconden bekijken en vraag wat je doet.
+1. **Ziet een bezoeker binnen vijf seconden wat je doet?** Laat iemand die jou en je werk niet kent je homepage vijf seconden bekijken en vraag wat je doet.
 2. **Is duidelijk voor wie je het doet?** "Voor iedereen" spreekt niemand aan.
 3. **Staat er één duidelijke knop bovenaan?** Bijvoorbeeld "Plan een gesprek" of "Vraag een offerte aan".
 4. **Past de stijl bij je klanten?** Een advocatenkantoor en een tattooshop vragen een andere uitstraling.
@@ -47,10 +51,10 @@ Een website die klanten oplevert, maakt binnen vijf seconden duidelijk wat je do
 9. **Noem je prijzen of een indicatie?** Prijsindicaties verlagen de drempel om contact op te nemen.
 
 <aside class="callout">
-<p>Gratis kennismaking</p>
+<p>Websitecheck</p>
 <h3>Liever dat ik meekijk?</h3>
-<p>In een gratis kennismaking van 30 minuten lopen we samen door je site. Je hoort meteen welke punten het meeste opleveren. We bellen via video, zonder verplichting.</p>
-<p><a href="/#contact">Plan een kennismaking →</a></p>
+<p>Met de websitecheck loop ik deze punten voor je door. Je krijgt de 10 belangrijkste verbeteringen op volgorde van belang en een gesprek van 30 minuten. €245, verrekend als je binnen 30 dagen een landingspagina of complete website boekt.</p>
+<p><a href="/website-verbeteren/#websitecheck">Bekijk de websitecheck →</a></p>
 </aside>
 
 ## Vertrouwen
@@ -63,7 +67,7 @@ Een website die klanten oplevert, maakt binnen vijf seconden duidelijk wat je do
 
 ## Snelheid en techniek
 
-15. **Laadt je site snel?** Test hem in Google PageSpeed Insights. Ik bouw sites die snel laden, ook op mobiel.
+15. **Laadt je site snel?** Test hem in Google PageSpeed Insights.
 16. **Zijn afbeeldingen gecomprimeerd** en in een modern formaat zoals WebP of AVIF?
 17. **Haal je de Core Web Vitals?** Google kijkt naar laadsnelheid (LCP onder 2,5 seconde), reactiesnelheid (INP onder 200 milliseconden) en visuele stabiliteit (CLS onder 0,1).
 18. **Werken alle links en formulieren?** Test je contactformulier zelf.
@@ -96,4 +100,4 @@ Een website die klanten oplevert, maakt binnen vijf seconden duidelijk wat je do
 
 - **25 tot 30 keer ja:** je site staat er goed voor. Kleine optimalisaties kunnen nog veel opleveren.
 - **15 tot 24 keer ja:** er liggen duidelijke kansen. Begin bij boodschap, contact en snelheid.
-- **Minder dan 15 keer ja:** je site houdt je waarschijnlijk tegen. Plan een gratis kennismaking, dan kijken we samen wat het meeste oplevert.
+- **Minder dan 15 keer ja:** je site houdt je waarschijnlijk tegen. Een [websitecheck](/website-verbeteren/#websitecheck) laat zien waar je het beste kunt beginnen.

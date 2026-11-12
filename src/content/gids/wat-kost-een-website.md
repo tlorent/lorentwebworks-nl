@@ -3,8 +3,8 @@ title: "Wat kost een website laten maken in 2026?"
 cardTitle: "Wat kost een website laten maken in 2026?"
 crumb: "Wat kost een website"
 seoTitle: "Wat kost een website laten maken in 2026?"
-description: "Wat kost een website laten maken in 2026? Prijzen voor zelf bouwen, een freelancer en een bureau, en wat de prijs bepaalt."
-teaser: "Prijzen per optie, wat de prijs bepaalt en welke kosten je makkelijk vergeet. Inclusief realistische budgetten voor zelfstandigen en kleine ondernemers."
+description: "Wat kost een website laten maken in 2026? Prijzen voor zelf bouwen, een freelancer en een bureau, plus de kosten die je makkelijk vergeet."
+teaser: "Prijzen per optie, wat de prijs bepaalt en welke kosten je makkelijk vergeet. Met realistische budgetten voor zzp’ers, ondernemers en stichtingen."
 intro: "\"Wat kost een website?\" is een van de meest gestelde vragen van ondernemers, en het antwoord \"dat hangt ervan af\" helpt niemand. In deze gids zet ik de prijzen per optie op een rij, laat ik zien wat de prijs bepaalt en welke kosten je makkelijk vergeet."
 slug: "wat-kost-een-website"
 readingTime: 8
@@ -19,7 +19,7 @@ faq:
   - q: "Wat kost een simpele website?"
     a: "Zelf bouwen kan vanaf ongeveer €15 per maand. Een professionele landingspagina laten maken kost bij een freelancer vaak vanaf zo'n €800."
   - q: "Wat kost een website met 5 pagina's?"
-    a: "Bij een freelancer grofweg €1.500 tot €3.000, bij een bureau vaak €3.500 tot €5.000 of meer. Bij Lorent Webworks begint een site van 4 tot 6 pagina's vanaf €2.150 excl. btw."
+    a: "Bij een freelancer grofweg €1.500 tot €3.000, bij een bureau vaak €4.000 tot €8.000. Bij Lorent Webworks begint een site van 4 tot 6 pagina's vanaf €2.150 excl. btw."
   - q: "Zijn er maandelijkse kosten aan een website?"
     a: "Meestal wel: domein, hosting en eventueel onderhoud of een abonnement op een websitebouwer. Vraag vooraf wat er bijkomt."
   - q: "Waarom verschillen de prijzen zo veel?"
@@ -102,7 +102,7 @@ Vraag altijd wat er na oplevering maandelijks of jaarlijks bijkomt, en of je erg
 
 De echte vraag is wat je website je oplevert. Reken het eens uit: als een nieuwe klant voor jou gemiddeld €500 waard is, heb je een site van €2.150 terugverdiend met vijf klanten. Een site die maandelijks een paar aanvragen extra binnenhaalt, betaalt zich snel terug.
 
-Uit mijn eigen werk: bij GrandVision leverde een nieuwe feature 425 nieuwe betalende klanten op. Dat zijn er 425 van de 13.000 interacties, een conversie van 3,3%. Dezelfde aandacht voor wat een pagina moet opleveren, pas ik toe bij sites voor zelfstandigen en kleine ondernemers.
+Voor een coach kan één nieuwe cliënt met een traject van €600 al een groot deel van een landingspagina terugverdienen. Voor een stichting leveren twintig nieuwe donateurs van €10 per maand samen €2.400 per jaar op.
 
 ## Zo vergelijk je offertes
 

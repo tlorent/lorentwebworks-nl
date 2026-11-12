@@ -11,6 +11,8 @@ type Props = {
   button?: string;
   /** Zonder href gaat de knop naar de boekingslink van de site. */
   href?: string;
+  /** Optionele tekstlink onder de knop. */
+  secondary?: { text: string; href: string };
 };
 const {
   class: className = "",
@@ -18,6 +20,7 @@ const {
   text = defaultCta.text,
   button = defaultCta.button,
   href,
+  secondary,
 } = Astro.props;
 const titleId = "gids-cta-titel";
 ---
@@ -31,8 +34,15 @@ const titleId = "gids-cta-titel";
       href ? (
         <Button href={href} variant="on-block">{button}</Button>
       ) : (
-        <BookButton variant="on-block" label={button} />
+        <BookButton base="/" variant="on-block" label={button} />
       )
     }
   </div>
+  {
+    secondary && (
+      <p class="mt-5 text-label">
+        <a href={secondary.href} class="rounded-sm text-on-block underline underline-offset-4 focus-ring">{secondary.text}</a>
+      </p>
+    )
+  }
 </aside>

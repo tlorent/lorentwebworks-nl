@@ -1,8 +1,7 @@
 ---
-import BookButton from "../../components/BookButton.astro";
-import Button from "../../components/Button.astro";
-import Schema from "../../components/Schema.astro";
-import SectionLabel from "../../components/SectionLabel.astro";
+import type { CollectionEntry } from "astro:content";
+import { getCollection } from "astro:content";
+import type { MarkdownHeading } from "astro";
 import {
   device,
   measured,
@@ -10,33 +9,64 @@ import {
   reportUrl,
   scores,
 } from "../../data/lighthouse";
-import { schemaIds, site } from "../../data/site";
-import BaseLayout from "../../layouts/BaseLayout.astro";
+import GuideLayout from "../../layouts/GuideLayout.astro";
 
-const title = "Lighthouse-score: wat betekent 100? | Lorent Webworks";
+const guides = (await getCollection("gids")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+const title = "Wat een Lighthouse-score van 100 betekent";
+const seoTitle = "Lighthouse-score: wat betekent 100? | Lorent Webworks";
 const description =
   "Mijn website scoort 100 op Google Lighthouse. Lees wat de score meet, wat hij niet vertelt en hoe ik jouw website op dezelfde manier bouw.";
-const url = `${site.url}/gids/lighthouse-score/`;
+const intro =
+  "Mijn eigen website scoort 100 op alle vier de onderdelen van Google Lighthouse. Hier leg ik uit wat die score meet, wat hij je niet vertelt en hoe ik jouw website op dezelfde manier opbouw.";
+const measuredDate = new Date(measuredIso);
 
-const schema = [
-  {
-    "@type": "Article",
-    headline: "Wat een Lighthouse-score van 100 betekent",
+// De pagina gebruikt dezelfde opmaak als de gidsen. De layout verwacht een gidsentry, dus geven we de velden mee.
+const guide = {
+  data: {
+    title,
+    seoTitle,
+    crumb: "Lighthouse-score",
+    slug: "lighthouse-score",
     description,
-    inLanguage: "nl-NL",
-    dateModified: measuredIso,
-    mainEntityOfPage: url,
-    image: `${site.url}/og-image.png`,
-    author: { "@id": schemaIds.person },
-    publisher: { "@id": schemaIds.organization },
+    intro,
+    readingTime: 5,
+    published: measuredDate,
+    updated: measuredDate,
+    order: 99,
+    cta: {
+      title: "Benieuwd hoe jouw website scoort?",
+      text: "Met de Websitecheck bekijk ik je huidige website en krijg je concrete verbeterpunten. Of plan een kennismaking en vertel wat je nodig hebt.",
+      button: "Plan een kennismaking",
+    },
+  },
+} as unknown as CollectionEntry<"gids">;
+
+const headings: MarkdownHeading[] = [
+  { depth: 2, slug: "wat-is-lighthouse", text: "Wat is Lighthouse?" },
+  { depth: 2, slug: "de-vier-onderdelen", text: "De vier onderdelen" },
+  {
+    depth: 2,
+    slug: "wat-een-score-niet-kan-zeggen",
+    text: "Wat een score niet kan zeggen",
   },
   {
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: `${site.url}/` },
-      { "@type": "ListItem", position: 2, name: "Lighthouse-score", item: url },
-    ],
+    depth: 2,
+    slug: "hoe-ik-dit-aanpak",
+    text: "Hoe ik dit aanpak voor jouw website",
   },
+  {
+    depth: 2,
+    slug: "wat-jouw-score-omlaag-kan-halen",
+    text: "Wat jouw score omlaag kan halen",
+  },
+  {
+    depth: 2,
+    slug: "wat-je-er-zelf-van-merkt",
+    text: "Wat je er zelf van merkt",
+  },
+  { depth: 2, slug: "controleer-het-zelf", text: "Controleer het zelf" },
 ];
 
 const onderdelen = [
@@ -66,21 +96,8 @@ const onderdelen = [
   },
 ];
 ---
+<GuideLayout guide={guide} headings={headings} others={guides}>
 
-<BaseLayout title={title} description={description} nav="other">
-  <Schema slot="head" data={schema} />
-  <header class="relative pt-14 pb-12 md:pt-20 md:pb-16">
-    <div class="relative container-narrow">
-      <SectionLabel>Gids</SectionLabel>
-      <h1 class="mt-6 text-display font-stretch-116% text-balance">Wat een Lighthouse-score van 100 betekent</h1>
-      <p class="mt-6 text-intro text-text-soft measure">
-        Mijn eigen website scoort 100 op alle vier de onderdelen van Google Lighthouse. Hier leg ik uit wat die score
-        meet, wat hij je niet vertelt en hoe ik jouw website op dezelfde manier opbouw.
-      </p>
-    </div>
-  </header>
-
-  <main class="container-narrow pb-20 md:pb-28">
     <section aria-labelledby="overzicht-titel">
       <h2 id="overzicht-titel" class="sr-only">Scores</h2>
       <dl class="grid gap-2 text-sm">
@@ -105,18 +122,17 @@ const onderdelen = [
       </p>
     </section>
 
-    <div class="prose-content mt-14">
-      <h2>Wat is Lighthouse?</h2>
+          <h2 id="wat-is-lighthouse">Wat is Lighthouse?</h2>
       <p class="measure">
         Lighthouse is een gratis testprogramma van Google. Het opent een pagina, meet hoe snel die laadt en controleert
         honderden technische punten. Het resultaat zijn vier scores van 0 tot 100. Je vindt Lighthouse terug in Chrome en
         in PageSpeed Insights, waar je elke website mee kunt testen.
       </p>
 
-      <h2>De vier onderdelen</h2>
+      <h2 id="de-vier-onderdelen">De vier onderdelen</h2>
       {
         onderdelen.map((o) => (
-          <section>
+          <>
             <h3>{o.naam}{o.engels && ` (${o.engels})`}</h3>
             <p class="measure">
               <strong>Wat het meet:</strong> {o.meet}
@@ -124,11 +140,11 @@ const onderdelen = [
             <p class="measure">
               <strong>Wat ik ervoor doe:</strong> {o.doe}
             </p>
-          </section>
+          </>
         ))
       }
 
-      <h2>Wat een score niet kan zeggen</h2>
+      <h2 id="wat-een-score-niet-kan-zeggen">Wat een score niet kan zeggen</h2>
       <ul class="measure">
         <li><strong>Vindbaarheid:</strong> een 100 betekent dat de techniek op orde is. Waar je in Google verschijnt hangt ook af van je teksten, je concurrenten en de leeftijd van je site. Dat kan niemand garanderen, ik ook niet.</li>
         <li><strong>Toegankelijkheid:</strong> de automatische test dekt een deel van de richtlijnen. Een volledige controle vraagt ook handmatig testen, bijvoorbeeld met het toetsenbord en een schermlezer.</li>
@@ -136,7 +152,7 @@ const onderdelen = [
         <li><strong>Testomgeving:</strong> Lighthouse meet in een gesimuleerde situatie. Een bezoeker met een oudere telefoon of een zwak netwerk kan het anders ervaren.</li>
       </ul>
 
-      <h2>Hoe ik dit aanpak voor jouw website</h2>
+      <h2 id="hoe-ik-dit-aanpak">Hoe ik dit aanpak voor jouw website</h2>
       <ol class="measure">
         <li>Ik bouw licht. Geen zware thema's of plug-ins, alleen wat jouw website nodig heeft.</li>
         <li>Ik meet tijdens het bouwen, zodat problemen vroeg opvallen.</li>
@@ -145,39 +161,26 @@ const onderdelen = [
         <li>Ik leg uit wat de cijfers betekenen, zodat je ze zelf kunt lezen.</li>
       </ol>
 
-      <h2>Wat jouw score omlaag kan halen</h2>
+      <h2 id="wat-jouw-score-omlaag-kan-halen">Wat jouw score omlaag kan halen</h2>
       <p class="measure">
         Externe onderdelen kosten snelheid. Denk aan een boekingstool, chatwidget, trackingscripts, ingesloten video's en
         grote foto's die je later zelf toevoegt. Ik bouw ze zo licht mogelijk in en vertel je vooraf wat een onderdeel aan
         snelheid kost. Daarom beloof ik geen 100 voor elke website. Ik bespreek vooraf wat haalbaar is voor jouw situatie.
       </p>
 
-      <h2>Wat je er zelf van merkt</h2>
+      <h2 id="wat-je-er-zelf-van-merkt">Wat je er zelf van merkt</h2>
       <p class="measure">
         Een snelle website laat bezoekers niet wachten, ook op een telefoon met matig bereik. Een toegankelijke website is
         voor iedereen prettig leesbaar, ook buiten in de zon. Een technisch nette website heeft minder kans op storingen en
         is makkelijker te onderhouden.
       </p>
 
-      <h2>Controleer het zelf</h2>
+      <h2 id="controleer-het-zelf">Controleer het zelf</h2>
       <ol class="measure">
         <li>Ga naar pagespeed.web.dev.</li>
         <li>Vul het adres van de website in en kies Analyseren.</li>
         <li>Wissel tussen de tabs Mobiel en Desktop.</li>
         <li>Draai de test een paar keer, want de score kan een paar punten schommelen.</li>
       </ol>
-    </div>
 
-    <section aria-labelledby="gids-cta" class="on-block mt-16 rounded-hero p-6 md:p-12">
-      <h2 id="gids-cta" class="text-heading font-stretch-115%">Benieuwd hoe jouw website scoort?</h2>
-      <p class="mt-3 max-w-2xl text-on-block-muted">
-        Met de Websitecheck bekijk ik je huidige website en krijg je concrete verbeterpunten. Of plan een kennismaking en
-        vertel wat je nodig hebt.
-      </p>
-      <div class="mt-8 flex flex-wrap gap-3">
-        <BookButton base="/" variant="on-block" />
-        <Button href="/website-verbeteren/" variant="secondary">Bekijk de Websitecheck</Button>
-      </div>
-    </section>
-  </main>
-</BaseLayout>
+</GuideLayout>

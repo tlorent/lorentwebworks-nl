@@ -5,15 +5,15 @@ crumb: "Webdesigner kiezen"
 seoTitle: "Hoe kies je een goede webdesigner of webbouwer?"
 description: "Op zoek naar een webdesigner of webbouwer? Waar je er een vindt, hoe je een portfolio beoordeelt en welke rode vlaggen je ziet."
 teaser: "Waar je zoekt, hoe je een portfolio beoordeelt en welke rode vlaggen je serieus neemt. Voor een webbouwer die bij je past."
-intro: "Er zijn duizenden webdesigners en webbouwers in Nederland, van studenten tot grote bureaus. Hoe vind je degene die bij jouw bedrijf past, en voorkom je dat je na drie maanden met een mooie site zit die niets oplevert? In deze gids lees je waar je zoekt, hoe je beoordeelt en waar je op let."
+intro: "Er zijn duizenden webdesigners en webbouwers in Nederland, van studenten tot grote bureaus. Hoe vind je degene die bij jou past, en voorkom je dat je na drie maanden met een mooie site zit die niets oplevert? In deze gids lees je waar je zoekt, hoe je beoordeelt en waar je op let."
 slug: "webdesigner-kiezen"
 readingTime: 10
 published: 2026-01-15
 updated: 2026-11-03
 order: 3
 cta:
-  title: "Laten we eens praten"
-  text: "Een kennismaking van 30 minuten over wat beter kan aan je website. Zonder verplichtingen, en ik reageer binnen één werkdag."
+  title: "Op zoek naar een webbouwer?"
+  text: "Plan een gratis kennismaking van 30 minuten. Stel me de vragen uit deze gids en beoordeel zelf of ik bij je pas. Ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
 faq:
   - q: "Waar vind ik een goede webdesigner?"
@@ -62,8 +62,8 @@ Scroll naar de footer van een site die je mooi en duidelijk vindt. Vaak staat de
 <aside class="callout">
 <p>Lorent Webworks</p>
 <h3>Senior ervaring, direct contact</h3>
-<p>8+ jaar ervaring bij bol., GrandVision en T-Mobile, nu voor zelfstandigen en kleine ondernemers. Je werkt rechtstreeks met mij, van eerste gesprek tot livegang.</p>
-<p><a href="/#contact">Plan een kennismaking →</a></p>
+<p>8+ jaar ervaring bij bol., GrandVision en T-Mobile, nu voor zzp’ers, ondernemers en stichtingen. Je werkt rechtstreeks met mij, van eerste gesprek tot livegang. Test gerust mijn eigen site: die scoort 100 op <a href="/gids/lighthouse-score/">Lighthouse</a>.</p>
+<p><a href="/?dienst=weet-niet#contact">Plan een kennismaking →</a></p>
 </aside>
 
 ## Freelancer of bureau?

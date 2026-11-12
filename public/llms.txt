@@ -4,21 +4,31 @@
 
 ## Diensten en prijzen
 
-- [Website bouwen](https://www.lorentwebworks.nl/website-bouwen/): overzicht van de opties, extra's en wat er per optie in zit.
+- [Website laten bouwen](https://www.lorentwebworks.nl/website-bouwen/): overzicht van de opties, extra's en wat er per optie in zit.
 - [Landingspagina](https://www.lorentwebworks.nl/website-bouwen/): één pagina met wat je doet, voor wie, en een knop naar contact. Vanaf €950, excl. btw.
 - [Complete website](https://www.lorentwebworks.nl/website-bouwen/): vier tot zes pagina's voor je diensten, werkwijze en jezelf of je team. Vanaf €2.150, excl. btw.
-- [Websitecheck](https://www.lorentwebworks.nl/website-verbeteren/#websitecheck): de 10 belangrijkste verbeterpunten van een bestaande site, op volgorde van belang. €245, excl. btw. Wordt verrekend bij een landingspagina of complete website binnen 30 dagen.
+- [Websitecheck](https://www.lorentwebworks.nl/website-verbeteren/#websitecheck): de 10 belangrijkste verbeterpunten van een bestaande site, op volgorde van belang, en een gesprek van 30 minuten. €245, excl. btw. Wordt verrekend bij een landingspagina of complete website binnen 30 dagen.
 - [Verbeterronde](https://www.lorentwebworks.nl/website-verbeteren/#verbeterronde): start met 30 minuten om te bepalen wat er moet veranderen, daarna tot 6 uur werk aan tekst, structuur, snelheid of vindbaarheid van een bestaande site. €595, excl. btw.
 - [Vraaguur](https://www.lorentwebworks.nl/website-verbeteren/#vraaguur): 60 minuten samen naar je site kijken en antwoord op je vragen. €125, excl. btw.
-- [Lighthouse-score](https://www.lorentwebworks.nl/gids/lighthouse-score/): wat een Lighthouse-score van 100 meet en hoe de website van Lorent Webworks die score haalt.
 
-## Gids: website laten maken
+## Gids
 
+- [Alle gidsen](https://www.lorentwebworks.nl/gids/): praktische uitleg over een website laten maken, kosten, kiezen en een bestaande site controleren.
 - [Website laten maken: de complete gids](https://www.lorentwebworks.nl/gids/website-laten-maken/): doel bepalen, kiezen tussen zelf bouwen, freelancer of bureau, kosten en planning.
 - [Wat kost een website laten maken?](https://www.lorentwebworks.nl/gids/wat-kost-een-website/): prijzen voor zelf bouwen, een freelancer en een bureau.
 - [Hoe kies je een goede webdesigner of webbouwer?](https://www.lorentwebworks.nl/gids/webdesigner-kiezen/): waar je er een vindt, hoe je een portfolio beoordeelt en welke rode vlaggen je ziet.
-- [25 vragen om te stellen voordat je een website laat maken](https://www.lorentwebworks.nl/gids/vragen-aan-webdesigner/)
-- [Website checklist: 30 punten voor je site](https://www.lorentwebworks.nl/gids/website-checklist/)
+- [Website checklist: 30 punten](https://www.lorentwebworks.nl/gids/website-checklist/): controleer je eigen website op boodschap, teksten, vertrouwen, snelheid, mobiel, vindbaarheid, toegankelijkheid en contact.
+- [25 vragen om te stellen voordat je een website laat maken](https://www.lorentwebworks.nl/gids/vragen-aan-webdesigner/): vragen over aanpak, prijs, teksten, SEO, eigendom en onderhoud.
+- [Lighthouse-score uitgelegd](https://www.lorentwebworks.nl/gids/lighthouse-score/): wat een Lighthouse-score van 100 meet en hoe de website van Lorent Webworks die score haalt.
+
+## Goed om te weten
+
+- De eerste stap is een gratis kennismaking van 30 minuten via video: https://www.lorentwebworks.nl/#contact
+- Klanten leveren zelf de teksten en foto's aan, met per pagina een vragenlijst als hulp.
+- Domeinnaam, website en accounts staan op naam van de klant. Er is geen verplicht abonnement; onderhoud kan los voor €50 per maand, excl. btw.
+- Goede doelen en stichtingen krijgen 10% korting op de landingspagina en de complete website, met een ANBI-beschikking of KvK-inschrijving.
+- Webshops, inlogomgevingen en koppelingen op maat vallen buiten het aanbod.
+- Werkgebied: heel Nederland. In en rond Amsterdam ook op locatie, verder via video.
 
 ## Over
 
@@ -32,3 +42,5 @@
 - Vestigingsplaats: Amsterdam, Nederland
 - KvK-nummer: 98545698
 - Website: https://www.lorentwebworks.nl/
+- LinkedIn: https://www.linkedin.com/in/timlorent
+- Instagram: https://www.instagram.com/lorentwebworks/

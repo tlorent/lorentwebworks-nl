@@ -4,17 +4,18 @@ cardTitle: "Website laten maken: de complete gids"
 crumb: "Website laten maken"
 seoTitle: "Website laten maken: de complete gids voor ondernemers"
 description: "Een website laten maken? Zo pak je het aan: doel bepalen, kiezen tussen zelf bouwen, freelancer of bureau, kosten en planning."
-teaser: "Van doel en budget tot oplevering: zo laat je een website maken die klanten oplevert. Leer hoe je kiest tussen zelf bouwen, freelancer of bureau."
-intro: "Een website laten maken voelt voor veel ondernemers als een sprong in het diepe. Wat kost het, wie kies je, hoe lang duurt het, en hoe weet je of het resultaat straks ook klanten oplevert? In deze gids loop ik het hele traject met je door, van het eerste idee tot een site die live staat en werkt."
+teaser: "Van doel en budget tot oplevering: zo laat je een website maken die doet wat jij nodig hebt. Met de keuze tussen zelf bouwen, freelancer of bureau."
+intro: "Een website laten maken voelt voor veel zzp’ers, ondernemers en stichtingen als een sprong in het diepe. Wat kost het, wie kies je, hoe lang duurt het, en hoe weet je of de site straks doet wat je nodig hebt? In deze gids loop ik het hele traject met je door, van het eerste idee tot een site die live staat en werkt."
 slug: "website-laten-maken"
 readingTime: 12
 published: 2026-01-15
 updated: 2026-11-04
 order: 1
 cta:
-  title: "Klaar voor een website die klanten oplevert?"
+  title: "Klaar voor een website die doet wat jij nodig hebt?"
   text: "Plan een gratis kennismaking van 30 minuten. Je krijgt een helder beeld van wat er kan, zonder verplichtingen. Ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
+  href: "/?dienst=weet-niet#contact"
 faq:
   - q: "Wat kost een website laten maken voor een zelfstandige?"
     a: "Bij een freelancer betaal je voor een kleine, professionele bedrijfswebsite grofweg €800 tot €3.000. Bij een bureau begin je vaak rond €4.000."
@@ -23,19 +24,20 @@ faq:
   - q: "Is een websitebouwer zoals Wix genoeg?"
     a: "Voor een eenvoudige site kan dat prima, als je zelf de tijd hebt. Een professional helpt vooral bij strategie, teksten, snelheid en vindbaarheid, en bespaart je veel uren."
   - q: "Moet ik zelf de teksten schrijven?"
-    a: "Dat hoeft niet. Jij levert de teksten aan."
+    a: "Ja, jij levert de teksten aan, want jij kent je klanten het best. Je krijgt per pagina een vragenlijst die het schrijven makkelijker maakt."
   - q: "Wat moet er op een bedrijfswebsite staan?"
     a: "Minimaal een homepage met heldere boodschap, een pagina over je diensten, iets over jou of je team, bewijs zoals reviews, en een makkelijke manier om contact op te nemen."
 ---
 ## Kort antwoord
 
-Bepaal eerst wat je website moet opleveren (aanvragen, boekingen, telefoontjes) en voor wie hij is. Kies daarna hoe je hem laat bouwen: zelf met een websitebouwer, via een freelancer of via een bureau. Voor zelfstandigen en kleine ondernemers kost een professionele site bij een freelancer grofweg €800 tot €3.000, bij een bureau vaak €4.000 of meer. Een eenvoudige site staat binnen een paar dagen tot een paar weken live. Let bij de keuze op snelheid, vindbaarheid in Google, duidelijke teksten en een heldere knop naar contact.
+Bepaal eerst wat je website moet opleveren (aanvragen, boekingen, telefoontjes) en voor wie hij is. Kies daarna hoe je hem laat bouwen: zelf met een websitebouwer, via een freelancer of via een bureau. Voor zelfstandigen en kleine ondernemers kost een professionele site bij een freelancer grofweg €800 tot €3.000, bij een bureau vaak €4.000 tot €8.000. Een eenvoudige site staat binnen een paar dagen tot een paar weken live. Let bij de keuze op snelheid, vindbaarheid in Google, duidelijke teksten en een heldere knop naar contact.
 
 ## Begin bij het doel
 
-De belangrijkste vraag komt voor kleuren, lettertypes en foto's: wat moet je website doen? Voor de meeste ondernemers is dat een van deze dingen:
+De belangrijkste vraag komt voor kleuren, lettertypes en foto's: wat moet je website doen? Voor de meeste zzp’ers, ondernemers en stichtingen is dat een van deze dingen:
 
 - **Aanvragen binnenhalen:** een offerteaanvraag, een kennismakingsgesprek of een belletje.
+- **Donaties en aanmeldingen:** een gift, een vrijwilliger of een inschrijving.
 - **Boekingen:** een afspraak, een tafel, een behandeling.
 - **Vertrouwen opbouwen:** laten zien wie je bent, wat je doet en wat anderen over je zeggen, zodat mensen durven te bellen.
 - **Gevonden worden:** zichtbaar zijn als iemand in jouw regio zoekt naar wat jij doet.
@@ -59,10 +61,10 @@ Een freelance webbouwer of webdesigner bouwt de site voor je, vaak met direct co
 Een bureau heeft een team met strategen, ontwerpers en developers. Logisch bij grotere projecten met veel pagina's, koppelingen of een webshop. Voor een professionele site voor een klein bedrijf begin je vaak rond €4.000, en het kan flink hoger uitvallen.
 
 <aside class="callout">
-<p>Gratis kennismaking</p>
+<p>Websitecheck</p>
 <h3>Heb je al een website die weinig oplevert?</h3>
-<p>Plan een gratis kennismaking van 30 minuten. We kijken samen naar je huidige site en wat die moet opleveren, en je hoort direct waar de grootste kansen liggen. Ik reageer binnen één werkdag.</p>
-<p><a href="/#contact">Plan een kennismaking →</a></p>
+<p>Met de websitecheck loop ik je huidige site door. Je krijgt de 10 belangrijkste verbeterpunten op volgorde van belang en we bespreken ze in 30 minuten. €245, en dat bedrag gaat van de factuur af als je binnen 30 dagen een landingspagina of complete website boekt.</p>
+<p><a href="/website-verbeteren/#websitecheck">Bekijk de websitecheck →</a></p>
 </aside>
 
 ## Wat een goede website nodig heeft
@@ -81,7 +83,7 @@ Reviews, logo's van klanten, voor-en-na-foto's, cijfers. Bewijs maakt de stap na
 
 ### Snelheid
 
-Een trage site kost bezoekers, zeker op mobiel. Ik bouw sites die snel laden, ook op mobiel.
+Een trage site kost bezoekers, zeker op mobiel. Mik op een laadtijd onder de twee à drie seconden en test je site in Google PageSpeed Insights. Hoe ik dat zelf aanpak, lees je in [Lighthouse-score uitgelegd](/gids/lighthouse-score/).
 
 ### Vindbaarheid
 

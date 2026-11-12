@@ -8,30 +8,30 @@ import Process from "../components/Process.astro";
 import Schema from "../components/Schema.astro";
 import Services from "../components/Services.astro";
 import { faq } from "../data/faq";
-import {
-  formatPrice,
-  improvements,
-  nonprofitDiscount,
-  services,
-} from "../data/services";
+import { formatPrice, improvements, services } from "../data/services";
 import { personSchema, schemaIds, site } from "../data/site";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const title = "Website laten maken voor ondernemers | Lorent Webworks";
+const title = "Website laten maken voor zzp’ers en coaches | Lorent Webworks";
 // Op de homepage alleen deze vragen. De overige vragen blijven in src/data/faq.ts staan.
 const homeFaqQuestions = [
   "Wat kost een website laten maken?",
+  "Hoe lang duurt het?",
   "Wat als ik al een website heb?",
   "Moet ik zelf de teksten schrijven?",
   "Word ik gevonden in Google en ChatGPT?",
   "Van wie is de website na de oplevering?",
   "Kan ik later dingen laten aanpassen?",
+  "Werk je alleen in Amsterdam?",
 ];
 const homeFaq = faq.filter((item) => homeFaqQuestions.includes(item.q));
 const [lp] = services;
-const description = `Website laten maken die klanten oplevert? Vanaf ${formatPrice(lp.price)}, eenmalig en excl. btw. Goede doelen en stichtingen krijgen ${nonprofitDiscount}% korting.`;
+const description = `Website laten maken als zzp’er, coach of stichting? Vaste prijs vanaf ${formatPrice(lp.price)}, live binnen 5 werkdagen en alles op jouw naam. Plan een gratis kennismaking.`;
+
+const priceRange = `${formatPrice(Math.min(...improvements.map((i) => i.price)))} - ${formatPrice(Math.max(...services.map((x) => x.price)))}`;
 
 const schema = [
+  personSchema,
   {
     "@type": "ProfessionalService",
     "@id": schemaIds.organization,
@@ -40,20 +40,30 @@ const schema = [
     logo: `${site.url}/android-chrome-512x512.png`,
     image: `${site.url}/og-image.png`,
     description:
-      "Websites die klanten opleveren voor zelfstandigen, kleine ondernemers, goede doelen en initiatieven in heel Nederland.",
+      "Websites die bezoekers laten bellen, boeken, reserveren of doneren. Voor zzp’ers, ondernemers en stichtingen in heel Nederland.",
     address: {
       "@type": "PostalAddress",
       addressLocality: site.city,
       addressCountry: site.country,
     },
     areaServed: { "@type": "Country", name: "Netherlands" },
-    founder: personSchema,
+    founder: { "@id": schemaIds.person },
     identifier: {
       "@type": "PropertyValue",
       propertyID: "KvK",
       value: site.kvk,
     },
-    sameAs: [site.linkedin],
+    sameAs: [site.linkedin, site.instagram],
+    knowsAbout: [
+      "Website laten maken",
+      "Landingspagina",
+      "Websitecheck",
+      "Zoekmachineoptimalisatie",
+      "Digitale toegankelijkheid",
+    ],
+    slogan:
+      "Websites die bezoekers laten bellen, boeken, reserveren of doneren.",
+    priceRange,
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: "Diensten en prijzen",
@@ -78,7 +88,7 @@ const schema = [
         ...improvements.map((item) => ({
           "@type": "Offer",
           name: item.name,
-          description: item.label,
+          description: item.schemaDescription,
           priceSpecification: {
             "@type": "PriceSpecification",
             price: item.price,
@@ -88,7 +98,7 @@ const schema = [
           itemOffered: {
             "@type": "Service",
             name: item.name,
-            description: item.label,
+            description: item.schemaDescription,
           },
         })),
       ],

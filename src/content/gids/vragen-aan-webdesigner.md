@@ -13,7 +13,7 @@ updated: 2026-11-03
 order: 5
 cta:
   title: "Al je vragen beantwoord in 30 minuten"
-  text: "Plan een gratis kennismaking van 30 minuten. Je krijgt eerlijke antwoorden, een vaste prijs en geen offerte die je over je heen krijgt. Ik reageer binnen één werkdag."
+  text: "Plan een gratis kennismaking van 30 minuten. Je krijgt antwoord op je vragen en daarna een voorstel met vaste prijs, planning en afbakening. Ik reageer binnen één werkdag."
   button: "Plan een kennismaking"
 faq:
   - q: "Wat moet ik vragen aan een webdesigner?"
@@ -54,7 +54,7 @@ Een overzicht van gangbare prijzen vind je in [wat kost een website laten maken]
 <p>Lorent Webworks</p>
 <h3>Stel je vragen gewoon aan mij</h3>
 <p>In een gratis kennismaking van 30 minuten beantwoord ik al je vragen en krijg je een helder beeld van wat er kan, en wat het kost.</p>
-<p><a href="/#contact">Plan een kennismaking →</a></p>
+<p><a href="/?dienst=weet-niet#contact">Plan een kennismaking →</a></p>
 </aside>
 
 ## Vragen over teksten en ontwerp

@@ -1,5 +1,6 @@
 ---
 import BookButton from "../../components/BookButton.astro";
+import Faq from "../../components/Faq.astro";
 import Icon from "../../components/Icon.astro";
 import Pattern from "../../components/Pattern.astro";
 import ProofStrip from "../../components/ProofStrip.astro";
@@ -7,12 +8,18 @@ import Schema from "../../components/Schema.astro";
 import SectionHeader from "../../components/SectionHeader.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import SlotPhoto from "../../components/SlotPhoto.astro";
+import { verbeterFaq } from "../../data/faq";
 import { formatPrice, improvements } from "../../data/services";
-import { schemaIds, site } from "../../data/site";
+import {
+  organizationSchema,
+  personSchema,
+  schemaIds,
+  site,
+  websiteSchema,
+} from "../../data/site";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const title = "Bestaande website verbeteren | Lorent Webworks";
-const fromPrice = Math.min(...improvements.map((item) => item.price));
 const [check] = improvements;
 const description = `Bestaande website verbeteren zonder alles opnieuw te bouwen. Websitecheck ${formatPrice(check.price)}, verrekend bij een landingspagina of complete website. Vaste prijzen, exclusief btw.`;
 
@@ -72,9 +79,19 @@ const overviewRows: { label: string; values: string[] }[] = [
   },
 ];
 const url = `${site.url}/website-verbeteren/`;
-const lowestPrice = Math.min(...improvements.map((item) => item.price));
 
 const schema = [
+  organizationSchema,
+  personSchema,
+  websiteSchema,
+  {
+    "@type": "FAQPage",
+    mainEntity: verbeterFaq.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  },
   {
     "@type": "WebPage",
     "@id": `${url}#webpage`,
@@ -86,23 +103,29 @@ const schema = [
     about: { "@id": schemaIds.organization },
   },
   {
-    "@type": "Service",
-    name: "Bestaande website verbeteren",
-    description,
-    provider: { "@id": schemaIds.organization },
-    areaServed: { "@type": "Country", name: "Netherlands" },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "EUR",
-      lowPrice: lowestPrice,
-      offerCount: improvements.length,
-      priceSpecification: {
-        "@type": "PriceSpecification",
-        minPrice: lowestPrice,
-        priceCurrency: "EUR",
-        valueAddedTaxIncluded: false,
+    "@type": "ItemList",
+    name: "Bestaande website verbeteren bij Lorent Webworks",
+    itemListElement: improvements.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Service",
+        name: item.name,
+        description: item.schemaDescription,
+        provider: { "@id": schemaIds.organization },
+        areaServed: { "@type": "Country", name: "Netherlands" },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "EUR",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            price: item.price,
+            priceCurrency: "EUR",
+            valueAddedTaxIncluded: false,
+          },
+        },
       },
-    },
+    })),
   },
 ];
 
@@ -270,6 +293,8 @@ const stappen = [
       </ol>
     </div>
   </section>
+
+  <Faq items={verbeterFaq} title="Vragen over de websitecheck en verbeterdiensten" id="verbeter-faq" contactHref="/?dienst=weet-niet#contact" />
 
   <section aria-labelledby="verbeteren-cta" class="container-page pb-20 md:pb-28">
     <div class="on-block flex flex-wrap items-center justify-between gap-x-10 gap-y-6 rounded-hero p-6 md:p-12">

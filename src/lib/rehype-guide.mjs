@@ -1,9 +1,6 @@
 // Gidsen: maakt tabellen toegankelijk (bijschrift, scrollbare regio), voegt halverwege
-// (vóór de middelste H2) een CTA-blok in, en stuurt kennismakingslinks naar de boekingslink.
+// en stuurt kennismakingslinks naar de boekingslink.
 import { bookingLink } from "../data/booking.mjs";
-import { buttonClass, buttonIconClass } from "./button.mjs";
-import { ctaClass, defaultCta } from "./guide-cta.mjs";
-import { icons } from "./icons.mjs";
 
 /**
  * @typedef {{ type: string; tagName?: string; value?: string; properties?: Record<string, unknown>; children?: Node[] }} Node
@@ -33,25 +30,6 @@ const textOf = (node) =>
 const isEl = (node, ...tags) =>
   node.type === "element" && tags.includes(node.tagName ?? "");
 
-const arrowIcon = () =>
-  el(
-    "svg",
-    buttonIconClass(),
-    [...icons.arrow.matchAll(/d="([^"]+)"/g)].map(([, d]) =>
-      el("path", "", [], { d }),
-    ),
-    {
-      viewBox: "0 0 24 24",
-      fill: "none",
-      stroke: "currentColor",
-      strokeWidth: "2.2",
-      strokeLinecap: "round",
-      strokeLinejoin: "round",
-      ariaHidden: "true",
-      focusable: "false",
-    },
-  );
-
 // Externe boekingslink: opent in een nieuw tabblad, en dat staat ook in de tekst voor schermlezers.
 /** @param {{ href: string, external: boolean }} link */
 const linkAttributes = (link) =>
@@ -61,28 +39,6 @@ const newTabNote = (link) =>
   link.external
     ? [el("span", "sr-only", [text(" (opent in een nieuw tabblad)")])]
     : [];
-
-/** @returns {Node} */
-const guideCta = () => {
-  const link = bookingLink("/");
-  return el(
-    "aside",
-    `my-12 ${ctaClass.box}`,
-    [
-      el("p", ctaClass.title, [text(defaultCta.title)], {
-        id: "gids-cta-midden",
-      }),
-      el("p", ctaClass.text, [text(defaultCta.text)]),
-      el(
-        "a",
-        `mt-6 ${buttonClass("on-block")}`,
-        [text(defaultCta.button), ...newTabNote(link), arrowIcon()],
-        { href: link.href, ...linkAttributes(link) },
-      ),
-    ],
-    { ariaLabelledby: "gids-cta-midden" },
-  );
-};
 
 // Links naar "/#contact" in de gidsen gaan naar de boekingslink, zodat er maar één plek is om te wijzigen.
 /** @param {Node} node */
@@ -140,12 +96,5 @@ export default function rehypeGuide() {
     if (!path.includes("/content/gids/")) return;
     fixBookingLinks(tree);
     fixTables(tree);
-    const children = tree.children ?? [];
-    const h2Indexes = children.flatMap((node, i) =>
-      isEl(node, "h2") ? [i] : [],
-    );
-    if (h2Indexes.length < 2) return;
-    const at = h2Indexes[Math.floor(h2Indexes.length / 2)];
-    children.splice(at, 0, guideCta());
   };
 }

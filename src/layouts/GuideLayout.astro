@@ -26,6 +26,7 @@ const updated = new Intl.DateTimeFormat("nl-NL", {
 }).format(data.updated);
 
 const schema = [
+  personSchema,
   {
     "@type": "Article",
     headline: data.title,
@@ -35,7 +36,7 @@ const schema = [
     dateModified: isoDate(data.updated),
     mainEntityOfPage: url,
     image: ogImage,
-    author: personSchema,
+    author: { "@id": schemaIds.person },
     publisher: {
       "@type": "Organization",
       "@id": schemaIds.organization,
@@ -101,11 +102,10 @@ const chip = "inline-flex rounded-full px-3 py-1.5 text-caption font-semibold";
         <span class:list={[chip, "bg-surface text-text"]}>{data.readingTime} min lezen</span>
         <span class="text-label text-text-muted">
           Bijgewerkt op <time datetime={isoDate(data.updated)}>{updated}</time> · Door <a
-            href={site.linkedin}
-            rel="author noopener"
-            target="_blank"
+            href="/over/"
+            rel="author"
             class="underline underline-offset-2 hover:text-accent-text focus-ring"
-            >{site.founder}<span class="sr-only"> (opent in een nieuw tabblad)</span></a
+            >{site.founder}</a
           >
         </span>
       </p>
@@ -149,12 +149,12 @@ const chip = "inline-flex rounded-full px-3 py-1.5 text-caption font-semibold";
 
     {
       data.faq?.length ? (
-        <Faq items={data.faq} label="FAQ" title="Veelgestelde vragen" id="gids-faq" contactHref="/#contact" />
+        <Faq items={data.faq} label="FAQ" title="Veelgestelde vragen" id="gids-faq" contactHref="/?dienst=weet-niet#contact" />
       ) : null
     }
   </article>
 
-  <section aria-labelledby="verder-lezen" class="bg-surface py-20 md:py-28">
+  <section aria-labelledby="verder-lezen" class="bg-surface pb-20 md:pb-28">
     <div class="reveal container-page">
       <h2 id="verder-lezen" class="text-title font-stretch-115%">Verder lezen</h2>
       <div class="mt-10 grid grid-fit-65 gap-3.5">

@@ -53,9 +53,9 @@ export const services: Service[] = [
     ],
     notIncluded: "Extra pagina's en metingen.",
     highlights: [
-      "Ontwerp op maat voor jouw bedrijf",
+      "Ontwerp op maat",
       "Zelf teksten aanpassen via een CMS",
-      "Gevonden in Google en AI-assistenten",
+      "Gebouwd om gevonden te worden in Google en AI-assistenten",
     ],
     variant: "light",
   },
@@ -167,6 +167,8 @@ export const improvements: {
   name: string;
   cta: string;
   label: string;
+  /** Beschrijving voor structured data. Niet zichtbaar op de pagina. */
+  schemaDescription: string;
   price: number;
   variant: "light" | "inverse";
   included: string[];
@@ -177,6 +179,8 @@ export const improvements: {
     name: "Websitecheck",
     cta: "Boek websitecheck",
     label: "Eerst zien waar het misgaat",
+    schemaDescription:
+      "Check van een bestaande website op boodschap, structuur, snelheid, vindbaarheid en contact. Je krijgt de 10 belangrijkste verbeterpunten op volgorde van belang en een gesprek van 30 minuten. Wordt verrekend bij een landingspagina of complete website binnen 30 dagen.",
     price: prices.websitecheck,
     variant: "light",
     included: [
@@ -191,6 +195,8 @@ export const improvements: {
     name: "Verbeterronde",
     cta: "Plan een verbeterronde",
     label: "Verbeteren in één ronde",
+    schemaDescription:
+      "30 minuten om te bepalen wat er moet veranderen, daarna tot 6 uur werk aan tekst, structuur, snelheid of vindbaarheid van een bestaande website, met een overzicht van alle wijzigingen.",
     price: prices.verbeterronde,
     variant: "inverse",
     included: [
@@ -204,6 +210,8 @@ export const improvements: {
     name: "Vraaguur",
     cta: "Boek een vraaguur",
     label: "Vragen stellen en een volgende stap kiezen",
+    schemaDescription:
+      "60 minuten samen naar je website kijken, antwoord op je vragen en een afgesproken volgende stap.",
     price: prices.vraaguur,
     variant: "light",
     included: [

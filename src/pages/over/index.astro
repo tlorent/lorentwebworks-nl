@@ -7,7 +7,12 @@ import Pattern from "../../components/Pattern.astro";
 import Schema from "../../components/Schema.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import SlotPhoto from "../../components/SlotPhoto.astro";
-import { personSchema, site } from "../../data/site";
+import {
+  organizationSchema,
+  personSchema,
+  site,
+  websiteSchema,
+} from "../../data/site";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 const title = "Over Tim Lorent | Lorent Webworks";
@@ -33,6 +38,9 @@ const werkwijze = [
 ];
 
 const schema = [
+  organizationSchema,
+  websiteSchema,
+  personSchema,
   {
     "@type": "AboutPage",
     url: `${site.url}/over/`,

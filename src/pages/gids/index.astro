@@ -63,22 +63,44 @@ const schema = [
       </p>
     </div>
   </header>
-  <section aria-labelledby="alle-gidsen" class="bg-surface py-16 md:py-24">
+  <section aria-label="Alle gidsen" class="bg-surface py-16 md:py-24">
     <div class="reveal container-page">
-      <h2 id="alle-gidsen" class="sr-only">Alle gidsen</h2>
-      <div class="grid grid-fit-75 gap-3.5">
+      <h2 class="text-heading font-stretch-115%">Je gaat een nieuwe website laten maken</h2>
+      <div class="mt-8 grid grid-fit-75 gap-3.5">
         {
-          guides.map((g) => (
-            <GuideCard
-              title={g.data.cardTitle}
-              teaser={g.data.teaser}
-              slug={g.data.slug}
-              readingTime={g.data.readingTime}
-              order={g.data.order}
-            />
-          ))
-        }
+          guides
+            .filter((g) => [1, 2, 3, 5].includes(g.data.order))
+            .map((g) => (
               <GuideCard
+                title={g.data.cardTitle}
+                teaser={g.data.teaser}
+                slug={g.data.slug}
+                readingTime={g.data.readingTime}
+                order={g.data.order}
+              />
+            ))
+        }
+      </div>
+
+      <h2 class="mt-16 text-heading font-stretch-115%">Je hebt al een website</h2>
+      <p class="mt-4 max-w-3xl text-body-lg text-text-soft">
+        Wil je dat ik je site doorloop? Met de <a href="/website-verbeteren/#websitecheck" class="rounded-sm font-semibold text-accent-text underline underline-offset-4 focus-ring">websitecheck</a> krijg je de 10 belangrijkste verbeterpunten op volgorde van belang.
+      </p>
+      <div class="mt-8 grid grid-fit-75 gap-3.5">
+        {
+          guides
+            .filter((g) => g.data.order === 4)
+            .map((g) => (
+              <GuideCard
+                title={g.data.cardTitle}
+                teaser={g.data.teaser}
+                slug={g.data.slug}
+                readingTime={g.data.readingTime}
+                order={g.data.order}
+              />
+            ))
+        }
+        <GuideCard
           title="Lighthouse-score uitgelegd"
           teaser="Wat een score van 100 meet, wat hij niet zegt en hoe je jouw eigen website zelf controleert."
           slug="lighthouse-score"

@@ -9,7 +9,7 @@ import SectionLabel from "./SectionLabel.astro";
 
 const options = [
   { value: "Een landingspagina", id: "landingspagina" },
-  { value: "Een bedrijfswebsite", id: "bedrijfswebsite" },
+  { value: "Een complete website", id: "bedrijfswebsite" },
   { value: "Websitecheck", id: "websitecheck" },
   { value: "Verbeterronde", id: "verbeterronde" },
   { value: "Vraaguur", id: "vraaguur" },
@@ -38,7 +38,7 @@ const onBlockLink =
         />
         <SectionLabel onBlock>Contact</SectionLabel>
         <h2 id="contact-titel" class="mt-5 text-h2 font-stretch-115% text-balance">
-          Laten we in 30 minuten bespreken wat je website moet opleveren.
+          Plan een gratis kennismaking van 30 minuten. Daarna weet je welke website past en wat die kost.
         </h2>
         <ul class="mt-10 flex flex-col gap-3 text-on-block-muted">
           <li class="flex items-center gap-3">
@@ -86,7 +86,7 @@ const onBlockLink =
                 name="email"
                 type="email"
                 autocomplete="email"
-                placeholder="jan@jouwbedrijf.nl"
+                placeholder="jan@jouworganisatie.nl"
                 required
                 class={field}
               />
@@ -123,7 +123,7 @@ const onBlockLink =
           </div>
 
           <div class="mt-5">
-            <label for="bericht" class={label}>Vertel kort over je bedrijf</label>
+            <label for="bericht" class={label}>Vertel kort over je werk of organisatie</label>
             <textarea
               id="bericht"
               name="message"
@@ -131,7 +131,7 @@ const onBlockLink =
               placeholder="Wat doe je, voor wie, en wat moet de website opleveren?"
               required
               class={`${field} resize-y`}></textarea>
-            <p id="bericht-fout" class={error} hidden>Vertel kort over je bedrijf</p>
+            <p id="bericht-fout" class={error} hidden>Vertel kort over je werk of organisatie</p>
           </div>
 
           <p data-form-error role="alert" class="mt-5 text-sm font-semibold text-danger empty:hidden"></p>

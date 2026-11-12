@@ -20,7 +20,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Hoe lang duurt het?",
-    a: `Een landingspagina staat binnen 5 werkdagen live, een bedrijfswebsite binnen 3 tot 4 weken. Dat tempo halen we als je input en foto's op tijd binnen zijn.`,
+    a: `Een landingspagina staat binnen 5 werkdagen live, een complete website binnen 3 tot 4 weken. Dat tempo halen we als je input en foto's op tijd binnen zijn.`,
   },
   {
     q: "Moet ik zelf de teksten schrijven?",
@@ -28,7 +28,7 @@ export const faq: FaqItem[] = [
   },
   {
     q: "Word ik gevonden in Google en ChatGPT?",
-    a: "Ik bouw elke site zo dat zoekmachines en AI-assistenten goed begrijpen wat je doet en voor wie. Een vaste plek bovenaan kan niemand beloven. Een korte, duidelijke opbouw helpt zoekmachines en AI-assistenten begrijpen wat je doet.",
+    a: "Ik bouw elke site zo dat zoekmachines en AI-assistenten snel begrijpen wat je doet, voor wie en waar. Elke pagina krijgt een eigen titel en omschrijving, een duidelijke kopstructuur en gestructureerde gegevens, en de site laadt snel. Een vaste plek bovenaan kan niemand beloven.",
   },
   {
     q: "Van wie is de website na de oplevering?",
@@ -49,5 +49,21 @@ export const faq: FaqItem[] = [
   {
     q: "Werk je alleen in Amsterdam?",
     a: "Ik werk vanuit Amsterdam voor klanten in heel Nederland. In en rond Amsterdam kom ik graag langs, verder spreken we af via video.",
+  },
+];
+
+/** Vragen op /website-verbeteren/. */
+export const verbeterFaq: FaqItem[] = [
+  {
+    q: "Wat is een websitecheck?",
+    a: `Ik loop je bestaande website door op boodschap, structuur, snelheid, vindbaarheid en contact. Je krijgt de 10 belangrijkste verbeterpunten op volgorde van belang, en in een gesprek van 30 minuten lopen we ze samen door. De websitecheck kost ${formatPrice(improvements[0].price)}, excl. btw.`,
+  },
+  {
+    q: "Wordt de websitecheck verrekend?",
+    a: `Ja. Boek je binnen 30 dagen na het gesprek een landingspagina of een complete website, dan gaat de ${formatPrice(improvements[0].price)} van die factuur af.`,
+  },
+  {
+    q: "Welke dienst past bij mij?",
+    a: `Wil je weten wat er beter kan, kies dan de websitecheck. Wil je dat ik de verbeteringen uitvoer, kies dan de verbeterronde: tot 6 uur werk voor ${formatPrice(improvements[1].price)}. Wil je zelf aan de slag met hulp bij je vragen, kies dan het vraaguur van ${formatPrice(improvements[2].price)}.`,
   },
 ];

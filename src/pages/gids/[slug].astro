@@ -1,14 +1,29 @@
 ---
+import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 import GuideLayout from "../../layouts/GuideLayout.astro";
 
 export async function getStaticPaths() {
+  // De Lighthouse-pagina staat niet in de collectie, maar hoort bij de andere gidsen.
+  const lighthouseCard = {
+    data: {
+      cardTitle: "Lighthouse-score uitgelegd",
+      teaser:
+        "Wat een score van 100 meet, wat hij niet zegt en hoe je jouw eigen website zelf controleert.",
+      slug: "lighthouse-score",
+      readingTime: 4,
+      order: 6,
+    },
+  } as unknown as CollectionEntry<"gids">;
   const guides = (await getCollection("gids")).sort(
     (a, b) => a.data.order - b.data.order,
   );
   return guides.map((guide) => ({
     params: { slug: guide.data.slug },
-    props: { guide, others: guides.filter((g) => g.id !== guide.id) },
+    props: {
+      guide,
+      others: [...guides.filter((g) => g.id !== guide.id), lighthouseCard],
+    },
   }));
 }
 
