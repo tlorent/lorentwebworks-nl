@@ -358,6 +358,13 @@
     animation-fill-mode: both;
   }
 }
+
+/* Op mobiel geen markeerstift: de animatie werkt daar niet betrouwbaar. De tekst houdt zijn accentkleur. */
+@media (max-width: 47.99rem) {
+  .mark::before {
+    display: none;
+  }
+}
 @utility bg-glow {
   background-image: radial-gradient(
     120% 95% at 100% 0%,
