@@ -1,0 +1,107 @@
+---
+// Sectie "Word startklant", direct onder de prijskaarten op /website-bouwen/.
+// Verdwijnt vanzelf zodra alle startplekken vergeven zijn (src/data/startplekken.ts).
+import { formatPrice, services } from "../data/services";
+import {
+  startAnchor,
+  startOpen,
+  startplekken,
+  startplekkenRest,
+} from "../data/startplekken";
+import BookButton from "./BookButton.astro";
+
+const [lp, bw] = services;
+
+const prices = [lp, bw].map((s) => ({
+  name: s.name,
+  price: formatPrice(s.price),
+  regular: formatPrice(s.regularPrice),
+}));
+
+const asks = [
+  "Een eerlijke review",
+  "Je site als case tonen",
+  "Kort evaluatiegesprek",
+];
+
+const terms = [
+  `${startplekken.totaal} plekken, ${startplekken.periode}`,
+  "Eerste akkoord krijgt de plek",
+  "Niet voor latere uitbreidingen",
+];
+
+const tile = "rounded-card bg-inner p-5 md:p-6";
+const tileTitle = "text-sm font-bold text-text-muted";
+const dot = "mt-2.5 size-1.5 shrink-0 rounded-full bg-accent";
+---
+
+{
+  startOpen && (
+    <div
+      id={startAnchor}
+      aria-labelledby="startklant-titel"
+      role="region"
+      class="scroll-mt-40 rounded-panel bg-surface p-6 md:p-11"
+    >
+      <div class="flex flex-wrap items-end justify-between gap-x-10 gap-y-6">
+        <div class="max-w-xl">
+          <p class="on-start inline-flex rounded-full px-3.5 py-2 text-sm leading-tight font-semibold">
+            {startplekkenRest}
+          </p>
+          <h3 id="startklant-titel" class="mt-5 text-title font-stretch-115%">
+            Word startklant
+          </h3>
+          <p class="mt-3 text-text-soft">
+            Acht jaar ervaring, nieuw in Nederland. Ik zoek drie ondernemers om mee te beginnen.
+          </p>
+        </div>
+        <BookButton base="/" dienst="startplek" label="Vraag een startplek aan" size="lg" />
+      </div>
+
+      <div class="mt-8 grid gap-3 md:mt-10 md:grid-cols-3">
+        <div class={tile}>
+          <h4 class={tileTitle}>Wat je krijgt</h4>
+          <dl class="mt-4 flex flex-col gap-4">
+            {prices.map((p) => (
+              <div>
+                <dt class="text-label text-text-muted">{p.name}</dt>
+                <dd class="mt-1 flex flex-wrap items-baseline gap-x-2">
+                  <strong class="text-h3 font-stretch-110%">{p.price}</strong>
+                  <span class="text-sm text-text-muted">normaal {p.regular}</span>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+
+        <div class={tile}>
+          <h4 class={tileTitle}>Wat ik vraag</h4>
+          <ul class="mt-4 flex flex-col gap-2.5">
+            {asks.map((item) => (
+              <li class="flex gap-3">
+                <span aria-hidden="true" class={dot} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div class={tile}>
+          <h4 class={tileTitle}>Voorwaarden</h4>
+          <ul class="mt-4 flex flex-col gap-2.5">
+            {terms.map((item) => (
+              <li class="flex gap-3">
+                <span aria-hidden="true" class={dot} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+
+      <p class="mt-5 text-sm text-text-muted">
+        Eerst een gratis kennismaking van 30 minuten. Daarna beslis je.
+      </p>
+    </div>
+  )
+}

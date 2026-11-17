@@ -2,14 +2,32 @@ import {
   formatPrice,
   improvements,
   nonprofitDiscount,
+  regularPrices,
   services,
+  startPrices,
 } from "./services";
+import { startOpen, startplekken } from "./startplekken";
 
 export type FaqItem = { q: string; a: string };
 
 const [lp, bw] = services;
 
+/** Vragen over het startklanttarief. Alleen zolang er startplekken vrij zijn. */
+export const startFaq: FaqItem[] = startOpen
+  ? [
+      {
+        q: "Waarom is er een startklanttarief?",
+        a: `Lorent Webworks is nieuw in Nederland. Ik heb meer dan acht jaar ervaring, maar hier nog geen klanten die over mij kunnen vertellen. Daarom bouw ik de eerste ${startplekken.totaal} websites tegen een lager tarief: een landingspagina vanaf ${formatPrice(startPrices.landingspagina)} in plaats van ${formatPrice(regularPrices.landingspagina)}, een complete website vanaf ${formatPrice(startPrices.bedrijfswebsite)} in plaats van ${formatPrice(regularPrices.bedrijfswebsite)}. In ruil vraag ik een eerlijke review, toestemming om je website als case te tonen en een kort gesprek over de samenwerking. Het werk is precies hetzelfde.`,
+      },
+      {
+        q: "Wat gebeurt er als de plekken vol zijn?",
+        a: `Dan geldt het normale tarief: een landingspagina vanaf ${formatPrice(regularPrices.landingspagina)} en een complete website vanaf ${formatPrice(regularPrices.bedrijfswebsite)}, excl. btw. Heb je al een voorstel met het startklanttarief en geef je daar akkoord op, dan houd je dat tarief. Bovenaan de site zie je altijd hoeveel plekken er nog vrij zijn.`,
+      },
+    ]
+  : [];
+
 export const faq: FaqItem[] = [
+  ...startFaq,
   {
     q: "Wat kost een website laten maken?",
     a: `Een landingspagina kost bij mij vanaf ${formatPrice(lp.price)} en een complete website van vier tot zes pagina's vanaf ${formatPrice(bw.price)}. Beide bedragen zijn eenmalig en excl. btw. Goede doelen en stichtingen krijgen ${nonprofitDiscount}% korting.`,

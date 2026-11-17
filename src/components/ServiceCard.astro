@@ -43,7 +43,13 @@ const list = compact ? service.highlights : service.included;
 
   <div class:list={["mt-8 rounded-card p-5 md:p-6", inverse ? "bg-inverse-inner" : "bg-inner"]}>
     <div class="flex flex-wrap items-start justify-between gap-x-4 gap-y-2">
-      <span class:list={["pt-1 text-label", muted]}>vanaf</span>
+      {
+        service.startTariff ? (
+          <span class="on-start rounded-full px-3.5 py-2 text-sm leading-tight font-semibold">Startklanttarief</span>
+        ) : (
+          <span class:list={["pt-1 text-label", muted]}>vanaf</span>
+        )
+      }
       <span
         class:list={[
           "rounded-full px-3.5 py-2 text-sm leading-tight font-semibold",
@@ -53,10 +59,18 @@ const list = compact ? service.highlights : service.included;
         {service.duration}
       </span>
     </div>
-    <p class="mt-2 flex flex-col">
+    <p class:list={["flex flex-col", service.startTariff ? "mt-4" : "mt-2"]}>
+      {service.startTariff && <span class:list={["mb-1 text-label", muted]}>vanaf</span>}
       <strong class="text-price font-stretch-120% whitespace-nowrap">{formatPrice(service.price)}</strong>
       <span class:list={["mt-1 text-label", muted]}>ex btw, eenmalig</span>
     </p>
+    {
+      service.startTariff && (
+        <p class:list={["mt-3 text-sm", muted]}>
+          Normaal tarief {formatPrice(service.regularPrice)} · na de eerste drie klanten
+        </p>
+      )
+    }
   </div>
 
   {

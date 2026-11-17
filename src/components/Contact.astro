@@ -2,12 +2,17 @@
 import { Image } from "astro:assets";
 import timExtra from "../assets/tim-extra.jpg";
 import { site } from "../data/site";
+import { startOpen } from "../data/startplekken";
 import { buttonClass, buttonIconClass } from "../lib/button.mjs";
 import Icon from "./Icon.astro";
 import Pattern from "./Pattern.astro";
 import SectionLabel from "./SectionLabel.astro";
 
 const options = [
+  // Alleen zolang er startplekken vrij zijn (src/data/startplekken.ts).
+  ...(startOpen
+    ? [{ value: "Startplek (startklanttarief)", id: "startplek" }]
+    : []),
   { value: "Een landingspagina", id: "landingspagina" },
   { value: "Een complete website", id: "bedrijfswebsite" },
   { value: "Websitecheck", id: "websitecheck" },
@@ -108,6 +113,19 @@ const onBlockLink =
             </div>
             <p id="dienst-fout" class={error} hidden>Kies wat je nodig hebt</p>
           </fieldset>
+
+          <div class="mt-5">
+            <label for="live" class={label}
+              >Wanneer wil je live? <span class="font-normal text-text-muted">(optioneel)</span></label
+            >
+            <input
+              id="live"
+              name="live"
+              type="text"
+              placeholder="Bijvoorbeeld maart 2027, of zo snel mogelijk"
+              class={field}
+            />
+          </div>
 
           <div class="mt-5">
             <label for="gevonden" class={label}

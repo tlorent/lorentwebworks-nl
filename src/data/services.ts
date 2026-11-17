@@ -1,3 +1,5 @@
+import { startOpen } from "./startplekken";
+
 // Alle prijzen, inhoud van de opties en extra's. Wijzig prijzen alleen hier; de site rekent de rest uit.
 
 const priceFormat = new Intl.NumberFormat("nl-NL", {
@@ -14,7 +16,12 @@ export type Service = {
   label: string;
   name: string;
   description: string;
+  /** Prijs die nu geldt: het startklanttarief zolang er startplekken vrij zijn, anders het normale tarief. */
   price: number;
+  /** Normaal tarief, na de eerste drie klanten. */
+  regularPrice: number;
+  /** True als `price` het startklanttarief is. */
+  startTariff: boolean;
   duration: string;
   included: string[];
   notIncluded: string;
@@ -23,9 +30,25 @@ export type Service = {
   variant: "light" | "inverse";
 };
 
-export const prices = {
+/** Startklanttarief voor de eerste drie klanten (zie src/data/startplekken.ts). */
+export const startPrices = {
   landingspagina: 950,
   bedrijfswebsite: 2150,
+};
+
+/** Normaal tarief, na de eerste drie klanten. */
+export const regularPrices = {
+  landingspagina: 1150,
+  bedrijfswebsite: 2550,
+};
+
+export const prices = {
+  landingspagina: startOpen
+    ? startPrices.landingspagina
+    : regularPrices.landingspagina,
+  bedrijfswebsite: startOpen
+    ? startPrices.bedrijfswebsite
+    : regularPrices.bedrijfswebsite,
   extraPagina: 295,
   tool: 95,
   websitecheck: 245,
@@ -41,6 +64,8 @@ export const services: Service[] = [
     description:
       "Eén pagina met wat je doet, voor wie, en een knop naar contact. Ideaal als je snel online wilt.",
     price: prices.landingspagina,
+    regularPrice: regularPrices.landingspagina,
+    startTariff: startOpen,
     duration: "Live binnen 5 werkdagen",
     included: [
       "Kennismakingsgesprek over doel en doelgroep",
@@ -66,6 +91,8 @@ export const services: Service[] = [
     description:
       "Vier tot zes pagina's voor als je meer te vertellen hebt: je diensten, je werkwijze, jezelf of je team.",
     price: prices.bedrijfswebsite,
+    regularPrice: regularPrices.bedrijfswebsite,
+    startTariff: startOpen,
     duration: "Live binnen 3 tot 4 weken",
     included: [
       "Alles uit de landingspagina",

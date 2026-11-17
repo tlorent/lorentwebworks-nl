@@ -1,0 +1,32 @@
+---
+// Aankondigingsbalk boven elke pagina. Leest het aantal vrije plekken uit src/data/startplekken.ts.
+import { startAnchor, startOpen, startplekken } from "../data/startplekken";
+
+const href = `/website-bouwen/#${startAnchor}`;
+---
+
+<aside aria-label="Startplekken" class="on-start">
+  <p class="container-page flex flex-wrap items-center justify-center gap-x-2 py-2 text-center text-sm font-semibold">
+    {
+      startOpen ? (
+        <>
+          <span class="max-sm:hidden">Startplekken {startplekken.periode}</span>
+          <span aria-hidden="true" class="max-sm:hidden">·</span>
+          <span>
+            <span class="sm:hidden">Startplekken: </span>nog {startplekken.beschikbaar} van{" "}
+            {startplekken.totaal}
+            <span class="max-sm:hidden"> beschikbaar</span>
+          </span>
+          <span aria-hidden="true">·</span>
+          <a
+            href={href}
+            class="inline-block py-0.5 rounded-sm whitespace-nowrap underline underline-offset-4 hover:no-underline focus-ring"
+            >Bekijk<span class="max-sm:hidden"> het aanbod</span> →</a
+          >
+        </>
+      ) : (
+        <span>Alle startplekken zijn vergeven</span>
+      )
+    }
+  </p>
+</aside>

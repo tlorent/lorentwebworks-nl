@@ -9,6 +9,7 @@ import SectionHeader from "../../components/SectionHeader.astro";
 import SectionLabel from "../../components/SectionLabel.astro";
 import ServiceCard from "../../components/ServiceCard.astro";
 import SlotPhoto from "../../components/SlotPhoto.astro";
+import StartClient from "../../components/StartClient.astro";
 import { hostingPrice } from "../../data/booking.mjs";
 import {
   extras,
@@ -106,6 +107,9 @@ const rowClass =
       <div class="mt-12 grid grid-fit-80 gap-4 md:mt-16">
         <ServiceCard service={lp} onHome={false} />
         <ServiceCard service={bw} onHome={false} />
+      </div>
+      <div class="mt-4">
+        <StartClient />
       </div>
       <div class="mt-10 md:mt-12">
         <ProofStrip />

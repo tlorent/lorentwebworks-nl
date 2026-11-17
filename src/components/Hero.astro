@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import timExtra from "../assets/tim-extra.jpg";
+import { startOpen, startplekkenRest } from "../data/startplekken";
 import BookButton from "./BookButton.astro";
 import Pattern from "./Pattern.astro";
 ---
@@ -40,6 +41,7 @@ import Pattern from "./Pattern.astro";
         <BookButton size="hero" label="Plan een gratis kennismaking" class="justify-center" />
         <div aria-hidden="true" class="hidden sm:block sm:flex-1"></div>
       </div>
+      {startOpen && <p class="-mt-3 text-sm font-semibold text-text-muted">{startplekkenRest}</p>}
       <div class="flex flex-col items-center sm:flex-row sm:justify-center">
         <a href="#diensten" class="inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold text-accent-text md:text-base underline underline-offset-4 focus-ring">Bekijk diensten</a>
         <a href="/over/" class="inline-flex min-h-11 items-center rounded-sm px-3 text-sm font-semibold text-accent-text md:text-base underline underline-offset-4 focus-ring">Over mij</a>
