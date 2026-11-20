@@ -1,15 +1,15 @@
 ---
-title: "Website laten maken: de complete gids voor ondernemers"
-cardTitle: "Website laten maken: de complete gids"
+title: "Website laten maken in 2027: de complete gids voor ondernemers"
+cardTitle: "Website laten maken in 2027: de complete gids"
 crumb: "Website laten maken"
-seoTitle: "Website laten maken: de complete gids voor ondernemers"
+seoTitle: "Website laten maken in 2027: Complete gids voor ondernemers"
 description: "Een website laten maken? Zo pak je het aan: doel bepalen, kiezen tussen zelf bouwen, freelancer of bureau, kosten en planning."
 teaser: "Van doel en budget tot oplevering: zo laat je een website maken die doet wat jij nodig hebt. Met de keuze tussen zelf bouwen, freelancer of bureau."
 intro: "Een website laten maken voelt voor veel zzp’ers, ondernemers en stichtingen als een sprong in het diepe. Wat kost het, wie kies je, hoe lang duurt het, en hoe weet je of de site straks doet wat je nodig hebt? In deze gids loop ik het hele traject met je door, van het eerste idee tot een site die live staat en werkt."
 slug: "website-laten-maken"
 readingTime: 12
 published: 2026-01-15
-updated: 2026-11-04
+updated: 2026-11-21
 order: 1
 cta:
   title: "Klaar voor een website die doet wat jij nodig hebt?"

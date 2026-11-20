@@ -1,15 +1,15 @@
 ---
-title: "Wat kost een website laten maken in 2026?"
-cardTitle: "Wat kost een website laten maken in 2026?"
+title: "Wat kost een website laten maken in 2027?"
+cardTitle: "Wat kost een website laten maken in 2027?"
 crumb: "Wat kost een website"
-seoTitle: "Wat kost een website laten maken in 2026?"
-description: "Wat kost een website laten maken in 2026? Prijzen voor zelf bouwen, een freelancer en een bureau, plus de kosten die je makkelijk vergeet."
+seoTitle: "Wat kost een website laten maken in 2027? Complete prijsoverzicht"
+description: "Wat kost een website laten maken in 2027? Prijzen voor zelf bouwen, een freelancer en een bureau, plus de kosten die je makkelijk vergeet."
 teaser: "Prijzen per optie, wat de prijs bepaalt en welke kosten je makkelijk vergeet. Met realistische budgetten voor zzp’ers, ondernemers en stichtingen."
 intro: "\"Wat kost een website?\" is een van de meest gestelde vragen van ondernemers, en het antwoord \"dat hangt ervan af\" helpt niemand. In deze gids zet ik de prijzen per optie op een rij, laat ik zien wat de prijs bepaalt en welke kosten je makkelijk vergeet."
 slug: "wat-kost-een-website"
 readingTime: 8
 published: 2026-01-15
-updated: 2026-11-04
+updated: 2026-11-21
 order: 2
 cta:
   title: "Weten wat jouw website kost?"
@@ -39,7 +39,7 @@ Zelf bouwen met een websitebouwer kost grofweg €15 tot €50 per maand, plus v
 | Freelancer | ca. €800 tot 3.000 | €0 tot 50 | Zzp'ers en kleine ondernemers |
 | Webbureau | ca. €4.000 tot 8.000+ | vaak €50 tot 250 | Grotere sites, webshops, koppelingen |
 
-De bedragen zijn indicaties voor een standaard bedrijfswebsite in Nederland. Webshops en maatwerkplatforms vallen hoger uit. Het uurtarief van een freelance webdeveloper ligt in 2026 doorgaans tussen €60 en €120.
+De bedragen zijn indicaties voor een standaard bedrijfswebsite in Nederland. Webshops en maatwerkplatforms vallen hoger uit. Het uurtarief van een freelance webdeveloper ligt in 2027 doorgaans tussen €60 en €120.
 
 ### Lorent Webworks
 

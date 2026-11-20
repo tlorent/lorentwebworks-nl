@@ -27,6 +27,7 @@ export const icons = {
   close: '<path d="m6 6 12 12M18 6 6 18"/>',
   calendar:
     '<rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/>',
+  "arrow-right": '<path d="M5 12h14M12 5l7 7-7 7"/>',
 };
 
 /** @typedef {keyof typeof icons} IconName */

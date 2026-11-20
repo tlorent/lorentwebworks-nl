@@ -1,0 +1,58 @@
+---
+import type { icons } from "../lib/icons.mjs";
+import Icon from "./Icon.astro";
+
+type IconName = keyof typeof icons;
+
+const guides: Array<{ title: string; href: string; icon: IconName }> = [
+  {
+    title: "Website laten maken: de complete gids",
+    href: "/gids/website-laten-maken/",
+    icon: "cap",
+  },
+  {
+    title: "Wat kost een website in 2027?",
+    href: "/gids/wat-kost-een-website/",
+    icon: "briefcase",
+  },
+  {
+    title: "Hoe kies je een goede webdesigner?",
+    href: "/gids/webdesigner-kiezen/",
+    icon: "people",
+  },
+];
+---
+
+<section aria-labelledby="gids-links-titel" class="container-page pt-10 pb-18 md:pt-10 md:pb-24">
+  <div class="reveal">
+    <h2 id="gids-links-titel" class="text-h2 font-stretch-115% text-balance">
+      Hulp nodig bij je keuze?
+    </h2>
+    <p class="mt-4 max-w-2xl text-body-lg text-text-soft">
+      In deze gidsen vind je alles wat je moet weten over een website laten maken, prijzen en het kiezen van een webbouwer.
+    </p>
+    <div class="mt-10 grid grid-fit-70 gap-4 md:mt-12">
+      {
+        guides.map((guide) => (
+          <a
+            href={guide.href}
+            class="group flex items-start gap-4 rounded-panel border border-border bg-surface p-6 transition-colors hover:border-accent focus-ring md:p-7"
+          >
+            <span class="grid size-11 shrink-0 place-items-center rounded-input bg-accent/10 text-accent-text transition-colors group-hover:bg-accent group-hover:text-on-accent">
+              <Icon name={guide.icon} class="size-5.5" strokeWidth={2} />
+            </span>
+            <span class="flex-1">
+              <span class="block text-lead font-semibold text-balance group-hover:text-accent-text">
+                {guide.title}
+              </span>
+              <span class="mt-2 inline-flex items-center gap-1.5 text-sm font-semibold text-accent-text">
+                Lees de gids
+                <Icon name="arrow-right" class="size-4" strokeWidth={2.5} />
+              </span>
+            </span>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</section>
