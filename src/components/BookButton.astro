@@ -41,6 +41,9 @@ const link = bookingLink(base, dienst);
   target={link.external ? "_blank" : undefined}
   rel={link.external ? "noopener" : undefined}
   data-dienst-link={!link.external && base === "" ? dienst : undefined}
+  data-simple-event="book_meeting_clicked"
+  data-simple-event-service={dienst}
+  data-simple-event-location={base === "" ? "homepage" : "other"}
   {...rest}
 >
   {label}
